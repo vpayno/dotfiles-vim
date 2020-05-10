@@ -9,6 +9,8 @@ let g:_debug_mode = 1
 let _enable_line_wrap = 0
 
 " Enable/disable plugins.
+let _enable_ack = 1
+let _enable_ripgrep = 1
 
 " Helper Functions.
 function! DebugPrint(message)

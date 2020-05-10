@@ -1,0 +1,6 @@
+[submodule "pack/upstream/opt/ack.vim"]
+	path = pack/upstream/opt/ack.vim
+	url = https://github.com/mileszs/ack.vim
+[submodule "pack/upstream/opt/vim-ripgrep"]
+	path = pack/upstream/opt/vim-ripgrep
+	url = https://github.com/jremmen/vim-ripgrep
