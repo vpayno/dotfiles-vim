@@ -4,3 +4,15 @@
 [submodule "pack/upstream/opt/vim-ripgrep"]
 	path = pack/upstream/opt/vim-ripgrep
 	url = https://github.com/jremmen/vim-ripgrep
+[submodule "pack/upstream/opt/vim-airline"]
+	path = pack/upstream/opt/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "pack/upstream/opt/powerline"]
+	path = pack/upstream/opt/powerline
+	url = https://github.com/powerline/powerline.git
+[submodule "pack/upstream/opt/lightline.vim"]
+	path = pack/upstream/opt/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
+[submodule "pack/upstream/opt/onedark.vim"]
+	path = pack/upstream/opt/onedark.vim
+	url = https://github.com/joshdick/onedark.vim.git
