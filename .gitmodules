@@ -52,3 +52,6 @@
 [submodule "pack/upstream/start/syntastic"]
 	path = pack/upstream/start/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "pack/upstream/start/vim-lastplace"]
+	path = pack/upstream/start/vim-lastplace
+	url = https://github.com/farmergreg/vim-lastplace.git
