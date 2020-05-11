@@ -85,3 +85,6 @@
 [submodule "pack/upstream/opt/vim-bundler"]
 	path = pack/upstream/opt/vim-bundler
 	url = https://github.com/tpope/vim-bundler
+[submodule "pack/upstream/start/kite"]
+	path = pack/upstream/start/kite
+	url = https://github.com/kiteco/vim-plugin
