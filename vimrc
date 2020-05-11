@@ -17,11 +17,16 @@ let _enable_nerdtree = 1
 let _enable_nerdtree_git = 0
 let _enable_orgmode = 0
 let _enable_powerline = 0 " if disabled, airline is used
+let _enable_python_jedi = 0
+let _enable_python_pymode = 0
+let _enable_python_autopep8 = 0
 let _enable_ripgrep = 1
 let _enable_ruby = 0
 let _enable_snipmate = 0 " if enabled, overrides snippets and utilsnips
 let _enable_snippets = 0 " if enabled, overrides utilsnips
 let _enable_utilsnips = 0 " overidden by snipmate and snippets
+let _enable_youcompleteme = 0
+let _use_virtualenv = 1
 
 " Helper Functions.
 function! DebugPrint(message)

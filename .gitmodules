@@ -88,3 +88,15 @@
 [submodule "pack/upstream/start/kite"]
 	path = pack/upstream/start/kite
 	url = https://github.com/kiteco/vim-plugin
+[submodule "pack/upstream/opt/vim-autopep8"]
+	path = pack/upstream/opt/vim-autopep8
+	url = https://github.com/tell-k/vim-autopep8
+[submodule "pack/upstream/opt/YouCompleteMe"]
+	path = pack/upstream/opt/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe
+[submodule "pack/upstream/opt/jedi-vim"]
+	path = pack/upstream/opt/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim
+[submodule "pack/upstream/opt/vim-virtualenv"]
+	path = pack/upstream/opt/vim-virtualenv
+	url = https://github.com/jmcantrell/vim-virtualenv
