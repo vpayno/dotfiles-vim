@@ -100,3 +100,6 @@
 [submodule "pack/upstream/opt/vim-virtualenv"]
 	path = pack/upstream/opt/vim-virtualenv
 	url = https://github.com/jmcantrell/vim-virtualenv
+[submodule "pack/upstream/start/vim-json"]
+	path = pack/upstream/start/vim-json
+	url = https://github.com/elzr/vim-json
