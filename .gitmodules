@@ -34,3 +34,12 @@
 [submodule "pack/upstream/opt/vim-orgmode"]
 	path = pack/upstream/opt/vim-orgmode
 	url = https://github.com/jceb/vim-orgmode
+[submodule "pack/upstream/opt/vim-snipmate"]
+	path = pack/upstream/opt/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "pack/upstream/opt/ultisnips"]
+	path = pack/upstream/opt/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "pack/upstream/opt/vim-snippets"]
+	path = pack/upstream/opt/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
