@@ -31,3 +31,6 @@
 [submodule "pack/upstream/opt/vim-nerdtree-tabs"]
 	path = pack/upstream/opt/vim-nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs
+[submodule "pack/upstream/opt/vim-orgmode"]
+	path = pack/upstream/opt/vim-orgmode
+	url = https://github.com/jceb/vim-orgmode

@@ -13,6 +13,7 @@ let _enable_ack = 1
 let _enable_airline = 1 " if disabled, lightline is used
 let _enable_nerdtree = 1
 let _enable_nerdtree_git = 0
+let _enable_orgmode = 0
 let _enable_powerline = 0 " if disabled, airline is used
 let _enable_ripgrep = 1
 
