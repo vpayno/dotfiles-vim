@@ -43,3 +43,6 @@
 [submodule "pack/upstream/opt/vim-snippets"]
 	path = pack/upstream/opt/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
+[submodule "pack/upstream/start/editorconfig-vim"]
+	path = pack/upstream/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim
