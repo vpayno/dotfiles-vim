@@ -169,3 +169,6 @@
 [submodule "pack/upstream/opt/tlib"]
 	path = pack/upstream/opt/tlib
 	url = https://github.com/vim-scripts/tlib
+[submodule "pack/upstream/opt/VOoM"]
+	path = pack/upstream/opt/VOoM
+	url = https://github.com/vim-voom/VOoM
