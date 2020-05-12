@@ -139,3 +139,6 @@
 [submodule "pack/upstream/opt/ctrlp.vim"]
 	path = pack/upstream/opt/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
+[submodule "pack/upstream/opt/tagbar"]
+	path = pack/upstream/opt/tagbar
+	url = https://github.com/majutsushi/tagbar
