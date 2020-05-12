@@ -118,3 +118,6 @@
 [submodule "pack/upstream/opt/vim-javacomplete2"]
 	path = pack/upstream/opt/vim-javacomplete2
 	url = https://github.com/artur-shaik/vim-javacomplete2
+[submodule "pack/upstream/opt/ale"]
+	path = pack/upstream/opt/ale
+	url = https://github.com/dense-analysis/ale
