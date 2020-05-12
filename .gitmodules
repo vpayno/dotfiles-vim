@@ -181,3 +181,6 @@
 [submodule "pack/upstream/opt/vim-buftabline"]
 	path = pack/upstream/opt/vim-buftabline
 	url = https://github.com/ap/vim-buftabline
+[submodule "pack/upstream/opt/vimgdb"]
+	path = pack/upstream/opt/vimgdb
+	url = https://github.com/gisodal/vimgdb
