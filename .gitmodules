@@ -154,3 +154,6 @@
 [submodule "pack/upstream/opt/vim-one"]
 	path = pack/upstream/opt/vim-one
 	url = https://github.com/rakr/vim-one
+[submodule "pack/upstream/opt/vim-endwise"]
+	path = pack/upstream/opt/vim-endwise
+	url = https://github.com/tpope/vim-endwise
