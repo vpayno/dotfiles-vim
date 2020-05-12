@@ -199,3 +199,6 @@
 [submodule "pack/upstream/opt/vim-ansible-yaml"]
 	path = pack/upstream/opt/vim-ansible-yaml
 	url = https://github.com/chase/vim-ansible-yaml
+[submodule "pack/upstream/opt/emmet-vim"]
+	path = pack/upstream/opt/emmet-vim
+	url = https://github.com/mattn/emmet-vim
