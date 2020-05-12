@@ -172,3 +172,6 @@
 [submodule "pack/upstream/opt/VOoM"]
 	path = pack/upstream/opt/VOoM
 	url = https://github.com/vim-voom/VOoM
+[submodule "pack/upstream/opt/vimoutliner"]
+	path = pack/upstream/opt/vimoutliner
+	url = https://github.com/vimoutliner/vimoutliner
