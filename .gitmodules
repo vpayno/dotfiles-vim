@@ -166,3 +166,6 @@
 [submodule "pack/upstream/opt/gtk-vim-syntax"]
 	path = pack/upstream/opt/gtk-vim-syntax
 	url = https://github.com/vim-scripts/gtk-vim-syntax
+[submodule "pack/upstream/opt/tlib"]
+	path = pack/upstream/opt/tlib
+	url = https://github.com/vim-scripts/tlib
