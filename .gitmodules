@@ -193,3 +193,6 @@
 [submodule "pack/upstream/opt/tlib_vim"]
 	path = pack/upstream/opt/tlib_vim
 	url = https://github.com/tomtom/tlib_vim
+[submodule "pack/upstream/opt/vimux"]
+	path = pack/upstream/opt/vimux
+	url = https://github.com/benmills/vimux
