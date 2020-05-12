@@ -175,3 +175,6 @@
 [submodule "pack/upstream/opt/vimoutliner"]
 	path = pack/upstream/opt/vimoutliner
 	url = https://github.com/vimoutliner/vimoutliner
+[submodule "pack/upstream/opt/haproxy.vim"]
+	path = pack/upstream/opt/haproxy.vim
+	url = https://github.com/zimbatm/haproxy.vim
