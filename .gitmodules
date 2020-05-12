@@ -124,3 +124,6 @@
 [submodule "pack/upstream/opt/tmuxline.vim"]
 	path = pack/upstream/opt/tmuxline.vim
 	url = https://github.com/edkolev/tmuxline.vim
+[submodule "pack/upstream/opt/vim-elixir"]
+	path = pack/upstream/opt/vim-elixir
+	url = https://github.com/elixir-lang/vim-elixir
