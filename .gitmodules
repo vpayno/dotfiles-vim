@@ -121,3 +121,6 @@
 [submodule "pack/upstream/opt/ale"]
 	path = pack/upstream/opt/ale
 	url = https://github.com/dense-analysis/ale
+[submodule "pack/upstream/opt/tmuxline.vim"]
+	path = pack/upstream/opt/tmuxline.vim
+	url = https://github.com/edkolev/tmuxline.vim
