@@ -163,3 +163,6 @@
 [submodule "pack/upstream/opt/vim-latex"]
 	path = pack/upstream/opt/vim-latex
 	url = https://github.com/vim-latex/vim-latex
+[submodule "pack/upstream/opt/gtk-vim-syntax"]
+	path = pack/upstream/opt/gtk-vim-syntax
+	url = https://github.com/vim-scripts/gtk-vim-syntax
