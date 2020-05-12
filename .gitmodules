@@ -109,3 +109,6 @@
 [submodule "pack/upstream/opt/vim-markdown"]
 	path = pack/upstream/opt/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
+[submodule "pack/upstream/opt/vim-colors-solarized"]
+	path = pack/upstream/opt/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
