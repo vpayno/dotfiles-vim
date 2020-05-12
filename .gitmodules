@@ -184,3 +184,6 @@
 [submodule "pack/upstream/opt/vimgdb"]
 	path = pack/upstream/opt/vimgdb
 	url = https://github.com/gisodal/vimgdb
+[submodule "pack/upstream/opt/vim-chef"]
+	path = pack/upstream/opt/vim-chef
+	url = https://github.com/vadv/vim-chef
