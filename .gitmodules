@@ -115,3 +115,6 @@
 [submodule "pack/upstream/opt/vim-css-color"]
 	path = pack/upstream/opt/vim-css-color
 	url = https://github.com/ap/vim-css-color
+[submodule "pack/upstream/opt/vim-javacomplete2"]
+	path = pack/upstream/opt/vim-javacomplete2
+	url = https://github.com/artur-shaik/vim-javacomplete2
