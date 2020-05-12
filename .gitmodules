@@ -148,9 +148,6 @@
 [submodule "pack/upstream/opt/ansible-vim"]
 	path = pack/upstream/opt/ansible-vim
 	url = https://github.com/pearofducks/ansible-vim
-[submodule "pack/upstream/opt/python-mode"]
-	path = pack/upstream/opt/python-mode
-	url = https://github.com/klen/python-mode
 [submodule "pack/upstream/opt/vim-one"]
 	path = pack/upstream/opt/vim-one
 	url = https://github.com/rakr/vim-one
@@ -202,3 +199,6 @@
 [submodule "pack/upstream/opt/emmet-vim"]
 	path = pack/upstream/opt/emmet-vim
 	url = https://github.com/mattn/emmet-vim
+[submodule "pack/upstream/opt/python-mode"]
+	path = pack/upstream/opt/python-mode
+	url = https://github.com/python-mode/python-mode
