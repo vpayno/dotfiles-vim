@@ -145,3 +145,6 @@
 [submodule "pack/upstream/opt/vim-javascript"]
 	path = pack/upstream/opt/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
+[submodule "pack/upstream/opt/ansible-vim"]
+	path = pack/upstream/opt/ansible-vim
+	url = https://github.com/pearofducks/ansible-vim
