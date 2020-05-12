@@ -196,3 +196,6 @@
 [submodule "pack/upstream/opt/vimux"]
 	path = pack/upstream/opt/vimux
 	url = https://github.com/benmills/vimux
+[submodule "pack/upstream/opt/vim-ansible-yaml"]
+	path = pack/upstream/opt/vim-ansible-yaml
+	url = https://github.com/chase/vim-ansible-yaml
