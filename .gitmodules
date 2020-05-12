@@ -190,3 +190,6 @@
 [submodule "pack/upstream/opt/vim-addon-mw-utils"]
 	path = pack/upstream/opt/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils
+[submodule "pack/upstream/opt/tlib_vim"]
+	path = pack/upstream/opt/tlib_vim
+	url = https://github.com/tomtom/tlib_vim
