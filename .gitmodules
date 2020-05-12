@@ -157,3 +157,6 @@
 [submodule "pack/upstream/opt/vim-endwise"]
 	path = pack/upstream/opt/vim-endwise
 	url = https://github.com/tpope/vim-endwise
+[submodule "pack/upstream/opt/kotlin-vim"]
+	path = pack/upstream/opt/kotlin-vim
+	url = https://github.com/udalov/kotlin-vim
