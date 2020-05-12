@@ -178,3 +178,6 @@
 [submodule "pack/upstream/opt/haproxy.vim"]
 	path = pack/upstream/opt/haproxy.vim
 	url = https://github.com/zimbatm/haproxy.vim
+[submodule "pack/upstream/opt/vim-buftabline"]
+	path = pack/upstream/opt/vim-buftabline
+	url = https://github.com/ap/vim-buftabline
