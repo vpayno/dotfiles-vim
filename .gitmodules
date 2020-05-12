@@ -127,3 +127,6 @@
 [submodule "pack/upstream/opt/vim-elixir"]
 	path = pack/upstream/opt/vim-elixir
 	url = https://github.com/elixir-lang/vim-elixir
+[submodule "pack/upstream/opt/vim-go"]
+	path = pack/upstream/opt/vim-go
+	url = https://github.com/fatih/vim-go
