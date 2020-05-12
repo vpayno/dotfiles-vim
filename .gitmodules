@@ -112,3 +112,6 @@
 [submodule "pack/upstream/opt/vim-colors-solarized"]
 	path = pack/upstream/opt/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
+[submodule "pack/upstream/opt/vim-css-color"]
+	path = pack/upstream/opt/vim-css-color
+	url = https://github.com/ap/vim-css-color
