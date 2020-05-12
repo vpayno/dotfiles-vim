@@ -160,3 +160,6 @@
 [submodule "pack/upstream/opt/kotlin-vim"]
 	path = pack/upstream/opt/kotlin-vim
 	url = https://github.com/udalov/kotlin-vim
+[submodule "pack/upstream/opt/vim-latex"]
+	path = pack/upstream/opt/vim-latex
+	url = https://github.com/vim-latex/vim-latex
