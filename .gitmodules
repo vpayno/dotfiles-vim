@@ -148,3 +148,6 @@
 [submodule "pack/upstream/opt/ansible-vim"]
 	path = pack/upstream/opt/ansible-vim
 	url = https://github.com/pearofducks/ansible-vim
+[submodule "pack/upstream/opt/python-mode"]
+	path = pack/upstream/opt/python-mode
+	url = https://github.com/klen/python-mode
