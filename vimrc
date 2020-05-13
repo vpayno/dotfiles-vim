@@ -23,6 +23,7 @@ let _enable_python_pymode = 0
 let _enable_python_autopep8 = 0
 let _enable_ripgrep = 1
 let _enable_ruby = 0
+let _enable_salt = 0
 let _enable_snipmate = 0 " if enabled, overrides snippets and utilsnips
 let _enable_snippets = 0 " if enabled, overrides utilsnips
 let _enable_utilsnips = 0 " overidden by snipmate and snippets
