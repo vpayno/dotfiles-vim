@@ -3,7 +3,7 @@
 "
 
 " Enable(1)/disable(0) debug mode.
-let g:_debug_mode = 1
+let g:_debug_mode = 0
 
 " Enable/disable my options.
 let _enable_line_wrap = 0
