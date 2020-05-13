@@ -12,7 +12,10 @@ if _use_virtualenv
 	" Where are my virtual envs
 	let g:virtualenv_directory = "~/.vim/venv"
 
-	"call VirtualEnvActivate("vim-python")
+	" this isn't working, only works from the interactive command shell
+	" also need to figure out how to select the appropriate version (host
+	" specific vim env files?)
+	"VirtualEnvActivate py35
 
 	call DebugPrint("25-virtualenv.vimrc: end [vim-python]")
 else
