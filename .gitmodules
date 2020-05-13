@@ -202,3 +202,6 @@
 [submodule "pack/upstream/opt/python-mode"]
 	path = pack/upstream/opt/python-mode
 	url = https://github.com/python-mode/python-mode
+[submodule "pack/upstream/opt/taboo.vim"]
+	path = pack/upstream/opt/taboo.vim
+	url = https://github.com/gcmt/taboo.vim.git
