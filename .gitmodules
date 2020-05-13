@@ -205,3 +205,6 @@
 [submodule "pack/upstream/opt/taboo.vim"]
 	path = pack/upstream/opt/taboo.vim
 	url = https://github.com/gcmt/taboo.vim.git
+[submodule "pack/upstream/opt/unite.vim"]
+	path = pack/upstream/opt/unite.vim
+	url = https://github.com/Shougo/unite.vim.git
