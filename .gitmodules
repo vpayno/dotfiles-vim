@@ -247,3 +247,6 @@
 [submodule "pack/upstream/opt/AutoComplPop"]
 	path = pack/upstream/opt/AutoComplPop
 	url = https://github.com/vim-scripts/AutoComplPop
+[submodule "pack/upstream/opt/vim-puppet"]
+	path = pack/upstream/opt/vim-puppet
+	url = https://github.com/rodjek/vim-puppet
