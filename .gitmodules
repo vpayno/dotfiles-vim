@@ -244,3 +244,6 @@
 [submodule "pack/upstream/opt/vimspector"]
 	path = pack/upstream/opt/vimspector
 	url = https://github.com/puremourning/vimspector
+[submodule "pack/upstream/opt/AutoComplPop"]
+	path = pack/upstream/opt/AutoComplPop
+	url = https://github.com/vim-scripts/AutoComplPop
