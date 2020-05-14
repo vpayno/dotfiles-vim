@@ -36,7 +36,7 @@ highlight clear CursorLine
 augroup CLClear
     autocmd! ColorScheme * highlight clear CursorLine
 augroup END
-highlight CursorLineNR cterm=bold
+highlight CursorLineNR cterm=bold ctermbg=darkgreen
 augroup CLNRSet
     autocmd! ColorScheme * highlight CursorLineNR cterm=bold
 augroup END
