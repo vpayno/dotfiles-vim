@@ -211,3 +211,6 @@
 [submodule "pack/upstream/opt/vim-gnupg"]
 	path = pack/upstream/opt/vim-gnupg
 	url = https://github.com/jamessan/vim-gnupg
+[submodule "pack/upstream/opt/vim-docbk"]
+	path = pack/upstream/opt/vim-docbk
+	url = https://github.com/jhradilek/vim-docbk
