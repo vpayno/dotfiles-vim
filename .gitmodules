@@ -232,3 +232,6 @@
 [submodule "pack/upstream/opt/SQLComplete.vim"]
 	path = pack/upstream/opt/SQLComplete.vim
 	url = https://github.com/vim-scripts/SQLComplete.vim
+[submodule "pack/upstream/opt/vim-perl"]
+	path = pack/upstream/opt/vim-perl
+	url = https://github.com/vim-perl/vim-perl
