@@ -226,3 +226,6 @@
 [submodule "pack/upstream/opt/vim-redis"]
 	path = pack/upstream/opt/vim-redis
 	url = https://github.com/junegunn/vim-redis
+[submodule "pack/upstream/opt/vim-sql-workbench"]
+	path = pack/upstream/opt/vim-sql-workbench
+	url = https://github.com/cosminadrianpopescu/vim-sql-workbench
