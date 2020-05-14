@@ -223,3 +223,6 @@
 [submodule "pack/upstream/opt/vim-dadbod"]
 	path = pack/upstream/opt/vim-dadbod
 	url = https://github.com/tpope/vim-dadbod
+[submodule "pack/upstream/opt/vim-redis"]
+	path = pack/upstream/opt/vim-redis
+	url = https://github.com/junegunn/vim-redis
