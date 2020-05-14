@@ -250,3 +250,6 @@
 [submodule "pack/upstream/opt/vim-puppet"]
 	path = pack/upstream/opt/vim-puppet
 	url = https://github.com/rodjek/vim-puppet
+[submodule "pack/upstream/opt/salt-vim"]
+	path = pack/upstream/opt/salt-vim
+	url = https://github.com/saltstack/salt-vim
