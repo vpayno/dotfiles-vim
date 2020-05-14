@@ -220,3 +220,6 @@
 [submodule "pack/upstream/opt/vimongous"]
 	path = pack/upstream/opt/vimongous
 	url = https://github.com/robu3/vimongous
+[submodule "pack/upstream/opt/vim-dadbod"]
+	path = pack/upstream/opt/vim-dadbod
+	url = https://github.com/tpope/vim-dadbod
