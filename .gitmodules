@@ -265,3 +265,6 @@
 [submodule "pack/upstream/opt/vim-tmux-pilot"]
 	path = pack/upstream/opt/vim-tmux-pilot
 	url = https://github.com/urbainvaes/vim-tmux-pilot
+[submodule "pack/upstream/opt/better-vim-tmux-resizer"]
+	path = pack/upstream/opt/better-vim-tmux-resizer
+	url = https://github.com/RyanMillerC/better-vim-tmux-resizer
