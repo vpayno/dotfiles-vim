@@ -238,3 +238,6 @@
 [submodule "pack/upstream/opt/perl-support"]
 	path = pack/upstream/opt/perl-support
 	url = https://github.com/wolfgangmehner/perl-support
+[submodule "pack/upstream/opt/Conque-GDB"]
+	path = pack/upstream/opt/Conque-GDB
+	url = https://github.com/vim-scripts/Conque-GDB
