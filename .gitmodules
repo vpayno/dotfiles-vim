@@ -256,3 +256,6 @@
 [submodule "pack/upstream/opt/cscope.vim"]
 	path = pack/upstream/opt/cscope.vim
 	url = https://github.com/brookhong/cscope.vim
+[submodule "pack/upstream/opt/vim-tmux"]
+	path = pack/upstream/opt/vim-tmux
+	url = https://github.com/tmux-plugins/vim-tmux
