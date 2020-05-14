@@ -208,3 +208,6 @@
 [submodule "pack/upstream/opt/unite.vim"]
 	path = pack/upstream/opt/unite.vim
 	url = https://github.com/Shougo/unite.vim.git
+[submodule "pack/upstream/opt/vim-gnupg"]
+	path = pack/upstream/opt/vim-gnupg
+	url = https://github.com/jamessan/vim-gnupg
