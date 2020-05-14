@@ -214,3 +214,6 @@
 [submodule "pack/upstream/opt/vim-docbk"]
 	path = pack/upstream/opt/vim-docbk
 	url = https://github.com/jhradilek/vim-docbk
+[submodule "pack/upstream/opt/xml.vim"]
+	path = pack/upstream/opt/xml.vim
+	url = https://github.com/othree/xml.vim
