@@ -259,3 +259,6 @@
 [submodule "pack/upstream/opt/vim-tmux"]
 	path = pack/upstream/opt/vim-tmux
 	url = https://github.com/tmux-plugins/vim-tmux
+[submodule "pack/upstream/opt/vim-tmux-navigator"]
+	path = pack/upstream/opt/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
