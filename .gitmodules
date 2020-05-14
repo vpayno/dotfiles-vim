@@ -241,3 +241,6 @@
 [submodule "pack/upstream/opt/Conque-GDB"]
 	path = pack/upstream/opt/Conque-GDB
 	url = https://github.com/vim-scripts/Conque-GDB
+[submodule "pack/upstream/opt/vimspector"]
+	path = pack/upstream/opt/vimspector
+	url = https://github.com/puremourning/vimspector
