@@ -229,3 +229,6 @@
 [submodule "pack/upstream/opt/vim-sql-workbench"]
 	path = pack/upstream/opt/vim-sql-workbench
 	url = https://github.com/cosminadrianpopescu/vim-sql-workbench
+[submodule "pack/upstream/opt/SQLComplete.vim"]
+	path = pack/upstream/opt/SQLComplete.vim
+	url = https://github.com/vim-scripts/SQLComplete.vim
