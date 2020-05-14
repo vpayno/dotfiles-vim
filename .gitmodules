@@ -253,3 +253,6 @@
 [submodule "pack/upstream/opt/salt-vim"]
 	path = pack/upstream/opt/salt-vim
 	url = https://github.com/saltstack/salt-vim
+[submodule "pack/upstream/opt/cscope.vim"]
+	path = pack/upstream/opt/cscope.vim
+	url = https://github.com/brookhong/cscope.vim
