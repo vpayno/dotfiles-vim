@@ -79,7 +79,7 @@ filetype plugin indent on     " required
 set number
 
 " paste mode toggle
-set pastetoggle=\tp
+"set pastetoggle=\tp
 
 " show line lengths at 80 and 120 chars
 set colorcolumn=80,120
