@@ -271,3 +271,6 @@
 [submodule "pack/upstream/opt/aws-vim"]
 	path = pack/upstream/opt/aws-vim
 	url = https://github.com/m-kat/aws-vim
+[submodule "pack/upstream/opt/vim-raku"]
+	path = pack/upstream/opt/vim-raku
+	url = https://github.com/Raku/vim-raku
