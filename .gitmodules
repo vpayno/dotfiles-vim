@@ -277,3 +277,6 @@
 [submodule "pack/upstream/opt/vim-plugins"]
 	path = pack/upstream/opt/vim-plugins-wm
 	url = https://github.com/WolfgangMehner/vim-plugins.git
+[submodule "pack/upstream/opt/c-support"]
+	path = pack/upstream/opt/c-support
+	url = https://github.com/WolfgangMehner/c-support
