@@ -307,3 +307,6 @@
 [submodule "pack/upstream/opt/vimlscript-support"]
 	path = pack/upstream/opt/vimlscript-support
 	url = https://github.com/WolfgangMehner/vim-support
+[submodule "pack/upstream/opt/gentoo-syntax"]
+	path = pack/upstream/opt/gentoo-syntax
+	url = https://github.com/gentoo/gentoo-syntax.git
