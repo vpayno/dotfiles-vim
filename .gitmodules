@@ -295,3 +295,6 @@
 [submodule "pack/upstream/opt/awk-support"]
 	path = pack/upstream/opt/awk-support
 	url = https://github.com/WolfgangMehner/awk-support
+[submodule "pack/upstream/opt/matlab-support"]
+	path = pack/upstream/opt/matlab-support
+	url = https://github.com/WolfgangMehner/matlab-support
