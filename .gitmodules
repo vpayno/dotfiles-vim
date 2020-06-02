@@ -286,3 +286,6 @@
 [submodule "pack/upstream/opt/bash-support"]
 	path = pack/upstream/opt/bash-support
 	url = https://github.com/WolfgangMehner/bash-support
+[submodule "pack/upstream/opt/latex-support"]
+	path = pack/upstream/opt/latex-support
+	url = https://github.com/WolfgangMehner/latex-support
