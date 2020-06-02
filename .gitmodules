@@ -289,3 +289,6 @@
 [submodule "pack/upstream/opt/latex-support"]
 	path = pack/upstream/opt/latex-support
 	url = https://github.com/WolfgangMehner/latex-support
+[submodule "pack/upstream/opt/python-support"]
+	path = pack/upstream/opt/python-support
+	url = https://github.com/WolfgangMehner/python-support
