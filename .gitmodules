@@ -304,3 +304,6 @@
 [submodule "pack/upstream/opt/c.vim"]
 	path = pack/upstream/opt/c.vim
 	url = https://github.com/WolfgangMehner/c.vim
+[submodule "pack/upstream/opt/vimlscript-support"]
+	path = pack/upstream/opt/vimlscript-support
+	url = https://github.com/WolfgangMehner/vim-support
