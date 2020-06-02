@@ -310,3 +310,6 @@
 [submodule "pack/upstream/opt/gentoo-syntax"]
 	path = pack/upstream/opt/gentoo-syntax
 	url = https://github.com/gentoo/gentoo-syntax.git
+[submodule "pack/upstream/opt/spec.vim"]
+	path = pack/upstream/opt/spec.vim
+	url = https://github.com/vim-scripts/spec.vim.git
