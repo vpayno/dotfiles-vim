@@ -283,3 +283,6 @@
 [submodule "pack/upstream/opt/lua-support"]
 	path = pack/upstream/opt/lua-support
 	url = https://github.com/WolfgangMehner/lua-support
+[submodule "pack/upstream/opt/bash-support"]
+	path = pack/upstream/opt/bash-support
+	url = https://github.com/WolfgangMehner/bash-support
