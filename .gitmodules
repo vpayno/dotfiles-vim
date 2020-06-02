@@ -292,3 +292,6 @@
 [submodule "pack/upstream/opt/python-support"]
 	path = pack/upstream/opt/python-support
 	url = https://github.com/WolfgangMehner/python-support
+[submodule "pack/upstream/opt/awk-support"]
+	path = pack/upstream/opt/awk-support
+	url = https://github.com/WolfgangMehner/awk-support
