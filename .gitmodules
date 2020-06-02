@@ -280,3 +280,6 @@
 [submodule "pack/upstream/opt/c-support"]
 	path = pack/upstream/opt/c-support
 	url = https://github.com/WolfgangMehner/c-support
+[submodule "pack/upstream/opt/lua-support"]
+	path = pack/upstream/opt/lua-support
+	url = https://github.com/WolfgangMehner/lua-support
