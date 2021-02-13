@@ -11,6 +11,7 @@ let _enable_line_wrap = 0
 " Enable/disable plugins.
 let _enable_ack = 1
 let _enable_airline = 1 " if disabled, lightline is used
+let _enable_arduino = 1
 let _enable_buftabline = 1
 let _enable_golang = 0 " requires at least Vim 8.0.1453 or Neovim 0.4.0
 let _enable_kite = 1

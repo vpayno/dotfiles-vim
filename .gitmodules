@@ -316,3 +316,6 @@
 [submodule "pack/upstream/opt/vim-slime"]
 	path = pack/upstream/opt/vim-slime
 	url = https://github.com/jpalardy/vim-slime
+[submodule "pack/upstream/opt/vim-arduino"]
+	path = pack/upstream/opt/vim-arduino
+	url = https://github.com/stevearc/vim-arduino
