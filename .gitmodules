@@ -322,3 +322,6 @@
 [submodule "pack/upstream/opt/killersheep"]
 	path = pack/upstream/opt/killersheep
 	url = https://github.com/vim/killersheep
+[submodule "pack/upstream/opt/vim-commentary"]
+	path = pack/upstream/opt/vim-commentary
+	url = https://github.com/tpope/vim-commentary
