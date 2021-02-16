@@ -325,3 +325,6 @@
 [submodule "pack/upstream/opt/vim-commentary"]
 	path = pack/upstream/opt/vim-commentary
 	url = https://github.com/tpope/vim-commentary
+[submodule "pack/upstream/opt/impsort.vim"]
+	path = pack/upstream/opt/impsort.vim
+	url = https://github.com/tweekmonster/impsort.vim
