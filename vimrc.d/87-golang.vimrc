@@ -3,6 +3,8 @@
 "
 " https://github.com/fatih/vim-go
 
+autocmd! BufWritePost *.go | execute 'silent !gofmt -w %' | :e
+
 if _enable_golang
 	call DebugPrint("87-golang.vimrc: start")
 
