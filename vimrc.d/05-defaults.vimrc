@@ -239,6 +239,7 @@ if _enable_line_wrap
 	set breakindentopt=sbr
 	" I use a unicode curly array with a <backslash><space>
 	set showbreak=↪>\
+	"set formatoptions+=w " Wrap lines without breaking words
 else
 	set nowrap
 	set sidescroll=1
