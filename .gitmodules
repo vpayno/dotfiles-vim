@@ -328,3 +328,9 @@
 [submodule "pack/upstream/opt/impsort.vim"]
 	path = pack/upstream/opt/impsort.vim
 	url = https://github.com/tweekmonster/impsort.vim
+[submodule "pack/upstream/opt/vim-jq"]
+	path = pack/upstream/opt/vim-jq
+	url = https://github.com/bfrg/vim-jq
+[submodule "pack/upstream/opt/vim-jqplay"]
+	path = pack/upstream/opt/vim-jqplay
+	url = https://github.com/bfrg/vim-jqplay
