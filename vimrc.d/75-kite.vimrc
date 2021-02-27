@@ -8,9 +8,9 @@ if _enable_kite
 
 	packadd! kite
 
-	let g:kite_supported_languages = ['python', 'go']
+	let g:kite_supported_languages = ['python']  " ['python', 'go']
 	let g:kite_auto_complete=1
-	let g:kite_snippets=1
+	let g:kite_snippets=0
 
 	set completeopt+=menuone   " show the popup menu even when there is only 1 match
 	set completeopt+=noinsert  " don't insert any text until user chooses a match
