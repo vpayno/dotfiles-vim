@@ -334,3 +334,6 @@
 [submodule "pack/upstream/opt/vim-jqplay"]
 	path = pack/upstream/opt/vim-jqplay
 	url = https://github.com/bfrg/vim-jqplay
+[submodule "pack/upstream/opt/vimwiki"]
+	path = pack/upstream/opt/vimwiki
+	url = https://github.com/vimwiki/vimwiki

@@ -37,6 +37,7 @@ if version >= 500
 	let _enable_snipmate = 1 " if enabled, overrides utilsnips
 	let _enable_taboo = 1 " if enabled, it overrides other tab plugins
 	let _enable_utilsnips = 0 " overidden by snipmate
+	let _enable_vimwiki = 1
 	let _enable_youcompleteme = 0
 	let _use_virtualenv = 1
 
