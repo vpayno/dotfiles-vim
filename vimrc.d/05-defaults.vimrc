@@ -246,3 +246,7 @@ else
 	set sidescrolloff=5
 	set listchars=extends:>,precedes:<
 endif
+
+" Setting leader key.
+let mapleader = "\\"
+"let maplocalldeader = "\\"
