@@ -337,3 +337,6 @@
 [submodule "pack/upstream/opt/vimwiki"]
 	path = pack/upstream/opt/vimwiki
 	url = https://github.com/vimwiki/vimwiki
+[submodule "pack/upstream/opt/calendar-vim"]
+	path = pack/upstream/opt/calendar-vim
+	url = https://github.com/mattn/calendar-vim
