@@ -6,6 +6,25 @@
 " https://github.com/python-mode/python-mode
 " https://github.com/tell-k/vim-autopep8
 
+if _enable_python_isort
+	call DebugPrint("80-python.vimrc: start [isort]")
+
+	" Load plugins.
+	packadd! vim-isort
+
+	"let g:vim_isort_map = '<C-i>'
+	let g:vim_isort_map = ''
+
+	let g:vim_isort_config_overrides = {
+		\ 'include_trailing_comma': 1,
+		\ 'multi_line_output': 3
+		\}
+
+	let g:vim_isort_python_version = 'python3'
+
+	call DebugPrint("80-python.vimrc: end [isort]")
+endif
+
 if _enable_python_jedi
 	call DebugPrint("80-python.vimrc: start [jedi-vim]")
 

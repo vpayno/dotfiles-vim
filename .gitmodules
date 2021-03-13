@@ -340,3 +340,6 @@
 [submodule "pack/upstream/opt/calendar-vim"]
 	path = pack/upstream/opt/calendar-vim
 	url = https://github.com/mattn/calendar-vim
+[submodule "pack/upstream/opt/vim-isort"]
+	path = pack/upstream/opt/vim-isort
+	url = https://github.com/fisadev/vim-isort

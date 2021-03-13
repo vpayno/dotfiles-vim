@@ -29,6 +29,7 @@ if version >= 500
 	let _enable_perl6 = 0
 	let _enable_powerline = 0 " if disabled, airline is used
 	let _enable_python_autopep8 = 0
+	let _enable_python_isort = 0
 	let _enable_python_jedi = 0
 	let _enable_python_pymode = 0
 	let _enable_ripgrep = 1
