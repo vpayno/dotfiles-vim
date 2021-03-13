@@ -343,3 +343,6 @@
 [submodule "pack/upstream/opt/vim-isort"]
 	path = pack/upstream/opt/vim-isort
 	url = https://github.com/fisadev/vim-isort
+[submodule "pack/upstream/opt/coc.nvim"]
+	path = pack/upstream/opt/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
