@@ -346,3 +346,6 @@
 [submodule "pack/upstream/opt/coc.nvim"]
 	path = pack/upstream/opt/coc.nvim
 	url = https://github.com/neoclide/coc.nvim
+[submodule "pack/upstream/opt/tabnine-vim"]
+	path = pack/upstream/opt/tabnine-vim
+	url = https://github.com/codota/tabnine-vim
