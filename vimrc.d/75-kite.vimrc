@@ -8,7 +8,10 @@ if _enable_kite
 
 	packadd! kite
 
-	let g:kite_supported_languages = ['python']  " ['python', 'go']
+    " Java, C Based, Typescript, Kotlin, Less, Ruby, HTML/CSS, Go, Scala,
+    " JavaScript, PHP, Bash, Python
+	"let g:kite_supported_languages = ['python']  " ['python', 'go']
+	let g:kite_supported_languages = ['*']
 	let g:kite_auto_complete=1
 	let g:kite_snippets=0
 
