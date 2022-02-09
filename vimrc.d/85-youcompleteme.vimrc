@@ -4,7 +4,7 @@
 " https://github.com/davidhalter/jedi
 " https://github.com/ycm-core/YouCompleteMe
 
-if _enable_youcompleteme
+if _enable_youcompleteme && !has("nvim")
 	call DebugPrint("85-youcompleteme.vimrc: start [youcompleteme]")
 
 	" Load plugins.
