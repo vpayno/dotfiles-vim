@@ -61,9 +61,13 @@ if version >= 500
 
     call DebugPrint("runtime! vimrc.d/*.vimrc: start")
 
-    " Load the extra configs.
+    " VIM & NEOVIM: Load the extra configs.
     runtime! vimrc.d/*.vimrc
 
+    " NEOVIM: Load the extra configs.
+    if has("nvim")
+        runtime! vimrc.d/*.nvimrc
+    endif
 
     if !has("nvim")
         "set pythonthreedll=/home/vpayno/.pyenv/versions/3.9.1/lib/libpython3.9.a
