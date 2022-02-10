@@ -349,3 +349,12 @@
 [submodule "pack/upstream/opt/tabnine-vim"]
 	path = pack/upstream/opt/tabnine-vim
 	url = https://github.com/codota/tabnine-vim
+[submodule "pack/upstream/opt/telescope.nvim"]
+	path = pack/upstream/opt/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim
+[submodule "pack/upstream/opt/telescope-file-browser.nvim"]
+	path = pack/upstream/opt/telescope-file-browser.nvim
+	url = https://github.com/nvim-telescope/telescope-file-browser.nvim
+[submodule "pack/upstream/opt/plenary.nvim"]
+	path = pack/upstream/opt/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim
