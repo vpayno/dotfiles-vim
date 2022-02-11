@@ -73,8 +73,8 @@
 [submodule "pack/upstream/start/vim-racer"]
 	path = pack/upstream/start/vim-racer
 	url = https://github.com/racer-rust/vim-racer
-[submodule "pack/upstream/start/vim-ruby"]
-	path = pack/upstream/start/vim-ruby
+[submodule "pack/upstream/opt/vim-ruby"]
+	path = pack/upstream/opt/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby
 [submodule "pack/upstream/opt/vim-rails"]
 	path = pack/upstream/opt/vim-rails
