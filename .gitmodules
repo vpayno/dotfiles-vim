@@ -79,8 +79,8 @@
 [submodule "pack/upstream/opt/vim-rails"]
 	path = pack/upstream/opt/vim-rails
 	url = https://github.com/tpope/vim-rails
-[submodule "pack/upstream/start/vim-rake"]
-	path = pack/upstream/start/vim-rake
+[submodule "pack/upstream/opt/vim-rake"]
+	path = pack/upstream/opt/vim-rake
 	url = https://github.com/tpope/vim-rake
 [submodule "pack/upstream/opt/vim-bundler"]
 	path = pack/upstream/opt/vim-bundler
