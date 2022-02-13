@@ -67,10 +67,10 @@ set noignorecase
 set nosmartcase
 
 " Fix up arrow not working in search.
-imap  OA <ESC>ki
-imap  OB <ESC>ji
-imap  OC <ESC>li
-imap  OD <ESC>hi
+"imap  OA <ESC>ki
+"imap  OB <ESC>ji
+"imap  OC <ESC>li
+"imap  OD <ESC>hi
 
 filetype off                  " required
 filetype plugin indent on     " required
