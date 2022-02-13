@@ -42,7 +42,11 @@ augroup CLNRSet
 augroup END
 
 try
-    set undodir=~/.vim_runtime/undodir
+    if has("nvim")
+        set undodir=~/.vim_runtime/undodir.nvim
+    else
+        set undodir=~/.vim_runtime/undodir.vim
+    endif
     set undofile
 catch
 endtry
