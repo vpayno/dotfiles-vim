@@ -104,7 +104,7 @@
 	path = pack/upstream/start/vim-json
 	url = https://github.com/elzr/vim-json
 [submodule "pack/upstream/start/Conque-Shell"]
-	path = pack/upstream/start/Conque-Shell
+	path = pack/upstream/opt/Conque-Shell
 	url = https://github.com/vim-scripts/Conque-Shell
 [submodule "pack/upstream/opt/vim-markdown"]
 	path = pack/upstream/opt/vim-markdown
