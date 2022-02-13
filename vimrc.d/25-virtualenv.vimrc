@@ -3,7 +3,7 @@
 "
 " https://github.com/jmcantrell/vim-virtualenv
 
-if _use_virtualenv
+if _enable_virtualenv
 	call DebugPrint("25-virtualenv.vimrc: start [vim-python]")
 
 	" Load plugins.
