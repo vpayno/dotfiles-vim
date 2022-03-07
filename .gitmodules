@@ -361,3 +361,6 @@
 [submodule "pack/upstream/opt/xterm-color-table.vim"]
 	path = pack/upstream/opt/xterm-color-table.vim
 	url = https://github.com/guns/xterm-color-table.vim
+[submodule "pack/upstream/opt/command-t"]
+	path = pack/upstream/opt/command-t
+	url = https://github.com/wincent/command-t
