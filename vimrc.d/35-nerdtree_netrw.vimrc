@@ -1,18 +1,18 @@
 "
-" ~/vimrc.d/35-nerdtree.vimrc
+" ~/vimrc.d/35-nerdtree_netrw.vimrc
 "
 " https://github.com/preservim/nerdtree
 " https://github.com/Xuyuanp/nerdtree-git-plugin
 " https://github.com/jistr/vim-nerdtree-tabs
 
 if _enable_nerdtree
-	call DebugPrint("35-nerdtree.vimrc: start")
+	call DebugPrint("35-nerdtree_netrw.vimrc: [nerdtree] start")
 
 	" Load the plugin.
 	packadd! nerdtree
 
 	" Open NERDTree when vim starts up.
-	autocmd vimenter * NERDTree
+	" autocmd vimenter * NERDTree
 
 	" ctrl-n to toggle NERDTree
 	" map <C-n> :NERDTreeToggle<CR>
@@ -62,5 +62,28 @@ if _enable_nerdtree
 		\ }
 	endif
 
-	call DebugPrint("35-nerdtree.vimrc: end")
+	call DebugPrint("35-nerdtree_netrw.vimrc: [nerdtree] end")
+else
+	call DebugPrint("35-nerdtree_netrw.vimrc: [netrw] start")
+
+	let g:netrw_liststyle = 3
+
+	let g:netrw_banner = 1
+
+	" Open files in a
+	" 1: horizontal split
+	" 2: vertical split
+	" 3: new tab
+	" 4: previous window
+	let g:netrw_browse_split = 1
+
+	" ?
+	" let g:netrw_altv = 1
+
+	" pane width in %
+	let g:netrw_winsize = 25
+
+	let g:netrw_altv = 1
+
+	call DebugPrint("35-nerdtree_netrw.vimrc: [netrw] end")
 endif
