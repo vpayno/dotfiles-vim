@@ -21,6 +21,13 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" https://github.com/vim-syntastic/syntastic/blob/master/doc/syntastic-checkers.txt
+
 let g:syntastic_python_checkers = ['pylint', 'pyflakes', 'python']
+
+" let g:syntastic_ruby_checkers = ['ruby', 'flog', 'reek', 'rubocop', 'sorbet']
+let g:syntastic_ruby_checkers = ['ruby', 'flog']
+
+autocmd! BufWritePost *.rb | execute 'silent !rufo %' | :e
 
 call DebugPrint("40-syntastic.vimrc: end")
