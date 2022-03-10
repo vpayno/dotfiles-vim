@@ -4,11 +4,15 @@
 " https://github.com/davidhalter/jedi
 " https://github.com/ycm-core/YouCompleteMe
 
-if _enable_youcompleteme && !has("nvim")
+if (_enable_youcompleteme || _enable_youcompleteme_tabnine) && !has("nvim")
 	call DebugPrint("85-youcompleteme.vimrc: start [youcompleteme]")
 
 	" Load plugins.
-	packadd! YouCompleteMe
+    if _enable_youcompleteme_tabnine
+        packadd! YouCompleteMe-tabnine
+    elseif _enable_youcompleteme
+        packadd! YouCompleteMe
+    endif
 
 	call DebugPrint("85-youcompleteme.vimrc: end [youcompleteme]")
 endif
