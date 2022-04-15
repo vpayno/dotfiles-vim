@@ -32,14 +32,33 @@ set vb
 highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 set cursorline
 set cursorcolumn
+
+"
 highlight clear CursorLine
 augroup CLClear
     autocmd! ColorScheme * highlight clear CursorLine
 augroup END
+highlight CursorLine cterm=NONE ctermbg=234 ctermfg=NONE guibg=NONE guifg=NONE
+highlight CursorColumn cterm=NONE ctermbg=236 ctermfg=NONE guibg=NONE guifg=NONE
+
 highlight CursorLineNR cterm=bold ctermbg=darkgreen
 augroup CLNRSet
     autocmd! ColorScheme * highlight CursorLineNR cterm=bold
 augroup END
+
+" https://vim.fandom.com/wiki/Highlight_current_line
+
+" To highlight the current line, and have the highlighting stay where it is
+" when the cursor is moved.
+" With the default backslash leader key, pressing \l will highlight the line
+" that currently contains the cursor. The mapping also sets mark l so you can
+" type 'l to return to the highlighted line. Enter :match to clear the
+" highlighting when finished.
+:nnoremap <silent> <Leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
+
+" To highlight the current virtual column (column after tabs are expanded),
+" and have the highlighting stay where it is when the cursor is moved.
+:nnoremap <silent> <Leader>c :execute 'match Search /\%'.virtcol('.').'v/'<CR>
 
 try
     if has("nvim")
