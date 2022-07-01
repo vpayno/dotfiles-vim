@@ -23,6 +23,7 @@ if version >= 500
     let _enable_jq = 1     " requires at least vim 8.1.1776 (no neovim support)
     let _enable_jqplay = 1 " requires at least vim 8.1.1776 (no neovim support)
     let _enable_kite = 0
+    let _enable_lsp = 1
     let _enable_markdown = 1 " also enables tabular
     let _enable_nerdtree = 0 " if disabled, netrw is used
     let _enable_nerdtree_git = 0

@@ -364,3 +364,6 @@
 [submodule "pack/upstream/opt/command-t"]
 	path = pack/upstream/opt/command-t
 	url = https://github.com/wincent/command-t
+[submodule "pack/upstream/opt/vim-lsp"]
+	path = pack/upstream/opt/vim-lsp
+	url = https://github.com/prabirshrestha/vim-lsp
