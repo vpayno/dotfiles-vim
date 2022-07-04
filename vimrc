@@ -20,6 +20,7 @@ if version >= 500
     let _enable_conque_shell = 0 " old, broken
     let _enable_conquerofcompletion = 0
     let _enable_golang = 1 " requires at least Vim 8.0.1453 or Neovim 0.4.0
+    let _enable_golang_govim = 0 " needs _enable_golang=1
     let _enable_jq = 1     " requires at least vim 8.1.1776 (no neovim support)
     let _enable_jqplay = 1 " requires at least vim 8.1.1776 (no neovim support)
     let _enable_kite = 0
