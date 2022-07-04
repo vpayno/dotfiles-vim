@@ -190,8 +190,14 @@ if version >= 702
 endif
 
 " Change the Pmenu colors so they're more readable.
+" normal item
 highlight Pmenu ctermbg=cyan ctermfg=white
-highlight PmenuSel ctermbg=black ctermfg=white
+" selected item
+highlight PmenuSel ctermbg=gray ctermfg=white
+" scrollbar
+highlight PmenuSbar ctermbg=lightmagenta ctermfg=white
+" thumb of the scrollbar
+highlight PmenuThumb ctermbg=magenta ctermfg=white
 
 " pyflakes
 let g:khuno_ignore="E501"
