@@ -106,6 +106,7 @@ set number
 
 " show line lengths at 80 and 120 chars
 set colorcolumn=80,120
+hi ColorColumn ctermbg=darkgray guibg=darkgray
 set textwidth=0
 
 " enable 256 colors
