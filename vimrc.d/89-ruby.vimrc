@@ -10,10 +10,10 @@ if _enable_ruby
 	call DebugPrint("89-ruby.vimrc: start")
 
 	" Load plugins.
-	packad! vim-ruby
-	packad! vim-rake
-	packad! vim-rails
-	packad! vim-bundler
+	packadd! vim-ruby
+	packadd! vim-rake
+	packadd! vim-rails
+	packadd! vim-bundler
 
 	call DebugPrint("89-ruby.vimrc: end")
 endif

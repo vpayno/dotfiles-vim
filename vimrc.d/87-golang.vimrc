@@ -12,7 +12,7 @@ if _enable_golang
 	call DebugPrint("87-golang.vimrc: start")
 
 	" Load plugins.
-	packad! vim-go
+	packadd! vim-go
 
 	" Use :GoInstallBinaries to install dependencies.
 	" github.com/mgechev/revive@latest

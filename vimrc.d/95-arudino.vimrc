@@ -8,7 +8,7 @@ if _enable_arduino
 	call DebugPrint("95-arduino.vimrc: start")
 
 	" Load plugins.
-	packad! vim-arduino
+	packadd! vim-arduino
 
 	" Key bindings
 	"nnoremap <buffer> <leader>am :ArduinoVerify<CR>

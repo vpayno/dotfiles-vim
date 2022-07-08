@@ -11,7 +11,7 @@ if _enable_jq
 	call DebugPrint("17-jq.vimrc: start (vim-jq)")
 
 	" Load plugins.
-	packad! vim-jq
+	packadd! vim-jq
 
 	" Don't highlight builtin functions/filters (default: 1)
 	let g:jq_highlight_builtin_functions = 1
@@ -37,7 +37,7 @@ if _enable_jqplay
 	call DebugPrint("17-jq.vimrc: start (vim-jqplay)")
 
 	" Load plugins.
-	packad! vim-jqplay
+	packadd! vim-jqplay
 
 	call DebugPrint("17-jq.vimrc: end (vim-jqplay")
 endif

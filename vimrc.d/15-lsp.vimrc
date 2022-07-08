@@ -38,7 +38,7 @@ if _enable_lsp
     call DebugPrint("15-lsp.vimrc: start")
 
     " Load plugins.
-    packad! vim-lsp
+    packadd! vim-lsp
 
     " register language server
     augroup LSC
