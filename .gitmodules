@@ -367,3 +367,6 @@
 [submodule "pack/upstream/opt/vim-lsp"]
 	path = pack/upstream/opt/vim-lsp
 	url = https://github.com/prabirshrestha/vim-lsp
+[submodule "pack/upstream/opt/Dockerfile.vim"]
+	path = pack/upstream/opt/Dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim
