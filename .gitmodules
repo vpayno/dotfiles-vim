@@ -370,3 +370,6 @@
 [submodule "pack/upstream/opt/Dockerfile.vim"]
 	path = pack/upstream/opt/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim
+[submodule "denops-docker.vim"]
+	path = pack/upstream/opt/denops-docker.vim
+	url = https://github.com/skanehira/denops-docker.vim
