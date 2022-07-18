@@ -32,6 +32,7 @@ if version >= 500
     let _enable_markdown = 1 " also enables tabular
     let _enable_nerdtree = 0 " if disabled, netrw is used
     let _enable_nerdtree_git = 0
+    let _enable_other_todo_highlight = 0
     let _enable_orgmode = 0
     let _enable_perl5 = 0
     let _enable_perl6 = 0
