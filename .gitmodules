@@ -376,3 +376,6 @@
 [submodule "denops.vim"]
 	path = pack/upstream/opt/denops.vim
 	url = https://github.com/vim-denops/denops.vim
+[submodule "pack/upstream/opt/html5.vim"]
+	path = pack/upstream/opt/html5.vim
+	url = https://github.com/othree/html5.vim
