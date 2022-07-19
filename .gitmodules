@@ -382,3 +382,6 @@
 [submodule "pack/upstream/opt/vim-todo-highlight"]
 	path = pack/upstream/opt/vim-todo-highlight
 	url = https://github.com/sakshamgupta05/vim-todo-highlight
+[submodule "pack/upstream/opt/vim-less"]
+	path = pack/upstream/opt/vim-less
+	url = https://github.com/groenewege/vim-less
