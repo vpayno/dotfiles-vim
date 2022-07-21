@@ -1,9 +1,10 @@
 "
-" vimrc.d/36-tabs.vimrc
+" vimrc.d/36.0-tabs.vimrc
 "
 " https://github.com/gcmt/taboo.vim
 
 if _enable_taboo
+	call DebugPrint("36.0-tabs.vimrc: start")
 
 	" Load plugins.
 	packadd! taboo.vim
@@ -14,4 +15,5 @@ if _enable_taboo
 	" Remember tab names when saving a session.
 	set sessionoptions+=tabpages,globals
 
+	call DebugPrint("36.0-tabs.vimrc: end")
 endif
