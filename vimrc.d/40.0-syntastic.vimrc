@@ -1,8 +1,8 @@
 "
-" ~/.vim/vimrc.d/40-syntastic.vimrc
+" ~/.vim/vimrc.d/40.0-syntastic.vimrc
 "
 
-call DebugPrint("40-syntastic.vimrc: start")
+call DebugPrint("40.0-syntastic.vimrc: start")
 
 let g:syntastic_check_on_open = 1
 let g:syntastic_lua_checkers = ["luac", "luacheck"]
@@ -30,4 +30,4 @@ let g:syntastic_ruby_checkers = ['ruby', 'flog']
 
 autocmd! BufWritePost *.rb | execute 'silent !rufo %' | :e
 
-call DebugPrint("40-syntastic.vimrc: end")
+call DebugPrint("40.0-syntastic.vimrc: end")
