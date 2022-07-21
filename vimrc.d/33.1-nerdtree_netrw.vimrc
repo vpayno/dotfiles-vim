@@ -1,12 +1,12 @@
 "
-" ~/vimrc.d/35-nerdtree_netrw.vimrc
+" ~/vimrc.d/33.1-nerdtree_netrw.vimrc
 "
 " https://github.com/preservim/nerdtree
 " https://github.com/Xuyuanp/nerdtree-git-plugin
 " https://github.com/jistr/vim-nerdtree-tabs
 
 if _enable_nerdtree
-	call DebugPrint("35-nerdtree_netrw.vimrc: [nerdtree] start")
+	call DebugPrint("33.1-nerdtree_netrw.vimrc: [nerdtree] start")
 
 	" Load the plugin.
 	packadd! nerdtree
@@ -62,9 +62,9 @@ if _enable_nerdtree
 		\ }
 	endif
 
-	call DebugPrint("35-nerdtree_netrw.vimrc: [nerdtree] end")
+	call DebugPrint("33.1-nerdtree_netrw.vimrc: [nerdtree] end")
 else
-	call DebugPrint("35-nerdtree_netrw.vimrc: [netrw] start")
+	call DebugPrint("33.1-nerdtree_netrw.vimrc: [netrw] start")
 
 	let g:netrw_liststyle = 3
 
@@ -85,5 +85,5 @@ else
 
 	let g:netrw_altv = 1
 
-	call DebugPrint("35-nerdtree_netrw.vimrc: [netrw] end")
+	call DebugPrint("33.1-nerdtree_netrw.vimrc: [netrw] end")
 endif
