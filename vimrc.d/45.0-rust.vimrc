@@ -1,12 +1,12 @@
 "
-" ~/.vim/vimrc.d/45-rust.vimrc
+" ~/.vim/vimrc.d/45.0-rust.vimrc
 "
 
 " https://github.com/racer-rust/vim-racer.git
 " https://github.com/racer-rust/racer
 " https://github.com/rust-lang/rust.vim
 
-call DebugPrint("45-rust.vimrc: start")
+call DebugPrint("45.0-rust.vimrc: start")
 
 " Automatically run rustfmt when saving a buffer.
 let g:rustfmt_autosave = 1
@@ -30,4 +30,4 @@ augroup END
 
 packadd! tagbar
 
-call DebugPrint("45-rust.vimrc: end")
+call DebugPrint("45.0-rust.vimrc: end")
