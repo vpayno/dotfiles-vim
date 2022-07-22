@@ -1,9 +1,9 @@
 "
-" vimrc.d/47-perl.vimrc
+" vimrc.d/47.0-perl.vimrc
 "
 " https://perlmonks.org/?node_id=540167
 
-call DebugPrint("47-perl.vimrc: start")
+call DebugPrint("47.0-perl.vimrc: start")
 
 " check perl code with :make
 autocmd FileType perl set makeprg=perl\ -c\ %\ $*
@@ -29,7 +29,7 @@ nnoremap <silent> _d :.!perl -MO=Deparse 2>/dev/null<cr>
 vnoremap <silent> _d :!perl -MO=Deparse 2>/dev/null<cr>
 
 if _enable_perl5
-	call DebugPrint("47-perl.vimrc: start [Perl 5]")
+	call DebugPrint("47.0-perl.vimrc: start [Perl 5]")
 
 	if !empty(glob("~/.vim/pack/upstream/opt/vim-perl/after/syntax/perl/*vim"))
 	" pack/upstream/opt/vim-perl (dev %=)
@@ -43,18 +43,18 @@ if _enable_perl5
 
 	packadd! vim-perl
 
-	call DebugPrint("47-perl.vimrc: end [Perl 5]")
+	call DebugPrint("47.0-perl.vimrc: end [Perl 5]")
 endif
 
 if _enable_perl6
-	call DebugPrint("47-perl.vimrc: start [Perl 6]")
+	call DebugPrint("47.0-perl.vimrc: start [Perl 6]")
 
 	packadd! vim-raku
 
 	" convert ASCII based operators to their Unicode equivalents on the fly
 	let g:raku_unicode_abbrevs = 1
 
-	call DebugPrint("47-perl.vimrc: end [Perl 6]")
+	call DebugPrint("47.0-perl.vimrc: end [Perl 6]")
 endif
 
-call DebugPrint("47-perl.vimrc: end")
+call DebugPrint("47.0-perl.vimrc: end")
