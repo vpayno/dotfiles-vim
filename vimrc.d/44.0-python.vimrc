@@ -1,5 +1,5 @@
 "
-" vimrc.d/80-python.vimrc
+" vimrc.d/44.0-python.vimrc
 "
 " https://github.com/davidhalter/jedi
 " https://github.com/davidhalter/jedi-vim
@@ -9,7 +9,7 @@
 autocmd! BufWritePost *.py | execute 'silent !pyfmt --vim %' | :e
 
 if (!_enable_kite && !_enable_youcompleteme) && _enable_python_pymode
-	call DebugPrint("80-python.vimrc: start [python-mode]")
+	call DebugPrint("44.0-python.vimrc: start [python-mode]")
 
 	" Load plugins.
 	packadd! python-mode
@@ -65,11 +65,11 @@ if (!_enable_kite && !_enable_youcompleteme) && _enable_python_pymode
 	" OPTION: g:pymode_lint_ignore -- string. Skip errors and warnings (e.g.  E4,W)
 	"call pymode#Default("g:pymode_lint_ignore", "E501")
 
-	call DebugPrint("80-python.vimrc: end [python-mode]")
+	call DebugPrint("44.0-python.vimrc: end [python-mode]")
 
 elseif _enable_python_jedi
 
-	call DebugPrint("80-python.vimrc: start [jedi-vim]")
+	call DebugPrint("44.0-python.vimrc: start [jedi-vim]")
 
 	" https://github.com/davidhalter/jedi-vim
 
@@ -119,30 +119,30 @@ elseif _enable_python_jedi
 	" Finally, if you don't want completion, but all the other features, use:
 	" let g:jedi#completions_enabled = 0
 
-	call DebugPrint("80-python.vimrc: end [jedi-vim]")
+	call DebugPrint("44.0-python.vimrc: end [jedi-vim]")
 
 else
 
-	call DebugPrint("80-python.vimrc: start [omnicomplete]")
+	call DebugPrint("44.0-python.vimrc: start [omnicomplete]")
 
 	" https://stackabuse.com/vim-for-python-development/
 	set omnifunc=syntaxcomplete#Complete
 
-	call DebugPrint("80-python.vimrc: end [omnicomplete]")
+	call DebugPrint("44.0-python.vimrc: end [omnicomplete]")
 
 endif
 
 if _enable_python_autopep8
-	call DebugPrint("80-python.vimrc: start [autopep8]")
+	call DebugPrint("44.0-python.vimrc: start [autopep8]")
 
 	" Load plugins.
 	packadd! vim-autopep8
 
-	call DebugPrint("80-python.vimrc: end [autopep8]")
+	call DebugPrint("44.0-python.vimrc: end [autopep8]")
 endif
 
 if _enable_python_isort
-	call DebugPrint("80-python.vimrc: start [isort]")
+	call DebugPrint("44.0-python.vimrc: start [isort]")
 
 	" Load plugins.
 	packadd! vim-isort
@@ -157,5 +157,5 @@ if _enable_python_isort
 
 	let g:vim_isort_python_version = 'python3'
 
-	call DebugPrint("80-python.vimrc: end [isort]")
+	call DebugPrint("44.0-python.vimrc: end [isort]")
 endif
