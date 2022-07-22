@@ -1,11 +1,11 @@
 "
-" ~/.vim/vimrc.d/95-arduino.vimrc
+" ~/.vim/vimrc.d/55.0-arduino.vimrc
 "
 " https://github.com/stevearc/vim-arduino
 " https://github.com/arduino/Arduino/blob/master/build/shared/manpage.adoc
 
 if _enable_arduino
-	call DebugPrint("95-arduino.vimrc: start")
+	call DebugPrint("55.0-arduino.vimrc: start")
 
 	" Load plugins.
 	packadd! vim-arduino
@@ -53,5 +53,5 @@ if _enable_arduino
 		"setl statusline=%!ArduinoStatusLineVerbose()
 	endif
 
-	call DebugPrint("95-arduino.vimrc: end")
+	call DebugPrint("55.0-arduino.vimrc: end")
 endif
