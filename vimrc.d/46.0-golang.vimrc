@@ -1,5 +1,5 @@
 "
-" ~/.vim/vimrc.d/87-golang.vimrc
+" ~/.vim/vimrc.d/46.0-golang.vimrc
 "
 " https://github.com/fatih/vim-go
 
@@ -9,7 +9,7 @@
 " autocmd! BufWritePost *.go | execute '! go fmt %' | :e
 
 if _enable_golang
-	call DebugPrint("87-golang.vimrc: start")
+	call DebugPrint("46.0-golang.vimrc: start")
 
 	" Load plugins.
 	packadd! vim-go
@@ -121,5 +121,5 @@ if _enable_golang
 	" Disable the vim version warning
 	" let g:go_version_warning = 0
 
-	call DebugPrint("87-golang.vimrc: end")
+	call DebugPrint("46.0-golang.vimrc: end")
 endif
