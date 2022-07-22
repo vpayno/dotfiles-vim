@@ -1,10 +1,10 @@
 "
-" vimrc.d/86-conquerofcompletion.vimrc
+" vimrc.d/78.0-conquerofcompletion.vimrc
 "
 " https://github.com/neoclide/coc.nvim
 
 if _enable_conquerofcompletion
-	call DebugPrint("86-conquerofcompletion.vimrc: start [youcompleteme]")
+	call DebugPrint("78.0-conquerofcompletion.vimrc: start [youcompleteme]")
 
 	" Load plugins.
 	packadd! coc.vim
@@ -175,5 +175,5 @@ if _enable_conquerofcompletion
 	" Resume latest coc list.
 	nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-	call DebugPrint("86-conquerofcompletion.vimrc: end [youcompleteme]")
+	call DebugPrint("78.0-conquerofcompletion.vimrc: end [youcompleteme]")
 endif
