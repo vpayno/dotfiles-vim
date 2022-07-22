@@ -1,11 +1,11 @@
 "
-" vimrc.d/85-youcompleteme.vimrc
+" vimrc.d/73.0-youcompleteme.vimrc
 "
 " https://github.com/davidhalter/jedi
 " https://github.com/ycm-core/YouCompleteMe
 
 if (_enable_youcompleteme || _enable_youcompleteme_tabnine) && !has("nvim")
-	call DebugPrint("85-youcompleteme.vimrc: start [youcompleteme]")
+	call DebugPrint("73.0-youcompleteme.vimrc: start [youcompleteme]")
 
 	" Load plugins.
     if _enable_youcompleteme_tabnine
@@ -14,5 +14,5 @@ if (_enable_youcompleteme || _enable_youcompleteme_tabnine) && !has("nvim")
         packadd! YouCompleteMe
     endif
 
-	call DebugPrint("85-youcompleteme.vimrc: end [youcompleteme]")
+	call DebugPrint("73.0-youcompleteme.vimrc: end [youcompleteme]")
 endif
