@@ -385,3 +385,6 @@
 [submodule "pack/upstream/opt/vim-less"]
 	path = pack/upstream/opt/vim-less
 	url = https://github.com/groenewege/vim-less
+[submodule "pack/upstream/opt/LanguageClient-neovim"]
+	path = pack/upstream/opt/LanguageClient-neovim
+	url = https://github.com/autozimu/LanguageClient-neovim
