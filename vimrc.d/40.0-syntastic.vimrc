@@ -5,6 +5,9 @@
 call DebugPrint("40.0-syntastic.vimrc: start")
 
 let g:syntastic_check_on_open = 1
+
+let g:syntastic_vim_checkers = ['vint']
+
 let g:syntastic_lua_checkers = ["luac", "luacheck"]
 let g:syntastic_lua_checkers = ["luacheck"]
 let g:syntastic_lua_luacheck_args = "--no-unused-args"
