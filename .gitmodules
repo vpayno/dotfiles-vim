@@ -388,3 +388,6 @@
 [submodule "pack/upstream/opt/LanguageClient-neovim"]
 	path = pack/upstream/opt/LanguageClient-neovim
 	url = https://github.com/autozimu/LanguageClient-neovim
+[submodule "pack/upstream/opt/gotests-vim"]
+	path = pack/upstream/opt/gotests-vim
+	url = https://github.com/buoto/gotests-vim.git
