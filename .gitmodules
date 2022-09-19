@@ -391,3 +391,6 @@
 [submodule "pack/upstream/opt/gotests-vim"]
 	path = pack/upstream/opt/gotests-vim
 	url = https://github.com/buoto/gotests-vim.git
+[submodule "pack/upstream/opt/dart-vim-plugin"]
+	path = pack/upstream/opt/dart-vim-plugin
+	url = https://github.com/dart-lang/dart-vim-plugin
