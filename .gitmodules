@@ -394,3 +394,6 @@
 [submodule "pack/upstream/opt/dart-vim-plugin"]
 	path = pack/upstream/opt/dart-vim-plugin
 	url = https://github.com/dart-lang/dart-vim-plugin
+[submodule "pack/upstream/opt/vader.vim"]
+	path = pack/upstream/opt/vader.vim
+	url = https://github.com/junegunn/vader.vim

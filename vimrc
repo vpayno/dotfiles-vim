@@ -35,8 +35,8 @@ if version >= 500
     let _enable_markdown = 1 " also enables tabular
     let _enable_nerdtree = 0 " if disabled, netrw is used
     let _enable_nerdtree_git = 0
-    let _enable_other_todo_highlight = 0
     let _enable_orgmode = 0
+    let _enable_other_todo_highlight = 0
     let _enable_perl5 = 0
     let _enable_perl6 = 0
     let _enable_powerline = 0 " if disabled, airline is used
@@ -54,10 +54,11 @@ if version >= 500
     let _enable_telescope = 1
     let _enable_tmux_navigator = 0 " not sure what the point of this plugin is
     let _enable_utilsnips = 0 " overidden by snipmate
+    let _enable_vim_vader = 1
     let _enable_vimwiki = 1
+    let _enable_virtualenv = 0
     let _enable_youcompleteme = 0
     let _enable_youcompleteme_tabnine = 0 " overrides youcompleteme and tabnine
-    let _enable_virtualenv = 0
 
     " Helper Functions.
     function! DebugPrint(message)
