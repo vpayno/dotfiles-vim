@@ -400,3 +400,6 @@
 [submodule "pack/upstream/opt/vim-themis"]
 	path = pack/upstream/opt/vim-themis
 	url = https://github.com/thinca/vim-themis
+[submodule "pack/upstream/opt/github-actions-yaml.vim"]
+	path = pack/upstream/opt/github-actions-yaml.vim
+	url = https://github.com/yasuhiroki/github-actions-yaml.vim
