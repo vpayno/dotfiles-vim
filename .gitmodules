@@ -397,3 +397,6 @@
 [submodule "pack/upstream/opt/vader.vim"]
 	path = pack/upstream/opt/vader.vim
 	url = https://github.com/junegunn/vader.vim
+[submodule "pack/upstream/opt/vim-themis"]
+	path = pack/upstream/opt/vim-themis
+	url = https://github.com/thinca/vim-themis

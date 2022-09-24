@@ -54,6 +54,7 @@ if version >= 500
     let _enable_telescope = 1
     let _enable_tmux_navigator = 0 " not sure what the point of this plugin is
     let _enable_utilsnips = 0 " overidden by snipmate
+    let _enable_vim_themis = 1
     let _enable_vim_vader = 1
     let _enable_vimwiki = 1
     let _enable_virtualenv = 0
