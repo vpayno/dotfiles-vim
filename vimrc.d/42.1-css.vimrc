@@ -1,7 +1,8 @@
 "
 " vimrc.d/42.1-css.vimrc
 "
-" https://github.com/othree/html5.vim
+" https://github.com/groenewege/vim-less
+" https://github.com/ap/vim-css-color
 
 if _enable_css
 	call DebugPrint("42.1-css.vimrc: start")
@@ -22,8 +23,6 @@ if _enable_css
 
         " Load plugins.
         packadd! vim-css-color
-
-        " let g:cssColorVimDoNotMessMyUpdatetime = 1 " default 100ms
 
         call DebugPrint("42.1-css.vimrc: end [vim-css-color]")
     endif
