@@ -403,3 +403,6 @@
 [submodule "pack/upstream/opt/vim-css-color"]
 	path = pack/upstream/opt/vim-css-color
 	url = https://github.com/ap/vim-css-color
+[submodule "pack/upstream/opt/ConvertBase.vim"]
+	path = pack/upstream/opt/ConvertBase.vim
+	url = https://github.com/vim-scripts/ConvertBase.vim
