@@ -21,6 +21,7 @@ if version >= 500
     let _enable_conquerofcompletion = 0
     let _enable_css = 1 " controls all of the css_ options
     let _enable_css_less = 1
+    let _enable_css_color = 1
     let _enable_dart = 1
     let _enable_denops = 0 " required by denops-docker
     let _enable_docker = 0
