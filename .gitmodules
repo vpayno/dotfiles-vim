@@ -406,3 +406,6 @@
 [submodule "pack/upstream/opt/ConvertBase.vim"]
 	path = pack/upstream/opt/ConvertBase.vim
 	url = https://github.com/vim-scripts/ConvertBase.vim
+[submodule "pack/upstream/opt/vim-css3-syntax"]
+	path = pack/upstream/opt/vim-css3-syntax
+	url = https://github.com/hail2u/vim-css3-syntax
