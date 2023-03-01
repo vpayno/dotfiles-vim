@@ -1,0 +1,22 @@
+"
+" ~/.vim/vimrc.d/35.1-vimspector.vimrc
+"
+
+" https://alpha2phi.medium.com/setting-up-neovim-for-rust-debugging-termdebug-and-vimspector-df749e1ba47c
+" https://github.com/puremourning/vimspector
+
+call DebugPrint('35.1-vimspector.vimrc: start')
+
+if _enable_vimspector
+    packadd! vimspector
+
+    let g:vimspector_enable_mappings = 'HUMAN'
+
+    nmap <leader>dd :call vimspector#Launch()<CR>
+    nmap <leader>dx :VimspectorReset<CR>
+    nmap <leader>de :VimspectorEval
+    nmap <leader>dw :VimspectorWatch
+    nmap <leader>do :VimspectorShowOutput
+endif
+
+call DebugPrint('35.1-vimspector.vimrc: end')
