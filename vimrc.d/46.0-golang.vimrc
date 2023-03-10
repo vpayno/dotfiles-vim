@@ -37,6 +37,10 @@ if _enable_golang
 	let g:go_metalinter_autosave_enabled=['revive', 'govet', 'typecheck', 'staticcheck']
 	" let g:go_metalinter_command='golangci-lint'
 
+		let g:go_fmt_command = "golines"
+		let g:go_fmt_options = {
+			\ 'golines': '-m 128 -w',
+			\ }
 
 	if has('nvim')
 		" Launch gopls when Go files are in use
@@ -104,7 +108,7 @@ if _enable_golang
 		" etc to be added, https://github.com/jiangmiao/auto-pairs. In future we might
 		" include this by default in govim.
 		set autoindent
-		snguageClient#textDocument_formatting_syncet smartindent
+		set smartindent
 		filetype indent on
 
 		" Suggestion: define sensible backspace behaviour. See :help backspace for
@@ -123,3 +127,5 @@ if _enable_golang
 
 	call DebugPrint("46.0-golang.vimrc: end")
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
