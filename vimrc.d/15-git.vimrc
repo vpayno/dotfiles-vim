@@ -6,3 +6,6 @@
 " https://github.com/tpope/vim-fugitive
 
 let g:gitgutter_max_signs=10000
+
+" Use separate columns for git status and for the line numbers.
+set signcolumn=yes

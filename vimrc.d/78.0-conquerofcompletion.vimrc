@@ -2,12 +2,13 @@
 " vimrc.d/78.0-conquerofcompletion.vimrc
 "
 " https://github.com/neoclide/coc.nvim
+" https://github.com/neoclide/coc.nvim/wiki/Language-servers
 
 if _enable_conquerofcompletion
 	call DebugPrint("78.0-conquerofcompletion.vimrc: start [youcompleteme]")
 
 	" Load plugins.
-	packadd! coc.vim
+	packadd! coc.nvim
 
 	" Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 	" unicode characters in the file autoload/float.vim
@@ -33,11 +34,12 @@ if _enable_conquerofcompletion
 	" Always show the signcolumn, otherwise it would shift the text each time
 	" diagnostics appear/become resolved.
 	if has("patch-8.1.1564")
-	" Recently vim can merge signcolumn and number column into one
-	set signcolumn=number
+		" Recently vim can merge signcolumn and number column into one
+		set signcolumn=number
 	else
-	set signcolumn=yes
+		set signcolumn=yes
 	endif
+	set signcolumn=yes
 
 	" Use tab for trigger completion with characters ahead and navigate.
 	" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -177,3 +179,5 @@ if _enable_conquerofcompletion
 
 	call DebugPrint("78.0-conquerofcompletion.vimrc: end [youcompleteme]")
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
