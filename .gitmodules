@@ -415,3 +415,6 @@
 [submodule "pack/upstream/opt/vscode-lldb"]
 	path = pack/upstream/opt/vscode-lldb
 	url = https://github.com/vadimcn/vscode-lldb
+[submodule "pack/upstream/opt/haskell-vim"]
+	path = pack/upstream/opt/haskell-vim
+	url = https://github.com/neovimhaskell/haskell-vim
