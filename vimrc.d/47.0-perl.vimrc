@@ -6,9 +6,12 @@
 call DebugPrint('47.0-perl.vimrc: start')
 
 " check perl code with :make
-autocmd FileType perl set makeprg=perl\ -c\ %\ $*
-autocmd FileType perl set errorformat=%f:%l:%m
-autocmd FileType perl set autowrite
+augroup au_perl
+	autocmd!
+	autocmd FileType perl set makeprg=perl\ -c\ %\ $*
+	autocmd FileType perl set errorformat=%f:%l:%m
+	autocmd FileType perl set autowrite
+augroup end
 
 " comment/uncomment blocks of code (in vmode)
 vmap _c :s/^/#/gi<Enter>

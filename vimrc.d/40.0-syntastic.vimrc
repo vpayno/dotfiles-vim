@@ -31,7 +31,10 @@ let g:syntastic_python_checkers = ['pylint', 'pyflakes', 'python']
 " let g:syntastic_ruby_checkers = ['ruby', 'flog', 'reek', 'rubocop', 'sorbet']
 let g:syntastic_ruby_checkers = ['ruby', 'flog']
 
-autocmd! BufWritePost *.rb | execute 'silent !rufo %' | :e
+augroup au_syntastic
+	autocmd!
+	autocmd! BufWritePost *.rb | execute 'silent !rufo %' | :e
+augroup end
 
 call DebugPrint('40.0-syntastic.vimrc: end')
 

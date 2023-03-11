@@ -21,7 +21,10 @@ if _enable_kite
 	set completeopt+=preview
 
 	" To have the preview window automatically closed once a completion has been inserted:
-	autocmd CompleteDone * if !pumvisible() | pclose | endif
+	augroup au_kite
+		autocmd!
+		autocmd CompleteDone * if !pumvisible() | pclose | endif
+	augroup end
 
 	set belloff+=ctrlg	" if vim beeps during completion
 

@@ -46,8 +46,11 @@ if _enable_arduino
 	endfunction
 
 	if _enable_airline
-		autocmd BufNewFile,BufRead *.ino let g:airline_section_x='%{ArduinoStatusLineBasic()}'
-		"autocmd BufNewFile,BufRead *.ino let g:airline_section_x='%{ArduinoStatusLineVerbose()}'
+		augroup au_airline
+			autocmd!
+			autocmd BufNewFile,BufRead *.ino let g:airline_section_x='%{ArduinoStatusLineBasic()}'
+			"autocmd BufNewFile,BufRead *.ino let g:airline_section_x='%{ArduinoStatusLineVerbose()}'
+		augroup end
 	else
 		setl statusline=%!ArduinoStatusLineBasic()
 		"setl statusline=%!ArduinoStatusLineVerbose()

@@ -81,12 +81,15 @@ command! -complete=file -nargs=* C set splitbelow | new | r! cargo <q-args>
 " command! -complete=file -nargs=* Sb set splitbelow | new | r! <q-args>
 
 " http://vimdoc.sourceforge.net/htmldoc/pattern.html
-autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
-autocmd FileType sh,ruby,python   let b:comment_leader = '# '
-autocmd FileType conf,fstab		  let b:comment_leader = '# '
-autocmd FileType tex			  let b:comment_leader = '% '
-autocmd FileType mail			  let b:comment_leader = '> '
-autocmd FileType vim			  let b:comment_leader = '" '
+augroup ag_leaders
+	autocmd!
+	autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+	autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+	autocmd FileType conf,fstab		  let b:comment_leader = '# '
+	autocmd FileType tex			  let b:comment_leader = '% '
+	autocmd FileType mail			  let b:comment_leader = '> '
+	autocmd FileType vim			  let b:comment_leader = '" '
+augroup end
 
 function! CommentToggle()
 	execute ':silent! s/\([^ ]\)/' . escape(b:comment_leader,'\/') . ' \1/'

@@ -5,7 +5,10 @@
 
 call DebugPrint('38-json.vimrc: start')
 
-:au BufNewFile,BufRead *.json set filetype=json
+augroup au_json
+	autocmd!
+	autocmd BufNewFile,BufRead *.json set filetype=json
+augroup end
 
 " https://vi.stackexchange.com/questions/16906/how-to-format-json-file-in-vim
 function FormatJson()

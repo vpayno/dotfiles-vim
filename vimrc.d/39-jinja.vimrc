@@ -4,7 +4,10 @@
 
 call DebugPrint('39-jinja.vimrc: start')
 
-:au BufNewFile,BufRead *.jinja set filetype=jinja
+augroup au_jinja
+	autocmd!
+	autocmd BufNewFile,BufRead *.jinja set filetype=jinja
+augroup end
 
 call DebugPrint('39-jinja.vimrc: end')
 

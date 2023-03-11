@@ -131,14 +131,20 @@ set t_Co=256
 "au BufNewFile,BufReadPost,InsertEnter,InsertLeave * syntax match NonASCII "[^\u0000-\u007F]"
 
 "open the file at the last line edited
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
+augroup au_last_pos
+	autocmd!
+	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 						 \ exe "normal! g`\"" | endif
+augroup end
 
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 :highlight ExtraWhitespace ctermbg=red guibg=red
 
 " Automatically remove trailing whitespace (https://vim.fandom.com/wiki/Remove_unwanted_spaces)
-:autocmd BufWritePre * %s/\s\+$//e
+augroup au_traling_ws
+	autocmd!
+	autocmd BufWritePre * %s/\s\+$//e
+augroup end
 
 " The following alternative may be less obtrusive.
 ":highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
@@ -147,7 +153,10 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 ":highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 
 " Using before the first colorscheme command will ensure that the highlight group gets created and is not cleared by future colorscheme commands
-:autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+augroup au_colorscheme
+	autocmd!
+	autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+augroup end
 
 " Show trailing whitespace:
 :match ExtraWhitespace /\s\+$/
@@ -169,8 +178,11 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 
 " If you use this alternate pattern, you may want to consider using the following autocmd to let the highlighting show up as soon as you leave insert mode after entering trailing whitespace:
 ":autocmd InsertLeave * redraw!
-:au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-:au InsertLeave * match ExtraWhitespace /\s\+$/
+augroup au_whitespace
+	autocmd!
+	autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+	autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+augroup eng
 
 " For C, if you don't want to see trailing space errors at end-of-line set:
 "let c_no_trail_space_error = 1
@@ -206,7 +218,10 @@ highlight PmenuThumb ctermbg=magenta ctermfg=white
 let g:khuno_ignore='E501'
 
 " Reload .vimrc immediately when edited
-autocmd! bufwritepost vimrc source ~/.vimrc
+augroup au_reload_config
+	autocmd!
+	autocmd! bufwritepost vimrc source ~/.vimrc
+augroup end
 
 " Set max line length.
 "let linelen = 120
