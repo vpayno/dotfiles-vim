@@ -43,10 +43,23 @@ if _enable_lsp
     " register language server
     augroup LSC
         autocmd!
+
         autocmd User lsp_setup call lsp#register_server({
             \ 'name': 'gopls',
             \ 'cmd': {_->['gopls']},
             \ 'allowlist': ['go']
+            \})
+
+        autocmd User lsp_setup call lsp#register_server({
+            \ 'name': 'rust-analyzer',
+            \ 'cmd': {_->['rust-analyzer']},
+            \ 'allowlist': ['rust']
+            \})
+
+        autocmd User lsp_setup call lsp#register_server({
+            \ 'name': 'haskell-language-server',
+            \ 'cmd': {_->['haskell-language-server']},
+            \ 'allowlist': ['haskell']
             \})
 
         autocmd User lsp_server_init call <SID>setup_ls()

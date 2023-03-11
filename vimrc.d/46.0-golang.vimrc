@@ -47,8 +47,11 @@ if _enable_golang
 		let g:LanguageClient_serverCommands = {
 			\ 'go': ['gopls']
 			\ }
-		" Run gofmt on save
-		autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+		augroup ag_golang_gofmt
+			autocmd!
+			" Run gofmt on save
+			autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+		augroup end
 	endif
 
 	augroup LspGo
@@ -101,8 +104,12 @@ if _enable_golang
 		" syntax on
 		"
 		" will suffice, no autocmd required.
-		autocmd! BufEnter,BufNewFile *.go,go.mod syntax on
-		autocmd! BufLeave *.go,go.mod syntax off
+
+		augroup ag_golang_govim
+			autocmd!
+			autocmd! BufEnter,BufNewFile *.go,go.mod syntax on
+			autocmd! BufLeave *.go,go.mod syntax off
+		augroup end
 
 		" Suggestion: turn on auto-indenting. If you want closing parentheses, braces
 		" etc to be added, https://github.com/jiangmiao/auto-pairs. In future we might

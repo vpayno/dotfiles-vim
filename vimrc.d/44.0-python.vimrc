@@ -6,7 +6,10 @@
 " https://github.com/python-mode/python-mode
 " https://github.com/tell-k/vim-autopep8
 
-autocmd! BufWritePost *.py | execute 'silent !pyfmt --vim %' | :e
+augroup ag_python_pyfmt
+	autocmd!
+	autocmd! BufWritePost *.py | execute 'silent !pyfmt --vim %' | :e
+augroup end
 
 if (!_enable_kite && !_enable_youcompleteme) && _enable_python_pymode
 	call DebugPrint('44.0-python.vimrc: start [python-mode]')
