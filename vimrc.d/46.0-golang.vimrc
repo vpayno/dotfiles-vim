@@ -9,7 +9,7 @@
 " autocmd! BufWritePost *.go | execute '! go fmt %' | :e
 
 if _enable_golang
-	call DebugPrint("46.0-golang.vimrc: start")
+	call DebugPrint('46.0-golang.vimrc: start')
 
 	" Load plugins.
 	packadd! vim-go
@@ -37,7 +37,7 @@ if _enable_golang
 	let g:go_metalinter_autosave_enabled=['revive', 'govet', 'typecheck', 'staticcheck']
 	" let g:go_metalinter_command='golangci-lint'
 
-		let g:go_fmt_command = "golines"
+		let g:go_fmt_command = 'golines'
 		let g:go_fmt_options = {
 			\ 'golines': '-m 128 -w',
 			\ }
@@ -116,7 +116,7 @@ if _enable_golang
 		set backspace=2
 
 		" Suggestion: show info for completion candidates in a popup menu
-		if has("patch-8.1.1904")
+		if has('patch-8.1.1904')
 			set completeopt+=popup
 			set completepopup=align:menu,border:off,highlight:Pmenu
 		endif
@@ -128,7 +128,7 @@ if _enable_golang
     call extend(g:vimspector_install_gadgets, [ 'delve' ])
     call extend(g:vimspector_install_gadgets, [ 'vscode-go' ])
 
-	call DebugPrint("46.0-golang.vimrc: end")
+	call DebugPrint('46.0-golang.vimrc: end')
 endif
 
 " vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

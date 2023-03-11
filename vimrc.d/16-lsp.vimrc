@@ -35,7 +35,7 @@ func! s:setup_ls(...) abort
 endfunc
 
 if _enable_lsp
-    call DebugPrint("16-lsp.vimrc: start")
+    call DebugPrint('16-lsp.vimrc: start')
 
     " Load plugins.
     packadd! vim-lsp
@@ -74,5 +74,5 @@ if _enable_lsp
     " Disable the vim version warning
     " let g:go_version_warning = 0
 
-    call DebugPrint("16-lsp.vimrc: end")
+    call DebugPrint('16-lsp.vimrc: end')
 endif

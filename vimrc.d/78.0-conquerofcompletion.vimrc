@@ -5,7 +5,7 @@
 " https://github.com/neoclide/coc.nvim/wiki/Language-servers
 
 if _enable_conquerofcompletion
-	call DebugPrint("78.0-conquerofcompletion.vimrc: start [youcompleteme]")
+	call DebugPrint('78.0-conquerofcompletion.vimrc: start [youcompleteme]')
 
 	" Load plugins.
 	packadd! coc.nvim
@@ -33,7 +33,7 @@ if _enable_conquerofcompletion
 
 	" Always show the signcolumn, otherwise it would shift the text each time
 	" diagnostics appear/become resolved.
-	if has("patch-8.1.1564")
+	if has('patch-8.1.1564')
 		" Recently vim can merge signcolumn and number column into one
 		set signcolumn=number
 	else
@@ -87,7 +87,7 @@ if _enable_conquerofcompletion
 	elseif (coc#rpc#ready())
 		call CocActionAsync('doHover')
 	else
-		execute '!' . &keywordprg . " " . expand('<cword>')
+		execute '!' . &keywordprg . ' ' . expand('<cword>')
 	endif
 	endfunction
 
@@ -177,7 +177,7 @@ if _enable_conquerofcompletion
 	" Resume latest coc list.
 	nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-	call DebugPrint("78.0-conquerofcompletion.vimrc: end [youcompleteme]")
+	call DebugPrint('78.0-conquerofcompletion.vimrc: end [youcompleteme]')
 endif
 
 " vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

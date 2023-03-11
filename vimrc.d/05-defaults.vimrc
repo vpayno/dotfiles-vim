@@ -61,7 +61,7 @@ augroup END
 :nnoremap <silent> <Leader>c :execute 'match Search /\%'.virtcol('.').'v/'<CR>
 
 try
-    if has("nvim")
+    if has('nvim')
         set undodir=~/.vim_runtime/undodir.nvim
     else
         set undodir=~/.vim_runtime/undodir.vim
@@ -185,7 +185,7 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 ":set listchars=tab:··,trail:·
 
 " memory leak problem
-if version >= 702
+if v:version >= 702
     autocmd BufWinLeave * call clearmatches()
 endif
 
@@ -200,16 +200,16 @@ highlight PmenuSbar ctermbg=lightmagenta ctermfg=white
 highlight PmenuThumb ctermbg=magenta ctermfg=white
 
 " pyflakes
-let g:khuno_ignore="E501"
+let g:khuno_ignore='E501'
 
 " Reload .vimrc immediately when edited
 autocmd! bufwritepost vimrc source ~/.vimrc
 
 " Set max line length.
 "let linelen = 120
-"execute "set colorcolumn=".linelen
+"execute 'set colorcolumn='.linelen
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"execute "match OverLength /\%".linelen."v.\+/"
+"execute 'match OverLength /\%'.linelen.'v.\+/'
 
 " Tell VIM which tags file to use.
 set tags=~/.vimrc/tags
@@ -221,8 +221,8 @@ set tags=~/.vimrc/tags
 set shiftround
 
 " Run lint on these file types.
-"au FileType xml exe ":silent 1, $!xmllint --format --recover - 2> /dev/null"
-"au FileType json exe ":silent 1, $!jq . - 2> /dev/null"
+"au FileType xml exe ':silent 1, $!xmllint --format --recover - 2> /dev/null'
+"au FileType json exe ':silent 1, $!jq . - 2> /dev/null'
 
 " disable folding
 set nofoldenable
@@ -233,8 +233,8 @@ set nofoldenable
 set listchars=tab:▸\ ,eol:¬
 
 " Window stuff
-"nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
-"nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
+"nnoremap <silent> + :exe 'resize ' . (winheight(0) * 3/2)<CR>
+"nnoremap <silent> - :exe 'resize ' . (winheight(0) * 2/3)<CR>
 "nnoremap <C-h> <C-w>h
 "nnoremap <C-j> <C-w>j
 "nnoremap <C-k> <C-w>k
@@ -259,7 +259,7 @@ if has('nvim')
 	set background=dark
 endif
 
-if v:version > 703 || v:version == 703 && has("patch541")
+if v:version > 703 || v:version == 703 && has('patch541')
 	set formatoptions+=j " Delete comment character when joining commented lines
 endif
 
@@ -278,5 +278,5 @@ else
 endif
 
 " Setting leader key.
-let mapleader = "\\"
-"let maplocalldeader = "\\"
+let mapleader = '\\'
+"let maplocalldeader = '\\'

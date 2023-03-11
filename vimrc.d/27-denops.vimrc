@@ -4,7 +4,7 @@
 " https://github.com/vim-denops/denops.vim
 
 if _enable_denops
-	call DebugPrint("27-denops.vimrc: start")
+	call DebugPrint('27-denops.vimrc: start')
 
     " Manually start the shared server:
     " deno run -A --no-check ./denops/@denops-private/cli.ts
@@ -15,5 +15,5 @@ if _enable_denops
     " where to find the shared server
     let g:denops_server_addr = '127.0.0.1:32123'
 
-	call DebugPrint("27-denops.vimrc: end")
+	call DebugPrint('27-denops.vimrc: end')
 endif

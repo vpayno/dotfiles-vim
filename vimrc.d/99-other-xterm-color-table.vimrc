@@ -27,7 +27,7 @@
 "   * http://www.vim.org/scripts/script.php?script_id=664
 
 " We have a dependency on buffer-local autocommands
-if version < 700
+if v:version < 700
     echo 'FAIL: XtermColorTable requires vim 7.0+'
     finish
 endif
@@ -167,9 +167,9 @@ function! s:HelpComment()
     highlight link XtermColorTableComment Comment
 
     let lines = []
-    call add(lines, "; # to copy current color (yiw)")
-    call add(lines, "; t to toggle RGB visibility")
-    call add(lines, "; f to set RGB foreground color")
+    call add(lines, '; # to copy current color (yiw)')
+    call add(lines, '; t to toggle RGB visibility')
+    call add(lines, '; f to set RGB foreground color')
 
     return lines
 endfunction

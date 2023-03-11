@@ -5,7 +5,7 @@
 " https://gist.github.com/mislav/5189704
 
 if _enable_tmux_navigator
-	call DebugPrint("13-tmux-navigator.vimrc: start")
+	call DebugPrint('13-tmux-navigator.vimrc: start')
 
 	" Load plugins.
 	packadd! vim-tmux-navigator
@@ -33,11 +33,11 @@ if _enable_tmux_navigator
 	"	bind-key -T copy-mode-vi 'C-l' select-pane -R
 	"   bind-key -T copy-mode-vi 'C-\' select-pane -l
 
-    "   bind -r C-h run "tmux select-pane -L"
-    "   bind -r C-j run "tmux select-pane -D"
-    "   bind -r C-k run "tmux select-pane -U"
-    "   bind -r C-l run "tmux select-pane -R"
-    "   bind -r C-\ run "tmux select-pane -l"
+    "   bind -r C-h run 'tmux select-pane -L'
+    "   bind -r C-j run 'tmux select-pane -D'
+    "   bind -r C-k run 'tmux select-pane -U'
+    "   bind -r C-l run 'tmux select-pane -R'
+    "   bind -r C-\ run 'tmux select-pane -l'
     " tmux.conf - end
 
     " Each instance of {Left-Mapping} or {Down-Mapping} must be replaced in
@@ -61,5 +61,5 @@ if _enable_tmux_navigator
     " another pane.
     " let g:tmux_navigator_preserve_zoom = 1
 
-	call DebugPrint("13-tmux-navigator.vimrc: end")
+	call DebugPrint('13-tmux-navigator.vimrc: end')
 endif

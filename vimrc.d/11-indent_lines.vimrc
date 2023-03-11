@@ -8,9 +8,9 @@
 " https://stackoverflow.com/questions/2158305/is-it-possible-to-display-indentation-guides-in-vim
 
 if _enable_indent_guides
-	call DebugPrint("11-indent_lines.vimrc: start")
+	call DebugPrint('11-indent_lines.vimrc: start')
 
-    "https://gist.github.com/iburago/734422
+    " https://gist.github.com/iburago/734422
 
     nnoremap <silent> <leader><bar> :call ToggleIndentGuides()<cr>
 
@@ -41,5 +41,5 @@ if _enable_indent_guides
         endif
     endfunction
 
-	call DebugPrint("11-indent_lines.vimrc: end")
+	call DebugPrint('11-indent_lines.vimrc: end')
 endif

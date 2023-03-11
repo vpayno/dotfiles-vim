@@ -2,15 +2,15 @@
 " ~/.vim/vimrc.d/40.0-syntastic.vimrc
 "
 
-call DebugPrint("40.0-syntastic.vimrc: start")
+call DebugPrint('40.0-syntastic.vimrc: start')
 
 let g:syntastic_check_on_open = 1
 
 let g:syntastic_vim_checkers = ['vint']
 
-let g:syntastic_lua_checkers = ["luac", "luacheck"]
-let g:syntastic_lua_checkers = ["luacheck"]
-let g:syntastic_lua_luacheck_args = "--no-unused-args"
+let g:syntastic_lua_checkers = ['luac', 'luacheck']
+let g:syntastic_lua_checkers = ['luacheck']
+let g:syntastic_lua_luacheck_args = '--no-unused-args'
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -33,4 +33,4 @@ let g:syntastic_ruby_checkers = ['ruby', 'flog']
 
 autocmd! BufWritePost *.rb | execute 'silent !rufo %' | :e
 
-call DebugPrint("40.0-syntastic.vimrc: end")
+call DebugPrint('40.0-syntastic.vimrc: end')

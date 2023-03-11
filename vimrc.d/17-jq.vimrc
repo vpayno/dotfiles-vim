@@ -8,7 +8,7 @@
 " https://til.hashrocket.com/posts/ha0ci0pvkj-format-json-in-vim-with-jq
 
 if _enable_jq
-	call DebugPrint("17-jq.vimrc: start (vim-jq)")
+	call DebugPrint('17-jq.vimrc: start (vim-jq)')
 
 	" Load plugins.
 	packadd! vim-jq
@@ -30,14 +30,14 @@ if _enable_jq
 	" parenthesis
 	let g:jq_highlight_function_calls = 1
 
-	call DebugPrint("17-jq.vimrc: end (vim-jq")
+	call DebugPrint('17-jq.vimrc: end (vim-jq')
 endif
 
 if _enable_jqplay
-	call DebugPrint("17-jq.vimrc: start (vim-jqplay)")
+	call DebugPrint('17-jq.vimrc: start (vim-jqplay)')
 
 	" Load plugins.
 	packadd! vim-jqplay
 
-	call DebugPrint("17-jq.vimrc: end (vim-jqplay")
+	call DebugPrint('17-jq.vimrc: end (vim-jqplay')
 endif

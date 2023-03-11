@@ -4,7 +4,7 @@
 " https://github.com/ap/vim-buftabline
 
 if _enable_buftabline
-	call DebugPrint("36.1-buftabline.vimrc: start")
+	call DebugPrint('36.1-buftabline.vimrc: start')
 
 	" Load the plugin.
 	packadd! vim-buftabline
@@ -16,5 +16,5 @@ if _enable_buftabline
 	nnoremap <C-N> :bnext<CR>
 	nnoremap <C-P> :bprev<CR>
 
-	call DebugPrint("36.1-buftabline.vimrc: end")
+	call DebugPrint('36.1-buftabline.vimrc: end')
 endif

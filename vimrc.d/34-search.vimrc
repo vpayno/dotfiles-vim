@@ -8,19 +8,19 @@
 " set grepprg=ack
 
 if _enable_ack
-	call DebugPrint("34-search.vimrc: start [ack]")
+	call DebugPrint('34-search.vimrc: start [ack]')
 
 	" Load plugin.
 	packadd! ack.vim
 
-	call DebugPrint("34-search.vimrc: end [ack]")
+	call DebugPrint('34-search.vimrc: end [ack]')
 endif
 
 if _enable_ripgrep
-	call DebugPrint("34-search.vimrc: start [ripgrep]")
+	call DebugPrint('34-search.vimrc: start [ripgrep]')
 
 	" Load plugin.
 	packadd! vim-ripgrep
 
-	call DebugPrint("34-search.vimrc: end [ripgrep]")
+	call DebugPrint('34-search.vimrc: end [ripgrep]')
 endif

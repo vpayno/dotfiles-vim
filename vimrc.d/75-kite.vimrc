@@ -4,7 +4,7 @@
 " https://github.com/kiteco/vim-plugin
 
 if _enable_kite
-	call DebugPrint("75-kite.vimrc: start")
+	call DebugPrint('75-kite.vimrc: start')
 
 	packadd! kite
 
@@ -39,5 +39,5 @@ if _enable_kite
 
 	"let g:kite_log=1 " enable debug
 
-	call DebugPrint("75-kite.vimrc: end")
+	call DebugPrint('75-kite.vimrc: end')
 endif

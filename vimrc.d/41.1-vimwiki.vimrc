@@ -7,7 +7,7 @@
 " https://pandoc.org/MANUAL.html
 
 if _enable_vimwiki
-	call DebugPrint("41.1-vimwiki.vimrc: start")
+	call DebugPrint('41.1-vimwiki.vimrc: start')
 
 	" These need to be set in 05-defaults.vimrc.
 	" set nocompatible
@@ -27,5 +27,5 @@ if _enable_vimwiki
 		\ },
 	\]
 
-	call DebugPrint("41.1-vimwiki.vimrc: end")
+	call DebugPrint('41.1-vimwiki.vimrc: end')
 endif

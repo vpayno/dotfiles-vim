@@ -4,16 +4,16 @@
 " https://github.com/jpalardy/vim-slime
 
 if _enable_slime
-	call DebugPrint("31-slime.vimrc: start")
+	call DebugPrint('31-slime.vimrc: start')
 
 	" Load the plugin.
 	packadd! vim-slime
 
-	let g:slime_target = "tmux"
+	let g:slime_target = 'tmux'
 
 	let g:slime_paste_file = tempname()
 
-	let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+	let g:slime_default_config = {'socket_name': 'default', 'target_pane': '{last}'}
 
 	xmap <c-c><c-c> <Plug>SlimeRegionSend
 	nmap <c-c><c-c> <Plug>SlimeParagraphSend
@@ -23,5 +23,5 @@ if _enable_slime
 
 	let g:slime_preserve_curpos = 0
 
-	call DebugPrint("31-slime.vimrc: end")
+	call DebugPrint('31-slime.vimrc: end')
 endif

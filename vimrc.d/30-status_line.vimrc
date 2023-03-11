@@ -10,7 +10,7 @@ set laststatus=2
 
 if _enable_powerline
 
-	call DebugPrint("30-status_line.vimrc: start [powerline]")
+	call DebugPrint('30-status_line.vimrc: start [powerline]')
 
 	" Powerline requires a Python component. Use virtualenv here if the
 	" minimum required version isn't found on the system.
@@ -18,11 +18,11 @@ if _enable_powerline
 	" Load plugins.
 	packadd! powerline
 
-	call DebugPrint("30-status_line.vimrc: end [powerline]")
+	call DebugPrint('30-status_line.vimrc: end [powerline]')
 
 elseif _enable_airline
 
-	call DebugPrint("30-status_line.vimrc: start [airline]")
+	call DebugPrint('30-status_line.vimrc: start [airline]')
 
 	" Load plugins.
 	packadd! onedark.vim
@@ -31,16 +31,16 @@ elseif _enable_airline
 	" Set the airline theme.
 	let g:airline_theme='onedark'
 
-	call DebugPrint("30-status_line.vimrc: end [airline]")
+	call DebugPrint('30-status_line.vimrc: end [airline]')
 
 else
 
-	call DebugPrint("30-status_line.vimrc: start [lightline]")
+	call DebugPrint('30-status_line.vimrc: start [lightline]')
 
 	" Load plugins.
 	packadd! onedark.vim
 	packadd! lightline.vim
 
-	call DebugPrint("30-status_line.vimrc: end [lightline]")
+	call DebugPrint('30-status_line.vimrc: end [lightline]')
 
 endif

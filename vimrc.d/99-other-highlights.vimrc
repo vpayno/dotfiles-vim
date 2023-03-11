@@ -4,7 +4,7 @@
 " https://github.com/sakshamgupta05/vim-todo-highlight
 
 if _enable_other_todo_highlight
-	call DebugPrint("99-other-highlights.vimrc: start [vim-todo-highlight]")
+	call DebugPrint('99-other-highlights.vimrc: start [vim-todo-highlight]')
 
 	" Load plugins.
 	packadd! vim-todo-highlight
@@ -27,5 +27,5 @@ if _enable_other_todo_highlight
         \	}
         \}
 
-	call DebugPrint("99-other-highlights.vimrc: end [vim-todo-highlight]")
+	call DebugPrint('99-other-highlights.vimrc: end [vim-todo-highlight]')
 endif
