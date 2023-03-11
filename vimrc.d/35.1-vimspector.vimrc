@@ -17,6 +17,9 @@ if _enable_vimspector
     nmap <leader>de :VimspectorEval
     nmap <leader>dw :VimspectorWatch
     nmap <leader>do :VimspectorShowOutput
+
+    let g:vimspector_install_gadgets = [ ]
+    call extend(g:vimspector_install_gadgets, [ 'CodeLLDB' ])
 endif
 
 call DebugPrint('35.1-vimspector.vimrc: end')

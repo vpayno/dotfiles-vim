@@ -11,6 +11,8 @@ autocmd! BufWritePost *.py | execute 'silent !pyfmt --vim %' | :e
 if (!_enable_kite && !_enable_youcompleteme) && _enable_python_pymode
 	call DebugPrint("44.0-python.vimrc: start [python-mode]")
 
+    call extend(g:vimspector_install_gadgets, [ 'debugpy' ])
+
 	" Load plugins.
 	packadd! python-mode
 

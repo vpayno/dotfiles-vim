@@ -12,4 +12,8 @@ if (&ft=='sh' || &ft=='bash')
 	" :%retab!
 endif
 
+call extend(g:vimspector_install_gadgets, [ 'vscode-bash-debug' ])
+
 call DebugPrint("43.0-bash.vimrc: end")
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
