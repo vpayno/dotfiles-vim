@@ -50,13 +50,13 @@ if _enable_nerdtree
 		" Configure symbols.
 		let g:NERDTreeIndicatorMapCustom = {
 			\ 'Modified'  : '✹',
-			\ 'Staged'    : '✚',
+			\ 'Staged'	  : '✚',
 			\ 'Untracked' : '✭',
 			\ 'Renamed'   : '➜',
 			\ 'Unmerged'  : '═',
 			\ 'Deleted'   : '✖',
-			\ 'Dirty'     : '✗',
-			\ 'Clean'     : '✔︎',
+			\ 'Dirty'	  : '✗',
+			\ 'Clean'	  : '✔︎',
 			\ 'Ignored'   : '☒',
 			\ 'Unknown'   : '?'
 		\ }

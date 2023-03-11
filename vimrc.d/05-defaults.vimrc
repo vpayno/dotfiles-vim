@@ -5,7 +5,7 @@
 syntax on
 "colorscheme onedark
 
-set nocompatible              " be iMproved, required
+set nocompatible			  " be iMproved, required
 
 set ruler
 
@@ -36,14 +36,14 @@ set cursorcolumn
 "
 highlight clear CursorLine
 augroup CLClear
-    autocmd! ColorScheme * highlight clear CursorLine
+	autocmd! ColorScheme * highlight clear CursorLine
 augroup END
 highlight CursorLine cterm=NONE ctermbg=234 ctermfg=NONE guibg=NONE guifg=NONE
 highlight CursorColumn cterm=NONE ctermbg=236 ctermfg=NONE guibg=NONE guifg=NONE
 
 highlight CursorLineNR cterm=bold ctermbg=darkgreen
 augroup CLNRSet
-    autocmd! ColorScheme * highlight CursorLineNR cterm=bold
+	autocmd! ColorScheme * highlight CursorLineNR cterm=bold
 augroup END
 
 " https://vim.fandom.com/wiki/Highlight_current_line
@@ -61,12 +61,12 @@ augroup END
 :nnoremap <silent> <Leader>c :execute 'match Search /\%'.virtcol('.').'v/'<CR>
 
 try
-    if has('nvim')
-        set undodir=~/.vim_runtime/undodir.nvim
-    else
-        set undodir=~/.vim_runtime/undodir.vim
-    endif
-    set undofile
+	if has('nvim')
+		set undodir=~/.vim_runtime/undodir.nvim
+	else
+		set undodir=~/.vim_runtime/undodir.vim
+	endif
+	set undofile
 catch
 endtry
 
@@ -95,8 +95,8 @@ set nosmartcase
 "imap  OC <ESC>li
 "imap  OD <ESC>hi
 
-filetype off                  " required
-filetype plugin indent on     " required
+filetype off				  " required
+filetype plugin indent on	  " required
 
 " enable line numbering
 set number
@@ -129,7 +129,7 @@ set t_Co=256
 
 "open the file at the last line edited
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
-                         \ exe "normal! g`\"" | endif
+						 \ exe "normal! g`\"" | endif
 
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
 :highlight ExtraWhitespace ctermbg=red guibg=red
@@ -186,7 +186,7 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 
 " memory leak problem
 if v:version >= 702
-    autocmd BufWinLeave * call clearmatches()
+	autocmd BufWinLeave * call clearmatches()
 endif
 
 " Change the Pmenu colors so they're more readable.
@@ -243,11 +243,11 @@ set listchars=tab:▸\ ,eol:¬
 "set winminheight=5
 
 "if (&ft=='sh' || &ft=='bash')
-    "set noexpandtab
-    "set ai
-    "set ts=4
-    "set sw=4
-    "set list
+	"set noexpandtab
+	"set ai
+	"set ts=4
+	"set sw=4
+	"set list
 "endif
 
 let fts = ['sh', 'bash', 'vim']

@@ -36,16 +36,16 @@
 "Plugin 'udalov/kotlin-vim'
 
 "if ! has('nvim')
-    "Plugin 'Lokaltog/powerline'
+	"Plugin 'Lokaltog/powerline'
 "endif
 
 "call vundle#end()
 
 "" Brief help
-" :PluginList          - list configured bundles
+" :PluginList		   - list configured bundles
 " :PluginInstall(!)    - install (update) bundles
 " :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused bundles
+" :PluginClean(!)	   - confirm (or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Plugin commands are not allowed.

@@ -34,7 +34,7 @@ if _enable_perl5
 	if !empty(glob('~/.vim/pack/upstream/opt/vim-perl/after/syntax/perl/*vim'))
 	" pack/upstream/opt/vim-perl (dev %=)
 	" $ ls after/syntax/perl/
-	" carp.vim  dancer.vim  highlight-all-pragmas.vim  moose.vim
+	" carp.vim	dancer.vim	highlight-all-pragmas.vim  moose.vim
 	" test-more.vim  try-tiny.vim
 	"
 		call system('cd pack/upstream/opt/vim-perl && make clean carp dancer highlight-all-pragmas moose test-more try-tiny; cd -')

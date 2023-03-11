@@ -132,8 +132,8 @@ if _enable_golang
 	" Disable the vim version warning
 	" let g:go_version_warning = 0
 
-    call extend(g:vimspector_install_gadgets, [ 'delve' ])
-    call extend(g:vimspector_install_gadgets, [ 'vscode-go' ])
+	call extend(g:vimspector_install_gadgets, [ 'delve' ])
+	call extend(g:vimspector_install_gadgets, [ 'vscode-go' ])
 
 	call DebugPrint('46.0-golang.vimrc: end')
 endif

@@ -7,7 +7,7 @@
 if _enable_telescope
 	call DebugPrint('32-telescope.nvimrc: start')
 
-    packadd! plenary.nvim
+	packadd! plenary.nvim
 	packadd! telescope.nvim
 	packadd! telescope-file-browser.nvim
 

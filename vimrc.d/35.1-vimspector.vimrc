@@ -8,18 +8,18 @@
 call DebugPrint('35.1-vimspector.vimrc: start')
 
 if _enable_vimspector
-    packadd! vimspector
+	packadd! vimspector
 
-    let g:vimspector_enable_mappings = 'HUMAN'
+	let g:vimspector_enable_mappings = 'HUMAN'
 
-    nmap <leader>dd :call vimspector#Launch()<CR>
-    nmap <leader>dx :VimspectorReset<CR>
-    nmap <leader>de :VimspectorEval
-    nmap <leader>dw :VimspectorWatch
-    nmap <leader>do :VimspectorShowOutput
+	nmap <leader>dd :call vimspector#Launch()<CR>
+	nmap <leader>dx :VimspectorReset<CR>
+	nmap <leader>de :VimspectorEval
+	nmap <leader>dw :VimspectorWatch
+	nmap <leader>do :VimspectorShowOutput
 
-    let g:vimspector_install_gadgets = [ ]
-    call extend(g:vimspector_install_gadgets, [ 'CodeLLDB' ])
+	let g:vimspector_install_gadgets = [ ]
+	call extend(g:vimspector_install_gadgets, [ 'CodeLLDB' ])
 endif
 
 call DebugPrint('35.1-vimspector.vimrc: end')

@@ -9,7 +9,7 @@ call DebugPrint('38-json.vimrc: start')
 
 " https://vi.stackexchange.com/questions/16906/how-to-format-json-file-in-vim
 function FormatJson()
-    execute '%!jq --sort-keys .'
+	execute '%!jq --sort-keys .'
 endfunction
 
 call DebugPrint('38-json.vimrc: end')

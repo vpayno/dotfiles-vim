@@ -9,23 +9,23 @@ if _enable_other_todo_highlight
 	" Load plugins.
 	packadd! vim-todo-highlight
 
-    " Disable highlighting for the default annotations:
-    " let g:todo_highlight_disable_default = ['TODO', 'FIXME']
+	" Disable highlighting for the default annotations:
+	" let g:todo_highlight_disable_default = ['TODO', 'FIXME']
 
-    let g:todo_highlight_config = {
-        \   'TODO': {
-        \	    'gui_fg_color': '#ffffff',
-        \   	'gui_bg_color': '#ffbd2a',
-        \   	'cterm_fg_color': 'white',
-        \   	'cterm_bg_color': '214'
-        \   },
-        \	'FIXME': {
-        \		'gui_fg_color': '#ffffff',
-        \		'gui_bg_color': '#f06292',
-        \		'cterm_fg_color': 'white',
-        \		'cterm_bg_color': '204'
-        \	}
-        \}
+	let g:todo_highlight_config = {
+		\	'TODO': {
+		\		'gui_fg_color': '#ffffff',
+		\		'gui_bg_color': '#ffbd2a',
+		\		'cterm_fg_color': 'white',
+		\		'cterm_bg_color': '214'
+		\	},
+		\	'FIXME': {
+		\		'gui_fg_color': '#ffffff',
+		\		'gui_bg_color': '#f06292',
+		\		'cterm_fg_color': 'white',
+		\		'cterm_bg_color': '204'
+		\	}
+		\}
 
 	call DebugPrint('99-other-highlights.vimrc: end [vim-todo-highlight]')
 endif

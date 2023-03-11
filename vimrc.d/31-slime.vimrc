@@ -17,7 +17,7 @@ if _enable_slime
 
 	xmap <c-c><c-c> <Plug>SlimeRegionSend
 	nmap <c-c><c-c> <Plug>SlimeParagraphSend
-	nmap <c-c>v     <Plug>SlimeConfig
+	nmap <c-c>v		<Plug>SlimeConfig
 
 	let g:slime_dont_ask_default = 1
 

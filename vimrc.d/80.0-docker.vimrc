@@ -10,11 +10,11 @@ if _enable_docker
 	" Load plugins.
 	packadd! Dockerfile.vim
 
-    if _enable_denops
+	if _enable_denops
 
-        packadd! denops-docker.vim
+		packadd! denops-docker.vim
 
-    endif
+	endif
 
 	call DebugPrint('80.0-docker.vimrc: end')
 endif

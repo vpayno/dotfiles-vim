@@ -8,7 +8,7 @@ if _enable_markdown
 	call DebugPrint('41.0-markdown.vimrc: start')
 
 	" Load plugins.
-	packadd! tabular      " must load before vim-markdown
+	packadd! tabular	  " must load before vim-markdown
 	packadd! vim-markdown
 
 	call DebugPrint('41.0-markdown.vimrc: end')
