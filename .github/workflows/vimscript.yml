@@ -1,0 +1,148 @@
+#
+# .github/woorkflows/vimscript.yml
+#
+
+name: Vimscript Workflow
+on: # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+jobs:
+  stage1:
+    name: Change Check
+    runs-on: 'ubuntu-latest'
+    outputs:
+      docs_changed: ${{ steps.check_file_changed.outputs.docs_changed }}
+    steps:
+      - name: Checkout Repo
+        id: checkout-repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref }}
+          submodules: recursive
+      - name: Get Change List
+        id: check_file_changed
+        shell: bash
+        run: |
+          # Diff HEAD with the previous commit then output to stdout.
+          printf "=== Which files changed? ===\n"
+          GIT_DIFF="$(git diff --name-only HEAD^ HEAD)"
+          printf "%s\n" "${GIT_DIFF}"
+          printf "\n"
+
+          # Check if the files are present in the changed file list (added, modified, deleted) then output to stdout.
+          HAS_DIFF=false
+          printf "=== Which Golang files changed? ===\n"
+          if printf "%s\n" "${GIT_DIFF}" | grep -E '^(vimrc|.*[.](vim|vader|vimspec|vimrc))$'; then
+             HAS_DIFF=true
+          fi
+          printf "\n"
+
+          # Did Golang files change?
+          printf "=== Did Golang files change? ===\n"
+          printf "%s\n" "${HAS_DIFF}"
+          printf "\n"
+
+          # Set the output named "docs_changed"
+          printf "%s=%s\n" "docs_changed" "${HAS_DIFF}" >> "${GITHUB_OUTPUT}"
+  stage2:
+    name: Vim Checks
+    strategy:
+      matrix:
+        os: ["ubuntu-latest"]
+    runs-on: "${{ matrix.os }}"
+    needs: [stage1]
+    if: needs.stage1.outputs.docs_changed == 'True'
+    steps:
+      - name: Checkout Repo
+        id: checkout-repo
+        uses: actions/checkout@v3
+      - name: Get Repo Root
+        id: get-repo-root
+        run: |
+          printf "%s=\"%s\"\n" "REPO_ROOT" "${PWD}" | tee -a "${GITHUB_ENV}"
+      - name: Setup Vim
+        id: setup-vim
+        uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: false
+          version: stable
+      - name: Setup Nvim
+        id: setup-nvim
+        uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          version: stable
+      - name: Show Vim Versions
+        id: vim-version
+        run: |
+          which vim
+          vim --version
+          which nvim
+          nvim --version
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3'
+      - name: Install Tools
+        id: install-tools
+        run: |
+          # https://github.com/Vimjas/covimerage/issues/95
+          #pip install 'click<8.0.0'
+          #pip install covimerage
+          pip install vim-vint
+      - name: Show Tool Versions
+        id: tool-versions
+        if: false
+        run: |
+          #covimerage --version
+          vint --version
+      - name: Analysing the code with vint
+        id: vim-lint
+        run: |
+          vint --warning --style-problem --enable-neovim ./vimrc ./vimrc.d/*.vimrc
+      - name: Vader Tests with Vim
+        if: false
+        id: vim-tests-vader-vim
+        uses: PsychoLlama/vader-action@v1
+        with:
+          neovim: false
+          test-pattern: '**/*.vader'
+      - name: Vader Tests with NeoVim
+        if: false
+        id: vim-tests-vader-neovim
+        uses: PsychoLlama/vader-action@v1
+        with:
+          neovim: true
+          test-pattern: '**/*.vader'
+      - name: Checkout themis.vim
+        if: false
+        id: checkout-themis
+        uses: actions/checkout@v3
+        with:
+          repository: thinca/vim-themis
+          path: vim-themis
+      - name: Remove coverage output files
+        if: false
+        id: cov-cleanup
+        run: |
+          rm -fv profile.txt coverage.xml .coverage_covimerage
+      - name: Run Themis Tests
+        if: false
+        id: themis-tests-vim
+        env:
+          THEMIS_VIM: ${{ steps.setup-vim.outputs.executable }}
+          THEMIS_PROFILE: profile.txt
+        run: |
+          ../vim-themis/bin/themis --version
+          ../../vim-themis/bin/themis themis.vimspec
+          ls
+      - name: Coverage Report
+        if: false
+        id: vimscript-coverage-report
+        run: |
+          covimerage write_coverage profile.txt
+          coverage report
