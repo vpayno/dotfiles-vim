@@ -99,7 +99,6 @@ if v:version >= 500
 	endif
 
 	call DebugPrint('runtime! vimrc.d/*.vimrc: end')
-
 endif
 
 " vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
