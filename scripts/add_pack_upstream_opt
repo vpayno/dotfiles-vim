@@ -1,0 +1,40 @@
+#!/bin/bash
+
+declare src="${1:-not_set}"
+declare dst
+declare name
+
+if [[ ${src} == not_set ]]; then
+	printf "Usage: %s https://github.com/org/repo\n" "$0"
+	exit 1
+fi
+
+name="$(basename "${src}")"
+dst="pack/upstream/opt/${name}"
+
+echo git submodule add "${src}" "${dst}"
+time git submodule add "${src}" "${dst}"
+printf "\n"
+
+if [[ -f ${dst}/.gitmodules ]]; then
+	echo cd "${dst}"
+	cd "${dst}" || exit
+
+	echo git submodule init
+	time git submodule init
+	printf "\n"
+
+	echo git submodule update
+	time git submodule update
+	printf "\n"
+
+	cd - || exit
+
+	echo git add "${dst}"
+	time git add "${dst}"
+fi
+
+printf "\n"
+echo git status
+git status
+printf "\n"
