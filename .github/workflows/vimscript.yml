@@ -22,7 +22,8 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.ref }}
-          submodules: recursive
+          # aws-vim doesn't exist anymore, can't checkout submodules
+          submodules: false
       - name: Get Change List
         id: check_file_changed
         shell: bash
@@ -60,6 +61,11 @@ jobs:
       - name: Checkout Repo
         id: checkout-repo
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref }}
+          # aws-vim doesn't exist anymore, can't checkout submodules
+          submodules: false
       - name: Get Repo Root
         id: get-repo-root
         run: |

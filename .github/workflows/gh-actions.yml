@@ -28,7 +28,8 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.ref }}
-          submodules: recursive
+          # aws-vim doesn't exist anymore, can't checkout submodules
+          submodules: false
       - name: Get Change List
         id: check_file_changed
         run: |
@@ -69,7 +70,8 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.ref }}
-          submodules: recursive
+          # aws-vim doesn't exist anymore, can't checkout submodules
+          submodules: false
       - name: Set up Go (using version from go.mod)
         id: setup-go
         uses: actions/setup-go@v3
