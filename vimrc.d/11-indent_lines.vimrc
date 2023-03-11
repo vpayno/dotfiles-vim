@@ -2,6 +2,8 @@
 " vimrc.d/11-indent_lines.vim
 "
 
+scriptencoding utf-8
+
 " other possible solutions:
 " https://github.com/Yggdroot/indentLine
 " https://github.com/nathanaelkane/vim-indent-guides

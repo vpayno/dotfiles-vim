@@ -5,6 +5,8 @@
 " https://github.com/Xuyuanp/nerdtree-git-plugin
 " https://github.com/jistr/vim-nerdtree-tabs
 
+scriptencoding utf-8
+
 if _enable_nerdtree
 	call DebugPrint('33.1-nerdtree_netrw.vimrc: [nerdtree] start')
 
