@@ -255,3 +255,5 @@ let s:xterm_colors = {
     \ '245': '#8a8a8a', '246': '#949494', '247': '#9e9e9e', '248': '#a8a8a8', '249': '#b2b2b2',
     \ '250': '#bcbcbc', '251': '#c6c6c6', '252': '#d0d0d0', '253': '#dadada', '254': '#e4e4e4',
     \ '255': '#eeeeee', 'fg': 'fg', 'bg': 'bg', 'NONE': 'NONE' }
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

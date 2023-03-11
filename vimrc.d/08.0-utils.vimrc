@@ -11,3 +11,5 @@ if _enable_utils_baseconvert
 
     call DebugPrint('08.0-utils.vimrc: end [ConvertBase]')
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

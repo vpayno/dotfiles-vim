@@ -29,3 +29,5 @@ else
 
 	call DebugPrint('25-virtualenv.vimrc: end')
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

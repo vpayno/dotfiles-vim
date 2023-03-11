@@ -280,3 +280,5 @@ endif
 " Setting leader key.
 let mapleader = '\\'
 "let maplocalldeader = '\\'
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

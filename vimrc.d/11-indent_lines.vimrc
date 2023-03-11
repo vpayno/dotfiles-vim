@@ -43,3 +43,5 @@ if _enable_indent_guides
 
 	call DebugPrint('11-indent_lines.vimrc: end')
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

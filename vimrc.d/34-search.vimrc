@@ -24,3 +24,5 @@ if _enable_ripgrep
 
 	call DebugPrint('34-search.vimrc: end [ripgrep]')
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

@@ -161,3 +161,5 @@ if _enable_python_isort
 
 	call DebugPrint('44.0-python.vimrc: end [isort]')
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

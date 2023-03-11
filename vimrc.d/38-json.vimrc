@@ -13,3 +13,5 @@ function FormatJson()
 endfunction
 
 call DebugPrint('38-json.vimrc: end')
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

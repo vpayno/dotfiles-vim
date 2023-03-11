@@ -17,3 +17,5 @@ if _enable_denops
 
 	call DebugPrint('27-denops.vimrc: end')
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

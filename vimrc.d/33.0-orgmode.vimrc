@@ -11,3 +11,5 @@ if _enable_orgmode
 
 	call DebugPrint('33.0-orgmode.vimrc: end')
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

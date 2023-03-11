@@ -29,3 +29,5 @@ if _enable_other_todo_highlight
 
 	call DebugPrint('99-other-highlights.vimrc: end [vim-todo-highlight]')
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

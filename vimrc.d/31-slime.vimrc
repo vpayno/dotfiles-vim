@@ -25,3 +25,5 @@ if _enable_slime
 
 	call DebugPrint('31-slime.vimrc: end')
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

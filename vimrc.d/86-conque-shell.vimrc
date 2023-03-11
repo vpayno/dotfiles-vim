@@ -11,3 +11,5 @@ if _enable_conque_shell
 
 	call DebugPrint('86-conque-shell.vimrc: end [conque-shell]')
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

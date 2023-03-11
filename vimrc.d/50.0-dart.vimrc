@@ -24,3 +24,5 @@ if _enable_dart
 
 	call DebugPrint('50.0-dart.vimrc: end')
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

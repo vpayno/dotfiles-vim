@@ -34,3 +34,5 @@ let g:syntastic_ruby_checkers = ['ruby', 'flog']
 autocmd! BufWritePost *.rb | execute 'silent !rufo %' | :e
 
 call DebugPrint('40.0-syntastic.vimrc: end')
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

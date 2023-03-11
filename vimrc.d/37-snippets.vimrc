@@ -24,3 +24,5 @@ elseif _enable_utilsnips
 
 	call DebugPrint('37-snippets.vimrc: end [utilsnips]')
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

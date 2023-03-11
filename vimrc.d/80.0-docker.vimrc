@@ -18,3 +18,5 @@ if _enable_docker
 
 	call DebugPrint('80.0-docker.vimrc: end')
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

@@ -55,3 +55,5 @@ if _enable_arduino
 
 	call DebugPrint('55.0-arduino.vimrc: end')
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

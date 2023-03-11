@@ -29,3 +29,5 @@ if _enable_vimwiki
 
 	call DebugPrint('41.1-vimwiki.vimrc: end')
 endif
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

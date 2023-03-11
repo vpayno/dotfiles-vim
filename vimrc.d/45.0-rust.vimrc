@@ -31,3 +31,5 @@ augroup END
 packadd! tagbar
 
 call DebugPrint('45.0-rust.vimrc: end')
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

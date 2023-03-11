@@ -93,3 +93,5 @@ function! CommentToggle()
     execute ':silent! s/^\( *\)' . escape(b:comment_leader,'\/') . ' \?' . escape(b:comment_leader,'\/') . ' \?/\1/'
 endfunction
 " map <F7> :call CommentToggle()<CR>
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

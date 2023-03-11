@@ -35,3 +35,5 @@ function! SwitchWindow(count) abort
 endfunction
 
 nnoremap <C-w>x :<C-u>call SwitchWindow(v:count1)<CR>
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

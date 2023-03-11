@@ -23,3 +23,5 @@ if _enable_vimspector
 endif
 
 call DebugPrint('35.1-vimspector.vimrc: end')
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

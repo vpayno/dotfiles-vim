@@ -49,3 +49,5 @@
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Plugin commands are not allowed.
+
+" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
