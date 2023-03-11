@@ -31,7 +31,7 @@ if _enable_indent_guides
 				let b:indentguides_match = matchadd('ColorColumn', pat)
 			endif
 		else
-			if b:indentguides == 'tabs'
+			if b:indentguides ==# 'tabs'
 				let &l:list = b:indentguides_listopt
 				let &l:listchars = b:indentguides_listcharsopt
 				unlet b:indentguides_listopt b:indentguides_listcharsopt

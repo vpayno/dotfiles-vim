@@ -12,7 +12,7 @@ function! s:RunShellCommand2(cmdline)
 	let expanded_cmdline = a:cmdline
 
 	for part in split(a:cmdline, ' ')
-		if part[0] =~ '\v[%#<]'
+		if part[0] =~# '\v[%#<]'
 		let expanded_part = fnameescape(expand(part))
 		let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
 		endif
@@ -44,7 +44,7 @@ function! s:RunShellCommand(cmdline)
 		if isfirst
 			let isfirst = 0  " don't change first word (shell command)
 		else
-			if word[0] =~ '\v[%#<]'
+			if word[0] =~# '\v[%#<]'
 				let word = expand(word)
 			endif
 
