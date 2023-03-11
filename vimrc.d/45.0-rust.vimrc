@@ -30,6 +30,11 @@ augroup END
 
 packadd! tagbar
 
+" https://alpha2phi.medium.com/setting-up-neovim-for-rust-debugging-termdebug-and-vimspector-df749e1ba47c
+" termdebugger is included with vim >=8.1
+packadd! termdebug
+let termdebugger='rust-gdb'
+
 call DebugPrint('45.0-rust.vimrc: end')
 
 " vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
