@@ -1,0 +1,8 @@
+
+" 256
+echo &t_Co
+
+" black | white
+
+" dark/light+name
+" red, green, brown|yellow, blue, magenta, cyan, gray
