@@ -80,8 +80,10 @@ if v:version >= 500
 		call DebugPrint('You can use :function to list all functions.')
 	endif
 
+	" vint: -ProhibitEncodingOptionAfterScriptEncoding
 	set encoding=utf-8
 	scriptencoding utf-8
+	" vint: +ProhibitEncodingOptionAfterScriptEncoding
 
 	call DebugPrint('runtime! vimrc.d/*.vimrc: start')
 

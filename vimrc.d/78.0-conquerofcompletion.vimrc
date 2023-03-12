@@ -13,8 +13,8 @@ if _enable_conquerofcompletion
 	" Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 	" unicode characters in the file autoload/float.vim
 	" vint: -ProhibitEncodingOptionAfterScriptEncoding
-	scriptencoding utf-8
 	set encoding=utf-8
+	scriptencoding utf-8
 	" vint: +ProhibitEncodingOptionAfterScriptEncoding
 
 	" TextEdit might fail if hidden is not set.
