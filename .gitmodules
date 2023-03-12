@@ -270,7 +270,7 @@
 	url = https://github.com/RyanMillerC/better-vim-tmux-resizer
 [submodule "pack/upstream/opt/aws-vim"]
 	path = pack/upstream/opt/aws-vim
-	url = https://github.com/m-kat/aws-vim
+	url = https://github.com/vpayno/aws-vim
 [submodule "pack/upstream/opt/vim-raku"]
 	path = pack/upstream/opt/vim-raku
 	url = https://github.com/Raku/vim-raku
