@@ -5,9 +5,3 @@ if [[ -f ~/.vimrc ]] && [[ ! -L ~/.vimrc ]]; then
 fi
 
 ln -svf "$(pwd)/vimrc" ~/.vimrc
-
-if [[ -d ~/.kite ]] && [[ ! -L ~/.kite ]]; then
-	mv -v ~/.kite{,~}
-fi
-
-ln -svf "$(pwd)/dotconfigs/kite" ~/.kite
