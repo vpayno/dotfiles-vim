@@ -5,7 +5,8 @@
 syntax on
 "colorscheme onedark
 
-set nocompatible			  " be iMproved, required
+" if ~/.vimrc exists, it's already set
+" set nocompatible			  " be iMproved, required
 
 set ruler
 
