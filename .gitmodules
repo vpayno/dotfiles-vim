@@ -183,7 +183,7 @@
 	url = https://github.com/gisodal/vimgdb
 [submodule "pack/upstream/opt/vim-chef"]
 	path = pack/upstream/opt/vim-chef
-	url = https://github.com/t9md/vim-chef
+	url = https://github.com/vadv/vim-chef
 [submodule "pack/upstream/opt/vim-addon-mw-utils"]
 	path = pack/upstream/opt/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils
