@@ -6,15 +6,32 @@
 " https://github.com/python-mode/python-mode
 " https://github.com/tell-k/vim-autopep8
 
-augroup ag_python_pyfmt
-	autocmd!
-	autocmd! BufWritePost *.py | execute 'silent !"${HOME}"/.vim/scripts/pyfmt --vim %' | :e
-augroup end
-
-if (!_enable_kite && !_enable_youcompleteme) && _enable_python_pymode
-	call DebugPrint('44.0-python.vimrc: start [python-mode]')
+if _enable_python
+	call DebugPrint('44.0-python.vimrc: start')
 
 	call extend(g:vimspector_install_gadgets, [ 'debugpy' ])
+
+	call DebugPrint('44.0-python.vimrc: end')
+
+	if ! _enable_python_coc_pyright
+		augroup ag_python_pyfmt
+			autocmd!
+			autocmd! BufWritePost *.py | execute 'silent !"${HOME}"/.vim/scripts/pyfmt --vim %' | :e
+		augroup end
+	endif
+endif
+
+if _enable_python_coc_pyright
+	call DebugPrint('44.0-python.vimrc: start [coc-pyright]')
+
+	" https://github.com/fannheyward/coc-pyright
+	" :CocInstall coc-pyright
+	packadd! coc-pyright
+
+	call DebugPrint('44.0-python.vimrc: end [coc-pyright]')
+
+elseif (!_enable_kite && !_enable_youcompleteme) && _enable_python_pymode
+	call DebugPrint('44.0-python.vimrc: start [python-mode]')
 
 	" Load plugins.
 	packadd! python-mode

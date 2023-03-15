@@ -10,6 +10,27 @@
         "go"
       ]
     },
+	"pyright": {
+		"enable": true,
+		"organizeimports": {
+			"provider": "isort"
+		}
+	},
+	"python": {
+		"formatting": {
+			"blackArgs": "--line-length=120"
+		},
+		"linting": {
+			"banditEnable": true,
+			"mypyEnabled": true,
+			"ruffEnabled": true,
+			"pytypeEnabled": true,
+			"pycodestyleEnabled": true,
+			"prospectorEnabled": true,
+			"pylamaEnabled": true,
+			"pylintEnabled": false
+		}
+	},
     "rust": {
       "command": "rust-analyzer",
       "filetypes": [
