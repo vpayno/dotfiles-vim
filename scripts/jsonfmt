@@ -1,0 +1,143 @@
+#!/bin/bash
+#
+# Script used to format JSON files using python json.tool & sponge.
+#
+
+declare output_cmd="cat"
+
+if [[ ${1} == --vim ]]; then
+	output_cmd="cat >& /dev/null"
+	shift 1
+fi
+
+declare -a VARGS=("$@")
+
+declare -a json_files
+declare -i count=0
+declare -i total=0
+
+declare sum_before
+declare sum_after
+
+# shellcheck disable=SC1003
+declare -a spinner_symbols=('/' '-' '\' '|')
+declare -i spinner_index=0
+declare spinner_flag
+
+spinner_flag="$(mktemp)"
+usage() {
+	cat <<-EOF
+		Usage:
+			${0} data.json subdir/file.json ...
+			${0} -d subdir/
+			${0} -d .
+			${0} .
+	EOF
+	exit 1
+} # usage()
+
+spinner_start() {
+	touch "${spinner_flag}"
+
+	while [[ -f ${spinner_flag} ]]; do
+		echo -n "${spinner_symbols[${spinner_index}]}"
+		echo -n -e "\b"
+
+		if [[ $(((spinner_index + 1) % 4)) -ne 0 ]]; then
+			((spinner_index++))
+		else
+			spinner_index=0
+		fi
+
+		LANG=C sleep 0.5s
+	done
+
+	echo -n -e "\b"
+} # spinner()
+
+spinner_stop() {
+	if [[ -f ${spinner_flag} ]]; then
+		rm -f "${spinner_flag}"
+		wait >&/dev/null
+	fi
+} # spinner_stop()
+
+check_deps() {
+	if ! command -v bc >&/dev/null; then
+		printf "ERROR: bc command is missing, please install sys-devel/bc.\n"
+		exit 1
+	fi
+
+	if ! command -v python >&/dev/null; then
+		printf "ERROR: python command is missing, please install dev-lang/python.\n"
+		exit 1
+	fi
+
+	if ! command -v sponge >&/dev/null; then
+		printf "ERROR: sponge command is missing, please install sys-apps/moreutils.\n"
+		exit 1
+	fi
+} # check_deps()
+
+process_args() {
+	if [[ ${#VARGS[@]} -eq 0 ]]; then
+		printf "ERROR: you didn't pass any arguments.\n"
+		usage
+	fi
+
+	if [[ ${VARGS[0]} == "-d" ]] || [[ ${VARGS[0]} == "." ]]; then
+		if [[ ${VARGS[0]} == "-d" ]] && [[ -d ${VARGS[1]} ]]; then
+			json_dir="${VARGS[1]}"
+		elif [[ ${VARGS[0]} == "." ]]; then
+			json_dir="."
+		else
+			printf "ERROR: The argument passed to -d is not a directory.\n"
+			usage
+		fi
+
+		mapfile -t json_files < <(find "${json_dir}" -type f -name '*.json')
+	else
+		json_files=("${VARGS[@]}")
+	fi
+
+	total="${#json_files[@]}"
+} # process_args()
+
+sort_files() {
+	{ spinner_start & } 2>/dev/null
+
+	for json_file in "${json_files[@]}"; do
+		[[ -f ${json_file} ]] || continue
+
+		if python -m json.tool --sort-keys "${json_file}" >&/dev/null; then
+
+			sum_before="$(md5sum "${json_file}" | awk '{ print $1 }')"
+			python -m json.tool --sort-keys "${json_file}" | sponge "${json_file}"
+			sum_after="$(md5sum "${json_file}" | awk '{ print $1 }')"
+
+			if [[ ${sum_before} != "${sum_after}" ]]; then
+				((count++))
+			fi
+		else
+			printf "\nERROR: failed to sort file [%s]\n" "${json_file}"
+		fi
+	done
+
+	spinner_stop
+
+	printf "Changed %d out of %d (%.2f%%) JSON files.\n" "${count}" "${total}" "$(printf "scale=4\n%s/%s*100\n" "${count}" "${total}" | bc)"
+} # sort_files()
+
+show_output()
+{
+	# shellcheck disable=SC2086
+	eval ${output_cmd}
+} # show_output()
+
+main() {
+	check_deps
+	process_args
+	sort_files
+} # main()
+
+main |& show_output

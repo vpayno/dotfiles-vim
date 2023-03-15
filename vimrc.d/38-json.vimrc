@@ -10,6 +10,11 @@ augroup au_json
 	autocmd BufNewFile,BufRead *.json set filetype=json
 augroup end
 
+augroup ag_json_jsonfmt
+	autocmd!
+	autocmd! BufWritePost *.json | execute 'silent !"${HOME}"/.vim/scripts/jsonfmt --vim %' | :e
+augroup end
+
 " https://vi.stackexchange.com/questions/16906/how-to-format-json-file-in-vim
 function FormatJson()
 	execute '%!jq --sort-keys .'
