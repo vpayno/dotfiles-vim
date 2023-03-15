@@ -1,44 +1,44 @@
 {
-  "languageserver": {
-    "go": {
-      "command": "gopls",
-      "rootPatterns": [
-        "go.mod"
-      ],
-      "trace.server": "verbose",
-      "filetypes": [
-        "go"
-      ]
-    },
-	"pyright": {
-		"enable": true,
-		"organizeimports": {
-			"provider": "isort"
-		}
-	},
-	"python": {
-		"formatting": {
-			"blackArgs": "--line-length=120"
-		},
-		"linting": {
-			"banditEnable": true,
-			"mypyEnabled": true,
-			"ruffEnabled": true,
-			"pytypeEnabled": true,
-			"pycodestyleEnabled": true,
-			"prospectorEnabled": true,
-			"pylamaEnabled": true,
-			"pylintEnabled": false
-		}
-	},
-    "rust": {
-      "command": "rust-analyzer",
-      "filetypes": [
-        "rust"
-      ],
-      "rootPatterns": [
-        "Cargo.toml"
-      ]
+    "languageserver": {
+        "go": {
+            "command": "gopls",
+            "filetypes": [
+                "go"
+            ],
+            "rootPatterns": [
+                "go.mod"
+            ],
+            "trace.server": "verbose"
+        },
+        "pyright": {
+            "enable": true,
+            "organizeimports": {
+                "provider": "isort"
+            }
+        },
+        "python": {
+            "formatting": {
+                "blackArgs": "--line-length=120"
+            },
+            "linting": {
+                "banditEnable": true,
+                "mypyEnabled": true,
+                "prospectorEnabled": true,
+                "pycodestyleEnabled": true,
+                "pylamaEnabled": true,
+                "pylintEnabled": false,
+                "pytypeEnabled": true,
+                "ruffEnabled": true
+            }
+        },
+        "rust": {
+            "command": "rust-analyzer",
+            "filetypes": [
+                "rust"
+            ],
+            "rootPatterns": [
+                "Cargo.toml"
+            ]
+        }
     }
-  }
 }
