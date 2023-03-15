@@ -8,7 +8,7 @@
 
 augroup ag_python_pyfmt
 	autocmd!
-	autocmd! BufWritePost *.py | execute 'silent !pyfmt --vim %' | :e
+	autocmd! BufWritePost *.py | execute 'silent !"${HOME}"/.vim/scripts/pyfmt --vim %' | :e
 augroup end
 
 if (!_enable_kite && !_enable_youcompleteme) && _enable_python_pymode

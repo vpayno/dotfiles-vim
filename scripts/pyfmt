@@ -1,0 +1,39 @@
+#!/bin/bash
+
+declare output_cmd="cat"
+
+if [[ ${1} == --vim ]]; then
+	output_cmd="cat >& /dev/null"
+	shift 1
+fi
+
+declare -a targets=( "${@:-.}" )
+
+show_output()
+{
+	# shellcheck disable=SC2086
+	eval ${output_cmd}
+} # show_output()
+
+main()
+{
+	time {
+		echo autopep8 --in-place --recursive "${targets[@]}"
+		time autopep8 --in-place --recursive "${targets[@]}"
+		printf "\n"
+
+		echo yapf --style=google --recursive --in-place "${targets[@]}"
+		time yapf --style=google --recursive --in-place "${targets[@]}"
+		printf "\n"
+
+		echo isort --dont-follow-links --atomic --ensure-newline-before-comments "${targets[@]}"
+		time isort --dont-follow-links --atomic --ensure-newline-before-comments "${targets[@]}"
+		printf "\n"
+
+		echo black --line-length=120 "${targets[@]}"
+		time black --line-length=120 "${targets[@]}"
+		printf "\n"
+	}
+} # main()
+
+main |& show_output
