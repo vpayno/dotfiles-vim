@@ -418,3 +418,6 @@
 [submodule "pack/upstream/opt/haskell-vim"]
 	path = pack/upstream/opt/haskell-vim
 	url = https://github.com/neovimhaskell/haskell-vim
+[submodule "pack/upstream/opt/vim-shfmt"]
+	path = pack/upstream/opt/vim-shfmt
+	url = https://github.com/z0mbix/vim-shfmt.git
