@@ -421,3 +421,6 @@
 [submodule "pack/upstream/opt/vim-shfmt"]
 	path = pack/upstream/opt/vim-shfmt
 	url = https://github.com/z0mbix/vim-shfmt.git
+[submodule "pack/upstream/opt/coc-pyright"]
+	path = pack/upstream/opt/coc-pyright
+	url = https://github.com/fannheyward/coc-pyright.git
