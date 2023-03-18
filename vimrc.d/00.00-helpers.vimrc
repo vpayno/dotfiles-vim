@@ -5,13 +5,13 @@
 " If helpers haven't been imported...
 if get(g:, 'ImportedHelpers', 0) == 0
 
-	let g:True = 1
-	let g:False = 0
+	let g:true = 1
+	let g:false = 0
 
-	let g:Enable = g:True
-	let g:Disable = g:False
+	let g:enable = g:true
+	let g:disable = g:false
 
-	let g:debug_mode = g:Disable
+	let g:debug_mode = g:disable
 
 	function! DebugPrint(message)
 		if g:debug_mode
@@ -21,7 +21,7 @@ if get(g:, 'ImportedHelpers', 0) == 0
 
 	call DebugPrint('runtime! vimrc.d/00.00-helpers.vimrc: start')
 
-	let g:ImportedHelpers = get(g:, 'ImportedHelpers', g:True)
+	let g:ImportedHelpers = get(g:, 'ImportedHelpers', g:true)
 
 	let g:languages = [
 		\'python',
@@ -35,9 +35,9 @@ if get(g:, 'ImportedHelpers', 0) == 0
 
 	function! ArrayIndex(list, item)
 		if index(a:list, a:item) >= 0
-			return g:True
+			return g:true
 		else
-			return g:False
+			return g:false
 		endif
 	endfunction
 

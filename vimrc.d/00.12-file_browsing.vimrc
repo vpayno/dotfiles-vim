@@ -9,7 +9,7 @@ set path+=**
 
 set wildmenu
 
-let g:netrw_banner = g:Disable
+let g:netrw_banner = g:disable
 let g:netrw_browse_split = 4  " 0=reuse, 1=split, 2=vsplit, 3=new, 4= previous
 let g:netrw_altv = 1 " 0=left, 1=right
 let g:netrw_liststyle = 3  " 0=thin, 1=long, 2=wide, 3=tree
