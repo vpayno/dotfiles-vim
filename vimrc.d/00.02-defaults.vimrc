@@ -1,8 +1,10 @@
 "
-" ~/.vim/vimrc.d/05-defaults.vimrc
+" vimrc.d/00.02-defaults.vimrc
 "
 
-syntax on
+call DebugPrint('runtime! vimrc.d/00.02-defaults.vimrc: start')
+
+syntax enable
 "colorscheme onedark
 
 " if ~/.vimrc exists, it's already set
@@ -27,6 +29,9 @@ set showmode
 set wildmenu
 set history=1000
 set showmatch
+
+" shows command keys in lower right corner of the screen
+set showcmd
 
 " use visual bell instead of beeping
 set vb
@@ -230,9 +235,6 @@ augroup end
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "execute 'match OverLength /\%'.linelen.'v.\+/'
 
-" Tell VIM which tags file to use.
-set tags=~/.vimrc/tags
-
 " Make underscores part of words.
 "set iskeyword-=_
 
@@ -300,4 +302,5 @@ endif
 let mapleader = '\\'
 "let maplocalldeader = '\\'
 
+call DebugPrint('runtime! vimrc.d/00.02-defaults.vimrc: stop')
 " vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

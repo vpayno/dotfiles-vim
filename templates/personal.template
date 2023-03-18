@@ -1,0 +1,10 @@
+"
+" templates/personal.template
+"
+
+SetMacro( 'AUTHOR',      'Victor Payno' )
+SetMacro( 'AUTHORREF',   'vp' )
+SetMacro( 'EMAIL',       'vpayno@gmail.com' )
+SetMacro( 'COPYRIGHT',   'Copyright (c) |YEAR|, |AUTHOR|' )
+
+" vim:filetype=vim:syntax=vim

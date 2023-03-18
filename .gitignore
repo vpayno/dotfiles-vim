@@ -1,3 +1,5 @@
 dotconfigs/kite/logs/
 viminfo*
 view/
+tags
+.netrwhist

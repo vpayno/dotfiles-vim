@@ -72,24 +72,24 @@ if _enable_nerdtree
 else
 	call DebugPrint('33.1-nerdtree_netrw.vimrc: [netrw] start')
 
-	let g:netrw_liststyle = 3
+	"let g:netrw_liststyle = 3
 
-	let g:netrw_banner = 1
+	"let g:netrw_banner = 1
 
 	" Open files in a
 	" 1: horizontal split
 	" 2: vertical split
 	" 3: new tab
 	" 4: previous window
-	let g:netrw_browse_split = 1
+	"let g:netrw_browse_split = 1
 
 	" ?
 	" let g:netrw_altv = 1
 
 	" pane width in %
-	let g:netrw_winsize = 25
+	"let g:netrw_winsize = 25
 
-	let g:netrw_altv = 1
+	"let g:netrw_altv = 1
 
 	call DebugPrint('33.1-nerdtree_netrw.vimrc: [netrw] end')
 endif
