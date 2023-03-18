@@ -39,6 +39,39 @@
             "rootPatterns": [
                 "Cargo.toml"
             ]
+        },
+        "vimls": {
+            "args": [
+                "--stdio"
+            ],
+            "command": "vim-language-server",
+            "filetypes": [
+                "vim"
+            ],
+            "initializationOptions": {
+                "diagnostic": {
+                    "enable": true
+                },
+                "indexes": {
+                    "count": 3,
+                    "gap": 100,
+                    "projectRootPatterns": [
+                        "strange-root-pattern",
+                        ".git",
+                        "autoload",
+                        "plugin"
+                    ],
+                    "runtimepath": true
+                },
+                "isNeovim": false,
+                "iskeyword": "@,48-57,_,192-255,-#",
+                "runtimepath": "",
+                "suggest": {
+                    "fromRuntimepath": false,
+                    "fromVimruntime": true
+                },
+                "vimruntime": ""
+            }
         }
     }
 }
