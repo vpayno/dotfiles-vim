@@ -5,28 +5,21 @@
 " !has("compatible") or has("eval") or has("autocmd")
 if v:version >= 500
 
-	" Enable(1)/disable(0) debug mode.
-	let g:_debug_mode = 0
+	" Load helper functions and global variables.
+	runtime! vimrc.d/00.00-helpers.vimrc
 
-    " The rest of the helper functions go in ./vimrc.d/00.00-helpers.vimrc
-    function! DebugPrint(message)
-        if g:_debug_mode
-            echom 'DEBUG:' a:message
-        endif
-    endfunction
+	call DebugPrint('runtime! vimrc.d/*.vimrc: start')
 
 	" vint: -ProhibitEncodingOptionAfterScriptEncoding
 	set encoding=utf-8
 	scriptencoding utf-8
 	" vint: +ProhibitEncodingOptionAfterScriptEncoding
 
-	if g:_debug_mode
+	if g:debug_mode
 		call DebugPrint('You can use :messages to show statusline messages.')
 		call DebugPrint('You can use :scriptnames to show loaded plugins.')
 		call DebugPrint('You can use :function to list all functions.')
 	endif
-
-	call DebugPrint('runtime! vimrc.d/*.vimrc: start')
 
 	" VIM & NEOVIM: Load the extra configs.
 	runtime! vimrc.d/*.vimrc
