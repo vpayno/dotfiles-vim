@@ -10,6 +10,7 @@ set tags=./tags
 command! MakeTags !ctags --exclude=@${HOME}/.vim/.ctagsignore -R .
 
 augroup au_gen_tags
+	autocmd!
 	autocmd BufWritePost * call IsCodeFile() | silent! !ctags --exclude=@${HOME}/.vim/.ctagsignore -R .
 augroup end
 
