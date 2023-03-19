@@ -2,7 +2,7 @@
 " vimrc.d/00.00-options.vimrc
 "
 
-call DebugPrint('runtime! vimrc.d/00.01-options.vimrc: start')
+call DebugPrint('00.01-options.vimrc: start')
 
 " Enable/disable my options.
 let _enable_line_wrap = g:disable
@@ -65,6 +65,6 @@ let _enable_virtualenv = g:disable
 let _enable_youcompleteme = g:disable
 let _enable_youcompleteme_tabnine = g:disable " overrides youcompleteme and tabnine
 
-call DebugPrint('runtime! vimrc.d/00.01-options.vimrc: stop')
+call DebugPrint('00.01-options.vimrc: stop')
 
 " vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

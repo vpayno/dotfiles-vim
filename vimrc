@@ -8,7 +8,7 @@ if v:version >= 500
 	" Load helper functions and global variables.
 	runtime! vimrc.d/00.00-helpers.vimrc
 
-	call DebugPrint('runtime! vimrc.d/*.vimrc: start')
+	call DebugPrint('vimrc: start [loading ' . $MYVIMRC . ']')
 
 	" vint: -ProhibitEncodingOptionAfterScriptEncoding
 	set encoding=utf-8
@@ -34,7 +34,7 @@ if v:version >= 500
 		set pythonthreedll=/home/vpayno/.pyenv/versions/3.10.2/lib/libpython3.so
 	endif
 
-	call DebugPrint('runtime! vimrc.d/*.vimrc: end')
+	call DebugPrint('vimrc: end')
 endif
 
 " vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

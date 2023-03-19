@@ -19,7 +19,7 @@ if get(g:, 'ImportedHelpers', 0) == 0
 		endif
 	endfunction
 
-	call DebugPrint('runtime! vimrc.d/00.00-helpers.vimrc: start')
+	call DebugPrint('00.00-helpers.vimrc: start')
 
 	let g:ImportedHelpers = get(g:, 'ImportedHelpers', g:true)
 
@@ -45,7 +45,7 @@ if get(g:, 'ImportedHelpers', 0) == 0
 		return ArrayIndex(g:languages, &filetype)
 	endfunction
 
-	call DebugPrint('runtime! vimrc.d/00.00-helpers.vimrc: end')
+	call DebugPrint('00.00-helpers.vimrc: end')
 
 endif
 

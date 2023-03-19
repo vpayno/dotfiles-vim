@@ -2,7 +2,7 @@
 " vimrc.d/00.12-file_browsing.vimrc
 "
 
-call DebugPrint('runtime! vimrc.d/00.12-file_browsing.vimrc: start')
+call DebugPrint('00.12-file_browsing.vimrc: start')
 
 " Search all subfolders when autocompleting file names.
 set path+=**
@@ -22,6 +22,6 @@ let g:netrw_dirhistmax = 25  " number of entries in ~/.vim/.netrwhist
 " autocmd VimEnter let &path = g:project_find_path
 " autocmd BufReadPost * let &path = g:project_find_path
 
-call DebugPrint('runtime! vimrc.d/00.12-file_browsing.vimrc: end')
+call DebugPrint('00.12-file_browsing.vimrc: end')
 
 " vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

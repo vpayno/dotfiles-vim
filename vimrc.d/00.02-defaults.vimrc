@@ -2,7 +2,7 @@
 " vimrc.d/00.02-defaults.vimrc
 "
 
-call DebugPrint('runtime! vimrc.d/00.02-defaults.vimrc: start')
+call DebugPrint('00.02-defaults.vimrc: start')
 
 syntax enable
 "colorscheme onedark
@@ -302,5 +302,5 @@ endif
 let mapleader = '\\'
 "let maplocalldeader = '\\'
 
-call DebugPrint('runtime! vimrc.d/00.02-defaults.vimrc: stop')
+call DebugPrint('00.02-defaults.vimrc: stop')
 " vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

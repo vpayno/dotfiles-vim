@@ -2,7 +2,7 @@
 " vimrc.d/00.14-spelling.vimrc
 "
 
-call DebugPrint('runtime! vimrc.d/00.14-spelling.vimrc: start')
+call DebugPrint('00.14-spelling.vimrc: start')
 
 let g:SpellModeFlag = g:false
 
@@ -16,6 +16,6 @@ function! ToggleSpelling()
 	endif
 endfunction
 
-call DebugPrint('runtime! vimrc.d/00.14-spelling.vimrc: end')
+call DebugPrint('00.14-spelling.vimrc: end')
 
 " vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
