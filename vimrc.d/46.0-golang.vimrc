@@ -4,6 +4,7 @@
 " https://github.com/fatih/vim-go
 
 " go install golang.org/x/tools/gopls@latest
+" :GoInstallBinaries
 
 " autocmd! BufWritePost *.go | execute 'silent !go fmt %' | :e
 " autocmd! BufWritePost *.go | execute '! go fmt %' | :e
@@ -34,12 +35,12 @@ if _enable_golang
 	let g:go_def_mode='gopls'
 	let g:go_info_mode='gopls'
 	let g:go_metalinter_autosave=1
-	let g:go_metalinter_autosave_enabled=['revive', 'govet', 'typecheck', 'staticcheck']
-	" let g:go_metalinter_command='golangci-lint'
+	let g:go_metalinter_autosave_enabled=[ 'gocritic', 'gosec', 'govet', 'ineffassign', 'revive', 'staticcheck', 'typecheck' ]
+	let g:go_metalinter_command='golangci-lint'
 
 	let g:go_fmt_command = 'golines'
 	let g:go_fmt_options = {
-		\ 'golines': '-m 128 -w',
+		\ 'golines': '-m 128',
 		\ }
 
 	if has('nvim')
