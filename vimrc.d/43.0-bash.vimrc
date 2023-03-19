@@ -4,7 +4,7 @@
 
 call DebugPrint('43.0-bash.vimrc: start')
 
-if (&ft==#'sh' || &ft==#'bash')
+if (&filetype==#'sh' || &filetype==#'bash')
 	set ts=4
 	set sw=4
 	set noexpandtab
@@ -14,7 +14,7 @@ if (&ft==#'sh' || &ft==#'bash')
 	" pack/upstream/opt/vim-shfmt
 	packadd! vim-shfmt
 
-	" autosave on write
+	" autosave on write - not working
 	let g:shfmt_fmt_on_save = 1
 
 	" extra arguments
@@ -25,6 +25,10 @@ if (&ft==#'sh' || &ft==#'bash')
 		autocmd BufReadPost * if &filetype==#'sh' | set noet | :%retab! | :w | endif
 	augroup end
 
+	augroup ag_sh_shfmt
+		autocmd!
+		autocmd! BufWrite * if &filetype==#'sh' | Shfmt
+	augroup end
 endif
 
 call extend(g:vimspector_install_gadgets, [ 'vscode-bash-debug' ])
