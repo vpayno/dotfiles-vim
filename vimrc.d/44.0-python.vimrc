@@ -28,6 +28,13 @@ if _enable_python_coc_pyright
 	" :CocInstall coc-pyright
 	packadd! coc-pyright
 
+	let g:coc_global_extensions = [ 'coc-pyright' ]
+
+	augroup ag_python_pyfmt
+		autocmd!
+		autocmd! BufWrite * if &filetype==#'python' | call CocAction('format') | :w
+	augroup end
+
 	call DebugPrint('44.0-python.vimrc: end [coc-pyright]')
 
 elseif (!_enable_kite && !_enable_youcompleteme) && _enable_python_pymode

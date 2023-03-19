@@ -1,4 +1,7 @@
 {
+    "black": {
+        "enabled": true
+    },
     "languageserver": {
         "go": {
             "command": "gopls",
@@ -18,7 +21,8 @@
         },
         "python": {
             "formatting": {
-                "blackArgs": "--line-length=120"
+                "blackArgs": "--line-length=120",
+                "provider": "black"
             },
             "linting": {
                 "banditEnable": true,
@@ -73,5 +77,6 @@
                 "vimruntime": ""
             }
         }
-    }
+    },
+    "python.formatting.provider": "black"
 }
