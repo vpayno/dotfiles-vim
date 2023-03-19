@@ -36,3 +36,10 @@ Run the `install.sh` script to replace your existing `~/.vimrc` configuration fi
 ```bash
 ./install.sh
 ```
+
+### Update Repo
+
+```bash
+git pull
+git submodule update
+```
