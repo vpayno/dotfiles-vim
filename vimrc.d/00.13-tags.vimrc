@@ -4,10 +4,10 @@
 
 call DebugPrint('00.13-tags.vimrc: start')
 
-set tags=./tags,~/.vimrc/tags
+set tags=./tags
 
 " Used to create tags file.
-command! MakeTags !ctags -R .
+command! MakeTags !ctags --exclude=@${HOME}/.vim/.ctagsignore -R .
 
 augroup au_gen_tags
 	autocmd BufWritePost * call IsCodeFile() | silent! !ctags --exclude=@${HOME}/.vim/.ctagsignore -R .
