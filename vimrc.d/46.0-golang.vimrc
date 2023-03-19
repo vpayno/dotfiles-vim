@@ -37,10 +37,10 @@ if _enable_golang
 	let g:go_metalinter_autosave_enabled=['revive', 'govet', 'typecheck', 'staticcheck']
 	" let g:go_metalinter_command='golangci-lint'
 
-		let g:go_fmt_command = 'golines'
-		let g:go_fmt_options = {
-			\ 'golines': '-m 128 -w',
-			\ }
+	let g:go_fmt_command = 'golines'
+	let g:go_fmt_options = {
+		\ 'golines': '-m 128 -w',
+		\ }
 
 	if has('nvim')
 		" Launch gopls when Go files are in use

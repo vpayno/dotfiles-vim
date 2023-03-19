@@ -8,7 +8,7 @@ syntax enable
 "colorscheme onedark
 
 " if ~/.vimrc exists, it's already set
-" set nocompatible			  " be iMproved, required
+" set nocompatible  " be iMproved, required
 
 set ruler
 
@@ -104,8 +104,8 @@ set nosmartcase
 "imap  OC <ESC>li
 "imap  OD <ESC>hi
 
-filetype off				  " required
-filetype plugin indent on	  " required
+filetype off  " required
+filetype plugin indent on  " required
 
 " enable line numbering
 set number
@@ -139,8 +139,7 @@ set t_Co=256
 "open the file at the last line edited
 augroup au_last_pos
 	autocmd!
-	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
-						 \ exe "normal! g`\"" | endif
+	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup end
 
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
