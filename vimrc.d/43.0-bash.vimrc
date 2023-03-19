@@ -19,6 +19,12 @@ if (&ft==#'sh' || &ft==#'bash')
 
 	" extra arguments
 	let g:shfmt_extra_args = ''
+
+	augroup au_shell_retab
+		autocmd!
+		autocmd BufReadPost * if &filetype==#'sh' | set noet | :%retab! | :w | endif
+	augroup end
+
 endif
 
 call extend(g:vimspector_install_gadgets, [ 'vscode-bash-debug' ])
