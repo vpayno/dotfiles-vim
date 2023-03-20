@@ -2,6 +2,51 @@
     "black": {
         "enabled": true
     },
+    "diagnostic-languageserver.debug": {
+        "default": true,
+        "description": "enable debug?",
+        "type": "boolean"
+    },
+    "diagnostic-languageserver.enable": {
+        "default": true,
+        "description": "enable this extension?",
+        "type": "boolean"
+    },
+    "diagnostic-languageserver.filetypes": {
+        "default": {},
+        "description": "filetypes config same as diagnostic-languageserver's filetypes config",
+        "type": "object"
+    },
+    "diagnostic-languageserver.formatFiletypes": {
+        "default": {},
+        "description": "formatFiletypes config same as diagnostic-languageserver's formatFiletypes config",
+        "type": "object"
+    },
+    "diagnostic-languageserver.formatters": {
+        "default": {},
+        "description": "formatters config same as diagnostic-languageserver's formatters config",
+        "type": "object"
+    },
+    "diagnostic-languageserver.linters": {
+        "default": {},
+        "description": "linters config same as diagnostic-languageserver's linters config",
+        "type": "object"
+    },
+    "diagnostic-languageserver.mergeConfig": {
+        "default": false,
+        "description": "merge config?",
+        "type": "boolean"
+    },
+    "diagnostic-languageserver.trace.server": {
+        "default": "off",
+        "description": "Trace level of diagnostic-languageserver",
+        "enum": [
+            "off",
+            "messages",
+            "verbose"
+        ],
+        "type": "string"
+    },
     "languageserver": {
         "go": {
             "command": "gopls",
