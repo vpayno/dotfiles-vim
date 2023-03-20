@@ -49,8 +49,8 @@
 [submodule "pack/upstream/start/securemodelines"]
 	path = pack/upstream/start/securemodelines
 	url = https://github.com/ciaranm/securemodelines
-[submodule "pack/upstream/start/syntastic"]
-	path = pack/upstream/start/syntastic
+[submodule "pack/upstream/opt/syntastic"]
+	path = pack/upstream/opt/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
 [submodule "pack/upstream/start/vim-lastplace"]
 	path = pack/upstream/start/vim-lastplace
