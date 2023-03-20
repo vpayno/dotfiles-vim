@@ -6,7 +6,7 @@
 " https://github.com/tpope/vim-rails
 " https://github.com/tpope/vim-rake
 
-if _enable_ruby
+if (&filetype==#'ruby' && _enable_ruby)
 	call DebugPrint('48.0-ruby.vimrc: start')
 
 	" Load plugins.
