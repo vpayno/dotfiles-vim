@@ -70,8 +70,8 @@
 [submodule "pack/upstream/opt/rust.vim"]
 	path = pack/upstream/opt/rust.vim
 	url = https://github.com/rust-lang/rust.vim
-[submodule "pack/upstream/start/vim-racer"]
-	path = pack/upstream/start/vim-racer
+[submodule "pack/upstream/opt/vim-racer"]
+	path = pack/upstream/opt/vim-racer
 	url = https://github.com/racer-rust/vim-racer
 [submodule "pack/upstream/opt/vim-ruby"]
 	path = pack/upstream/opt/vim-ruby
