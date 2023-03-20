@@ -67,8 +67,8 @@
 [submodule "pack/upstream/start/vim-jinja"]
 	path = pack/upstream/start/vim-jinja
 	url = https://github.com/lepture/vim-jinja
-[submodule "pack/upstream/start/rust.vim"]
-	path = pack/upstream/start/rust.vim
+[submodule "pack/upstream/opt/rust.vim"]
+	path = pack/upstream/opt/rust.vim
 	url = https://github.com/rust-lang/rust.vim
 [submodule "pack/upstream/start/vim-racer"]
 	path = pack/upstream/start/vim-racer
