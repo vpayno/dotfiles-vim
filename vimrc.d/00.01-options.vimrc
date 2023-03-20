@@ -49,6 +49,7 @@ let _enable_ripgrep = g:enable
 let _enable_ruby = g:disable
 let _enable_salt = g:disable
 let _enable_slime = g:enable
+let _enable_sh = g:enable
 let _enable_snipmate = g:disable " if enabled, overrides utilsnips
 let _enable_tabnine = g:disable
 let _enable_taboo = g:disable " if enabled, it overrides other tab plugins

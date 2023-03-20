@@ -2,9 +2,12 @@
 " ~/.vim/vimrc.d/43.0-bash.vimrc
 "
 
-call DebugPrint('43.0-bash.vimrc: start')
+" https://github.com/josa42/coc-sh
+" :CocInstall coc-sh
 
-if (&filetype==#'sh' || &filetype==#'bash')
+if (&filetype==#'sh' || _enable_sh)
+	call DebugPrint('43.0-bash.vimrc: start')
+
 	set ts=4
 	set sw=4
 	set noexpandtab
@@ -14,10 +17,7 @@ if (&filetype==#'sh' || &filetype==#'bash')
 	" pack/upstream/opt/vim-shfmt
 	packadd! vim-shfmt
 
-	" autosave on write - not working
-	let g:shfmt_fmt_on_save = 1
-
-	" extra arguments
+	let g:shfmt_fmt_on_save = g:enable
 	let g:shfmt_extra_args = ''
 
 	augroup au_shell_retab
@@ -27,12 +27,12 @@ if (&filetype==#'sh' || &filetype==#'bash')
 
 	augroup ag_sh_shfmt
 		autocmd!
-		autocmd! BufWrite * if &filetype==#'sh' | Shfmt
+		autocmd! BufWritePost * if &filetype==#'sh' | Shfmt
 	augroup end
+
+	call extend(g:vimspector_install_gadgets, [ 'vscode-bash-debug' ])
+
+	call DebugPrint('43.0-bash.vimrc: end')
 endif
-
-call extend(g:vimspector_install_gadgets, [ 'vscode-bash-debug' ])
-
-call DebugPrint('43.0-bash.vimrc: end')
 
 " vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
