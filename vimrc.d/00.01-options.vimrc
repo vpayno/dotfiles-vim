@@ -51,6 +51,7 @@ let _enable_salt = g:disable
 let _enable_slime = g:enable
 let _enable_sh = g:enable
 let _enable_snipmate = g:disable " if enabled, overrides utilsnips
+let _enable_syntastic = g:disable " dead, use ale instead
 let _enable_tabnine = g:disable
 let _enable_taboo = g:disable " if enabled, it overrides other tab plugins
 let _enable_telescope = g:enable
