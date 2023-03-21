@@ -2,9 +2,8 @@
     "black": {
         "enabled": true
     },
-    "coc.preferences.formatOnSaveFiletypes": [
-        "python"
-    ],
+    "coc.preferences.formatOnSaveFiletypes": [],
+    "coc.preferences.formatOnType": true,
     "coc.preferences.snippets.enable": true,
     "coc.preferences.useQuickfixForLocations": true,
     "coc.preferences.willSaveHandlerTimeout": 5000,
@@ -196,5 +195,12 @@
             }
         }
     },
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    "python.jediEnabled": false,
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.lintOnSave": true,
+    "python.linting.pylintEnabled": true,
+    "python.venvFolders": [],
+    "python.venvPath": "~/venv"
 }
