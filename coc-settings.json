@@ -2,6 +2,12 @@
     "black": {
         "enabled": true
     },
+    "coc.preferences.formatOnSaveFiletypes": [
+        "python"
+    ],
+    "coc.preferences.snippets.enable": true,
+    "coc.preferences.useQuickfixForLocations": true,
+    "coc.preferences.willSaveHandlerTimeout": 5000,
     "diagnostic-languageserver.debug": {
         "default": true,
         "description": "enable debug?",
@@ -13,12 +19,77 @@
         "type": "boolean"
     },
     "diagnostic-languageserver.filetypes": {
-        "default": {},
+        "default": {
+            "cmake": [
+                "cmake-lint",
+                "cmakelint"
+            ],
+            "email": "languagetool",
+            "go": [
+                "golint",
+                "revive",
+                "gosec",
+                "staticcheck",
+                "guru",
+                "golangci-lint",
+                "errcheck",
+                "gocritic",
+                "govet",
+                "ineffassign",
+                "typecheck"
+            ],
+            "json": [
+                "jsonlint"
+            ],
+            "markdown": [
+                "write-good",
+                "markdownlint"
+            ],
+            "python": [
+                "bandit",
+                "mccabe",
+                "mypy",
+                "pycodestye",
+                "pydocstyle",
+                "pyflakes",
+                "pylint",
+                "pyright",
+                "radon"
+            ],
+            "rust": [
+                "clippy"
+            ],
+            "sh": "shellcheck",
+            "systemd": "systemd-analyze",
+            "vim": "vint",
+            "yaml": [
+                "yamllint"
+            ]
+        },
         "description": "filetypes config same as diagnostic-languageserver's filetypes config",
         "type": "object"
     },
     "diagnostic-languageserver.formatFiletypes": {
-        "default": {},
+        "default": {
+            "cmake": "cmake-format",
+            "dart": "dartfmt",
+            "go": [
+                "gofmt",
+                "goimports",
+                "golines",
+                "gofumpt"
+            ],
+            "lua": "lua-format",
+            "python": [
+                "black",
+                "isort"
+            ],
+            "ruby": [
+                "rubocop"
+            ],
+            "rust": "rustfmt",
+            "sh": "shfmt"
+        },
         "description": "formatFiletypes config same as diagnostic-languageserver's formatFiletypes config",
         "type": "object"
     },
@@ -47,6 +118,8 @@
         ],
         "type": "string"
     },
+    "diagnostic.autoRefresh": true,
+    "diagnostic.virtualTextCurrentLineOnly": false,
     "languageserver": {
         "go": {
             "command": "gopls",

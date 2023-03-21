@@ -4,6 +4,10 @@
 " https://github.com/neoclide/coc.nvim
 " https://github.com/neoclide/coc.nvim/wiki/Language-servers
 
+" https://github.com/iamcco/coc-diagnostic
+" https://github.com/neoclide/coc.nvim/blob/release/doc/coc.txt
+" :CocInstall coc-diagnostic
+
 if _enable_conquerofcompletion
 	call DebugPrint('78.0-conquerofcompletion.vimrc: start [youcompleteme]')
 
@@ -54,15 +58,15 @@ if _enable_conquerofcompletion
 	inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 	function! s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~# '\s'
+		let col = col('.') - 1
+		return !col || getline('.')[col - 1]  =~# '\s'
 	endfunction
 
 	" Use <c-space> to trigger completion.
 	if has('nvim')
-	inoremap <silent><expr> <c-space> coc#refresh()
+		inoremap <silent><expr> <c-space> coc#refresh()
 	else
-	inoremap <silent><expr> <c-@> coc#refresh()
+		inoremap <silent><expr> <c-@> coc#refresh()
 	endif
 
 	" Make <CR> auto-select the first completion item and notify coc.nvim to
@@ -85,13 +89,13 @@ if _enable_conquerofcompletion
 	nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 	function! s:show_documentation()
-	if (index(['vim','help'], &filetype) >= 0)
-		execute 'h '.expand('<cword>')
-	elseif (coc#rpc#ready())
-		call CocActionAsync('doHover')
-	else
-		execute '!' . &keywordprg . ' ' . expand('<cword>')
-	endif
+		if (index(['vim','help'], &filetype) >= 0)
+			execute 'h '.expand('<cword>')
+		elseif (coc#rpc#ready())
+			call CocActionAsync('doHover')
+		else
+			execute '!' . &keywordprg . ' ' . expand('<cword>')
+		endif
 	endfunction
 
 	" Highlight the symbol and its references when holding the cursor.
@@ -138,12 +142,12 @@ if _enable_conquerofcompletion
 
 	" Remap <C-f> and <C-b> for scroll float windows/popups.
 	if has('nvim-0.4.0') || has('patch-8.2.0750')
-	nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-	nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-	inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-	inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-	vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-	vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+		nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+		nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+		inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+		inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+		vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+		vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 	endif
 
 	" Use CTRL-S for selections ranges.
@@ -182,6 +186,11 @@ if _enable_conquerofcompletion
 	nnoremap <silent><nowait> <space>k	:<C-u>CocPrev<CR>
 	" Resume latest coc list.
 	nnoremap <silent><nowait> <space>p	:<C-u>CocListResume<CR>
+
+	" Use `[g` and `]g` to navigate diagnostics
+	" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+	nmap <silent> [g <Plug>(coc-diagnostic-prev)
+	nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 	call DebugPrint('78.0-conquerofcompletion.vimrc: end [youcompleteme]')
 endif
