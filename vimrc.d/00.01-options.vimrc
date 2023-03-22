@@ -8,6 +8,7 @@ call DebugPrint('00.01-options.vimrc: start')
 let _enable_line_wrap = g:disable
 
 " Enable/disable plugins.
+let _enable_ale = g:enable
 let _enable_ack = g:enable
 let _enable_airline = g:enable " if disabled, lightline is used
 let _enable_arduino = g:enable
