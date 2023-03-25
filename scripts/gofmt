@@ -1,0 +1,37 @@
+#!/bin/bash
+
+declare output_cmd="cat"
+
+if [[ ${1} == --vim ]]; then
+	output_cmd="cat >& /dev/null"
+	shift 1
+fi
+
+declare -a targets=("${@:-.}")
+
+show_output() {
+	# shellcheck disable=SC2086
+	eval ${output_cmd}
+} # show_output()
+
+main() {
+	time {
+		echo gofmt "${targets[@]}"
+		time gofmt "${targets[@]}"
+		printf "\n"
+
+		echo goimports -w "${targets[@]}"
+		time goimports -w "${targets[@]}"
+		printf "\n"
+
+		echo golines -w "${targets[@]}"
+		time golines -w "${targets[@]}"
+		printf "\n"
+
+		echo gofumpt -w "${targets[@]}"
+		time gofumpt -w "${targets[@]}"
+		printf "\n"
+	}
+} # main()
+
+main |& show_output
