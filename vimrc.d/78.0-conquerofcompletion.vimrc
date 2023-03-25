@@ -8,7 +8,7 @@
 " https://github.com/neoclide/coc.nvim/blob/release/doc/coc.txt
 " :CocInstall coc-diagnostic
 
-if _enable_conquerofcompletion
+if _enable_coc
 	call DebugPrint('78.0-conquerofcompletion.vimrc: start [youcompleteme]')
 
 	" Load plugins.

@@ -118,6 +118,7 @@
         "type": "string"
     },
     "diagnostic.autoRefresh": true,
+    "diagnostic.refreshOnInsertMode": false,
     "diagnostic.virtualTextCurrentLineOnly": false,
     "languageserver": {
         "go": {
@@ -148,6 +149,7 @@
                 "pycodestyleEnabled": true,
                 "pylamaEnabled": true,
                 "pylintEnabled": false,
+                "pyrightEnabled": true,
                 "pytypeEnabled": true,
                 "ruffEnabled": true
             }
@@ -160,6 +162,10 @@
             "rootPatterns": [
                 "Cargo.toml"
             ]
+        },
+        "rust-analyzer": {
+            "checkOnSave": true,
+            "enable": true
         },
         "vimls": {
             "args": [
@@ -202,5 +208,11 @@
     "python.linting.lintOnSave": true,
     "python.linting.pylintEnabled": true,
     "python.venvFolders": [],
-    "python.venvPath": "~/venv"
+    "python.venvPath": "~/venv",
+    "ruff-lsp": {
+        "command": "ruff-lsp",
+        "filetypes": [
+            "python"
+        ]
+    }
 }
