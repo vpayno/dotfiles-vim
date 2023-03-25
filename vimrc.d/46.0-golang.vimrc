@@ -5,72 +5,114 @@
 
 " go install golang.org/x/tools/gopls@latest
 " :GoInstallBinaries
+"
+" https://github.com/josa42/coc-go
+" :CocInstall coc-go
 
 " autocmd! BufWritePost *.go | execute 'silent !go fmt %' | :e
 " autocmd! BufWritePost *.go | execute '! go fmt %' | :e
 
-if _enable_golang
+if (&filetype==#'go' && _enable_golang)
 	call DebugPrint('46.0-golang.vimrc: start')
 
-	" Load plugins.
-	packadd! vim-go
+	" Disable the vim version warning
+	" let g:go_version_warning = 0
 
-	" Use :GoInstallBinaries to install dependencies.
-	" github.com/mgechev/revive@latest
-	" golang.org/x/tools/cmd/guru@master
-	" github.com/davidrjenni/reftools/cmd/fillstruct@master
-	" github.com/rogpeppe/godef@latest
-	" github.com/fatih/motion@latest
-	" github.com/kisielk/errcheck@latest to folder /home/vpayno/go/bin
-	" github.com/koron/iferr@master
-	" github.com/jstemmer/gotags@master
-	" github.com/josharian/impl@master
-	" github.com/golangci/golangci-lint/cmd/golangci-lint@latest
-	" honnef.co/go/tools/cmd/keyify@master
-	" honnef.co/go/tools/cmd/staticcheck@latest
-	" github.com/klauspost/asmfmt/cmd/asmfmt@latest
+	call extend(g:vimspector_install_gadgets, [ 'delve' ])
+	call extend(g:vimspector_install_gadgets, [ 'vscode-go' ])
 
-	" https://github.com/golang/tools/blob/master/gopls/doc/vim.md
-	" go install golang.org/x/tools/gopls@latest
-	let g:go_def_mode='gopls'
-	let g:go_info_mode='gopls'
-	let g:go_metalinter_autosave=1
-	let g:go_metalinter_autosave_enabled=[ 'gocritic', 'gosec', 'govet', 'ineffassign', 'revive', 'staticcheck', 'typecheck' ]
-	let g:go_metalinter_command='golangci-lint'
+	augroup ag_golang_gofmt
+		autocmd!
+		autocmd BufWritePost *.go | execute 'silent !"${HOME}"/.vim/scripts/gofmt --vim %' | :e
+	augroup end
 
-	let g:go_fmt_command = 'golines'
-	let g:go_fmt_options = {
-		\ 'golines': '-m 128',
-		\ }
+	if _enable_golang_vimgo
+		call DebugPrint('46.0-golang.vimrc: start [vim-go]')
 
-	if has('nvim')
+		" Load plugins.
+		packadd! vim-go
+
+		" Use :GoInstallBinaries to install dependencies.
+		" github.com/mgechev/revive@latest
+		" golang.org/x/tools/cmd/guru@master
+		" github.com/davidrjenni/reftools/cmd/fillstruct@master
+		" github.com/rogpeppe/godef@latest
+		" github.com/fatih/motion@latest
+		" github.com/kisielk/errcheck@latest
+		" github.com/koron/iferr@master
+		" github.com/jstemmer/gotags@master
+		" github.com/josharian/impl@master
+		" github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+		" honnef.co/go/tools/cmd/keyify@master
+		" honnef.co/go/tools/cmd/staticcheck@latest
+		" github.com/klauspost/asmfmt/cmd/asmfmt@latest
+
+		" https://github.com/golang/tools/blob/master/gopls/doc/vim.md
+		" go install golang.org/x/tools/gopls@latest
+
+		" the highlights in vim-go are fairly unreadable
+		let g:go_auto_sameids = g:disable
+		let g:go_auto_type_info = g:enable
+		let g:go_def_mode = 'gopls'
+		let g:go_highlight_build_constraints = g:disable
+		let g:go_highlight_extra_types = g:disable
+		let g:go_highlight_fields = g:disable
+		let g:go_highlight_function_calls = g:disable
+		let g:go_highlight_functions = g:disable
+		let g:go_highlight_generate_tags = g:disable
+		let g:go_highlight_operators = g:disable
+		let g:go_highlight_types = g:disable
+		let g:go_info_mode = 'gopls'
+		"let g:go_metalinter_autosave = g:enable
+		"let g:go_metalinter_autosave_enabled = [ 'errcheck', 'gocritic', 'gosec', 'govet', 'ineffassign', 'revive', 'staticcheck', 'typecheck' ]
+		"let g:go_metalinter_command = 'staticcheck'
+		"let g:go_metalinter_command = 'golangci-lint'
+		"let g:go_metalinter_enabled = [ 'errcheck', 'gocritic', 'gosec', 'govet', 'ineffassign', 'revive', 'staticcheck', 'typecheck' ]
+
+		"let g:go_fmt_command = 'goimports'
+		"let g:go_fmt_command = 'golines'
+		"let g:go_fmt_command = 'gofumpt'
+		"let g:go_fmt_options = {
+			"\ 'gofmt': '',
+			"\ 'golines': '-m 128',
+			"\ 'goimports': '',
+			"\ 'gofumpt': '',
+			"\ }
+
 		" Launch gopls when Go files are in use
 		let g:LanguageClient_serverCommands = {
 			\ 'go': ['gopls']
 			\ }
-		augroup ag_golang_gofmt
+
+		augroup ag_vimgo_gofmt
 			autocmd!
 			" Run gofmt on save
 			autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+			"autocmd BufWritePost *.go GoFmt
 		augroup end
-	endif
 
-	augroup LspGo
-		au!
-		autocmd User lsp_setup call lsp#register_server({
-			\ 'name': 'go-lang',
-			\ 'cmd': {server_info->['gopls']},
-			\ 'whitelist': ['go'],
+		augroup LspGo
+			au!
+			autocmd User lsp_setup call lsp#register_server({
+				\ 'name': 'go-lang',
+				\ 'cmd': {server_info->['gopls']},
+				\ 'whitelist': ['go'],
 			\ })
 		autocmd FileType go setlocal omnifunc=lsp#complete
 		"autocmd FileType go nmap <buffer> gd <plug>(lsp-definition)
 		"autocmd FileType go nmap <buffer> ,n <plug>(lsp-next-error)
 		"autocmd FileType go nmap <buffer> ,p <plug>(lsp-previous-error)
-	augroup END
+		augroup END
 
-	" go install github.com/govim/govim/cmd/govim@latest
-	" https://github.com/govim/govim/blob/main/cmd/govim/config/minimal.vimrc
-	if _enable_golang_govim
+		call DebugPrint('46.0-golang.vimrc: end [vim-go]')
+
+	elseif _enable_golang_govim
+		call DebugPrint('46.0-golang.vimrc: start [govim]')
+
+		" go install github.com/govim/govim/cmd/govim@latest
+		packadd! govim
+
+		" https://github.com/govim/govim/blob/main/cmd/govim/config/minimal.vimrc
 		set mouse=a
 
 		" To get hover working in the terminal we need to set ttymouse. See
@@ -128,13 +170,9 @@ if _enable_golang
 			set completeopt+=popup
 			set completepopup=align:menu,border:off,highlight:Pmenu
 		endif
+
+		call DebugPrint('46.0-golang.vimrc: end [govim]')
 	endif
-
-	" Disable the vim version warning
-	" let g:go_version_warning = 0
-
-	call extend(g:vimspector_install_gadgets, [ 'delve' ])
-	call extend(g:vimspector_install_gadgets, [ 'vscode-go' ])
 
 	call DebugPrint('46.0-golang.vimrc: end')
 endif
