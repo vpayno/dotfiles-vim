@@ -64,8 +64,8 @@
 [submodule "pack/upstream/opt/tabular"]
 	path = pack/upstream/opt/tabular
 	url = https://github.com/godlygeek/tabular
-[submodule "pack/upstream/start/vim-jinja"]
-	path = pack/upstream/start/vim-jinja
+[submodule "pack/upstream/opt/vim-jinja"]
+	path = pack/upstream/opt/vim-jinja
 	url = https://github.com/lepture/vim-jinja
 [submodule "pack/upstream/opt/rust.vim"]
 	path = pack/upstream/opt/rust.vim
