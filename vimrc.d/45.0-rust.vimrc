@@ -6,35 +6,81 @@
 " https://github.com/racer-rust/racer
 " https://github.com/rust-lang/rust.vim
 
-call DebugPrint('45.0-rust.vimrc: start')
+" https://github.com/fannheyward/coc-rust-analyzer
+" :CocInstall coc-rust-analyzer
 
-" Automatically run rustfmt when saving a buffer.
-let g:rustfmt_autosave = 1
+if (&filetype==#'rust' && _enable_rust)
+	call DebugPrint('45.0-rust.vimrc: start')
 
-" Send clipboard to rust playpen.
-" let g:rust_clip_command = 'xclip -selection clipboard'
+	if _enable_rust_rustvim
+		packadd! rust.vim
 
-set hidden
-let g:racer_cmd = '/home/vpayno/.cargo/bin/racer'
-let g:racer_experimental_completer = 1	" shoe the complete function definition
-let g:racer_insert_paren = 1  " insert parenthesis in the completion
+		" Automatically run rustfmt when saving a buffer.
+		let g:rustfmt_autosave = g:enable
 
-augroup Racer
-	autocmd!
-	autocmd FileType rust nmap <buffer> gd		   <Plug>(rust-def)
-	autocmd FileType rust nmap <buffer> gs		   <Plug>(rust-def-split)
-	autocmd FileType rust nmap <buffer> gx		   <Plug>(rust-def-vertical)
-	autocmd FileType rust nmap <buffer> gt		   <Plug>(rust-def-tab)
-	autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
-augroup END
+		" Send clipboard to rust playpen.
+		if has('macunix')
+			let g:rust_clip_command = 'pbcopy'
+		else
+			let g:rust_clip_command = 'xclip -selection clipboard'
+		endif
+	endif
 
-packadd! tagbar
+	if _enable_rust_vimracer
+		packadd! vim-racer
 
-" https://alpha2phi.medium.com/setting-up-neovim-for-rust-debugging-termdebug-and-vimspector-df749e1ba47c
-" termdebugger is included with vim >=8.1
-packadd! termdebug
-let termdebugger='rust-gdb'
+		set hidden
+		let g:racer_cmd = '/home/vpayno/.cargo/bin/racer'
+		let g:racer_experimental_completer = 1	" shoe the complete function definition
+		let g:racer_insert_paren = 1	" insert parenthesis in the completion
 
-call DebugPrint('45.0-rust.vimrc: end')
+		augroup Racer
+			autocmd!
+			autocmd FileType rust nmap <buffer> gd		   <Plug>(rust-def)
+			autocmd FileType rust nmap <buffer> gs		   <Plug>(rust-def-split)
+			autocmd FileType rust nmap <buffer> gx		   <Plug>(rust-def-vertical)
+			autocmd FileType rust nmap <buffer> gt		   <Plug>(rust-def-tab)
+			autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
+		augroup END
+	endif
+
+	if _enable_rust_coc
+		" highlight CocFloating ctermbg=grey
+
+		inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+		nnoremap <silent> K :call ShowDocumentation()<CR>
+
+		function! ShowDocumentation()
+			if CocAction('hasProvider', 'hover')
+				call CocActionAsync('doHover')
+			else
+				call feedkeys('K', 'in')
+			endif
+		endfunction
+
+		nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+		nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+		inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+		inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+		vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+		vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+	endif
+
+	augroup ag_rust_rustfmt
+		autocmd!
+		autocmd! BufWritePost * if &filetype==#'rust' | RustFmt | :e
+		"autocmd! BufWritePost * if &filetype==#'rust' | execute 'silent !rustfmt %' | :e
+	augroup end
+
+	packadd! tagbar
+
+	" https://alpha2phi.medium.com/setting-up-neovim-for-rust-debugging-termdebug-and-vimspector-df749e1ba47c
+	" termdebugger is included with vim >=8.1
+	packadd! termdebug
+	let termdebugger='rust-gdb'
+
+	call DebugPrint('45.0-rust.vimrc: end')
+endif
 
 " vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
