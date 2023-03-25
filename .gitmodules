@@ -55,8 +55,8 @@
 [submodule "pack/upstream/start/vim-lastplace"]
 	path = pack/upstream/start/vim-lastplace
 	url = https://github.com/farmergreg/vim-lastplace.git
-[submodule "pack/upstream/start/webapi-vim"]
-	path = pack/upstream/start/webapi-vim
+[submodule "pack/upstream/opt/webapi-vim"]
+	path = pack/upstream/opt/webapi-vim
 	url = https://github.com/mattn/webapi-vim
 [submodule "pack/upstream/opt/vim-markdown"]
 	path = pack/upstream/opt/vim-markdown
