@@ -2,6 +2,7 @@
 " ~/.vim/vimrc.d/16-lsp.vimrc
 "
 " https://github.com/prabirshrestha/vim-lsp
+" https://github.com/mattn/vim-lsp-setting
 
 " go install golang.org/x/tools/gopls@latest
 
@@ -39,10 +40,27 @@ if _enable_lsp
 
 	" Load plugins.
 	packadd! vim-lsp
+	packadd! vim-lsp-settings
 
 	" register language server
 	augroup LSC
 		autocmd!
+
+		if executable('ruff-lsp')
+			" pip install ruff-lsp ruff
+			autocmd User lsp_setup call lsp#register_server({
+				\ 'name': 'ruff-lsp',
+				\ 'cmd': {server_info->['ruff-lsp']},
+				\ 'allowlist': ['python']
+				\})
+		elseif executable('pylsp')
+			" pip install python-lsp-server python-lsp-ruff
+			autocmd User lsp_setup call lsp#register_server({
+				\ 'name': 'ruff-lsp',
+				\ 'cmd': {server_info->['ruff-lsp']},
+				\ 'allowlist': ['python']
+				\})
+		endif
 
 		autocmd User lsp_setup call lsp#register_server({
 			\ 'name': 'gopls',
@@ -69,23 +87,50 @@ if _enable_lsp
 	inoremap <C-t>	   <C-x><C-u>
 
 	" disable diagnostics etc.
-	let g:lsp_diagnostics_enabled				 = 0
-	let g:lsp_diagnostics_signs_enabled			 = 0
-	let g:lsp_diagnostics_virtual_text_enabled	 = 0
-	let g:lsp_diagnostics_highlights_enabled	 = 0
-	let g:lsp_document_code_action_signs_enabled = 0
+	let g:lsp_diagnostics_enabled = g:disable
+	let g:lsp_diagnostics_signs_enabled = g:disable
+	let g:lsp_diagnostics_virtual_text_enabled = g:disable
+	let g:lsp_diagnostics_highlights_enabled = g:disable
+	let g:lsp_document_code_action_signs_enabled = g:disable
 
-	let g:lsp_fold_enabled = 0
+	let g:lsp_fold_enabled = g:disable
 
 	set foldmethod=expr
 	  \ foldexpr=lsp#ui#vim#folding#foldexpr()
 	  \ foldtext=lsp#ui#vim#folding#foldtext()
 
-	" let g:lsp_document_highlight_enabled = 0
+	" let g:lsp_document_highlight_enabled = g:disable
 	" highlight lspReference ctermfg=red guifg=red ctermbg=green guibg=green
 
 	" Disable the vim version warning
-	" let g:go_version_warning = 0
+	" let g:go_version_warning = g:disable
+
+	function! s:on_lsp_buffer_enabled() abort
+		setlocal omnifunc=lsp#complete
+		setlocal signcolumn=yes
+		if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+		nmap <buffer> gd <plug>(lsp-definition)
+		nmap <buffer> gs <plug>(lsp-document-symbol-search)
+		nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+		nmap <buffer> gr <plug>(lsp-references)
+		nmap <buffer> gi <plug>(lsp-implementation)
+		nmap <buffer> gt <plug>(lsp-type-definition)
+		nmap <buffer> <leader>rn <plug>(lsp-rename)
+		nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+		nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+		nmap <buffer> K <plug>(lsp-hover)
+		nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+		nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+
+		let g:lsp_format_sync_timeout = 1000
+		autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+	endfunction
+
+	augroup lsp_install
+		au!
+		" call s:on_lsp_buffer_enabled only for languages that has the server registered.
+		autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+	augroup END
 
 	call DebugPrint('16-lsp.vimrc: end')
 endif

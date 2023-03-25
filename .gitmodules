@@ -424,3 +424,6 @@
 [submodule "pack/upstream/opt/coc-pyright"]
 	path = pack/upstream/opt/coc-pyright
 	url = https://github.com/fannheyward/coc-pyright.git
+[submodule "pack/upstream/opt/vim-lsp-settings"]
+	path = pack/upstream/opt/vim-lsp-settings
+	url = https://github.com/mattn/vim-lsp-settings
