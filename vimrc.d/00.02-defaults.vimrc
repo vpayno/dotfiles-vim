@@ -8,7 +8,7 @@ syntax enable
 "colorscheme onedark
 
 " if ~/.vimrc exists, it's already set
-" set nocompatible  " be iMproved, required
+" set nocompatible	" be iMproved, required
 
 set ruler
 

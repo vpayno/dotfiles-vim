@@ -3,6 +3,11 @@
 "
 " https://github.com/dense-analysis/ale
 
+" vint: -ProhibitEncodingOptionAfterScriptEncoding
+set encoding=utf-8
+scriptencoding utf-8
+" vint: +ProhibitEncodingOptionAfterScriptEncoding
+
 if _enable_ale
 	call DebugPrint('40.1-ale.vimrc: start')
 
