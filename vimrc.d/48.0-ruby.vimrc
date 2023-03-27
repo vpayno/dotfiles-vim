@@ -5,6 +5,7 @@
 " https://github.com/tpope/vim-bundler
 " https://github.com/tpope/vim-rails
 " https://github.com/tpope/vim-rake
+" :LspInstallServer
 
 if (&filetype==#'ruby' && _enable_ruby)
 	call DebugPrint('48.0-ruby.vimrc: start')
