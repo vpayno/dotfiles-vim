@@ -5,13 +5,13 @@
 " https://github.com/josa42/coc-sh
 " :CocInstall coc-sh
 
-if (&filetype==#'sh' || _enable_sh)
+if _enable_sh && &filetype==#'sh'
 	call DebugPrint('43.0-bash.vimrc: start')
 
-	set ts=4
-	set sw=4
+	set tabstop=4
+	set shiftwidth=4
 	set noexpandtab
-	set ai
+	set autoindent
 	" :%retab!
 
 	" pack/upstream/opt/vim-shfmt
