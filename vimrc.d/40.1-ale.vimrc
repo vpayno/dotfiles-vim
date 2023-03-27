@@ -16,6 +16,9 @@ if _enable_ale
 
 	packadd! ale
 
+	let g:ale_set_quickfix = g:enable
+
+	if g:false
 	let g:ale_fixers = {
 	\	'*': ['remove_trailing_lines', 'trim_whitespace'],
 	\	'javascript': ['eslint'],
@@ -109,6 +112,7 @@ if _enable_ale
 	let g:ale_keep_list_window_open = g:enable
 
 	let g:ale_list_vertical = g:disable
+	endif
 
 	call DebugPrint('40.1-ale.vimrc: end')
 endif
