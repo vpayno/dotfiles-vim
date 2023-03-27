@@ -2,6 +2,7 @@
 " vimrc.d/47.0-perl.vimrc
 "
 " https://perlmonks.org/?node_id=540167
+" :LspInstallServer
 
 if (&filetype==#'perl' && (_enable_perl5 || _enable_perl6))
 	call DebugPrint('47.0-perl.vimrc: start')
@@ -38,7 +39,7 @@ if (&filetype==#'perl' && (_enable_perl5 || _enable_perl6))
 		if !empty(glob('~/.vim/pack/upstream/opt/vim-perl/after/syntax/perl/*vim'))
 			" pack/upstream/opt/vim-perl (dev %=)
 			" $ ls after/syntax/perl/
-			" carp.vim	dancer.vim	highlight-all-pragmas.vim  moose.vim test-more.vim  try-tiny.vim
+			" carp.vim	dancer.vim	highlight-all-pragmas.vim  moose.vim test-more.vim	try-tiny.vim
 
 			call system('cd pack/upstream/opt/vim-perl && make clean carp dancer highlight-all-pragmas moose test-more try-tiny; cd -')
 		endif
