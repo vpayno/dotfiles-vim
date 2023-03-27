@@ -3,7 +3,7 @@
 "
 " https://github.com/othree/html5.vim
 
-if _enable_html5_svg
+if _enable_html5_svg && (&filetype==#'html' || &filetype==#'svg')
 	call DebugPrint('42.0-html5_svg.vimrc: start')
 
 	" Load plugins.
