@@ -42,6 +42,8 @@ if _enable_lsp
 	packadd! vim-lsp
 	packadd! vim-lsp-settings
 
+	let g:lsp_log_file = '/dev/null'
+
 	" register language server
 	augroup LSC
 		autocmd!
