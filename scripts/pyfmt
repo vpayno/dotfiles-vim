@@ -7,16 +7,14 @@ if [[ ${1} == --vim ]]; then
 	shift 1
 fi
 
-declare -a targets=( "${@:-.}" )
+declare -a targets=("${@:-.}")
 
-show_output()
-{
+show_output() {
 	# shellcheck disable=SC2086
 	eval ${output_cmd}
 } # show_output()
 
-main()
-{
+main() {
 	time {
 		echo autopep8 --in-place --recursive "${targets[@]}"
 		time autopep8 --in-place --recursive "${targets[@]}"

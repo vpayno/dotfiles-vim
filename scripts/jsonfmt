@@ -128,8 +128,7 @@ sort_files() {
 	printf "Changed %d out of %d (%.2f%%) JSON files.\n" "${count}" "${total}" "$(printf "scale=4\n%s/%s*100\n" "${count}" "${total}" | bc)"
 } # sort_files()
 
-show_output()
-{
+show_output() {
 	# shellcheck disable=SC2086
 	eval ${output_cmd}
 } # show_output()
