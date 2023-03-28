@@ -15,8 +15,14 @@ if (&filetype==#'rust' && _enable_rust)
 	if _enable_rust_rustvim
 		packadd! rust.vim
 
-		" Automatically run rustfmt when saving a buffer.
+		" rust.vim options
 		let g:rustfmt_autosave = g:enable
+		let g:ale_rust_cargo_use_check = g:enable
+		let g:ale_rust_cargo_check_tests = g:enable
+		let g:ale_rust_cargo_check_examples = g:enable
+		let g:rust_cargo_check_benches = g:disable
+		let g:rust_fold = g:enable
+		let g:rust_bang_comment_leader = g:enable
 
 		" Send clipboard to rust playpen.
 		if has('macunix')
@@ -67,11 +73,11 @@ if (&filetype==#'rust' && _enable_rust)
 		vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 	endif
 
-	augroup ag_rust_rustfmt
-		autocmd!
-		autocmd! BufWritePost * if &filetype==#'rust' | RustFmt | :e
+	"augroup ag_rust_rustfmt
+		"autocmd!
+		"autocmd! BufWritePost * if &filetype==#'rust' | RustFmt | :e
 		"autocmd! BufWritePost * if &filetype==#'rust' | execute 'silent !rustfmt %' | :e
-	augroup end
+	"augroup end
 
 	packadd! tagbar
 
