@@ -427,3 +427,6 @@
 [submodule "pack/upstream/opt/vim-lsp-settings"]
 	path = pack/upstream/opt/vim-lsp-settings
 	url = https://github.com/mattn/vim-lsp-settings
+[submodule "pack/upstream/opt/vim-indent-guides"]
+	path = pack/upstream/opt/vim-indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides
