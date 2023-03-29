@@ -21,13 +21,19 @@ function! ToggleIndentGuides()
 			let b:indentguides = 'tabs'
 			let b:indentguides_listopt = &l:list
 			let b:indentguides_listcharsopt = &l:listchars
-			exe 'setl listchars' . '+'[!&l:list] . '=tab:˙\  list'
+
+			" set the indentation symbol here
+			" exe 'setl listchars' . '+'[!&l:list] . '=tab:˙\  list'
+			exe 'setl listchars' . '+'[!&l:list] . '=tab:·\  list'
+			" exe 'setl listchars' . '+'[!&l:list] . '=tab:•\  list'
+			" exe 'setl listchars' . '+'[!&l:list] . '=tab:¦\  list'
 		else
 			let b:indentguides = 'spaces'
 			let pos = range(1, &textwidth > 0 ? &textwidth : 80, &shiftwidth)
 			call map(pos, '"\\%" . v:val . "v"')
 			let pat = '\%(\_^ *\)\@<=\%(' . join(pos, '\|') . '\) '
-			let b:indentguides_match = matchadd('ColorColumn', pat)
+			" let b:indentguides_match = matchadd('ColorColumn', pat)
+			let b:indentguides_match = matchadd('CursorLine', pat)
 		endif
 	else
 		if b:indentguides ==# 'tabs'

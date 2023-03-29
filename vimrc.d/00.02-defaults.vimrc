@@ -250,7 +250,7 @@ set nofoldenable
 "set foldlevel=99
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+" set listchars=tab:▸\ ,eol:¬
 
 " Window stuff
 "nnoremap <silent> + :exe 'resize ' . (winheight(0) * 3/2)<CR>
