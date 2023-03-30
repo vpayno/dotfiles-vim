@@ -29,7 +29,7 @@ if _enable_python_coc_pyright
 	" :CocInstall coc-pyright
 	packadd! coc-pyright
 
-	let g:coc_global_extensions = [ 'coc-pyright' ]
+	" let g:coc_global_extensions = [ 'coc-pyright' ]
 
 	augroup ag_python_pyfmt
 		autocmd!

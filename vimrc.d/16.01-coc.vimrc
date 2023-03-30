@@ -1,5 +1,5 @@
 "
-" vimrc.d/78.0-conquerofcompletion.vimrc
+" vimrc.d/16.01-coc.vimrc
 "
 " https://github.com/neoclide/coc.nvim
 " https://github.com/neoclide/coc.nvim/wiki/Language-servers
@@ -9,7 +9,7 @@
 " :CocInstall coc-diagnostic
 
 if _enable_coc
-	call DebugPrint('78.0-conquerofcompletion.vimrc: start [youcompleteme]')
+	call DebugPrint('vimrc.d/16.01-coc.vimrc: start [coc]')
 
 	" Load plugins.
 	packadd! coc.nvim
@@ -192,7 +192,16 @@ if _enable_coc
 	nmap <silent> [g <Plug>(coc-diagnostic-prev)
 	nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-	call DebugPrint('78.0-conquerofcompletion.vimrc: end [youcompleteme]')
+	let g:coc_global_extensions = [
+		\ 'coc-pyright',
+		\ 'coc-pairs',
+		\ 'coc-tsserver',
+		\ 'coc-eslint',
+		\ 'coc-prettier',
+		\ 'coc-json',
+		\ ]
+
+	call DebugPrint('vimrc.d/16.01-coc.vimrc: end [coc]')
 endif
 
 " vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:

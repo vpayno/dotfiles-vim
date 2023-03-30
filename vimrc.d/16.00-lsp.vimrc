@@ -1,5 +1,5 @@
 "
-" ~/.vim/vimrc.d/16-lsp.vimrc
+" ~/.vim/vimrc.d/16.00-lsp.vimrc
 "
 " https://github.com/prabirshrestha/vim-lsp
 " https://github.com/mattn/vim-lsp-setting
@@ -36,7 +36,7 @@ func! s:setup_ls(...) abort
 endfunc
 
 if _enable_lsp
-	call DebugPrint('16-lsp.vimrc: start')
+	call DebugPrint('16.00-lsp.vimrc: start')
 
 	" Load plugins.
 	packadd! vim-lsp
@@ -136,7 +136,7 @@ if _enable_lsp
 		autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 	augroup END
 
-	call DebugPrint('16-lsp.vimrc: end')
+	call DebugPrint('16.00-lsp.vimrc: end')
 endif
 
 " vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
