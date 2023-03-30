@@ -430,3 +430,6 @@
 [submodule "pack/upstream/opt/vim-indent-guides"]
 	path = pack/upstream/opt/vim-indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides
+[submodule "pack/upstream/opt/indentLine"]
+	path = pack/upstream/opt/indentLine
+	url = https://github.com/Yggdroot/indentLine

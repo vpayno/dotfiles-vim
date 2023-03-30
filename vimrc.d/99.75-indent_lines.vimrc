@@ -15,6 +15,8 @@ call DebugPrint('99.75-indent_lines.vimrc: start')
 
 nnoremap <silent> <leader><bar> :call ToggleIndentGuides()<cr>
 
+let g:_use_indentlines_plugin = g:true
+
 function! ToggleIndentGuides()
 	if !exists('b:indentguides')
 		if !&expandtab && &tabstop == &shiftwidth
@@ -28,12 +30,16 @@ function! ToggleIndentGuides()
 			" exe 'setl listchars' . '+'[!&l:list] . '=tab:•\  list'
 			" exe 'setl listchars' . '+'[!&l:list] . '=tab:¦\  list'
 		else
-			let b:indentguides = 'spaces'
-			let pos = range(1, &textwidth > 0 ? &textwidth : 80, &shiftwidth)
-			call map(pos, '"\\%" . v:val . "v"')
-			let pat = '\%(\_^ *\)\@<=\%(' . join(pos, '\|') . '\) '
-			" let b:indentguides_match = matchadd('ColorColumn', pat)
-			let b:indentguides_match = matchadd('CursorLine', pat)
+			if g:_use_indentlines_plugin
+				:IndentLinesToggle
+			else
+				let b:indentguides = 'spaces'
+				let pos = range(1, &textwidth > 0 ? &textwidth : 80, &shiftwidth)
+				call map(pos, '"\\%" . v:val . "v"')
+				let pat = '\%(\_^ *\)\@<=\%(' . join(pos, '\|') . '\) '
+				" let b:indentguides_match = matchadd('ColorColumn', pat)
+				let b:indentguides_match = matchadd('CursorLine', pat)
+			endif
 		endif
 	else
 		if b:indentguides ==# 'tabs'
@@ -52,6 +58,15 @@ if _enable_indent_guides
 	augroup au_enable_indent_guides
 		autocmd BufNewFile,BufRead * call ToggleIndentGuides()
 	augroup end
+
+	" This works with spaces only, not tabs.
+	" https://github.com/Yggdroot/indentLine
+	packadd! indentLine
+
+	" these chars only work in utf-8 encoded files
+	let g:indentLine_char_list = ['|', '¦', '┆', '┊', '•', '·', '˙']
+	" let g:indentLine_char		= '▏'
+	" let g:indentLine_setConceal = 0
 endif
 
 call DebugPrint('99.75-indent_lines.vimrc: end')
