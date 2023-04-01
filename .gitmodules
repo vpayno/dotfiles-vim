@@ -448,3 +448,9 @@
 [submodule "pack/upstream/opt/vim-wordmotion"]
 	path = pack/upstream/opt/vim-wordmotion
 	url = https://github.com/chaoren/vim-wordmotion
+[submodule "pack/upstream/opt/fzf.vim"]
+	path = pack/upstream/opt/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "pack/upstream/opt/fzf"]
+	path = pack/upstream/opt/fzf
+	url = https://github.com/junegunn/fzf
