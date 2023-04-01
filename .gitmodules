@@ -445,3 +445,6 @@
 [submodule "pack/upstream/opt/vim-indent-object"]
 	path = pack/upstream/opt/vim-indent-object
 	url = https://github.com/michaeljsmith/vim-indent-object
+[submodule "pack/upstream/opt/vim-wordmotion"]
+	path = pack/upstream/opt/vim-wordmotion
+	url = https://github.com/chaoren/vim-wordmotion
