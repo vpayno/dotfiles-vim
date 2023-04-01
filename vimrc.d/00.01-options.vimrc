@@ -14,6 +14,7 @@ let _enable_airline = g:enable " if disabled, lightline is used
 let _enable_arduino = g:enable
 let _enable_buftabline = g:enable
 let _enable_calendar_vim = g:enable
+let _enable_clever_f = g:enable
 let _enable_conque_shell = g:disable " old, broken
 let _enable_coc = g:disable
 let _enable_css = g:enable " controls all of the css_ options

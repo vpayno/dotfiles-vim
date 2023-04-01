@@ -436,3 +436,6 @@
 [submodule "pack/upstream/opt/targets.vim"]
 	path = pack/upstream/opt/targets.vim
 	url = https://github.com/wellle/targets.vim
+[submodule "pack/upstream/opt/clever-f.vim"]
+	path = pack/upstream/opt/clever-f.vim
+	url = https://github.com/rhysd/clever-f.vim
