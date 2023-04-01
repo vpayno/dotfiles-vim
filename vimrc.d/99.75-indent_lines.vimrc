@@ -54,7 +54,7 @@ function! ToggleIndentGuides()
 	endif
 endfunction
 
-if _enable_indent_guides
+if _enable_indent_guides && &filetype!=#'gitcommit'
 	augroup au_enable_indent_guides
 		autocmd BufNewFile,BufRead * call ToggleIndentGuides()
 	augroup end
