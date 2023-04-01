@@ -442,3 +442,6 @@
 [submodule "pack/upstream/opt/vim-lion"]
 	path = pack/upstream/opt/vim-lion
 	url = https://github.com/tommcdo/vim-lion
+[submodule "pack/upstream/opt/vim-indent-object"]
+	path = pack/upstream/opt/vim-indent-object
+	url = https://github.com/michaeljsmith/vim-indent-object
