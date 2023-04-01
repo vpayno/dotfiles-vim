@@ -433,3 +433,6 @@
 [submodule "pack/upstream/opt/indentLine"]
 	path = pack/upstream/opt/indentLine
 	url = https://github.com/Yggdroot/indentLine
+[submodule "pack/upstream/opt/targets.vim"]
+	path = pack/upstream/opt/targets.vim
+	url = https://github.com/wellle/targets.vim

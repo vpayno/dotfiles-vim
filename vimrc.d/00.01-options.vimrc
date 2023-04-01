@@ -60,6 +60,7 @@ let _enable_snipmate = g:disable " if enabled, overrides utilsnips
 let _enable_syntastic = g:disable " dead, use ale instead
 let _enable_tabnine = g:disable
 let _enable_taboo = g:disable " if enabled, it overrides other tab plugins
+let _enable_targets = g:enable
 let _enable_telescope = g:enable
 let _enable_termdebug = g:enable
 let _enable_tmux_navigator = g:disable " not sure what the point of this plugin is
