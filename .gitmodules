@@ -439,3 +439,6 @@
 [submodule "pack/upstream/opt/clever-f.vim"]
 	path = pack/upstream/opt/clever-f.vim
 	url = https://github.com/rhysd/clever-f.vim
+[submodule "pack/upstream/opt/vim-lion"]
+	path = pack/upstream/opt/vim-lion
+	url = https://github.com/tommcdo/vim-lion
