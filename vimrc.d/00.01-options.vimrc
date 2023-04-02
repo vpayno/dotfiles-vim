@@ -24,6 +24,8 @@ let _enable_dart = g:enable
 let _enable_denops = g:disable " required by denops-docker
 let _enable_fzf = g:enable
 let _enable_docker = g:disable
+let _enable_gitgutter = g:enable
+let _enable_gitgutter_statusline = g:disable
 let _enable_github_actions = g:enable
 let _enable_golang = g:enable " requires at least Vim 8.0.1453 or Neovim 0.4.0
 let _enable_golang_vimgo = g:disable " needs _enable_golang=1
