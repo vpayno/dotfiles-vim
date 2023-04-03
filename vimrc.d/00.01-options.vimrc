@@ -17,6 +17,7 @@ let _enable_calendar_vim = g:enable
 let _enable_clever_f = g:enable
 let _enable_conque_shell = g:disable " old, broken
 let _enable_coc = g:disable
+let _enable_commentary = g:enable
 let _enable_css = g:enable " controls all of the css_ options
 let _enable_css_less = g:enable
 let _enable_css_color = g:enable
