@@ -469,3 +469,6 @@
 [submodule "pack/upstream/opt/vim-system-copy"]
 	path = pack/upstream/opt/vim-system-copy
 	url = https://github.com/christoomey/vim-system-copy
+[submodule "pack/upstream/opt/vim-ReplaceWithRegister"]
+	path = pack/upstream/opt/vim-ReplaceWithRegister
+	url = https://github.com/inkarkat/vim-ReplaceWithRegister

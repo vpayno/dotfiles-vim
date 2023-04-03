@@ -54,6 +54,7 @@ let _enable_python_coc_pyright = g:disable
 let _enable_python_isort = g:disable
 let _enable_python_jedi = g:disable
 let _enable_python_pymode = g:disable
+let _enable_replace_with_register = g:enable
 let _enable_ripgrep = g:enable
 let _enable_ruby = g:enable
 let _enable_rust = g:enable
