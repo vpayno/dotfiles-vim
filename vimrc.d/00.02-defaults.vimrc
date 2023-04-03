@@ -18,7 +18,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 scriptencoding utf-8
 " vint: +ProhibitEncodingOptionAfterScriptEncoding
-set ffs=unix,dos,mac
+set fileformats=unix,dos,mac
 set fileformat=unix
 set nobackup
 "set noswapfile
@@ -32,7 +32,7 @@ set showmatch
 set showcmd
 
 " use visual bell instead of beeping
-set vb
+set visualbell
 
 " highlight line number instead of the whole line
 " https://stackoverflow.com/questions/8247243/highlighting-the-current-line-number-in-vim
