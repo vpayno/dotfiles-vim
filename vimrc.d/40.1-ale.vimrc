@@ -51,7 +51,16 @@ if _enable_ale
 	endif
 
 	let g:ale_fixers = {
-		\	'python': ['ruff'],
+		\	'python': ['ruff', 'isort'],
+		\	'go': ['goimports'],
+		\}
+
+	let g:ale_linters_ignore = {
+		\	'python': ['pylint'],
+		\}
+
+	let g:ale_linters = {
+		\	'python': ['ruff', 'pyright', 'bandit', 'radon', 'mypy', 'pydocstyle', 'pycodestyle'],
 		\	'go': ['golangci-lint'],
 		\	'rust': ['clippy'],
 		\	'yaml': ['yamllint'],
@@ -62,6 +71,11 @@ if _enable_ale
 
 	" Only run linters named in ale_linters settings.
 	let g:ale_linters_explicit = g:disable
+
+	let g:ale_python_black_options = '--line-length=120'
+
+	let b:ale_go_golangci_lint_package = g:enable
+	let g:ale_go_golangci_lint_options = 'run --enable-all'
 
 	if g:false
 		let g:ale_fixers = {
