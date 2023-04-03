@@ -463,3 +463,6 @@
 [submodule "pack/upstream/opt/vim-titlecase"]
 	path = pack/upstream/opt/vim-titlecase
 	url = https://github.com/christoomey/vim-titlecase
+[submodule "pack/upstream/opt/vim-sort-motion"]
+	path = pack/upstream/opt/vim-sort-motion
+	url = https://github.com/christoomey/vim-sort-motion
