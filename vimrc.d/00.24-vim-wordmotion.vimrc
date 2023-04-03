@@ -7,7 +7,7 @@
 if _enable_wordmotion
 	call DebugPrint('00.24-wordmotion.vimrc: start')
 
-	packadd! targets.vim
+	packadd! vim-wordmotion
 
 	" Restore standard Vim behaviour, that being to preserve whitespace between words.
 	" note: nope
