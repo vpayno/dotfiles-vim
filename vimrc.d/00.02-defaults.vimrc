@@ -10,8 +10,6 @@ syntax enable
 " if ~/.vimrc exists, it's already set
 " set nocompatible	" be iMproved, required
 
-set ruler
-
 set background=dark
 
 set shell=/bin/bash
@@ -107,8 +105,19 @@ set nosmartcase
 filetype off  " required
 filetype plugin indent on  " required
 
+set ruler
+
 " enable line numbering
 set number
+
+" https://jeffkreeftmeijer.com/vim-number/
+if _enable_smart_gutter_numbers
+	augroup numbertoggle
+		autocmd!
+		autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &number && mode() != "i" | set relativenumber   | endif
+		autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &number                  | set norelativenumber | endif
+	augroup END
+endif
 
 " paste mode toggle
 "set pastetoggle=\tp

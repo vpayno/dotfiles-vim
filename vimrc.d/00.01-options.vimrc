@@ -62,6 +62,7 @@ let _enable_rust_vimracer = g:disable
 let _enable_salt = g:disable
 let _enable_slime = g:enable
 let _enable_sh = g:enable
+let _enable_smart_gutter_numbers = g:enable
 let _enable_snipmate = g:disable " if enabled, overrides utilsnips
 let _enable_syntastic = g:disable " dead, use ale instead
 let _enable_tabnine = g:disable
