@@ -460,3 +460,6 @@
 [submodule "pack/upstream/opt/vim-surround"]
 	path = pack/upstream/opt/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule "pack/upstream/opt/vim-titlecase"]
+	path = pack/upstream/opt/vim-titlecase
+	url = https://github.com/christoomey/vim-titlecase
