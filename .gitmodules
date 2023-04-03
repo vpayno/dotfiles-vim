@@ -454,3 +454,9 @@
 [submodule "pack/upstream/opt/fzf"]
 	path = pack/upstream/opt/fzf
 	url = https://github.com/junegunn/fzf
+[submodule "pack/upstream/opt/vim-repeat"]
+	path = pack/upstream/opt/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "pack/upstream/opt/vim-surround"]
+	path = pack/upstream/opt/vim-surround
+	url = https://github.com/tpope/vim-surround
