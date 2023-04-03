@@ -466,3 +466,6 @@
 [submodule "pack/upstream/opt/vim-sort-motion"]
 	path = pack/upstream/opt/vim-sort-motion
 	url = https://github.com/christoomey/vim-sort-motion
+[submodule "pack/upstream/opt/vim-system-copy"]
+	path = pack/upstream/opt/vim-system-copy
+	url = https://github.com/christoomey/vim-system-copy
