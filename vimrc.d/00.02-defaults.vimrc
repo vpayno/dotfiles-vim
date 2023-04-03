@@ -115,7 +115,7 @@ if _enable_smart_gutter_numbers
 	augroup numbertoggle
 		autocmd!
 		autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &number && mode() != "i" | set relativenumber   | endif
-		autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &number                  | set norelativenumber | endif
+		autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &number | set norelativenumber | endif
 	augroup END
 endif
 
@@ -234,7 +234,7 @@ let g:khuno_ignore='E501'
 " Reload .vimrc immediately when edited
 augroup au_reload_config
 	autocmd!
-	autocmd! bufwritepost vimrc source ~/.vimrc
+	autocmd! bufwritepost vimrc,*.vimrc source ~/.vimrc
 augroup end
 
 " Set max line length.
