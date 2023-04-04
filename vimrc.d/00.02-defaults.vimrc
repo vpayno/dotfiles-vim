@@ -10,8 +10,6 @@ syntax enable
 " if ~/.vimrc exists, it's already set
 " set nocompatible	" be iMproved, required
 
-set background=dark
-
 set shell=/bin/bash
 " vint: -ProhibitEncodingOptionAfterScriptEncoding
 set encoding=utf-8
@@ -166,6 +164,8 @@ augroup end
 " Try the following if your GUI uses a dark background.
 ":highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 
+set background=dark
+
 " Using before the first colorscheme command will ensure that the highlight group gets created and is not cleared by future colorscheme commands
 augroup au_colorscheme
 	autocmd!
@@ -284,10 +284,6 @@ set nofoldenable
 let fts = ['sh', 'bash', 'vim']
 if index(fts, &filetype) == -1
 	set noexpandtab
-endif
-
-if has('nvim')
-	set background=dark
 endif
 
 if v:version > 703 || v:version == 703 && has('patch541')
