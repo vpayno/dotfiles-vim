@@ -11,6 +11,19 @@ if _enable_markdown
 	packadd! tabular	  " must load before vim-markdown
 	packadd! vim-markdown
 
+	let g:vim_markdown_math = g:enable
+	let g:vim_markdown_toc_autofit = g:disable
+	let g:vim_markdown_strikethrough = g:enable
+	let g:vim_markdown_auto_insert_bullets = g:disable
+	let g:vim_markdown_new_list_item_indent = g:disable
+
+	"let g:vim_markdown_conceal = 0
+
+	"let g:vim_markdown_folding_disabled = g:enable
+	let g:vim_markdown_folding_level = 6
+	let g:vim_markdown_folding_style_pythonic = g:enable
+	"let g:vim_markdown_override_foldtext = g:disable
+
 	call DebugPrint('41.0-markdown.vimrc: end')
 endif
 
