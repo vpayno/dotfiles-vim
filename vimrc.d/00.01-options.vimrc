@@ -35,6 +35,7 @@ let _enable_haskell = g:enable
 let _enable_html5_svg = g:disable
 let _enable_indent_guides = g:enable
 let _enable_indent_object = g:enable
+let _enable_jinja = g:enable
 let _enable_jq = g:enable " requires at least vim 8.1.1776 (no neovim support)
 let _enable_jqplay = g:enable " requires at least vim 8.1.1776 (no neovim support)
 let _enable_kite = g:disable
