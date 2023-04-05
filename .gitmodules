@@ -475,3 +475,6 @@
 [submodule "pack/upstream/opt/vim-lsc"]
 	path = pack/upstream/opt/vim-lsc
 	url = https://github.com/natebosch/vim-lsc
+[submodule "pack/upstream/opt/vim-unimpaired"]
+	path = pack/upstream/opt/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
