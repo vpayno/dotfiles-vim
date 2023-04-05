@@ -472,3 +472,6 @@
 [submodule "pack/upstream/opt/vim-ReplaceWithRegister"]
 	path = pack/upstream/opt/vim-ReplaceWithRegister
 	url = https://github.com/inkarkat/vim-ReplaceWithRegister
+[submodule "pack/upstream/opt/vim-lsc"]
+	path = pack/upstream/opt/vim-lsc
+	url = https://github.com/natebosch/vim-lsc

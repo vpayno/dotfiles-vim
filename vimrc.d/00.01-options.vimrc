@@ -41,6 +41,7 @@ let _enable_jq					  = g:enable " requires at least vim 8.1.1776 (no neovim supp
 let _enable_jqplay				  = g:enable " requires at least vim 8.1.1776 (no neovim support)
 let _enable_kite				  = g:disable
 let _enable_lion				  = g:enable
+let _enable_lsc					  = g:disable
 let _enable_lsp					  = g:enable
 let _enable_markdown			  = g:disable " also enables tabular
 let _enable_nerdtree			  = g:disable " if disabled, netrw is used
