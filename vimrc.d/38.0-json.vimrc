@@ -6,6 +6,11 @@
 if &filetype==#'json'
 	call DebugPrint('38.0-json.vimrc: start')
 
+	" packadd! vim-json
+
+	" don't hide double quotes
+	let g:vim_json_syntax_conceal = g:disable
+
 	augroup au_json
 		autocmd!
 		autocmd BufNewFile,BufRead *.json set filetype=json
