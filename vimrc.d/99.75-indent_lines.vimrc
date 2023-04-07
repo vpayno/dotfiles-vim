@@ -16,47 +16,61 @@ call DebugPrint('99.75-indent_lines.vimrc: start')
 nnoremap <silent> <leader><bar> :call ToggleIndentGuides()<cr>
 
 let g:_use_indentlines_plugin = g:true
+let g:_enable_indent_guides_on_enter = g:true
+
+function! EnableIndentGuides()
+	if !&expandtab && &tabstop == &shiftwidth
+		let b:indentguides = 'tabs'
+		let b:indentguides_listopt = &l:list
+		let b:indentguides_listcharsopt = &l:listchars
+
+		" set the indentation symbol here
+		" exe 'setl listchars' . '+'[!&l:list] . '=tab:˙\  list'
+		exe 'setl listchars' . '+'[!&l:list] . '=tab:·\  list'
+		" exe 'setl listchars' . '+'[!&l:list] . '=tab:•\  list'
+		" exe 'setl listchars' . '+'[!&l:list] . '=tab:¦\  list'
+	else
+		if g:_use_indentlines_plugin
+			:IndentLinesToggle
+		else
+			let b:indentguides = 'spaces'
+			let pos = range(1, &textwidth > 0 ? &textwidth : 80, &shiftwidth)
+			call map(pos, '"\\%" . v:val . "v"')
+			let pat = '\%(\_^ *\)\@<=\%(' . join(pos, '\|') . '\) '
+			" let b:indentguides_match = matchadd('ColorColumn', pat)
+			let b:indentguides_match = matchadd('CursorLine', pat)
+		endif
+	endif
+endfunction
+
+function! DisableIndentGuides()
+	if b:indentguides ==# 'tabs'
+		let &l:list = b:indentguides_listopt
+		let &l:listchars = b:indentguides_listcharsopt
+		unlet b:indentguides_listopt b:indentguides_listcharsopt
+	else
+		call matchdelete(b:indentguides_match)
+		unlet b:indentguides_match
+	endif
+
+	unlet b:indentguides
+endfunction
 
 function! ToggleIndentGuides()
 	if !exists('b:indentguides')
-		if !&expandtab && &tabstop == &shiftwidth
-			let b:indentguides = 'tabs'
-			let b:indentguides_listopt = &l:list
-			let b:indentguides_listcharsopt = &l:listchars
-
-			" set the indentation symbol here
-			" exe 'setl listchars' . '+'[!&l:list] . '=tab:˙\  list'
-			exe 'setl listchars' . '+'[!&l:list] . '=tab:·\  list'
-			" exe 'setl listchars' . '+'[!&l:list] . '=tab:•\  list'
-			" exe 'setl listchars' . '+'[!&l:list] . '=tab:¦\  list'
-		else
-			if g:_use_indentlines_plugin
-				:IndentLinesToggle
-			else
-				let b:indentguides = 'spaces'
-				let pos = range(1, &textwidth > 0 ? &textwidth : 80, &shiftwidth)
-				call map(pos, '"\\%" . v:val . "v"')
-				let pat = '\%(\_^ *\)\@<=\%(' . join(pos, '\|') . '\) '
-				" let b:indentguides_match = matchadd('ColorColumn', pat)
-				let b:indentguides_match = matchadd('CursorLine', pat)
-			endif
-		endif
+		call EnableIndentGuides()
 	else
-		if b:indentguides ==# 'tabs'
-			let &l:list = b:indentguides_listopt
-			let &l:listchars = b:indentguides_listcharsopt
-			unlet b:indentguides_listopt b:indentguides_listcharsopt
-		else
-			call matchdelete(b:indentguides_match)
-			unlet b:indentguides_match
-		endif
-		unlet b:indentguides
+		call DisableIndentGuides()
 	endif
 endfunction
 
 if _enable_indent_guides && &filetype!=#'gitcommit'
 	augroup au_enable_indent_guides
-		autocmd BufNewFile,BufRead * call ToggleIndentGuides()
+		if g:_enable_indent_guides_on_enter
+			autocmd BufNewFile,BufRead,BufEnter * call EnableIndentGuides()
+		else
+			autocmd BufNewFile,BufRead,BufEnter * call DisableIndentGuides()
+		endif
 	augroup end
 
 	" This works with spaces only, not tabs.
