@@ -20,6 +20,7 @@ let g:_enable_indent_guides_on_enter = g:true
 
 function! EnableIndentGuides()
 	if !&expandtab && &tabstop == &shiftwidth
+		" echom 'EnableIndentGuides() -> tabs'
 		let b:indentguides = 'tabs'
 		let b:indentguides_listopt = &l:list
 		let b:indentguides_listcharsopt = &l:listchars
@@ -30,6 +31,7 @@ function! EnableIndentGuides()
 		" exe 'setl listchars' . '+'[!&l:list] . '=tab:•\  list'
 		" exe 'setl listchars' . '+'[!&l:list] . '=tab:¦\  list'
 	else
+		" echom 'EnableIndentGuides() -> spaces'
 		if g:_use_indentlines_plugin
 			:IndentLinesToggle
 		else
@@ -45,10 +47,12 @@ endfunction
 
 function! DisableIndentGuides()
 	if b:indentguides ==# 'tabs'
+		" echom 'DisableIndentGuides() -> tabs'
 		let &l:list = b:indentguides_listopt
 		let &l:listchars = b:indentguides_listcharsopt
 		unlet b:indentguides_listopt b:indentguides_listcharsopt
 	else
+		" echom 'DisableIndentGuides() -> tabs'
 		call matchdelete(b:indentguides_match)
 		unlet b:indentguides_match
 	endif
@@ -66,10 +70,11 @@ endfunction
 
 if _enable_indent_guides && &filetype!=#'gitcommit'
 	augroup au_enable_indent_guides
+		autocmd!
 		if g:_enable_indent_guides_on_enter
-			autocmd BufNewFile,BufRead,BufEnter * call EnableIndentGuides()
+			autocmd BufEnter * call EnableIndentGuides()
 		else
-			autocmd BufNewFile,BufRead,BufEnter * call DisableIndentGuides()
+			autocmd BufEnter * call DisableIndentGuides()
 		endif
 	augroup end
 

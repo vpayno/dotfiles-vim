@@ -20,10 +20,10 @@ if _enable_sh && &filetype==#'sh'
 	let g:shfmt_fmt_on_save = g:enable
 	let g:shfmt_extra_args = ''
 
-	augroup au_shell_retab
-		autocmd!
-		autocmd BufReadPost * if &filetype==#'sh' | set noet | :%retab! | :w | endif
-	augroup end
+" 	augroup au_shell_retab
+" 		autocmd!
+" 		autocmd BufReadPost * if &filetype==#'sh' | set noet | :%retab! | :w | endif
+" 	augroup end
 
 	augroup ag_sh_shfmt
 		autocmd!
