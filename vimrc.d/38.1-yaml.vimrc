@@ -10,7 +10,7 @@ if &filetype==#'yaml'
 
 	packadd! vim-yaml
 
-	let g:yaml_limit_spell g:disable
+	let g:yaml_limit_spell = g:disable
 
 	call DebugPrint('38.1-yaml.vimrc: end')
 endif
