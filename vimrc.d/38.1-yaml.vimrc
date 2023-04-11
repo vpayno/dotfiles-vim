@@ -8,9 +8,11 @@
 if &filetype==#'yaml'
 	call DebugPrint('38.1-yaml.vimrc: start')
 
-	packadd! vim-yaml
+	if _enable_yaml
+		packadd! vim-yaml
 
-	let g:yaml_limit_spell = g:disable
+		let g:yaml_limit_spell = g:disable
+	endif
 
 	call DebugPrint('38.1-yaml.vimrc: end')
 endif

@@ -88,6 +88,7 @@ let _enable_vimspector			  = g:enable
 let _enable_vimwiki				  = g:disable
 let _enable_virtualenv			  = g:disable
 let _enable_wordmotion			  = g:enable
+let _enable_yaml				  = g:disable " only needed for very large yaml files
 let _enable_youcompleteme		  = g:disable
 let _enable_youcompleteme_tabnine = g:disable " overrides youcompleteme and tabnine
 
