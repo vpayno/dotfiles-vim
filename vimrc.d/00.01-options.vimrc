@@ -11,6 +11,7 @@ let _enable_line_wrap			  = g:disable
 let _enable_ack					  = g:enable
 let _enable_airline				  = g:enable " if disabled, lightline is used
 let _enable_ale					  = g:enable
+let _enable_ansible				  = g:enable
 let _enable_arduino				  = g:enable
 let _enable_auto_tags			  = g:disable
 let _enable_buftabline			  = g:enable
