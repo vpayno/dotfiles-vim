@@ -35,7 +35,7 @@ function! SetOptionsForTabs()
     set softtabstop=0
     set tabstop=4
 
-    :%retab!
+    :%retab! | :w
 endfunction
 
 function! SetOptionsForSpaces()
@@ -46,7 +46,7 @@ function! SetOptionsForSpaces()
     set softtabstop=0
     set tabstop=4
 
-    :%retab!
+    :%retab! | :w
 endfunction
 
 function! SetOptionsForWhiteSpace()
