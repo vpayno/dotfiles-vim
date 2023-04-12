@@ -12,4 +12,4 @@ if _enable_tabnine && !has('nvim') && !_enable_youcompleteme_tabnine
 	call DebugPrint('76-tabnine.vimrc: end')
 endif
 
-" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
+" vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

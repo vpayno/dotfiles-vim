@@ -42,4 +42,4 @@ if _enable_jqplay
 	call DebugPrint('17-jq.vimrc: end (vim-jqplay')
 endif
 
-" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
+" vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

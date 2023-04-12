@@ -8,7 +8,7 @@ syntax enable
 "colorscheme onedark
 
 " if ~/.vimrc exists, it's already set
-" set nocompatible	" be iMproved, required
+" set nocompatible  " be iMproved, required
 
 set shell=/bin/bash
 " vint: -ProhibitEncodingOptionAfterScriptEncoding
@@ -41,14 +41,14 @@ set cursorcolumn
 "
 highlight clear CursorLine
 augroup CLClear
-	autocmd! ColorScheme * highlight clear CursorLine
+    autocmd! ColorScheme * highlight clear CursorLine
 augroup END
 highlight CursorLine cterm=NONE ctermbg=234 ctermfg=NONE guibg=NONE guifg=NONE
 highlight CursorColumn cterm=NONE ctermbg=236 ctermfg=NONE guibg=NONE guifg=NONE
 
 highlight CursorLineNR cterm=bold ctermbg=darkgreen
 augroup CLNRSet
-	autocmd! ColorScheme * highlight CursorLineNR cterm=bold
+    autocmd! ColorScheme * highlight CursorLineNR cterm=bold
 augroup END
 
 " https://vim.fandom.com/wiki/Highlight_current_line
@@ -66,12 +66,12 @@ augroup END
 :nnoremap <silent> <Leader>c :execute 'match Search /\%'.virtcol('.').'v/'<CR>
 
 try
-	if has('nvim')
-		set undodir=~/.vim_runtime/undodir.nvim
-	else
-		set undodir=~/.vim_runtime/undodir.vim
-	endif
-	set undofile
+    if has('nvim')
+        set undodir=~/.vim_runtime/undodir.nvim
+    else
+        set undodir=~/.vim_runtime/undodir.vim
+    endif
+    set undofile
 catch
 endtry
 
@@ -110,11 +110,11 @@ set number
 
 " https://jeffkreeftmeijer.com/vim-number/
 if _enable_smart_gutter_numbers
-	augroup numbertoggle
-		autocmd!
-		autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &number && mode() != "i" | set relativenumber   | endif
-		autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &number | set norelativenumber | endif
-	augroup END
+    augroup numbertoggle
+        autocmd!
+        autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &number && mode() != "i" | set relativenumber   | endif
+        autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &number | set norelativenumber | endif
+    augroup END
 endif
 
 " paste mode toggle
@@ -145,8 +145,8 @@ set t_Co=256
 
 "open the file at the last line edited
 augroup au_last_pos
-	autocmd!
-	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+    autocmd!
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup end
 
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
@@ -154,8 +154,8 @@ augroup end
 
 " Automatically remove trailing whitespace (https://vim.fandom.com/wiki/Remove_unwanted_spaces)
 augroup au_traling_ws
-	autocmd!
-	autocmd BufWritePre * %s/\s\+$//e
+    autocmd!
+    autocmd BufWritePre * %s/\s\+$//e
 augroup end
 
 " The following alternative may be less obtrusive.
@@ -168,8 +168,8 @@ set background=dark
 
 " Using before the first colorscheme command will ensure that the highlight group gets created and is not cleared by future colorscheme commands
 augroup au_colorscheme
-	autocmd!
-	autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+    autocmd!
+    autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 augroup end
 
 " Show trailing whitespace:
@@ -193,9 +193,9 @@ augroup end
 " If you use this alternate pattern, you may want to consider using the following autocmd to let the highlighting show up as soon as you leave insert mode after entering trailing whitespace:
 ":autocmd InsertLeave * redraw!
 augroup au_whitespace
-	autocmd!
-	autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-	autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+    autocmd!
+    autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+    autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 augroup eng
 
 " For C, if you don't want to see trailing space errors at end-of-line set:
@@ -215,7 +215,7 @@ augroup eng
 
 " memory leak problem
 if v:version >= 702
-	autocmd BufWinLeave * call clearmatches()
+    autocmd BufWinLeave * call clearmatches()
 endif
 
 " Change the Pmenu colors so they're more readable.
@@ -233,10 +233,10 @@ let g:khuno_ignore='E501'
 
 " Reload vimrc immediately when edited
 augroup au_reload_config
-	autocmd!
-	autocmd! bufwritepost vimrc source ~/.vimrc
-	" Reloading ~/.vimrc when writing *.vimrc files caused problems with indent guides on the current buffer(s).
-	autocmd! bufwritepost *.vimrc source %
+    autocmd!
+    autocmd! bufwritepost vimrc source ~/.vimrc
+    " Reloading ~/.vimrc when writing *.vimrc files caused problems with indent guides on the current buffer(s).
+    autocmd! bufwritepost *.vimrc source %
 augroup end
 
 " Set max line length.
@@ -274,34 +274,34 @@ set nofoldenable
 "set winminheight=5
 
 "if (&ft=='sh' || &ft=='bash')
-	"set noexpandtab
-	"set ai
-	"set ts=4
-	"set sw=4
-	"set list
+    "set noexpandtab
+    "set ai
+    "set ts=4
+    "set sw=4
+    "set list
 "endif
 
 let fts = ['sh', 'bash', 'vim']
 if index(fts, &filetype) == -1
-	set noexpandtab
+    set noexpandtab
 endif
 
 if v:version > 703 || v:version == 703 && has('patch541')
-	set formatoptions+=j " Delete comment character when joining commented lines
+    set formatoptions+=j " Delete comment character when joining commented lines
 endif
 
 if _enable_line_wrap
-	set wrap
-	set breakindent
-	set breakindentopt=sbr
-	" I use a unicode curly array with a <backslash><space>
-	set showbreak=↪>\
-	"set formatoptions+=w " Wrap lines without breaking words
+    set wrap
+    set breakindent
+    set breakindentopt=sbr
+    " I use a unicode curly array with a <backslash><space>
+    set showbreak=↪>\
+    "set formatoptions+=w " Wrap lines without breaking words
 else
-	set nowrap
-	set sidescroll=1
-	set sidescrolloff=5
-	set listchars=extends:>,precedes:<
+    set nowrap
+    set sidescroll=1
+    set sidescrolloff=5
+    set listchars=extends:>,precedes:<
 endif
 
 " Setting leader key.
@@ -309,4 +309,4 @@ let mapleader = '\\'
 "let maplocalldeader = '\\'
 
 call DebugPrint('00.02-defaults.vimrc: stop')
-" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
+" vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

@@ -13,4 +13,4 @@ packadd! xterm-color-table.vim
 
 call DebugPrint('vimrc.d/99-other-xterm-color-table.vimrc: end')
 
-" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
+" vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

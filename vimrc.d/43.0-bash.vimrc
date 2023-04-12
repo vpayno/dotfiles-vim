@@ -35,4 +35,4 @@ if _enable_sh && &filetype==#'sh'
 	call DebugPrint('43.0-bash.vimrc: end')
 endif
 
-" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
+" vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

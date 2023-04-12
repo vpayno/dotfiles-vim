@@ -17,4 +17,4 @@ if _enable_html5_svg && (&filetype==#'html' || &filetype==#'svg')
 	call DebugPrint('42.0-html5_svg.vimrc: end')
 endif
 
-" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
+" vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

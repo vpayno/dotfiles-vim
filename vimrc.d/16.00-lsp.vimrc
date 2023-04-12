@@ -139,4 +139,4 @@ if _enable_lsp
 	call DebugPrint('16.00-lsp.vimrc: end')
 endif
 
-" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
+" vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

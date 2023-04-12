@@ -5,18 +5,18 @@
 " https://github.com/skanehira/denops-docker.vim
 
 if _enable_docker
-	call DebugPrint('80.0-docker.vimrc: start')
+    call DebugPrint('80.0-docker.vimrc: start')
 
-	" Load plugins.
-	packadd! Dockerfile.vim
+    " Load plugins.
+    packadd! Dockerfile.vim
 
-	if _enable_denops
+    if _enable_denops
 
-		packadd! denops-docker.vim
+        packadd! denops-docker.vim
 
-	endif
+    endif
 
-	call DebugPrint('80.0-docker.vimrc: end')
+    call DebugPrint('80.0-docker.vimrc: end')
 endif
 
-" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
+" vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

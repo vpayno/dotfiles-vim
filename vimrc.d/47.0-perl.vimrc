@@ -63,4 +63,4 @@ if (&filetype==#'perl' && (_enable_perl5 || _enable_perl6))
 	call DebugPrint('47.0-perl.vimrc: end')
 endif
 
-" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
+" vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

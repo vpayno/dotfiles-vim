@@ -28,4 +28,4 @@ if _enable_targets
 	call DebugPrint('00.21-clever-f.vimrc: end')
 endif
 
-" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
+" vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

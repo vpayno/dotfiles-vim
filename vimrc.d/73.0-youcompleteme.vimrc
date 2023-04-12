@@ -17,4 +17,4 @@ if (_enable_youcompleteme || _enable_youcompleteme_tabnine) && !has('nvim')
 	call DebugPrint('73.0-youcompleteme.vimrc: end [youcompleteme]')
 endif
 
-" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
+" vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

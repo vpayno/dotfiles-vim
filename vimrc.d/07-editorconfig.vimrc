@@ -7,4 +7,4 @@
 " Disable loading editorconfig for remote files over ssh.
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
-" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
+" vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

@@ -16,4 +16,4 @@ if _enable_vim_vader
 	call DebugPrint('95.0-vim-vader.vimrc: end')
 endif
 
-" vim:filetype=vim:syntax=vim:noet:ts=4:sw=4:ai:
+" vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:
