@@ -55,10 +55,10 @@ function! SetOptionsForWhiteSpace()
     endif
 
     if FileTypeUsesTabs()
-        " echom 'SetOptionsForWhiteSpace() -> SetOptionsForTabs()'
+        echom 'SetOptionsForWhiteSpace() -> SetOptionsForTabs()'
         call SetOptionsForTabs()
      else
-        " echom 'SetOptionsForWhiteSpace() -> SetOptionsForSpaces()'
+        echom 'SetOptionsForWhiteSpace() -> SetOptionsForSpaces()'
         call SetOptionsForSpaces()
     endif
 endfunction

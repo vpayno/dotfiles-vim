@@ -20,7 +20,7 @@ let g:_enable_indent_guides_on_enter = g:true
 
 function! EnableIndentGuides()
     if !&expandtab && &tabstop == &shiftwidth
-        " echom 'EnableIndentGuides() -> tabs'
+        echom 'EnableIndentGuides() -> tabs'
         let b:indentguides = 'tabs'
         let b:indentguides_listopt = &l:list
         let b:indentguides_listcharsopt = &l:listchars
@@ -31,7 +31,7 @@ function! EnableIndentGuides()
         " exe 'setl listchars' . '+'[!&l:list] . '=tab:•\  list'
         " exe 'setl listchars' . '+'[!&l:list] . '=tab:¦\  list'
     else
-        " echom 'EnableIndentGuides() -> spaces'
+        echom 'EnableIndentGuides() -> spaces'
         if g:_use_indentlines_plugin
             :IndentLinesToggle
         else
@@ -47,12 +47,12 @@ endfunction
 
 function! DisableIndentGuides()
     if exists('b:indentguides') && b:indentguides ==# 'tabs'
-        " echom 'DisableIndentGuides() -> tabs'
+        echom 'DisableIndentGuides() -> tabs'
         let &l:list = b:indentguides_listopt
         let &l:listchars = b:indentguides_listcharsopt
         unlet b:indentguides_listopt b:indentguides_listcharsopt
     else
-        " echom 'DisableIndentGuides() -> tabs'
+        echom 'DisableIndentGuides() -> tabs'
         if exists('b:indentguides_match')
             call matchdelete(b:indentguides_match)
             unlet b:indentguides_match
