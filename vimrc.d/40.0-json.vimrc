@@ -28,6 +28,11 @@ if &filetype==#'json'
 
     command! JsonFmt %!jq --sort-keys .
 
+    augroup au_json
+        autocmd!
+        autocmd BufNewFile,BufRead *.json set filetype=json
+    augroup end
+
     call DebugPrint('40.0-json.vimrc: end')
 endif
 
