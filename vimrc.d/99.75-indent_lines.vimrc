@@ -19,8 +19,8 @@ let g:_use_indentlines_plugin = g:true
 let g:_enable_indent_guides_on_enter = g:true
 
 function! EnableIndentGuides()
-    if !&expandtab && &tabstop == &shiftwidth
-        echom 'EnableIndentGuides() -> tabs'
+    "if !&expandtab && &tabstop == &shiftwidth
+        " echom 'EnableIndentGuides() -> tabs'
         let b:indentguides = 'tabs'
         let b:indentguides_listopt = &l:list
         let b:indentguides_listcharsopt = &l:listchars
@@ -30,29 +30,29 @@ function! EnableIndentGuides()
         exe 'setl listchars' . '+'[!&l:list] . '=tab:·\  list'
         " exe 'setl listchars' . '+'[!&l:list] . '=tab:•\  list'
         " exe 'setl listchars' . '+'[!&l:list] . '=tab:¦\  list'
-    else
-        echom 'EnableIndentGuides() -> spaces'
-        if g:_use_indentlines_plugin
-            :IndentLinesToggle
-        else
-            let b:indentguides = 'spaces'
-            let pos = range(1, &textwidth > 0 ? &textwidth : 80, &shiftwidth)
-            call map(pos, '"\\%" . v:val . "v"')
-            let pat = '\%(\_^ *\)\@<=\%(' . join(pos, '\|') . '\) '
-            " let b:indentguides_match = matchadd('ColorColumn', pat)
-            let b:indentguides_match = matchadd('CursorLine', pat)
-        endif
-    endif
+    " else
+        " echom 'EnableIndentGuides() -> spaces'
+        " if g:_use_indentlines_plugin
+        "     :IndentLinesToggle
+        " else
+        "     let b:indentguides = 'spaces'
+        "     let pos = range(1, &textwidth > 0 ? &textwidth : 80, &shiftwidth)
+        "     call map(pos, '"\\%" . v:val . "v"')
+        "     let pat = '\%(\_^ *\)\@<=\%(' . join(pos, '\|') . '\) '
+        "     " let b:indentguides_match = matchadd('ColorColumn', pat)
+        "     let b:indentguides_match = matchadd('CursorLine', pat)
+        " endif
+    " endif
 endfunction
 
 function! DisableIndentGuides()
     if exists('b:indentguides') && b:indentguides ==# 'tabs'
-        echom 'DisableIndentGuides() -> tabs'
+        " echom 'DisableIndentGuides() -> tabs'
         let &l:list = b:indentguides_listopt
         let &l:listchars = b:indentguides_listcharsopt
         unlet b:indentguides_listopt b:indentguides_listcharsopt
     else
-        echom 'DisableIndentGuides() -> tabs'
+        " echom 'DisableIndentGuides() -> spaces'
         if exists('b:indentguides_match')
             call matchdelete(b:indentguides_match)
             unlet b:indentguides_match
