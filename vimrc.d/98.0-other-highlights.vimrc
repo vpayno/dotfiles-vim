@@ -1,10 +1,10 @@
 "
-" ~/.vim/vimrc.d/99-other-highlights.vimrc
+" ~/.vim/vimrc.d/98.0-other-highlights.vimrc
 "
 " https://github.com/sakshamgupta05/vim-todo-highlight
 
 if _enable_other_todo_highlight
-    call DebugPrint('99-other-highlights.vimrc: start [vim-todo-highlight]')
+    call DebugPrint('98.0-other-highlights.vimrc: start [vim-todo-highlight]')
 
     " Load plugins.
     packadd! vim-todo-highlight
@@ -27,7 +27,7 @@ if _enable_other_todo_highlight
         \   }
         \}
 
-    call DebugPrint('99-other-highlights.vimrc: end [vim-todo-highlight]')
+    call DebugPrint('98.0-other-highlights.vimrc: end [vim-todo-highlight]')
 endif
 
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:
