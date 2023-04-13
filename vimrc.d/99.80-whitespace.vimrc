@@ -42,9 +42,20 @@ function! SetOptionsForSpaces()
     set copyindent
     set expandtab
     set preserveindent
-    set shiftwidth=4
     set softtabstop=0
-    set tabstop=4
+
+    if
+        \ &filetype==#'html' ||
+        \ &filetype==#'json' ||
+        \ &filetype==#'xhtml' ||
+        \ &filetype==#'xml' ||
+        \ &filetype==#'yaml'
+        set shiftwidth=2
+        set tabstop=2
+    else
+        set shiftwidth=4
+        set tabstop=4
+    endif
 
     :%retab! | :w
 endfunction
@@ -57,7 +68,7 @@ function! SetOptionsForWhiteSpace()
     if FileTypeUsesTabs()
         " echom 'SetOptionsForWhiteSpace() -> SetOptionsForTabs()'
         call SetOptionsForTabs()
-     else
+    else
         " echom 'SetOptionsForWhiteSpace() -> SetOptionsForSpaces()'
         call SetOptionsForSpaces()
     endif
