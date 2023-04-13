@@ -9,7 +9,7 @@ if _enable_jinja
 
     augroup au_jinja
         autocmd!
-        autocmd BufNewFile,BufRead *.jinja set filetype=jinja
+        autocmd BufNewFile,BufRead *.jinja,*.j2 set filetype=jinja
     augroup end
 
     call DebugPrint('40.9-jinja.vimrc: end')
