@@ -4,19 +4,19 @@
 " https://github.com/ap/vim-buftabline
 
 if _enable_buftabline
-	call DebugPrint('36.1-buftabline.vimrc: start')
+    call DebugPrint('36.1-buftabline.vimrc: start')
 
-	" Load the plugin.
-	packadd! vim-buftabline
+    " Load the plugin.
+    packadd! vim-buftabline
 
-	" When opening a new file, the existing buffer is hidden instead of closed.
-	set hidden
+    " When opening a new file, the existing buffer is hidden instead of closed.
+    set hidden
 
-	" Configure key bindings.
-	nnoremap <C-N> :bnext<CR>
-	nnoremap <C-P> :bprev<CR>
+    " Configure key bindings.
+    nnoremap <C-N> :bnext<CR>
+    nnoremap <C-P> :bprev<CR>
 
-	call DebugPrint('36.1-buftabline.vimrc: end')
+    call DebugPrint('36.1-buftabline.vimrc: end')
 endif
 
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

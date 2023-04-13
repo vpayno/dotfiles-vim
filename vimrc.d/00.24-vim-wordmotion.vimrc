@@ -5,16 +5,16 @@
 " https://github.com/chaoren/vim-wordmotion
 
 if _enable_wordmotion
-	call DebugPrint('00.24-wordmotion.vimrc: start')
+    call DebugPrint('00.24-wordmotion.vimrc: start')
 
-	packadd! vim-wordmotion
+    packadd! vim-wordmotion
 
-	" Restore standard Vim behaviour, that being to preserve whitespace between words.
-	" note: nope
-	" nmap cw ce
-	" nmap cW cE
+    " Restore standard Vim behaviour, that being to preserve whitespace between words.
+    " note: nope
+    " nmap cw ce
+    " nmap cW cE
 
-	call DebugPrint('00.24-wordmotion.vimrc: end')
+    call DebugPrint('00.24-wordmotion.vimrc: end')
 endif
 
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

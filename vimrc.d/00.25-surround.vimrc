@@ -6,12 +6,12 @@
 " https://github.com/tpope/vim-repeat
 
 if _enable_surround
-	call DebugPrint('00.25-surround.vimrc: start')
+    call DebugPrint('00.25-surround.vimrc: start')
 
-	packadd! vim-surround
-	packadd! vim-repeat
+    packadd! vim-surround
+    packadd! vim-repeat
 
-	call DebugPrint('00.25-surround.vimrc: end')
+    call DebugPrint('00.25-surround.vimrc: end')
 endif
 
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

@@ -7,22 +7,22 @@
 " autocmd! BufWritePost *.dart | execute '! dart format %' | :e
 
 if _enable_dart
-	call DebugPrint('50.0-dart.vimrc: start')
+    call DebugPrint('50.0-dart.vimrc: start')
 
-	" Load plugins.
-	packadd! dart-vim-plugin
+    " Load plugins.
+    packadd! dart-vim-plugin
 
-	let dart_html_in_string=v:true
-	let g:dart_style_guide = 2
-	let g:dart_format_on_save = 1
+    let dart_html_in_string=v:true
+    let g:dart_style_guide = 2
+    let g:dart_format_on_save = 1
 
-	" (discover formatter options with dartfmt -h)
-	" let g:dartfmt_options =
+    " (discover formatter options with dartfmt -h)
+    " let g:dartfmt_options =
 
-	let g:dart_trailing_comma_indent = v:true
-	let g:lsc_auto_map = v:true
+    let g:dart_trailing_comma_indent = v:true
+    let g:lsc_auto_map = v:true
 
-	call DebugPrint('50.0-dart.vimrc: end')
+    call DebugPrint('50.0-dart.vimrc: end')
 endif
 
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

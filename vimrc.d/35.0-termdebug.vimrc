@@ -8,7 +8,7 @@
 call DebugPrint('35.0-termdebug.vimrc: start')
 
 if _enable_termdebug
-	packadd! termdebug
+    packadd! termdebug
 endif
 
 call DebugPrint('35.0-termdebug.vimrc: end')

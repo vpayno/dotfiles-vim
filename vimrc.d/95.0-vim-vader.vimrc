@@ -8,12 +8,12 @@
 " :Vader! [file glob ...]
 
 if _enable_vim_vader
-	call DebugPrint('95.0-vim-vader.vimrc: start')
+    call DebugPrint('95.0-vim-vader.vimrc: start')
 
-	" Load plugins.
-	packadd! vader.vim
+    " Load plugins.
+    packadd! vader.vim
 
-	call DebugPrint('95.0-vim-vader.vimrc: end')
+    call DebugPrint('95.0-vim-vader.vimrc: end')
 endif
 
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

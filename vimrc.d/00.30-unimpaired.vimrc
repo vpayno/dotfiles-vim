@@ -5,11 +5,11 @@
 " https://github.com/vim-unimpaired
 
 if _enable_unimpaired
-	call DebugPrint('00.30-unimpaired.vimrc: start')
+    call DebugPrint('00.30-unimpaired.vimrc: start')
 
-	packadd! vim-unimpaired
+    packadd! vim-unimpaired
 
-	call DebugPrint('00.30-unimpaired.vimrc: end')
+    call DebugPrint('00.30-unimpaired.vimrc: end')
 endif
 
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

@@ -17,21 +17,21 @@ function! WinBufSwap()
   let lastwin = winnr('#')
   let lastbuf = winbufnr(lastwin)
 
-  exec	lastwin . ' wincmd w' .'|'.
-	  \ 'buffer '. thisbuf .'|'.
-	  \ thiswin .' wincmd w' .'|'.
-	  \ 'buffer '. lastbuf
+  exec  lastwin . ' wincmd w' .'|'.
+      \ 'buffer '. thisbuf .'|'.
+      \ thiswin .' wincmd w' .'|'.
+      \ 'buffer '. lastbuf
 endfunction
 
 command! Wswap :call WinBufSwap()
 map <Leader>bs <C-c>:call WinBufSwap()<CR>
 
 function! SwitchWindow(count) abort
-	let l:current_buf = winbufnr(0)
-	exe 'buffer' . winbufnr(a:count)
-	exe ':count' . 'wincmd w'
-	exe 'buffer' . l:current_buf
-	wincmd p
+    let l:current_buf = winbufnr(0)
+    exe 'buffer' . winbufnr(a:count)
+    exe ':count' . 'wincmd w'
+    exe 'buffer' . l:current_buf
+    wincmd p
 endfunction
 
 nnoremap <C-w>x :<C-u>call SwitchWindow(v:count1)<CR>

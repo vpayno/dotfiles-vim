@@ -5,15 +5,15 @@
 " https://www.vim.org/scripts/script.php?script_id=1876
 
 let g:secure_modelines_allowed_items = [
-	\ 'textwidth',	 'tw',
-	\ 'softtabstop', 'sts',
-	\ 'tabstop',	 'ts',
-	\ 'shiftwidth',  'sw',
-	\ 'expandtab',	 'et',	 'noexpandtab', 'noet',
-	\ 'filetype',	 'ft',
-	\ 'foldmethod',  'fdm',
-	\ 'readonly',	 'ro',	 'noreadonly', 'noro',
-	\ 'rightleft',	 'rl',	 'norightleft', 'norl'
+    \ 'textwidth',   'tw',
+    \ 'softtabstop', 'sts',
+    \ 'tabstop',     'ts',
+    \ 'shiftwidth',  'sw',
+    \ 'expandtab',   'et',   'noexpandtab', 'noet',
+    \ 'filetype',    'ft',
+    \ 'foldmethod',  'fdm',
+    \ 'readonly',    'ro',   'noreadonly', 'noro',
+    \ 'rightleft',   'rl',   'norightleft', 'norl'
 \ ]
 
 " Set to true to warn when a modeline attempts to set any other option.

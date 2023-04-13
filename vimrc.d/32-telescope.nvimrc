@@ -5,13 +5,13 @@
 " https://github.com/nvim-telescope/telescope-file-browser.nvim
 
 if _enable_telescope
-	call DebugPrint('32-telescope.nvimrc: start')
+    call DebugPrint('32-telescope.nvimrc: start')
 
-	packadd! plenary.nvim
-	packadd! telescope.nvim
-	packadd! telescope-file-browser.nvim
+    packadd! plenary.nvim
+    packadd! telescope.nvim
+    packadd! telescope-file-browser.nvim
 
-	call DebugPrint('32-telescope.nvimrc: end')
+    call DebugPrint('32-telescope.nvimrc: end')
 endif
 
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:
