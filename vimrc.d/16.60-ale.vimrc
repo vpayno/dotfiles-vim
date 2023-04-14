@@ -22,7 +22,7 @@ if _enable_ale
     let g:ale_open_list = g:enable
 
     " only run linters on save?
-    let g:ale_fix_on_save = g:disable
+    let g:ale_fix_on_save = g:enable
 
     let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰', '│', '─']
     " let g:ale_floating_window_border = repeat([''], 8)
@@ -51,7 +51,8 @@ if _enable_ale
     endif
 
     let g:ale_fixers = {
-        \   'python': ['ruff', 'isort'],
+        \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+        \   'python': ['ruff', 'isort', 'black'],
         \   'go': ['goimports'],
         \}
 
@@ -59,13 +60,15 @@ if _enable_ale
         \   'python': ['pylint'],
         \}
 
+    "\   'python': ['ruff', 'pyright', 'bandit', 'radon', 'mypy', 'pydocstyle', 'pycodestyle'],
     let g:ale_linters = {
-        \   'python': ['ruff', 'pyright', 'bandit', 'radon', 'mypy', 'pydocstyle', 'pycodestyle'],
+        \   'python': ['ruff', 'pyright'],
         \   'go': ['golangci-lint'],
         \   'rust': ['clippy'],
         \   'yaml': ['yamllint'],
         \   'json': ['jsonlint'],
         \   'sh': ['shellcheck'],
+        \   'xml': ['xmllint'],
         \   'vim': ['vint'],
         \}
 
@@ -73,6 +76,15 @@ if _enable_ale
     let g:ale_linters_explicit = g:disable
 
     let g:ale_python_black_options = '--line-length=120'
+
+    let g:ale_python_ruff_options = ''
+
+    let g:ale_python_isort_options = '--profile black'
+
+    let b:ale_python_pyright_config = {
+        \ 'pyright': {
+        \ },
+        \}
 
     let b:ale_go_golangci_lint_package = g:enable
     let g:ale_go_golangci_lint_options = 'run --enable-all'
