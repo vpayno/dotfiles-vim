@@ -21,6 +21,39 @@ if (&filetype==#'python' && _enable_python)
 
 endif
 
+if _enable_ale
+    " https://github.com/dense-analysis/ale/blob/master/doc/ale-python.txt
+
+    " let g:ale_python_autoflake_options = ''
+    " let g:ale_python_autoimport_options = ''
+    " let g:ale_python_autopep8_options = ''
+    " let g:ale_python_bandit_options = ''
+    let g:ale_python_bandit_use_config = g:enable  " looks for .bandit
+    let g:ale_python_black_options = '--line-length=120'
+    " let g:ale_python_flake8_options = ''
+    " let g:ale_python_flakehell_options = ''
+    let g:ale_python_isort_options = '--profile black'
+    " let g:ale_python_mypy_options = ''
+    let g:ale_python_mypy_show_notes = g:enable
+    " let g:ale_python_prospector_options = ''
+    " let g:ale_python_pycln_options = ''
+    " let g:ale_python_pycodestyle_options = ''
+    " let g:ale_python_pydocstyle_options = ''
+    " let g:ale_python_pyflyby_options = ''
+    " let g:ale_python_pylama_options = ''
+    " let g:ale_python_pylint_options = ''
+    " let g:ale_python_pylsp_config = {}
+    " let g:ale_python_pylsp_options = ''
+    " let g:ale_python_pyright_config = { 'pyright': { } }
+    " let g:ale_python_refurb_options = ''
+    " let g:ale_python_ruff_options = ''
+    " let g:ale_python_vulture_options = ''
+
+    let g:ale_fixers.python = ['ruff', 'isort', 'black']
+    let g:ale_linters.python = ['ruff', 'pyright'] " ['ruff', 'pyright', 'autopep8', 'mypy', 'bandit', 'mccabe', 'pycodestyle', 'pydocstyle', 'pyflakes', 'radon']
+    let g:ale_linters_ignore.python = ['pylint']
+endif
+
 if _enable_python_coc_pyright
 
     call DebugPrint('44.0-python.vimrc: start [coc-pyright]')

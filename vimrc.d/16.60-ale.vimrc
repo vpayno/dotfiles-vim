@@ -30,41 +30,35 @@ if _enable_ale
     set omnifunc=ale#completion#OmniFunc
 
     " enable lint status line
-    if g:true
-        " Set this. Airline will handle the rest.
-        let g:airline#extensions#ale#enabled = 1
+    " Set this. Airline will handle the rest.
+    let g:airline#extensions#ale#enabled = 1
 
-        function! LinterStatus() abort
-            let l:counts = ale#statusline#Count(bufnr(''))
+    function! LinterStatus() abort
+        let l:counts = ale#statusline#Count(bufnr(''))
 
-            let l:all_errors = l:counts.error + l:counts.style_error
-            let l:all_non_errors = l:counts.total - l:all_errors
+        let l:all_errors = l:counts.error + l:counts.style_error
+        let l:all_non_errors = l:counts.total - l:all_errors
 
-            return l:counts.total == 0 ? 'OK' : printf(
-            \   '%dW %dE',
-            \   all_non_errors,
-            \   all_errors
-            \)
-        endfunction
+        return l:counts.total == 0 ? 'OK' : printf(
+        \   '%dW %dE',
+        \   all_non_errors,
+        \   all_errors
+        \)
+    endfunction
 
-        set statusline=%{LinterStatus()}
-    endif
+    set statusline=%{LinterStatus()}
 
     let g:ale_fixers = {
         \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-        \   'python': ['ruff', 'isort', 'black'],
         \   'go': ['goimports'],
         \}
 
     let g:ale_linters_ignore = {
-        \   'python': ['pylint'],
         \}
 
-    "\   'python': ['ruff', 'pyright', 'bandit', 'radon', 'mypy', 'pydocstyle', 'pycodestyle'],
     let g:ale_linters = {
         \   'go': ['golangci-lint'],
         \   'json': ['jsonlint'],
-        \   'python': ['ruff', 'pyright'],
         \   'sh': ['shellcheck'],
         \   'vim': ['vint'],
         \   'xml': ['xmllint'],
@@ -74,17 +68,6 @@ if _enable_ale
     " Only run linters named in ale_linters settings.
     let g:ale_linters_explicit = g:disable
 
-    let g:ale_python_black_options = '--line-length=120'
-
-    let g:ale_python_ruff_options = ''
-
-    let g:ale_python_isort_options = '--profile black'
-
-    let b:ale_python_pyright_config = {
-        \ 'pyright': {
-        \ },
-        \}
-
     let b:ale_go_golangci_lint_package = g:enable
     let g:ale_go_golangci_lint_options = 'run --enable-all'
 
@@ -92,7 +75,6 @@ if _enable_ale
         let g:ale_fixers = {
             \   '*': ['remove_trailing_lines', 'trim_whitespace'],
             \   'javascript': ['eslint'],
-            \   'python': ['ruff', 'pyright', 'autopep8', 'mypy', 'bandit', 'mccabe', 'pycodestyle', 'pydocstyle', 'pyflakes', 'radon'],
             \   'go': ['govet', 'revive', 'gosec', 'staticcheck', 'guru', 'golangci-lint', 'errcheck', 'gocritic', 'ineffassign', 'typecheck'],
             \   'yaml': ['yamllint'],
             \   'json': ['jsonlint'],
