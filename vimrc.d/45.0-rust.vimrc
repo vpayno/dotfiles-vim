@@ -17,12 +17,22 @@ if (&filetype==#'rust' && _enable_rust)
 
         " rust.vim options
         let g:rustfmt_autosave = g:enable
-        let g:ale_rust_cargo_use_check = g:enable
-        let g:ale_rust_cargo_check_tests = g:enable
-        let g:ale_rust_cargo_check_examples = g:enable
         let g:rust_cargo_check_benches = g:disable
         let g:rust_fold = g:enable
         let g:rust_bang_comment_leader = g:enable
+
+        if _enable_ale
+            " https://github.com/dense-analysis/ale/blob/master/doc/ale-rust.txt
+            let g:ale_rust_cargo_use_check = g:enable
+            let g:ale_rust_cargo_check_tests = g:enable
+            let g:ale_rust_cargo_check_examples = g:enable
+            let g:ale_rust_cargo_default_feature_behavior = 'all'
+            let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
+
+            let g:ale_fixers.rust = ['rustfmt']
+            let g:ale_linters.rust = ['rustc']
+            let g:ale_linters_ignore.rust = []
+        endif
 
         " Send clipboard to rust playpen.
         if has('macunix')

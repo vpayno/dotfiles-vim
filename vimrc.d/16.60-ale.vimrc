@@ -62,14 +62,13 @@ if _enable_ale
 
     "\   'python': ['ruff', 'pyright', 'bandit', 'radon', 'mypy', 'pydocstyle', 'pycodestyle'],
     let g:ale_linters = {
-        \   'python': ['ruff', 'pyright'],
         \   'go': ['golangci-lint'],
-        \   'rust': ['clippy'],
-        \   'yaml': ['yamllint'],
         \   'json': ['jsonlint'],
+        \   'python': ['ruff', 'pyright'],
         \   'sh': ['shellcheck'],
-        \   'xml': ['xmllint'],
         \   'vim': ['vint'],
+        \   'xml': ['xmllint'],
+        \   'yaml': ['yamllint'],
         \}
 
     " Only run linters named in ale_linters settings.
@@ -95,7 +94,6 @@ if _enable_ale
             \   'javascript': ['eslint'],
             \   'python': ['ruff', 'pyright', 'autopep8', 'mypy', 'bandit', 'mccabe', 'pycodestyle', 'pydocstyle', 'pyflakes', 'radon'],
             \   'go': ['govet', 'revive', 'gosec', 'staticcheck', 'guru', 'golangci-lint', 'errcheck', 'gocritic', 'ineffassign', 'typecheck'],
-            \   'rust': ['clippy'],
             \   'yaml': ['yamllint'],
             \   'json': ['jsonlint'],
             \   'sh': ['shellcheck'],
