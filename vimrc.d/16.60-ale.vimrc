@@ -48,6 +48,7 @@ if _enable_ale
 
     set statusline=%{LinterStatus()}
 
+    " https://github.com/dense-analysis/ale/tree/master/autoload/ale/fixers
     let g:ale_fixers = {
         \   '*': ['remove_trailing_lines', 'trim_whitespace'],
         \}
@@ -57,7 +58,6 @@ if _enable_ale
 
     let g:ale_linters = {
         \   'json': ['jsonlint'],
-        \   'sh': ['shellcheck'],
         \   'vim': ['vint'],
         \   'xml': ['xmllint'],
         \   'yaml': ['yamllint'],
@@ -72,7 +72,6 @@ if _enable_ale
             \   'javascript': ['eslint'],
             \   'yaml': ['yamllint'],
             \   'json': ['jsonlint'],
-            \   'sh': ['shellcheck'],
             \   'vim': ['vint'],
             \}
 
