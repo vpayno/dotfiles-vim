@@ -26,6 +26,33 @@ if (&filetype==#'go' && _enable_golang)
         autocmd BufWritePost *.go | execute 'silent !"${HOME}"/.vim/scripts/gofmt --vim %' | :e
     augroup end
 
+    if _enable_ale
+
+        " https://github.com/dense-analysis/ale/blob/master/doc/ale-go.txt
+        let b:ale_go_golangci_lint_package = g:enable
+        " let g:ale_go_bingo_options = ''
+        " let g:ale_go_gobuild_options = ''
+        " let g:ale_go_gofmt_options = ''
+        " let g:ale_go_gofumpt_options = ''
+        let g:ale_go_golangci_lint_options = 'run --enable-all'
+        " let g:ale_go_golines_options = ''
+        " let g:ale_go_golint_options = ''
+        " let g:ale_go_gopls_fix_options = ''
+        " let g:ale_go_gopls_options = ''
+        " let g:ale_go_govet_options = ''
+        " let g:ale_go_langserver_options = ''
+        " let g:ale_go_revive_options = ''
+        " let g:ale_go_staticcheck_options = ''
+
+        " https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md
+        " let g:ale_go_gopls_init_options = {'ui.diagnostic.analyses': {}}
+
+        let g:ale_fixers.go = ['goimports']
+        let g:ale_linters.go = ['golangci-lint']
+        let g:ale_linters_ignore.go = []
+
+    endif
+
     if _enable_golang_vimgo
         call DebugPrint('46.0-golang.vimrc: start [vim-go]')
 

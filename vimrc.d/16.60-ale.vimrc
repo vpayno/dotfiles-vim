@@ -50,14 +50,12 @@ if _enable_ale
 
     let g:ale_fixers = {
         \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-        \   'go': ['goimports'],
         \}
 
     let g:ale_linters_ignore = {
         \}
 
     let g:ale_linters = {
-        \   'go': ['golangci-lint'],
         \   'json': ['jsonlint'],
         \   'sh': ['shellcheck'],
         \   'vim': ['vint'],
@@ -68,14 +66,10 @@ if _enable_ale
     " Only run linters named in ale_linters settings.
     let g:ale_linters_explicit = g:disable
 
-    let b:ale_go_golangci_lint_package = g:enable
-    let g:ale_go_golangci_lint_options = 'run --enable-all'
-
     if g:false
         let g:ale_fixers = {
             \   '*': ['remove_trailing_lines', 'trim_whitespace'],
             \   'javascript': ['eslint'],
-            \   'go': ['govet', 'revive', 'gosec', 'staticcheck', 'guru', 'golangci-lint', 'errcheck', 'gocritic', 'ineffassign', 'typecheck'],
             \   'yaml': ['yamllint'],
             \   'json': ['jsonlint'],
             \   'sh': ['shellcheck'],
