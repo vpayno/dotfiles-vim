@@ -73,6 +73,11 @@ function! SetOptionsForWhiteSpace()
         " echom 'SetOptionsForWhiteSpace() -> SetOptionsForSpaces()'
         call SetOptionsForSpaces()
     endif
+
+    " commands that show you the last changer of these options
+    " verb set expandtab?
+    " verb set et?
+    " verb set invexpandtab?
 endfunction
 
 augroup au_whitespace
