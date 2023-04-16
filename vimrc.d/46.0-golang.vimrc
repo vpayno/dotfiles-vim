@@ -34,7 +34,7 @@ if (&filetype==#'go' && _enable_golang)
         " let g:ale_go_gobuild_options = ''
         " let g:ale_go_gofmt_options = ''
         " let g:ale_go_gofumpt_options = ''
-        let g:ale_go_golangci_lint_options = 'run --enable-all'
+        let g:ale_go_golangci_lint_options = 'run --enable "govet,ineffassign,asciicheck,goimports,misspell,revive,wsl" ./...'
         " let g:ale_go_golines_options = ''
         " let g:ale_go_golint_options = ''
         " let g:ale_go_gopls_fix_options = ''
@@ -47,7 +47,7 @@ if (&filetype==#'go' && _enable_golang)
         " https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md
         " let g:ale_go_gopls_init_options = {'ui.diagnostic.analyses': {}}
 
-        let g:ale_fixers.go = ['goimports']
+        let g:ale_fixers.go = ['goimports', 'golines']
         let g:ale_linters.go = ['golangci-lint']
         let g:ale_linters_ignore.go = []
 
