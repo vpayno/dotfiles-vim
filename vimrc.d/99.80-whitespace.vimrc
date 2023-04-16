@@ -62,8 +62,8 @@ function! SetOptionsForSpaces()
 endfunction
 
 function! SetOptionsForWhiteSpace()
-    if &filetype==#'qf'
-        return
+    if &filetype==#'qf' || &filetype==#'gitcommit'
+        return v:true
     endif
 
     if FileTypeUsesTabs()
@@ -77,7 +77,7 @@ endfunction
 
 augroup au_whitespace
     autocmd!
-    autocmd BufEnter * call SetOptionsForWhiteSpace()
+    autocmd BufEnter,FileType * call SetOptionsForWhiteSpace()
 augroup end
 
 call DebugPrint('99.80-whitespace.vimrc: end')
