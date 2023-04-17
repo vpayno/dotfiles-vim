@@ -49,7 +49,8 @@ if _enable_ale
     " let g:ale_python_ruff_options = ''
     " let g:ale_python_vulture_options = ''
 
-    let g:ale_fixers.python = ['ruff', 'isort', 'black']
+    " fixers are run in the order shown
+    let g:ale_fixers.python = ['autoimport', 'ruff', 'isort', 'black']
     let g:ale_linters.python = ['ruff', 'pyright'] " ['ruff', 'pyright', 'autopep8', 'mypy', 'bandit', 'mccabe', 'pycodestyle', 'pydocstyle', 'pyflakes', 'radon']
     let g:ale_linters_ignore.python = ['pylint']
 endif
