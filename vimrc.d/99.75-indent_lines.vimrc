@@ -87,7 +87,7 @@ if _enable_indent_guides && (&filetype!=#'gitcommit' || &filetype!=#'qf')
     " these chars only work in utf-8 encoded files (files with spaces)
     " https://www.ascii-code.com/ - Windows-1252
     " https://www.meridianoutpost.com/resources/articles/ASCII-Extended-Code-reference-chart.php
-    " •     █∙ ·   ▓ ▒ ░ ■ ≡ ≥ » › º ¨ ° º ¼ ½ ¾ ¹ ² ³
+    " • ∙ · █ ▓ ▒ ░ ■ ≡ ≥ » › º ¨ ° º ¼ ½ ¾ ¹ ² ³
     let g:indentLine_char_list = ['│', '|', '¦', '┆', '┊', '•', '·', '∙', '˙']
     " let g:indentLine_char = '¦'
     " let g:indentLine_char = '▏'
