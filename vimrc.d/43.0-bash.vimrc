@@ -8,12 +8,6 @@
 if _enable_sh && &filetype==#'sh'
     call DebugPrint('43.0-bash.vimrc: start')
 
-    set tabstop=4
-    set shiftwidth=4
-    set noexpandtab
-    set autoindent
-    " :%retab!
-
     " pack/upstream/opt/vim-shfmt
     packadd! vim-shfmt
 
