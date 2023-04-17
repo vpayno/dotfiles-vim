@@ -29,7 +29,7 @@ if &filetype==#'json'
     command! JsonFmt %!jq --sort-keys .
 
     if _enable_ale
-        let g:ale_fixers.json = ['jq']
+        let g:ale_fixers.json = ['fixjson', 'jq']
         let g:ale_linters.json = ['jsonlint']
         let g:ale_linters_ignore.json = []
     endif
