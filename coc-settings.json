@@ -1,218 +1,218 @@
 {
-    "black": {
-        "enabled": true
+  "black": {
+    "enabled": true
+  },
+  "coc.preferences.formatOnSaveFiletypes": [],
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.snippets.enable": true,
+  "coc.preferences.useQuickfixForLocations": true,
+  "coc.preferences.willSaveHandlerTimeout": 5000,
+  "diagnostic-languageserver.debug": {
+    "default": true,
+    "description": "enable debug?",
+    "type": "boolean"
+  },
+  "diagnostic-languageserver.enable": {
+    "default": true,
+    "description": "enable this extension?",
+    "type": "boolean"
+  },
+  "diagnostic-languageserver.filetypes": {
+    "default": {
+      "cmake": [
+        "cmake-lint",
+        "cmakelint"
+      ],
+      "email": "languagetool",
+      "go": [
+        "golint",
+        "revive",
+        "gosec",
+        "staticcheck",
+        "guru",
+        "golangci-lint",
+        "errcheck",
+        "gocritic",
+        "govet",
+        "ineffassign",
+        "typecheck"
+      ],
+      "json": [
+        "jsonlint"
+      ],
+      "markdown": [
+        "write-good",
+        "markdownlint"
+      ],
+      "python": [
+        "bandit",
+        "mccabe",
+        "mypy",
+        "pycodestye",
+        "pydocstyle",
+        "pyflakes",
+        "pylint",
+        "pyright",
+        "radon"
+      ],
+      "rust": [
+        "clippy"
+      ],
+      "sh": "shellcheck",
+      "systemd": "systemd-analyze",
+      "vim": "vint",
+      "yaml": [
+        "yamllint"
+      ]
     },
-    "coc.preferences.formatOnSaveFiletypes": [],
-    "coc.preferences.formatOnType": true,
-    "coc.preferences.snippets.enable": true,
-    "coc.preferences.useQuickfixForLocations": true,
-    "coc.preferences.willSaveHandlerTimeout": 5000,
-    "diagnostic-languageserver.debug": {
-        "default": true,
-        "description": "enable debug?",
-        "type": "boolean"
+    "description": "filetypes config same as diagnostic-languageserver's filetypes config",
+    "type": "object"
+  },
+  "diagnostic-languageserver.formatFiletypes": {
+    "default": {
+      "cmake": "cmake-format",
+      "dart": "dartfmt",
+      "go": [
+        "gofmt",
+        "goimports",
+        "golines",
+        "gofumpt"
+      ],
+      "lua": "lua-format",
+      "python": [
+        "black",
+        "isort"
+      ],
+      "ruby": [
+        "rubocop"
+      ],
+      "rust": "rustfmt",
+      "sh": "shfmt"
     },
-    "diagnostic-languageserver.enable": {
-        "default": true,
-        "description": "enable this extension?",
-        "type": "boolean"
+    "description": "formatFiletypes config same as diagnostic-languageserver's formatFiletypes config",
+    "type": "object"
+  },
+  "diagnostic-languageserver.formatters": {
+    "default": {},
+    "description": "formatters config same as diagnostic-languageserver's formatters config",
+    "type": "object"
+  },
+  "diagnostic-languageserver.linters": {
+    "default": {},
+    "description": "linters config same as diagnostic-languageserver's linters config",
+    "type": "object"
+  },
+  "diagnostic-languageserver.mergeConfig": {
+    "default": false,
+    "description": "merge config?",
+    "type": "boolean"
+  },
+  "diagnostic-languageserver.trace.server": {
+    "default": "off",
+    "description": "Trace level of diagnostic-languageserver",
+    "enum": [
+      "off",
+      "messages",
+      "verbose"
+    ],
+    "type": "string"
+  },
+  "diagnostic.autoRefresh": true,
+  "diagnostic.refreshOnInsertMode": false,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "filetypes": [
+        "go"
+      ],
+      "rootPatterns": [
+        "go.mod"
+      ],
+      "trace.server": "verbose"
     },
-    "diagnostic-languageserver.filetypes": {
-        "default": {
-            "cmake": [
-                "cmake-lint",
-                "cmakelint"
-            ],
-            "email": "languagetool",
-            "go": [
-                "golint",
-                "revive",
-                "gosec",
-                "staticcheck",
-                "guru",
-                "golangci-lint",
-                "errcheck",
-                "gocritic",
-                "govet",
-                "ineffassign",
-                "typecheck"
-            ],
-            "json": [
-                "jsonlint"
-            ],
-            "markdown": [
-                "write-good",
-                "markdownlint"
-            ],
-            "python": [
-                "bandit",
-                "mccabe",
-                "mypy",
-                "pycodestye",
-                "pydocstyle",
-                "pyflakes",
-                "pylint",
-                "pyright",
-                "radon"
-            ],
-            "rust": [
-                "clippy"
-            ],
-            "sh": "shellcheck",
-            "systemd": "systemd-analyze",
-            "vim": "vint",
-            "yaml": [
-                "yamllint"
-            ]
+    "pyright": {
+      "enable": true,
+      "organizeimports": {
+        "provider": "isort"
+      }
+    },
+    "python": {
+      "formatting": {
+        "blackArgs": "--line-length=120",
+        "provider": "black"
+      },
+      "linting": {
+        "banditEnable": true,
+        "mypyEnabled": true,
+        "prospectorEnabled": true,
+        "pycodestyleEnabled": true,
+        "pylamaEnabled": true,
+        "pylintEnabled": false,
+        "pyrightEnabled": true,
+        "pytypeEnabled": true,
+        "ruffEnabled": true
+      }
+    },
+    "rust": {
+      "command": "rust-analyzer",
+      "filetypes": [
+        "rust"
+      ],
+      "rootPatterns": [
+        "Cargo.toml"
+      ]
+    },
+    "rust-analyzer": {
+      "checkOnSave": true,
+      "enable": true
+    },
+    "vimls": {
+      "args": [
+        "--stdio"
+      ],
+      "command": "vim-language-server",
+      "filetypes": [
+        "vim"
+      ],
+      "initializationOptions": {
+        "diagnostic": {
+          "enable": true
         },
-        "description": "filetypes config same as diagnostic-languageserver's filetypes config",
-        "type": "object"
-    },
-    "diagnostic-languageserver.formatFiletypes": {
-        "default": {
-            "cmake": "cmake-format",
-            "dart": "dartfmt",
-            "go": [
-                "gofmt",
-                "goimports",
-                "golines",
-                "gofumpt"
-            ],
-            "lua": "lua-format",
-            "python": [
-                "black",
-                "isort"
-            ],
-            "ruby": [
-                "rubocop"
-            ],
-            "rust": "rustfmt",
-            "sh": "shfmt"
+        "indexes": {
+          "count": 3,
+          "gap": 100,
+          "projectRootPatterns": [
+            "strange-root-pattern",
+            ".git",
+            "autoload",
+            "plugin"
+          ],
+          "runtimepath": true
         },
-        "description": "formatFiletypes config same as diagnostic-languageserver's formatFiletypes config",
-        "type": "object"
-    },
-    "diagnostic-languageserver.formatters": {
-        "default": {},
-        "description": "formatters config same as diagnostic-languageserver's formatters config",
-        "type": "object"
-    },
-    "diagnostic-languageserver.linters": {
-        "default": {},
-        "description": "linters config same as diagnostic-languageserver's linters config",
-        "type": "object"
-    },
-    "diagnostic-languageserver.mergeConfig": {
-        "default": false,
-        "description": "merge config?",
-        "type": "boolean"
-    },
-    "diagnostic-languageserver.trace.server": {
-        "default": "off",
-        "description": "Trace level of diagnostic-languageserver",
-        "enum": [
-            "off",
-            "messages",
-            "verbose"
-        ],
-        "type": "string"
-    },
-    "diagnostic.autoRefresh": true,
-    "diagnostic.refreshOnInsertMode": false,
-    "diagnostic.virtualTextCurrentLineOnly": false,
-    "languageserver": {
-        "go": {
-            "command": "gopls",
-            "filetypes": [
-                "go"
-            ],
-            "rootPatterns": [
-                "go.mod"
-            ],
-            "trace.server": "verbose"
+        "isNeovim": false,
+        "iskeyword": "@,48-57,_,192-255,-#",
+        "runtimepath": "",
+        "suggest": {
+          "fromRuntimepath": false,
+          "fromVimruntime": true
         },
-        "pyright": {
-            "enable": true,
-            "organizeimports": {
-                "provider": "isort"
-            }
-        },
-        "python": {
-            "formatting": {
-                "blackArgs": "--line-length=120",
-                "provider": "black"
-            },
-            "linting": {
-                "banditEnable": true,
-                "mypyEnabled": true,
-                "prospectorEnabled": true,
-                "pycodestyleEnabled": true,
-                "pylamaEnabled": true,
-                "pylintEnabled": false,
-                "pyrightEnabled": true,
-                "pytypeEnabled": true,
-                "ruffEnabled": true
-            }
-        },
-        "rust": {
-            "command": "rust-analyzer",
-            "filetypes": [
-                "rust"
-            ],
-            "rootPatterns": [
-                "Cargo.toml"
-            ]
-        },
-        "rust-analyzer": {
-            "checkOnSave": true,
-            "enable": true
-        },
-        "vimls": {
-            "args": [
-                "--stdio"
-            ],
-            "command": "vim-language-server",
-            "filetypes": [
-                "vim"
-            ],
-            "initializationOptions": {
-                "diagnostic": {
-                    "enable": true
-                },
-                "indexes": {
-                    "count": 3,
-                    "gap": 100,
-                    "projectRootPatterns": [
-                        "strange-root-pattern",
-                        ".git",
-                        "autoload",
-                        "plugin"
-                    ],
-                    "runtimepath": true
-                },
-                "isNeovim": false,
-                "iskeyword": "@,48-57,_,192-255,-#",
-                "runtimepath": "",
-                "suggest": {
-                    "fromRuntimepath": false,
-                    "fromVimruntime": true
-                },
-                "vimruntime": ""
-            }
-        }
-    },
-    "python.formatting.provider": "black",
-    "python.jediEnabled": false,
-    "python.linting.enabled": true,
-    "python.linting.flake8Enabled": true,
-    "python.linting.lintOnSave": true,
-    "python.linting.pylintEnabled": true,
-    "python.venvFolders": [],
-    "python.venvPath": "~/venv",
-    "ruff-lsp": {
-        "command": "ruff-lsp",
-        "filetypes": [
-            "python"
-        ]
+        "vimruntime": ""
+      }
     }
+  },
+  "python.formatting.provider": "black",
+  "python.jediEnabled": false,
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.pylintEnabled": true,
+  "python.venvFolders": [],
+  "python.venvPath": "~/venv",
+  "ruff-lsp": {
+    "command": "ruff-lsp",
+    "filetypes": [
+      "python"
+    ]
+  }
 }
