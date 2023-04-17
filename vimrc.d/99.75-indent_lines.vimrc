@@ -74,9 +74,9 @@ if _enable_indent_guides && (&filetype!=#'gitcommit' || &filetype!=#'qf')
     augroup au_enable_indent_guides
         autocmd!
         if g:_enable_indent_guides_on_enter
-            autocmd BufEnter * call EnableIndentGuides()
+            autocmd BufEnter,BufRead,FileType * call EnableIndentGuides()
         else
-            autocmd BufEnter * call DisableIndentGuides()
+            autocmd BufEnter,BufRead,FileType * call DisableIndentGuides()
         endif
     augroup end
 
