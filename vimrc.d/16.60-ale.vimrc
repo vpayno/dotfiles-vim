@@ -53,11 +53,9 @@ if _enable_ale
         \   '*': ['remove_trailing_lines', 'trim_whitespace'],
         \}
 
-    let g:ale_linters_ignore = {
-        \}
+    let g:ale_linters_ignore = {}
 
     let g:ale_linters = {
-        \   'json': ['jsonlint'],
         \   'vim': ['vint'],
         \   'xml': ['xmllint'],
         \   'yaml': ['yamllint'],
@@ -71,7 +69,6 @@ if _enable_ale
             \   '*': ['remove_trailing_lines', 'trim_whitespace'],
             \   'javascript': ['eslint'],
             \   'yaml': ['yamllint'],
-            \   'json': ['jsonlint'],
             \   'vim': ['vint'],
             \}
 
