@@ -70,7 +70,7 @@ function! ToggleIndentGuides()
     endif
 endfunction
 
-if _enable_indent_guides && &filetype!=#'gitcommit'
+if _enable_indent_guides && (&filetype!=#'gitcommit' || &filetype!=#'qf')
     augroup au_enable_indent_guides
         autocmd!
         if g:_enable_indent_guides_on_enter
