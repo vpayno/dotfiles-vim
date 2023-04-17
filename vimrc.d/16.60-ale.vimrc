@@ -53,12 +53,12 @@ if _enable_ale
         \   '*': ['remove_trailing_lines', 'trim_whitespace'],
         \}
 
-    let g:ale_linters_ignore = {}
-
     let g:ale_linters = {
         \   'vim': ['vint'],
         \   'xml': ['xmllint'],
         \}
+
+    let g:ale_linters_ignore = {}
 
     " Only run linters named in ale_linters settings.
     let g:ale_linters_explicit = g:disable

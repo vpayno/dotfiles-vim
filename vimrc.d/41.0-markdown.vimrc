@@ -24,6 +24,12 @@ if _enable_markdown
     let g:vim_markdown_folding_style_pythonic = g:enable
     "let g:vim_markdown_override_foldtext = g:disable
 
+    if _enable_ale
+        let g:ale_fixers.markdown = ['textlint']
+        let g:ale_linters.markdown = []
+        let g:ale_linters_ignore.markdown = []
+    endif
+
     call DebugPrint('41.0-markdown.vimrc: end')
 endif
 
