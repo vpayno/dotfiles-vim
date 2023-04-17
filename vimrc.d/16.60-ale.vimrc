@@ -58,7 +58,6 @@ if _enable_ale
     let g:ale_linters = {
         \   'vim': ['vint'],
         \   'xml': ['xmllint'],
-        \   'yaml': ['yamllint'],
         \}
 
     " Only run linters named in ale_linters settings.
@@ -68,7 +67,6 @@ if _enable_ale
         let g:ale_fixers = {
             \   '*': ['remove_trailing_lines', 'trim_whitespace'],
             \   'javascript': ['eslint'],
-            \   'yaml': ['yamllint'],
             \   'vim': ['vint'],
             \}
 

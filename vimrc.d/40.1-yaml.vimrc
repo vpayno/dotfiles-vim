@@ -14,10 +14,16 @@ if &filetype==#'yaml'
         let g:yaml_limit_spell = g:disable
     endif
 
-    augroup au_yaml
-        autocmd!
-        autocmd BufNewFile,BufRead *.yaml,*.yml set filetype=yaml
-    augroup end
+    "augroup au_yaml
+        "autocmd!
+        "autocmd BufNewFile,BufRead *.yaml,*.yml set filetype=yaml
+    "augroup end
+
+    if _enable_ale
+        let g:ale_fixers.yaml = ['yamlfix']
+        let g:ale_linters.yaml = ['yamllint']
+        let g:ale_linters_ignore.yaml = []
+    endif
 
     call DebugPrint('40.1-yaml.vimrc: end')
 endif
