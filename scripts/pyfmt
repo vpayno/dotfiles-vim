@@ -24,8 +24,8 @@ main() {
 		time yapf --style=google --recursive --in-place "${targets[@]}"
 		printf "\n"
 
-		echo isort --dont-follow-links --atomic --ensure-newline-before-comments "${targets[@]}"
-		time isort --dont-follow-links --atomic --ensure-newline-before-comments "${targets[@]}"
+		echo isort --profile black --dont-follow-links --atomic --ensure-newline-before-comments "${targets[@]}"
+		time isort --profile black --dont-follow-links --atomic --ensure-newline-before-comments "${targets[@]}"
 		printf "\n"
 
 		echo black --line-length=120 "${targets[@]}"
