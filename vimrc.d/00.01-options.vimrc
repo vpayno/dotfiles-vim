@@ -53,6 +53,7 @@ let _enable_perl5                 = g:enable
 let _enable_perl6                 = g:enable
 let _enable_powerline             = g:disable " if disabled, airline is used
 let _enable_python                = g:enable
+let _enable_python_ale_fixers     = g:enable
 let _enable_python_autopep8       = g:disable
 let _enable_python_coc_pyright    = g:disable
 let _enable_python_isort          = g:disable
