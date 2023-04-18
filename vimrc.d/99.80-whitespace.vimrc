@@ -11,7 +11,7 @@ function! FileTypeUsesTabs()
     if
         \ &filetype ==# 'ebuild' ||
         \ &filetype ==# 'go' ||
-        \ &filetype ==# 'makefile' ||
+        \ &filetype ==# 'make' ||
         \ &filetype ==# 'sh' ||
         \ &filetype ==# 'tsv'
         let l:result = v:true
