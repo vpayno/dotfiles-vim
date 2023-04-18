@@ -7,18 +7,18 @@
 " https://github.com/tell-k/vim-autopep8
 
 if (&filetype==#'python' && _enable_python)
-
     call DebugPrint('44.0-python.vimrc: start')
 
     call extend(g:vimspector_install_gadgets, [ 'debugpy' ])
 
     call DebugPrint('44.0-python.vimrc: end')
 
-    augroup ag_python_pyfmt
-        autocmd!
-        autocmd BufWritePost *.py execute 'silent !"${HOME}"/.vim/scripts/pyfmt --vim %' | :e
-    augroup end
-
+    if _enable_python_pyfmt
+        augroup ag_python_pyfmt
+            autocmd!
+            autocmd BufWritePost *.py execute 'silent !"${HOME}"/.vim/scripts/pyfmt --vim %' | :e
+        augroup end
+    endif
 endif
 
 if _enable_ale

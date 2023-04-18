@@ -57,6 +57,7 @@ let _enable_python_autopep8       = g:disable
 let _enable_python_coc_pyright    = g:disable
 let _enable_python_isort          = g:disable
 let _enable_python_jedi           = g:disable
+let _enable_python_pyfmt          = g:disable
 let _enable_python_pymode         = g:disable
 let _enable_replace_with_register = g:enable
 let _enable_ripgrep               = g:enable
