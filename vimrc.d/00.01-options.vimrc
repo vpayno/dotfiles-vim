@@ -17,6 +17,7 @@ let _enable_auto_tags             = g:disable
 let _enable_buftabline            = g:enable
 let _enable_calendar_vim          = g:enable
 let _enable_clever_f              = g:enable
+let _enable_cmake                 = g:enable
 let _enable_coc                   = g:disable
 let _enable_commentary            = g:enable
 let _enable_conque_shell          = g:disable " old, broken

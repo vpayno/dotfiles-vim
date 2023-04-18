@@ -481,3 +481,6 @@
 [submodule "pack/upstream/opt/vim-yaml"]
 	path = pack/upstream/opt/vim-yaml
 	url = https://github.com/stephpy/vim-yaml
+[submodule "pack/upstream/opt/vim-cmake"]
+	path = pack/upstream/opt/vim-cmake
+	url = https://github.com/cdelledonne/vim-cmake
