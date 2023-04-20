@@ -21,7 +21,7 @@ if (&filetype==#'python' && _enable_python)
     endif
 endif
 
-if _enable_ale
+if _enable_ale && _enable_ale_python
     " https://github.com/dense-analysis/ale/blob/master/doc/ale-python.txt
 
     " let g:ale_python_autoflake_options = ''
@@ -50,12 +50,19 @@ if _enable_ale
     " let g:ale_python_vulture_options = ''
 
     " fixers are run in the order shown
-    if g:_enable_python_ale_fixers
+    if g:_enable_ale_python_fixers
         let g:ale_fixers.python = ['autoimport', 'ruff', 'isort', 'black']
     else
         let g:ale_fixers.python = []
     endif
-    let g:ale_linters.python = ['ruff', 'pyright'] " ['ruff', 'pyright', 'autopep8', 'mypy', 'bandit', 'mccabe', 'pycodestyle', 'pydocstyle', 'pyflakes', 'radon']
+    "
+    " ['ruff', 'pyright', 'autopep8', 'mypy', 'bandit', 'mccabe', 'pycodestyle', 'pydocstyle', 'pyflakes', 'radon']
+    if g:_enable_ale_python_linters
+        let g:ale_linters.python = ['ruff', 'pyright']
+    else
+        let g:ale_linters.python = []
+    endif
+
     let g:ale_linters_ignore.python = ['pylint']
 endif
 
