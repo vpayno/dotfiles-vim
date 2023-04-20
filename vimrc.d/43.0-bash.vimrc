@@ -26,14 +26,24 @@ if _enable_sh && &filetype==#'sh'
 
     call extend(g:vimspector_install_gadgets, [ 'vscode-bash-debug' ])
 
-    if _enable_ale
+    if _enable_ale && _enable_ale_sh
         " https://github.com/dense-analysis/ale/blob/master/doc/ale-sh.txt
         " let g:ale_sh_bashate_options = ''
         " let g:ale_sh_shellcheck_options = ''
         " let g:ale_sh_shfmt_options = ''
 
-        let g:ale_fixers.sh = ['shfmt']
-        let g:ale_linters.sh = ['shellcheck']
+        if _enable_ale_sh_fixers
+            let g:ale_fixers.sh = ['shfmt']
+        else
+            let g:ale_fixers.sh = []
+        endif
+
+        if g:_enable_ale_sh_linters
+            let g:ale_linters.sh = ['shellcheck']
+        else
+            let g:ale_linters.sh = []
+        endif
+
         let g:ale_linters_ignore.sh = []
     endif
 
