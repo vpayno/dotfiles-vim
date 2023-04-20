@@ -29,8 +29,18 @@ if (&filetype==#'rust' && _enable_rust)
             let g:ale_rust_cargo_default_feature_behavior = 'all'
             let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
 
-            let g:ale_fixers.rust = ['rustfmt']
-            let g:ale_linters.rust = ['rustc']
+            if g:_enable_ale_rust_fixers
+                let g:ale_fixers.rust = ['rustfmt']
+            else
+                let g:ale_fixers.rust = []
+            endif
+
+            if g:_enable_ale_rust_linters
+                let g:ale_linters.rust = ['rustc']
+            else
+                let g:ale_linters.rust = []
+            endif
+
             let g:ale_linters_ignore.rust = []
         endif
 
