@@ -66,7 +66,7 @@ function! SetOptionsForSpaces()
 endfunction
 
 function! SetOptionsForWhiteSpace()
-    if &filetype==#'qf' || &filetype==#'gitcommit'
+    if IsSpecialFile()
         return v:true
     endif
 

@@ -33,6 +33,13 @@ if get(g:, 'ImportedHelpers', 0) == 0
         \'vim',
     \]
 
+    let g:internal_filetypes = [
+        \'gitcommit',
+        \'gitrebase',
+        \'netrw',
+        \'qf',
+    \]
+
     function! ArrayIndex(list, item)
         if index(a:list, a:item) >= 0
             return g:true
@@ -43,6 +50,10 @@ if get(g:, 'ImportedHelpers', 0) == 0
 
     function! IsCodeFile()
         return ArrayIndex(g:languages, &filetype)
+    endfunction
+
+    function! IsSpecialFile()
+        return ArrayIndex(g:internal_filetypes, &filetype)
     endfunction
 
     call DebugPrint('00.00-helpers.vimrc: end')
