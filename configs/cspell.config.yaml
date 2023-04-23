@@ -1,0 +1,15 @@
+---
+# https://cspell.org/docs/getting-started/
+$schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
+version: '0.2'
+
+dictionaryDefinitions:
+  - name: custom-words
+    path: '~/.vim/configs/cspell-custom_dictionary.txt'
+    addWords: true
+
+dictionaries:
+  - custom-words
+
+ignorePaths:
+  - 'node_modules'

@@ -18,6 +18,16 @@ endfunction
 
 :highlight SpellBad cterm=underline ctermfg=black ctermbg=magenta
 
+if _enable_ale
+    let g:ale_cspell_options = 'lint --config ~/.vim/configs/cspell.config.yaml --no-progress --show-suggestions'
+
+    function! CSpellAddAllToDictionary()
+        let l:words = systemlist('cspell lint --config ~/.vim/configs/cspell.config.yaml --no-progress --words-only --unique ' . @% . ' 2>/dev/null | sort --ignore-case')
+        echom 'Adding [' . join(l:words, ', ') . '] to custom cspell dictionary'
+        call writefile(l:words, $HOME . '/.vim/configs/cspell-custom_dictionary.txt', 'a')
+    endfunction
+endif
+
 call DebugPrint('00.14-spelling.vimrc: end')
 
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:

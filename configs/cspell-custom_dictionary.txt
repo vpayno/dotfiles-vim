@@ -1,0 +1,7 @@
+coveragerc
+pyright
+pytest
+refurb
+exercism
+nullglob
+shopt
