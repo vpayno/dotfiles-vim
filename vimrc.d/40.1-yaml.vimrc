@@ -20,6 +20,8 @@ if &filetype==#'yaml'
     "augroup end
 
     if _enable_ale
+        let g:ale_yaml_yamllint_options = '--config-file ~/.vim/configs/yamllint-custom.yaml'
+
         let g:ale_fixers.yaml = ['yamlfix']
         let g:ale_linters.yaml = ['yamllint']
         let g:ale_linters_ignore.yaml = []
