@@ -120,8 +120,8 @@ endif
 " paste mode toggle
 "set pastetoggle=\tp
 
-" show line lengths at 80 and 120 chars
-set colorcolumn=80,120
+" show line lengths at 80, 120, 160 and 240 chars
+set colorcolumn=80,120,160,240
 hi ColorColumn ctermbg=darkgray guibg=darkgray
 set textwidth=0
 
