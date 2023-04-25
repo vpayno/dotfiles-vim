@@ -6,7 +6,7 @@
 if &filetype==#'json'
     call DebugPrint('40.0-json.vimrc: start')
 
-    " packadd! vim-json
+    packadd! vim-json
 
     " don't hide double quotes
     let g:vim_json_syntax_conceal = g:disable

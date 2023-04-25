@@ -101,11 +101,11 @@
 	path = pack/upstream/opt/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim
 [submodule "pack/upstream/opt/vim-virtualenv"]
-	path = pack/upstream/opt/vim-virtualenv
-	url = https://github.com/jmcantrell/vim-virtualenv
-[submodule "pack/upstream/start/vim-json"]
-	path = pack/upstream/start/vim-json
-	url = https://github.com/elzr/vim-json
+    path = pack/upstream/opt/vim-virtualenv
+    url = https://github.com/jmcantrell/vim-virtualenv
+[submodule "pack/upstream/opt/vim-json"]
+    path = pack/upstream/opt/vim-json
+    url = https://github.com/elzr/vim-json
 [submodule "pack/upstream/start/Conque-Shell"]
 	path = pack/upstream/opt/Conque-Shell
 	url = https://github.com/vim-scripts/Conque-Shell
