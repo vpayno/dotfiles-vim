@@ -5,7 +5,9 @@
 call DebugPrint('54.1-cmake.vimrc: start')
 
 if _enable_cmake
-    packadd! vim-cmake
+    if has('terminal')
+        packadd! vim-cmake
+    endif
 
     if _enable_ale
         "let g:ale_cmake_cmakeformat_options = ''
