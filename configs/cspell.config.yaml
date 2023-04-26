@@ -8,8 +8,18 @@ dictionaryDefinitions:
     path: '~/.vim/configs/cspell-custom_dictionary.txt'
     addWords: true
 
+  - name: program-words
+    path: '~/.vim/configs/cspell-program_dictionary.txt'
+    addWords: true
+
 dictionaries:
+  - bash
+  - python
   - custom-words
+  - program-words
 
 ignorePaths:
   - 'node_modules'
+
+ignoreRegExpList:
+  - "--\\w+"  # ansible-navigator long CLI parameters

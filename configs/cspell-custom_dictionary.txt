@@ -2,7 +2,9 @@ AWKLIBPATH
 AWKSRCPATH
 RUSTDOCFLAGS
 RUSTFLAGS
+VARGS
 Xoutput
+autopep
 awkunit
 benchmem
 benchstat
@@ -14,8 +16,12 @@ covermode
 coverprofile
 covimerage
 cpath
+ctags
+ctagsignore
+devel
 doctestbins
 doctests
+elif
 errcheck
 exercism
 fzipp
@@ -23,7 +29,11 @@ genhtml
 gocov
 gocritic
 gocyclo
+gofmt
+gofumpt
+goimports
 golangci
+golines
 golint
 gomarkdoc
 gordonklaus
@@ -36,6 +46,7 @@ honnef
 ineffassign
 inplace
 ioctl
+isort
 lcov
 ldoc
 lpath
@@ -44,6 +55,8 @@ luacov
 luarocks
 mapfile
 mgechev
+mktemp
+moreutils
 nagelfar
 neovim
 notch
@@ -72,3 +85,4 @@ vint
 xhtml
 xoml
 xotcl
+yapf
