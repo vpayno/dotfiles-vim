@@ -5,47 +5,54 @@
 " https://github.com/josa42/coc-sh
 " :CocInstall coc-sh
 
-if _enable_sh && &filetype==#'sh'
+if _enable_sh
     call DebugPrint('43.0-bash.vimrc: start')
 
-    " pack/upstream/opt/vim-shfmt
-    packadd! vim-shfmt
+    function! ConfigureFileTypeSh()
+        " pack/upstream/opt/vim-shfmt
+        packadd! vim-shfmt
 
-    let g:shfmt_fmt_on_save = g:enable
-    let g:shfmt_extra_args = ''
+        let g:shfmt_fmt_on_save = g:enable
+        let g:shfmt_extra_args = ''
 
-"   augroup au_shell_retab
-"       autocmd!
-"       autocmd BufReadPost * if &filetype==#'sh' | set noet | :%retab! | :w | endif
-"   augroup end
+        call extend(g:vimspector_install_gadgets, [ 'vscode-bash-debug' ])
 
-    augroup ag_sh_shfmt
+        if g:_enable_ale && g:_enable_ale_sh
+            " https://github.com/dense-analysis/ale/blob/master/doc/ale-sh.txt
+            " let g:ale_sh_bashate_options = ''
+            " let g:ale_sh_shellcheck_options = ''
+            " let g:ale_sh_shfmt_options = ''
+
+            if g:_enable_ale_sh_fixers
+                let g:ale_fixers.sh = ['shfmt']
+            else
+                let g:ale_fixers.sh = []
+            endif
+
+            if g:_enable_ale_sh_linters
+                let g:ale_linters.sh = ['shellcheck']
+            else
+                let g:ale_linters.sh = []
+            endif
+
+            let g:ale_linters_ignore.sh = []
+        else
+            augroup ag_sh_shfmt
+                autocmd!
+                autocmd BufWritePost * if &filetype==#'sh' | Shfmt
+            augroup end
+
+            " augroup au_shell_retab
+            "    autocmd!
+            "    autocmd BufReadPost * if &filetype==#'sh' | set noet | :%retab! | :w | endif
+            " augroup end
+        endif
+    endfunction
+
+    augroup ag_sh_setup
         autocmd!
-        autocmd! BufWritePost * if &filetype==#'sh' | Shfmt
+        autocmd BufEnter,BufRead,FileType * if &filetype==#'sh' | call ConfigureFileTypeSh() | endif
     augroup end
-
-    call extend(g:vimspector_install_gadgets, [ 'vscode-bash-debug' ])
-
-    if _enable_ale && _enable_ale_sh
-        " https://github.com/dense-analysis/ale/blob/master/doc/ale-sh.txt
-        " let g:ale_sh_bashate_options = ''
-        " let g:ale_sh_shellcheck_options = ''
-        " let g:ale_sh_shfmt_options = ''
-
-        if _enable_ale_sh_fixers
-            let g:ale_fixers.sh = ['shfmt']
-        else
-            let g:ale_fixers.sh = []
-        endif
-
-        if g:_enable_ale_sh_linters
-            let g:ale_linters.sh = ['shellcheck']
-        else
-            let g:ale_linters.sh = []
-        endif
-
-        let g:ale_linters_ignore.sh = []
-    endif
 
     call DebugPrint('43.0-bash.vimrc: end')
 endif
