@@ -4,6 +4,8 @@
 
 call DebugPrint('00.14-spelling.vimrc: start')
 
+set spellfile=$HOME/.vim/spell/en.utf-8.add
+
 let g:SpellModeFlag = g:false
 
 function! ToggleSpelling()
