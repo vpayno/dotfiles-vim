@@ -9,102 +9,111 @@
 " https://github.com/fannheyward/coc-rust-analyzer
 " :CocInstall coc-rust-analyzer
 
-if (&filetype==#'rust' && _enable_rust)
+if _enable_rust
     call DebugPrint('45.0-rust.vimrc: start')
 
-    if _enable_rust_rustvim
-        packadd! rust.vim
+    function! ConfigureFileTypeRust()
+        if g:_enable_rust_coc
+            " highlight CocFloating ctermbg=grey
 
-        " rust.vim options
-        let g:rustfmt_autosave = g:enable
-        let g:rust_cargo_check_benches = g:disable
-        let g:rust_fold = g:enable
-        let g:rust_bang_comment_leader = g:enable
+            inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-        if _enable_ale
-            " https://github.com/dense-analysis/ale/blob/master/doc/ale-rust.txt
-            let g:ale_rust_cargo_use_check = g:enable
-            let g:ale_rust_cargo_check_tests = g:enable
-            let g:ale_rust_cargo_check_examples = g:enable
-            let g:ale_rust_cargo_default_feature_behavior = 'all'
-            let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
+            nnoremap <silent> K :call ShowDocumentation()<CR>
 
-            if g:_enable_ale_rust_fixers
-                let g:ale_fixers.rust = ['rustfmt']
-            else
-                let g:ale_fixers.rust = []
-            endif
+            function! ShowDocumentation()
+                if CocAction('hasProvider', 'hover')
+                    call CocActionAsync('doHover')
+                else
+                    call feedkeys('K', 'in')
+                endif
+            endfunction
 
-            if g:_enable_ale_rust_linters
-                let g:ale_linters.rust = ['rustc']
-            else
-                let g:ale_linters.rust = []
-            endif
+            nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+            nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+            inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+            inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+            vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+            vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 
-            let g:ale_linters_ignore.rust = []
-        endif
-
-        " Send clipboard to rust playpen.
-        if has('macunix')
-            let g:rust_clip_command = 'pbcopy'
         else
-            let g:rust_clip_command = 'xclip -selection clipboard'
-        endif
-    endif
 
-    if _enable_rust_vimracer
-        packadd! vim-racer
+            if g:_enable_rust_rustvim
+                packadd! rust.vim
 
-        set hidden
-        let g:racer_cmd = '/home/vpayno/.cargo/bin/racer'
-        let g:racer_experimental_completer = 1  " shoe the complete function definition
-        let g:racer_insert_paren = 1    " insert parenthesis in the completion
+                " rust.vim options
+                let g:rustfmt_autosave = g:enable
+                let g:rust_cargo_check_benches = g:disable
+                let g:rust_fold = g:enable
+                let g:rust_bang_comment_leader = g:enable
 
-        augroup Racer
-            autocmd!
-            autocmd FileType rust nmap <buffer> gd         <Plug>(rust-def)
-            autocmd FileType rust nmap <buffer> gs         <Plug>(rust-def-split)
-            autocmd FileType rust nmap <buffer> gx         <Plug>(rust-def-vertical)
-            autocmd FileType rust nmap <buffer> gt         <Plug>(rust-def-tab)
-            autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
-        augroup END
-    endif
+                if g:_enable_ale
+                    " https://github.com/dense-analysis/ale/blob/master/doc/ale-rust.txt
+                    let g:ale_rust_cargo_use_check = g:enable
+                    let g:ale_rust_cargo_check_tests = g:enable
+                    let g:ale_rust_cargo_check_examples = g:enable
+                    let g:ale_rust_cargo_default_feature_behavior = 'all'
+                    let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
 
-    if _enable_rust_coc
-        " highlight CocFloating ctermbg=grey
+                    if g:_enable_ale_rust_fixers
+                        let g:ale_fixers.rust = ['rustfmt']
+                    else
+                        let g:ale_fixers.rust = []
+                    endif
 
-        inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+                    if g:_enable_ale_rust_linters
+                        let g:ale_linters.rust = ['rustc']
+                    else
+                        let g:ale_linters.rust = []
+                    endif
 
-        nnoremap <silent> K :call ShowDocumentation()<CR>
+                    let g:ale_linters_ignore.rust = []
+                endif
 
-        function! ShowDocumentation()
-            if CocAction('hasProvider', 'hover')
-                call CocActionAsync('doHover')
+                " Send clipboard to rust playpen.
+                if has('macunix')
+                    let g:rust_clip_command = 'pbcopy'
+                else
+                    let g:rust_clip_command = 'xclip -selection clipboard'
+                endif
+
+            elseif g:_enable_rust_vimracer
+                packadd! vim-racer
+
+                set hidden
+                let g:racer_cmd = '/home/vpayno/.cargo/bin/racer'
+                let g:racer_experimental_completer = 1  " shoe the complete function definition
+                let g:racer_insert_paren = 1    " insert parenthesis in the completion
+
+                augroup Racer
+                    autocmd!
+                    autocmd FileType rust nmap <buffer> gd         <Plug>(rust-def)
+                    autocmd FileType rust nmap <buffer> gs         <Plug>(rust-def-split)
+                    autocmd FileType rust nmap <buffer> gx         <Plug>(rust-def-vertical)
+                    autocmd FileType rust nmap <buffer> gt         <Plug>(rust-def-tab)
+                    autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
+                augroup END
+
             else
-                call feedkeys('K', 'in')
+                augroup ag_rust_rustfmt
+                    autocmd!
+                    autocmd! BufWritePost * if &filetype==#'rust' | RustFmt | :e | endif
+                augroup end
+
+                packadd! tagbar
+
+                " https://alpha2phi.medium.com/setting-up-neovim-for-rust-debugging-termdebug-and-vimspector-df749e1ba47c
+                " termdebugger is included with vim >=8.1
+                packadd! termdebug
+                let termdebugger='rust-gdb'
+
             endif
-        endfunction
+        endif
+    endfunction
 
-        nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-        nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-        inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-        inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-        vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-        vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-    endif
-
-    "augroup ag_rust_rustfmt
-        "autocmd!
-        "autocmd! BufWritePost * if &filetype==#'rust' | RustFmt | :e
-        "autocmd! BufWritePost * if &filetype==#'rust' | execute 'silent !rustfmt %' | :e
-    "augroup end
-
-    packadd! tagbar
-
-    " https://alpha2phi.medium.com/setting-up-neovim-for-rust-debugging-termdebug-and-vimspector-df749e1ba47c
-    " termdebugger is included with vim >=8.1
-    packadd! termdebug
-    let termdebugger='rust-gdb'
+    augroup ag_rust_setup
+        autocmd!
+        autocmd BufEnter,BufRead,FileType * if &filetype==#'rust' | call ConfigureFileTypeRust() | endif
+    augroup end
 
     call DebugPrint('45.0-rust.vimrc: end')
 endif
