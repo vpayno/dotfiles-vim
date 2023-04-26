@@ -61,6 +61,7 @@ let _enable_lsp                   = g:enable
 let _enable_markdown              = g:disable " also enables tabular
 let _enable_nerdtree              = g:disable " if disabled, netrw is used
 let _enable_nerdtree_git          = g:disable
+let _enable_omnicomplete          = g:disable
 let _enable_orgmode               = g:disable
 let _enable_other_todo_highlight  = g:disable
 let _enable_perl5                 = g:enable
