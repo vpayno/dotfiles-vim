@@ -1,0 +1,7 @@
+#!/bin/bash
+
+time while read -r line; do
+	echo npm update --global "${line}"
+	time npm update --global "${line}"
+	printf "\n"
+done < ~/.vim/requirements-npm.txt

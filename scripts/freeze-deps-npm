@@ -1,0 +1,3 @@
+#!/bin/bash
+
+npm list --global --json | jq -r '.dependencies | keys[]' > ~/.vim/requirements-npm.txt
