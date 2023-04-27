@@ -3,36 +3,33 @@
 "
 " https://github.com/elzr/vim-json
 
-if &filetype==#'json'
+if _enable_json
     call DebugPrint('40.0-json.vimrc: start')
 
-    packadd! vim-json
+    function! ConfigureFileTypeJson()
+        packadd! vim-json
 
-    " don't hide double quotes
-    let g:vim_json_syntax_conceal = g:disable
+        " don't hide double quotes
+        let g:vim_json_syntax_conceal = g:disable
 
-    "augroup au_json
-        "autocmd!
-        "autocmd BufNewFile,BufEnter,BufRead *.json set filetype=json
-    "augroup end
+        " https://vi.stackexchange.com/questions/16906/how-to-format-json-file-in-vim
+        function! FormatJson()
+            execute '%!jq --sort-keys .'
+        endfunction
 
-    "augroup ag_json_jsonfmt
-        "autocmd!
-        "autocmd! BufWritePost *.json | execute 'silent !"${HOME}"/.vim/scripts/jsonfmt --vim %' | :e
-    "augroup end
+        command! JsonFmt %!jq --sort-keys .
 
-    " https://vi.stackexchange.com/questions/16906/how-to-format-json-file-in-vim
-    function FormatJson()
-        execute '%!jq --sort-keys .'
+        if g:_enable_ale && g:_enable_ale_json
+            let g:ale_fixers.json = ['fixjson', 'jq']
+            let g:ale_linters.json = ['jsonlint']
+            let g:ale_linters_ignore.json = []
+        endif
     endfunction
 
-    command! JsonFmt %!jq --sort-keys .
-
-    if _enable_ale
-        let g:ale_fixers.json = ['fixjson', 'jq']
-        let g:ale_linters.json = ['jsonlint']
-        let g:ale_linters_ignore.json = []
-    endif
+    augroup ag_json_setup
+        autocmd!
+        autocmd BufEnter,BufRead,FileType * if &filetype==#'json' | call ConfigureFileTypeJson() | endif
+    augroup end
 
     call DebugPrint('40.0-json.vimrc: end')
 endif
