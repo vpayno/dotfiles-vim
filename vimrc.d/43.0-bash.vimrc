@@ -39,7 +39,7 @@ if _enable_sh
         else
             augroup ag_sh_shfmt
                 autocmd!
-                autocmd BufWritePost * if &filetype==#'sh' | Shfmt
+                autocmd BufWritePost * if &filetype==#'sh' | Shfmt | endif
             augroup end
 
             " augroup au_shell_retab
