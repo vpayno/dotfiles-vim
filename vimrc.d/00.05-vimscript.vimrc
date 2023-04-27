@@ -7,7 +7,7 @@
 " npm install -g vim-language-server
 " :CocInstall coc-vimlsp
 
-if &filetype==#'vim'
+if _enable_vimscript
     call DebugPrint('00.05-vimscript.vimrc: start')
 
 "   augroup au_vimscript_retab

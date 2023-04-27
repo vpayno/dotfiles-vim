@@ -101,6 +101,7 @@ let _enable_utils_baseconvert     = g:enable
 let _enable_utilsnips             = g:disable " overidden by snipmate
 let _enable_vim_themis            = g:enable
 let _enable_vim_vader             = g:enable
+let _enable_vimscript             = g:enable
 let _enable_vimspector            = g:enable
 let _enable_vimwiki               = g:disable
 let _enable_virtualenv            = g:disable
