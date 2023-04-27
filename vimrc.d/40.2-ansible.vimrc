@@ -1,25 +1,25 @@
 "
-" ~/.vim/vimrc.d/38.2-ansible.vimrc
+" ~/.vim/vimrc.d/40.2-ansible.vimrc
 "
 " https://github.com/pearofducks/ansible-vim
 " https://github.com/chase/vim-ansible-yaml - archived
 "
 
-if &filetype==#'yaml'
-    call DebugPrint('38.2-ansible.vimrc: start')
+if _enable_ansible
+    call DebugPrint('40.2-ansible.vimrc: start')
 
-    if _enable_ansible
+    augroup au_ansible_ft
+        autocmd!
+        autocmd BufRead,BufNewFile playbooks/*.yml set filetype=yaml.ansible
+    augroup end
+
+    function! ConfigureFileTypeAnsible()
         packadd! ansible-vim " ft=yaml.ansible | *.jinja2 | ansible_hosts
         " packadd! vim-ansible-yaml " ft=ansible
 
-        augroup au_ansible_ft
-            autocmd!
-            autocmd BufRead,BufNewFile playbooks/*.yml set filetype=yaml.ansible
-        augroup end
-
         let g:ansible_unindent_after_newline = g:enable
 
-        if _enable_yaml
+        if g:_enable_yaml
             " compatibility with vim-yaml
             let g:ansible_yamlKeyName = 'yamlKey'
         endif
@@ -49,9 +49,14 @@ if &filetype==#'yaml'
             \ }
 
         let g:ansible_ftdetect_filename_regex = '\v(playbook|site|main|local|requirements)\.ya?ml$'
-    endif
+    endfunction
 
-    call DebugPrint('38.2-ansible.vimrc: end')
+    augroup ag_ansible_setup
+        autocmd!
+        autocmd BufEnter,BufRead,FileType * if &filetype==#'yaml.ansible' | call ConfigureFileTypeAnsible() | endif
+    augroup end
+
+    call DebugPrint('40.2-ansible.vimrc: end')
 endif
 
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:
