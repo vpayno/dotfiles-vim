@@ -7,14 +7,20 @@
 " https://github.com/tpope/vim-rake
 " :LspInstallServer
 
-if (&filetype==#'ruby' && _enable_ruby)
+if _enable_ruby
     call DebugPrint('48.0-ruby.vimrc: start')
 
-    " Load plugins.
-    packadd! vim-ruby
-    packadd! vim-rake
-    packadd! vim-rails
-    packadd! vim-bundler
+    function! ConfigureFileTypeRuby()
+        packadd! vim-ruby
+        packadd! vim-rake
+        packadd! vim-rails
+        packadd! vim-bundler
+    endfunction
+
+    augroup ag_ruby_setup
+        autocmd!
+        autocmd BufEnter,BufRead,FileType * if &filetype==#'ruby' | call ConfigureFileTypeRuby() | endif
+    augroup end
 
     call DebugPrint('48.0-ruby.vimrc: end')
 endif
