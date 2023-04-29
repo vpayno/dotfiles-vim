@@ -15,14 +15,14 @@ if _enable_snipmate
 
     call DebugPrint('37-snippets.vimrc: end [snipmate]')
 
-elseif _enable_utilsnips
-    call DebugPrint('37-snippets.vimrc: start [utilsnips]')
+elseif _enable_ultisnips
+    call DebugPrint('37-snippets.vimrc: start [ultisnips]')
 
     " Load plugins.
-    packadd! utilsnips
+    packadd! ultisnips
     packadd! vim-snippets
 
-    call DebugPrint('37-snippets.vimrc: end [utilsnips]')
+    call DebugPrint('37-snippets.vimrc: end [ultisnips]')
 endif
 
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:
