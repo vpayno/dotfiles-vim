@@ -54,9 +54,9 @@ if _enable_python
                 let g:ale_fixers.python = []
             endif
             "
-            " ['ruff', 'pyright', 'autopep8', 'mypy', 'bandit', 'mccabe', 'pycodestyle', 'pydocstyle', 'pyflakes', 'radon']
+            " ['ruff', 'pyright', 'autopep8', 'mypy', 'bandit', 'mccabe', 'pycodestyle', 'pydocstyle', 'pyflakes', 'radon', 'refurb']
             if g:_enable_ale_python_linters
-                let g:ale_linters.python = ['ruff', 'pyright']
+                let g:ale_linters.python = ['ruff', 'pyright', 'refurb']
             else
                 let g:ale_linters.python = []
             endif
