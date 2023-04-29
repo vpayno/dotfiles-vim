@@ -49,7 +49,7 @@ if _enable_python
 
             " fixers are run in the order shown
             if g:_enable_ale_python_fixers
-                let g:ale_fixers.python = ['autoimport', 'ruff', 'isort', 'black']
+                let g:ale_fixers.python = ['autoimport', 'isort', 'black']
             else
                 let g:ale_fixers.python = []
             endif
