@@ -22,6 +22,9 @@ if _enable_ale
     let g:ale_open_list = g:enable
 
     " only run linters on save?
+    let g:ale_lint_on_save = g:enable
+
+    " only run fixers on save?
     let g:ale_fix_on_save = g:enable
 
     let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰', '│', '─']

@@ -43,20 +43,27 @@ if _enable_python
             " let g:ale_python_pylsp_config = {}
             " let g:ale_python_pylsp_options = ''
             " let g:ale_python_pyright_config = { 'pyright': { } }
-            " let g:ale_python_refurb_options = ''
+            let g:ale_python_refurb_options = '--quiet --enable-all'
             " let g:ale_python_ruff_options = ''
             " let g:ale_python_vulture_options = ''
 
+            let g:ale_python_refurb_change_directory = g:disable
+
             " fixers are run in the order shown
+            " autoflake, autoimport, autopep8, black, isort, pycln, pyflyby,
+            " reorder-python-imports, ruff, yapf
             if g:_enable_ale_python_fixers
                 let g:ale_fixers.python = ['autoimport', 'isort', 'black']
             else
                 let g:ale_fixers.python = []
             endif
             "
-            " ['ruff', 'pyright', 'autopep8', 'mypy', 'bandit', 'mccabe', 'pycodestyle', 'pydocstyle', 'pyflakes', 'radon', 'refurb']
+            " ['bandit', 'cspell', 'flake8', 'flakehell', 'jedils', 'mypy',
+            " 'prospector', 'pycln', 'pycodestyle', 'pydocstyle', 'pyflakes',
+            " 'pylama', 'pylint', 'pylsp', 'pyre', 'pyright', 'refurb', 'ruff',
+            " 'unimport', 'vulture']
             if g:_enable_ale_python_linters
-                let g:ale_linters.python = ['ruff', 'pyright', 'refurb']
+                let g:ale_linters.python = ['ruff', 'pyright', 'refurb', 'bandit']
             else
                 let g:ale_linters.python = []
             endif
