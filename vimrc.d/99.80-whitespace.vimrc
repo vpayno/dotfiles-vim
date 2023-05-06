@@ -49,11 +49,11 @@ function! SetOptionsForSpaces()
     set softtabstop=0
 
     if
-        \ &filetype==#'html' ||
-        \ &filetype==#'json' ||
-        \ &filetype==#'xhtml' ||
-        \ &filetype==#'xml' ||
-        \ &filetype==#'yaml'
+        \ &filetype ==# 'html' ||
+        \ &filetype ==# 'json' ||
+        \ &filetype ==# 'xhtml' ||
+        \ &filetype ==# 'xml' ||
+        \ &filetype ==# 'yaml'
         set shiftwidth=2
         set tabstop=2
     else
