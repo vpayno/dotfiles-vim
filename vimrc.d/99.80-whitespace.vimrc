@@ -50,12 +50,15 @@ function! SetOptionsForSpaces()
 
     if
         \ &filetype ==# 'html' ||
-        \ &filetype ==# 'json' ||
         \ &filetype ==# 'xhtml' ||
-        \ &filetype ==# 'xml' ||
-        \ &filetype ==# 'yaml'
+        \ &filetype ==# 'xml'
         set shiftwidth=2
         set tabstop=2
+    elseif
+        \ &filetype ==# 'json' ||
+        \ &filetype ==# 'yaml'
+        set shiftwidth=4
+        set tabstop=4
     else
         set shiftwidth=4
         set tabstop=4
