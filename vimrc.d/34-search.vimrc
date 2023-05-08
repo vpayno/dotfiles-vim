@@ -25,4 +25,12 @@ if _enable_ripgrep
     call DebugPrint('34-search.vimrc: end [ripgrep]')
 endif
 
+if _enable_command_t
+    call DebugPrint('34-search.vimrc: start [command-t]')
+
+    packadd! command-t
+
+    call DebugPrint('34-search.vimrc: end [command-t]')
+endif
+
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:
