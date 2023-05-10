@@ -305,7 +305,7 @@ else
 endif
 
 " Setting leader key.
-let mapleader = '\\'
+let mapleader = ','
 "let maplocalldeader = '\\'
 
 call DebugPrint('00.02-defaults.vimrc: stop')
