@@ -37,7 +37,7 @@ function! SetOptionsForTabs()
     set softtabstop=0
     set tabstop=4
 
-    if !empty(glob(expand('%')))
+    if !empty(glob(expand('%'))) && ! &readonly
         :%retab! | :w
     endif
 endfunction
@@ -64,7 +64,7 @@ function! SetOptionsForSpaces()
         set tabstop=4
     endif
 
-    if !empty(glob(expand('%')))
+    if !empty(glob(expand('%'))) && ! &readonly
         :%retab! | :w
     endif
 endfunction
