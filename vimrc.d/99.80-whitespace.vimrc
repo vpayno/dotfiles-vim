@@ -56,7 +56,9 @@ function! SetOptionsForSpaces()
         set tabstop=2
     elseif
         \ &filetype ==# 'json' ||
-        \ &filetype ==# 'yaml'
+        \ &filetype ==# 'json.jinja' ||
+        \ &filetype ==# 'yaml' ||
+        \ &filetype ==# 'yaml.jinja'
         set shiftwidth=4
         set tabstop=4
     else
