@@ -122,11 +122,18 @@ if _enable_line_wrap
     " I use a unicode curly array with a <backslash><space>
     set showbreak=↪>\
     "set formatoptions+=w " Wrap lines without breaking words
+
+    " https://vim.fandom.com/wiki/Automatically_wrap_left_and_right
+    " This causes the left and right arrow keys, as well as h and l, to wrap
+    " when used at beginning or end of lines. ( < > are the cursor keys used
+    " in normal and visual mode, and [ ] are the cursor keys in insert mode).
+    set whichwrap=<,>,[,],h,l
 else
     set nowrap
     set sidescroll=1
     set sidescrolloff=5
     set listchars=extends:>,precedes:<
+    set whichwrap=b,s
 endif
 
 call DebugPrint('00.07-theme.vimrc: stop')
