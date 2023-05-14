@@ -481,3 +481,6 @@
 [submodule "pack/upstream/opt/vim-cmake"]
     path = pack/upstream/opt/vim-cmake
     url = https://github.com/cdelledonne/vim-cmake
+[submodule "pack/upstream/opt/harpoon"]
+	path = pack/upstream/opt/harpoon
+	url = https://github.com/ThePrimeagen/harpoon
