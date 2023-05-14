@@ -484,3 +484,6 @@
 [submodule "pack/upstream/opt/harpoon"]
 	path = pack/upstream/opt/harpoon
 	url = https://github.com/ThePrimeagen/harpoon
+[submodule "pack/upstream/opt/refactoring.nvim"]
+	path = pack/upstream/opt/refactoring.nvim
+	url = https://github.com/ThePrimeagen/refactoring.nvim
