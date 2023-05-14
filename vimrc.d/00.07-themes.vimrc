@@ -30,7 +30,7 @@ set number
 if _enable_smart_gutter_numbers
     augroup numbertoggle
         autocmd!
-        autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &number && mode() != "i" | set relativenumber   | endif
+        autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &number && mode() != "i" | set relativenumber | endif
         autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &number | set norelativenumber | endif
     augroup END
 endif
@@ -78,64 +78,6 @@ set t_Co=256
 
 set background=dark
 
-" Using before the first colorscheme command will ensure that the highlight group gets created and is not cleared by future colorscheme commands
-augroup au_colorscheme
-    autocmd!
-    autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-augroup end
-
-" The following alternative may be less obtrusive.
-":highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
-
-" Try the following if your GUI uses a dark background.
-":highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-
-" http://vim.wikia.com/wiki/Highlight_unwanted_spaces
-:highlight ExtraWhitespace ctermbg=red guibg=red
-
-" Automatically remove trailing whitespace (https://vim.fandom.com/wiki/Remove_unwanted_spaces)
-augroup au_traling_ws
-    autocmd!
-    autocmd BufWritePre * %s/\s\+$//e
-augroup end
-
-" The following alternative may be less obtrusive.
-":highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
-
-" Try the following if your GUI uses a dark background.
-":highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-" Show trailing whitespace:
-:match ExtraWhitespace /\s\+$/
-
-" Show trailing whitespace and spaces before a tab:
-:match ExtraWhitespace /\s\+$\| \+\ze\t/
-
-" Show tabs that are not at the start of a line:
-:match ExtraWhitespace /[^\t]\zs\t\+/
-
-" Show spaces used for indenting (so you use only tabs for indenting).
-":match ExtraWhitespace /^\t*\zs \+/
-
-" Switch off :match highlighting.
-":match
-
-" The following pattern will match trailing whitespace, except when typing at the end of a line.
-:match ExtraWhitespace /\s\+\%#\@<!$/
-
-" If you use this alternate pattern, you may want to consider using the following autocmd to let the highlighting show up as soon as you leave insert mode after entering trailing whitespace:
-":autocmd InsertLeave * redraw!
-augroup au_whitespace
-    autocmd!
-    autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-    autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-augroup eng
-
-" For C, if you don't want to see trailing space errors at end-of-line set:
-"let c_no_trail_space_error = 1
-
-" If you only use spaces to indent, and don't want to see space errors in front of tabs:
-"let c_no_tab_space_error = 1
-
 " Change the Pmenu colors so they're more readable.
 " normal item
 highlight Pmenu ctermbg=cyan ctermfg=white
@@ -168,11 +110,6 @@ set showcmd
 "execute 'set colorcolumn='.linelen
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "execute 'match OverLength /\%'.linelen.'v.\+/'
-
-let fts = ['sh', 'bash', 'vim']
-if index(fts, &filetype) == -1
-    set noexpandtab
-endif
 
 if v:version > 703 || v:version == 703 && has('patch541')
     set formatoptions+=j " Delete comment character when joining commented lines

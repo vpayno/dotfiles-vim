@@ -9,6 +9,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 scriptencoding utf-8
 " vint: +ProhibitEncodingOptionAfterScriptEncoding
+
 "
 syntax enable
 
@@ -37,13 +38,15 @@ catch
 endtry
 
 set smarttab
-set expandtab
 set linebreak
+set autoindent
+set smartindent
+
+" overridden by vimrc.d/99.80-whitespace.vimrc
+set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set autoindent
-set smartindent
 
 " Enable incremental search.
 set incsearch
@@ -79,6 +82,9 @@ augroup end
 ":set list
 ":set listchars=tab:··,trail:·
 
+" Use the same symbols as TextMate for tabstops and EOLs
+" set listchars=tab:▸\ ,eol:¬
+
 " memory leak problem
 if v:version >= 702
     augroup au_fix_mem_leak
@@ -113,9 +119,6 @@ set nofoldenable
 "set foldmethod=indent
 "set foldlevel=99
 
-" Use the same symbols as TextMate for tabstops and EOLs
-" set listchars=tab:▸\ ,eol:¬
-
 " Window stuff
 "nnoremap <silent> + :exe 'resize ' . (winheight(0) * 3/2)<CR>
 "nnoremap <silent> - :exe 'resize ' . (winheight(0) * 2/3)<CR>
@@ -131,4 +134,5 @@ let mapleader = ','
 "let maplocalldeader = '\\'
 
 call DebugPrint('00.02-defaults.vimrc: stop')
+
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:
