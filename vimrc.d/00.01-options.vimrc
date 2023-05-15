@@ -32,6 +32,7 @@ let _enable_buftabline            = g:enable
 let _enable_calendar_vim          = g:enable
 let _enable_clever_f              = g:enable
 let _enable_cmake                 = g:enable
+let _enable_colors_24bit          = g:disable " if disabled, use 8-bit color (256 colors)
 let _enable_coc                   = g:disable
 let _enable_command_t             = g:enable
 let _enable_commentary            = g:enable

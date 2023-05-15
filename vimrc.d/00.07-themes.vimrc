@@ -10,6 +10,18 @@ set fileencoding=utf-8
 scriptencoding utf-8
 " vint: +ProhibitEncodingOptionAfterScriptEncoding
 
+if _enable_colors_24bit
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+else
+    " enable 256 colors
+    set t_Co=256
+endif
+
+" light or dark background?
+set background=dark
+
 "colorscheme onedark
 
 " use visual bell instead of beeping
@@ -58,9 +70,6 @@ set colorcolumn=80,120,160,240
 hi ColorColumn ctermbg=darkgray guibg=darkgray
 set textwidth=0
 
-" enable 256 colors
-set t_Co=256
-
 " http://stackoverflow.com/questions/16987362/how-to-get-vim-to-highlight-non-ascii-characters
 "syntax match nonascii "[^\x00-\x7F]"
 "highlight nonascii guibg=Red ctermbg=2 term=underline
@@ -75,8 +84,6 @@ set t_Co=256
 
 "highlight nonascii guibg=Red ctermbg=DarkRed term=standout
 "au BufNewFile,BufReadPost,InsertEnter,InsertLeave * syntax match NonASCII "[^\u0000-\u007F]"
-
-set background=dark
 
 " Change the Pmenu colors so they're more readable.
 " normal item
