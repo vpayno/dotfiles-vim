@@ -10,19 +10,27 @@ set fileencoding=utf-8
 scriptencoding utf-8
 " vint: +ProhibitEncodingOptionAfterScriptEncoding
 
+" colorschemes: blue  darkblue  default  delek  desert  elflord  evening
+" industry  koehler  morning  murphy  one  onedark  pablo  peachpuff  ron
+" shine  slate  solarized  torte  votl_dark  votl_light  votl_test  zellner
+
 if _enable_colors_24bit
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
+
+    " koehler votl_dark torte
+    colorscheme koehler
 else
-    " enable 256 colors
+    " enable 8-bit/256 colors
     set t_Co=256
+
+    " koehler torte votl_light
+    colorscheme koehler
 endif
 
 " light or dark background?
 set background=dark
-
-"colorscheme onedark
 
 " use visual bell instead of beeping
 set visualbell
