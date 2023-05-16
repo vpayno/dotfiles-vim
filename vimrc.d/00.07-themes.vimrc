@@ -57,6 +57,8 @@ endif
 
 " highlight search matches
 set hlsearch
+" highlight Search ctermbg=LightYellow ctermfg=Red
+highlight Search cterm=NONE guibg=peru guifg=black
 
 "
 highlight clear CursorLine
