@@ -496,3 +496,6 @@
 [submodule "pack/themes/opt/papercolor-theme.vim"]
 	path = pack/themes/opt/papercolor-theme.vim
 	url = https://github.com/NLKNguyen/papercolor-theme
+[submodule "pack/themes/opt/ayu-vim"]
+	path = pack/themes/opt/ayu-vim
+	url = https://github.com/ayu-theme/ayu-vim
