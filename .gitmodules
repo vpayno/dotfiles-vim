@@ -505,3 +505,6 @@
 [submodule "pack/themes/opt/vim-afterglow"]
 	path = pack/themes/opt/vim-afterglow
 	url = https://github.com/danilo-augusto/vim-afterglow
+[submodule "pack/themes/opt/iceberg.vim"]
+	path = pack/themes/opt/iceberg.vim
+	url = https://github.com/cocopon/iceberg.vim
