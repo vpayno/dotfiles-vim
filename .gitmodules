@@ -487,3 +487,6 @@
 [submodule "pack/upstream/opt/refactoring.nvim"]
 	path = pack/upstream/opt/refactoring.nvim
 	url = https://github.com/ThePrimeagen/refactoring.nvim
+[submodule "pack/themes/opt/tender.vim"]
+	path = pack/themes/opt/tender.vim
+	url = https://github.com/jacoborus/tender.vim
