@@ -502,3 +502,6 @@
 [submodule "pack/themes/opt/vim-github-colorscheme"]
 	path = pack/themes/opt/vim-github-colorscheme
 	url = https://github.com/endel/vim-github-colorscheme
+[submodule "pack/themes/opt/vim-afterglow"]
+	path = pack/themes/opt/vim-afterglow
+	url = https://github.com/danilo-augusto/vim-afterglow
