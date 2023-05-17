@@ -490,3 +490,6 @@
 [submodule "pack/themes/opt/tender.vim"]
 	path = pack/themes/opt/tender.vim
 	url = https://github.com/jacoborus/tender.vim
+[submodule "pack/themes/opt/nordtheme.vim"]
+	path = pack/themes/opt/nordtheme.vim
+	url = https://github.com/nordtheme/vim
