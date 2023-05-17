@@ -493,3 +493,6 @@
 [submodule "pack/themes/opt/nordtheme.vim"]
 	path = pack/themes/opt/nordtheme.vim
 	url = https://github.com/nordtheme/vim
+[submodule "pack/themes/opt/papercolor-theme.vim"]
+	path = pack/themes/opt/papercolor-theme.vim
+	url = https://github.com/NLKNguyen/papercolor-theme
