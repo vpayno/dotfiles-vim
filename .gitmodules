@@ -499,3 +499,6 @@
 [submodule "pack/themes/opt/ayu-vim"]
 	path = pack/themes/opt/ayu-vim
 	url = https://github.com/ayu-theme/ayu-vim
+[submodule "pack/themes/opt/vim-github-colorscheme"]
+	path = pack/themes/opt/vim-github-colorscheme
+	url = https://github.com/endel/vim-github-colorscheme
