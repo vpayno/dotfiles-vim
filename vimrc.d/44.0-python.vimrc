@@ -27,7 +27,7 @@ if _enable_python
             " let g:ale_python_autopep8_options = ''
             " let g:ale_python_bandit_options = ''
             let g:ale_python_bandit_use_config = g:enable  " looks for .bandit
-            let g:ale_python_black_options = '--line-length=120'
+            let g:ale_python_black_options = '--line-length=240'
             " let g:ale_python_flake8_options = ''
             " let g:ale_python_flakehell_options = ''
             let g:ale_python_isort_options = '--profile black'
@@ -122,7 +122,7 @@ if _enable_python
             " Pylint configuration file
             let g:pymode_lint_config = '$HOME/.pylintrc'
 
-            let g:pymode_options_max_line_length = 120
+            let g:pymode_options_max_line_length = 240
 
             " OPTION: g:pymode_folding -- bool. Disable python-mode folding for pyfiles.
             "call pymode#Default('g:pymode_folding", 0)

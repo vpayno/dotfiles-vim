@@ -28,8 +28,8 @@ main() {
 		time isort --profile black --dont-follow-links --atomic --ensure-newline-before-comments "${targets[@]}"
 		printf "\n"
 
-		echo black --line-length=120 "${targets[@]}"
-		time black --line-length=120 "${targets[@]}"
+		echo black --line-length=240 "${targets[@]}"
+		time black --line-length=240 "${targets[@]}"
 		printf "\n"
 	}
 } # main()

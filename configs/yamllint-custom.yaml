@@ -32,7 +32,7 @@ rules:
   line-length:
     allow-non-breakable-inline-mappings: true
     level: warning
-    max: 120
+    max: 240
   new-line-at-end-of-file: enable
   new-lines: enable
   octal-values: disable

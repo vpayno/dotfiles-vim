@@ -123,7 +123,7 @@ set showcmd
 :nnoremap <silent> <Leader>c :execute 'match Search /\%'.virtcol('.').'v/'<CR>
 
 " Set max line length.
-"let linelen = 120
+"let linelen = 240
 "execute 'set colorcolumn='.linelen
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "execute 'match OverLength /\%'.linelen.'v.\+/'
