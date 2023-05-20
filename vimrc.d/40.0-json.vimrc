@@ -14,14 +14,15 @@ if _enable_json
 
         " https://vi.stackexchange.com/questions/16906/how-to-format-json-file-in-vim
         function! FormatJson()
-            execute '%!jq --sort-keys .'
+            execute '%!jq --sort-keys --indent=4 .'
         endfunction
 
-        command! JsonFmt %!jq --sort-keys .
+        command! JsonFmt %!jq --sort-keys --indent=4 .
 
         if g:_enable_ale && g:_enable_ale_json
             let g:ale_fixers.json = ['fixjson', 'jq']
             let g:ale_linters.json = ['jsonlint']
+            let g:ale_json_jq_options = '. --sort-keys --indent 4'
             let g:ale_linters_ignore.json = []
         endif
     endfunction
