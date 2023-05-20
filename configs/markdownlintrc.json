@@ -1,0 +1,30 @@
+{
+    "MD003": {
+        "style": "atx"
+    },
+    "MD007": {
+        "indent": 4
+    },
+    "MD013": {
+        "code_block_line_length": 240,
+        "code_blocks": true,
+        "headers": true,
+        "headings": true,
+        "headling_line_length": 240,
+        "stern": false,
+        "strict": false,
+        "tables": false
+    },
+    "MD025": {
+        "front_matter_title": false
+    },
+    "MD033": {
+        "allowed_elements": [
+            "figure",
+            "video"
+        ]
+    },
+    "default": true,
+    "no-hard-tabs": false,
+    "whitespace": false
+}

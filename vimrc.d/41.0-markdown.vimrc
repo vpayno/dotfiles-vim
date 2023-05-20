@@ -5,7 +5,7 @@
 " https://travis-ci.org/plasticboy/vim-markdown
 
 if _enable_markdown
-    call DebugPrint('41.0-markdown.vimrc: start')
+    call DebugPrint('41.0-markdown.vimrc: [vim-markdown] start')
 
     " Load plugins.
     packadd! tabular      " must load before vim-markdown
@@ -24,13 +24,18 @@ if _enable_markdown
     let g:vim_markdown_folding_style_pythonic = g:enable
     "let g:vim_markdown_override_foldtext = g:disable
 
-    if _enable_ale
-        let g:ale_fixers.markdown = ['textlint']
-        let g:ale_linters.markdown = []
-        let g:ale_linters_ignore.markdown = []
-    endif
+    call DebugPrint('41.0-markdown.vimrc: [vim-markdown] end')
+endif
 
-    call DebugPrint('41.0-markdown.vimrc: end')
+if _enable_ale
+    call DebugPrint('41.0-markdown.vimrc: [ale] start')
+
+    let g:ale_fixers.markdown = ['textlint']
+    let g:ale_linters.markdown = ['markdownlint']
+    let g:ale_markdown_markdownlint_options = '--config ~/.vim/configs/markdownlintrc.json'
+    let g:ale_linters_ignore.markdown = []
+
+    call DebugPrint('41.0-markdown.vimrc: [ale] end')
 endif
 
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:
