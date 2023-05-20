@@ -55,6 +55,51 @@ set incsearch
 set noignorecase
 set nosmartcase
 
+if _enable_keys_mine
+    " new old - shift "arrow" keys to the right by one
+    " right
+    noremap ; l
+    " up
+    noremap l k
+    " down
+    noremap k j
+    " left
+    noremap j h
+elseif _enable_keys_dvorak
+    " https://gist.github.com/Prodge/a6347a4ca986058a7b3fbe20bfd9c578
+    "
+    " Add this to your vimrc
+    "
+    "   New mappings:    c
+    "                  h t n
+    "
+    " This also integrates this mapping into insert mode via <Alt>
+
+    " Navigation for dvorak
+    nnoremap c k
+    nnoremap t j
+    nnoremap n l
+
+    vnoremap c k
+    vnoremap t j
+    vnoremap n l
+
+    " Add a new mapping for 'n' as we just replaced it
+    nnoremap g n
+
+    " Provide chtn / hjkl movements in Insert mode via the <Alt> modifier key
+    inoremap <A-h> <C-o>h
+    inoremap <A-t> <C-o>j
+    inoremap <A-c> <C-o>k
+    inoremap <A-n> <C-o>l
+
+    " Shift navigation jumping movements for chtn
+    nnoremap H <C-Left>
+    nnoremap N <C-Right>
+    inoremap <A-H> <C-Left>
+    inoremap <A-N> <C-Right>
+endif
+
 " Fix up arrow not working in search.
 "imap  OA <ESC>ki
 "imap  OB <ESC>ji
