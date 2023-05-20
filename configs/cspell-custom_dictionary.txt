@@ -21,6 +21,7 @@ ctagsignore
 devel
 doctestbins
 doctests
+dotfiles
 elif
 errcheck
 exercism
