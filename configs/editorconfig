@@ -73,9 +73,9 @@ indent_style = space
 indent_size = 4
 
 [*.{yml,yaml}]
-indent_size = 4
+indent_size = 2
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 [*.{html,xhtml,xml,svg}]
 indent_size = 2

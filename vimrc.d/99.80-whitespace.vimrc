@@ -47,14 +47,14 @@ function! SetOptionsForSpaces()
     if
         \ &filetype ==# 'html' ||
         \ &filetype ==# 'xhtml' ||
-        \ &filetype ==# 'xml'
+        \ &filetype ==# 'xml' ||
+        \ &filetype ==# 'yaml' ||
+        \ &filetype ==# 'yaml.jinja'
         set shiftwidth=2
         set tabstop=2
     elseif
         \ &filetype ==# 'json' ||
-        \ &filetype ==# 'json.jinja' ||
-        \ &filetype ==# 'yaml' ||
-        \ &filetype ==# 'yaml.jinja'
+        \ &filetype ==# 'json.jinja'
         set shiftwidth=4
         set tabstop=4
     else
