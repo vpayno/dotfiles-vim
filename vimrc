@@ -16,7 +16,7 @@ if v:version >= 500
     " vint: +ProhibitEncodingOptionAfterScriptEncoding
 
     if g:debug_mode
-        call DebugPrint('You can use `:messages' to show statusline messages.')
+        call DebugPrint('You can use `:messages` to show statusline messages.')
         call DebugPrint('You can use `:scriptnames` to show loaded plugins.')
         call DebugPrint('You can use `:function` to list all functions.')
         call DebugPrint("You can use `:verb set var_name?` to show that variable's set history.")
