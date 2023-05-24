@@ -1,10 +1,21 @@
 "
 " vimrc.d/99.80-whitespace.vimrc
 "
+" https://stackoverflow.com/questions/5144284/force-vi-vim-to-use-leading-tabs-only-on-retab
 
 scriptencoding utf-8
 
 call DebugPrint('99.80-whitespace.vimrc: start')
+
+" Retab spaced file, but only indentation
+command! RetabIndents call RetabIndents()
+
+" Retab spaced file, but only indentation
+func! RetabIndents()
+    let saved_view = winsaveview()
+    execute '%s@^\( \{'.&tabstop.'}\)\+@\=repeat("\t", len(submatch(0))/'.&tabstop.')@'
+    call winrestview(saved_view)
+endfunc
 
 function! FileTypeUsesTabs()
     let l:result = v:false
@@ -34,7 +45,9 @@ function! SetOptionsForTabs()
     set tabstop=4
 
     if !empty(glob(expand('%'))) && ! &readonly
-        :%retab! | :w
+        " this keeps chaning spaces to tabs in strings
+        " :%retab! | :w
+        " RetabIndents
     endif
 endfunction
 
