@@ -44,7 +44,7 @@ if (_enable_golang)
             " let g:ale_go_gopls_init_options = {'ui.diagnostic.analyses': {}}
 
             if g:_enable_ale_go_fixers
-                let g:ale_fixers.go = ['golines']
+                let g:ale_fixers.go = ['goimports', 'golines']
             else
                 let g:ale_fixers.go = []
             endif
