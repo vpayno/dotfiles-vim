@@ -101,6 +101,7 @@ let _enable_taboo                 = g:disable " if enabled, it overrides other t
 let _enable_targets               = g:enable
 let _enable_telescope             = g:enable
 let _enable_termdebug             = g:enable
+let _enable_terraform             = g:enable
 let _enable_titlecase             = g:enable
 let _enable_tmux_navigator        = g:disable " not sure what the point of this plugin is
 let _enable_unimpaired            = g:enable

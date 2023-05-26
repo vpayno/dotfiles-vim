@@ -508,3 +508,6 @@
 [submodule "pack/themes/opt/iceberg.vim"]
 	path = pack/themes/opt/iceberg.vim
 	url = https://github.com/cocopon/iceberg.vim
+[submodule "pack/upstream/opt/vim-terraform"]
+	path = pack/upstream/opt/vim-terraform
+	url = https://github.com/hashivim/vim-terraform

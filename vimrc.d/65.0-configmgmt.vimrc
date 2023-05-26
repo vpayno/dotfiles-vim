@@ -1,5 +1,5 @@
 "
-" vimrc.d/65-configmgmt.vimrc
+" vimrc.d/65.0-configmgmt.vimrc
 "
 "
 
