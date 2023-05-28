@@ -16,6 +16,7 @@ markdownlint-cli
 npm
 textlint
 vim-language-server
+vscode-json-languageserver
 vscode-langservers-extracted
 write-good
 yarn
