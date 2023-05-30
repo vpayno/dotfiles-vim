@@ -85,6 +85,7 @@ let _enable_replace_with_register = g:enable
 let _enable_ripgrep               = g:enable
 let _enable_ruby                  = g:enable
 let _enable_rust                  = g:enable
+let _enable_rust_bacon            = g:enable " only works with nvim
 let _enable_rust_coc              = g:disable
 let _enable_rust_rustvim          = g:enable
 let _enable_rust_vimracer         = g:disable

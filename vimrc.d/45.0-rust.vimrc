@@ -5,6 +5,7 @@
 " https://github.com/racer-rust/vim-racer.git
 " https://github.com/racer-rust/racer
 " https://github.com/rust-lang/rust.vim
+" https://github.com/Canop/nvim-bacon
 
 " https://github.com/fannheyward/coc-rust-analyzer
 " :CocInstall coc-rust-analyzer
@@ -13,6 +14,17 @@ if _enable_rust
     call DebugPrint('45.0-rust.vimrc: start')
 
     function! ConfigureFileTypeRust()
+        if g:_enable_rust_bacon
+            if has('nvim')
+                packadd! nvim-bacon
+
+                " add 'export_locations = true' to 'bacon.prefs'
+
+                nnoremap ! :BaconLoad<CR>:w<CR>:BaconNext<CR>
+                nnoremap , :BaconList<CR>
+            endif
+        endif
+
         if g:_enable_rust_coc
             " highlight CocFloating ctermbg=grey
 

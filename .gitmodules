@@ -511,3 +511,6 @@
 [submodule "pack/upstream/opt/vim-terraform"]
 	path = pack/upstream/opt/vim-terraform
 	url = https://github.com/hashivim/vim-terraform
+[submodule "pack/upstream/opt/nvim-bacon"]
+	path = pack/upstream/opt/nvim-bacon
+	url = https://github.com/Canop/nvim-bacon
