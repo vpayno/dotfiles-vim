@@ -2,8 +2,12 @@
 " ~/.vim/vimrc.d/49.1-kotlin.vimrc
 "
 
-call DebugPrint('49.1-kotlin.vimrc: start')
+if _enable_kotlin
+    call DebugPrint('49.1-kotlin.vimrc: start')
 
-call DebugPrint('49.1-kotlin.vimrc: end')
+    packadd! kotlin-vim
+
+    call DebugPrint('49.1-kotlin.vimrc: end')
+endif
 
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:
