@@ -63,6 +63,7 @@ let _enable_keys_dvorak           = g:disable
 let _enable_keys_mine             = g:enable
 let _enable_kite                  = g:disable
 let _enable_kotlin                = g:enable
+let _enable_kotlin_android        = g:disable
 let _enable_lion                  = g:enable
 let _enable_lsc                   = g:disable
 let _enable_lsp                   = g:enable
@@ -119,6 +120,11 @@ let _enable_wordmotion            = g:enable
 let _enable_yaml                  = g:enable
 let _enable_youcompleteme         = g:disable
 let _enable_youcompleteme_tabnine = g:disable " overrides youcompleteme and tabnine
+
+if _enable_kotlin_android
+    let _enable_ale = g:disable
+    let _enable_coc = g:enable
+endif
 
 call DebugPrint('00.01-options.vimrc: stop')
 
