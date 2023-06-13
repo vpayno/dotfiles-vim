@@ -46,8 +46,8 @@
 [submodule "pack/upstream/start/editorconfig-vim"]
     path = pack/upstream/start/editorconfig-vim
     url = https://github.com/editorconfig/editorconfig-vim
-[submodule "pack/upstream/start/securemodelines"]
-    path = pack/upstream/start/securemodelines
+[submodule "pack/upstream/opt/securemodelines"]
+    path = pack/upstream/opt/securemodelines
     url = https://github.com/ciaranm/securemodelines
 [submodule "pack/upstream/opt/syntastic"]
     path = pack/upstream/opt/syntastic
