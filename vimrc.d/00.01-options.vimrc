@@ -43,6 +43,7 @@ let _enable_css_less              = g:enable
 let _enable_dart                  = g:enable
 let _enable_denops                = g:disable " required by denops-docker
 let _enable_docker                = g:disable
+let _enable_editorconfig          = g:enable
 let _enable_fzf                   = g:enable
 let _enable_gentoo                = g:enable
 let _enable_gitgutter             = g:enable

@@ -100,9 +100,28 @@ function! SetOptionsForWhiteSpace()
     " verb set invexpandtab?
 endfunction
 
-augroup au_whitespace_set_options
+function! SetFileTypeOptions()
+    let l:special_types = ['', 'gitcommit', 'gitrebase', 'netrw', 'qf']
+
+    if index(l:special_types, &filetype) >=0
+        return
+    endif
+
+    call SetOptionsForWhiteSpace()
+
+    if g:_enable_editorconfig
+        call ReloadEditorConfig()
+    endif
+
+    call ReloadModeLine()
+endfunction
+
+" this is the first definition, clear all the autocommands in the group
+augroup au_multipart_file_settings
     autocmd!
-    autocmd BufEnter,FileType * call SetOptionsForWhiteSpace()
+    autocmd BufNewFile,BufReadPost,BufFilePost,VimEnter,BufNew,BufEnter,FileType * call SetFileTypeOptions()
+    " autocmd BufNewFile,BufFilePost,VimEnter,BufNew,BufEnter,FileType * call SetFileTypeOptions()
+    " autocmd BufEnter,FileType * call SetFileTypeOptions()
 augroup end
 
 " Using before the first colorscheme command will ensure that the highlight group gets created and is not cleared by future colorscheme commands
