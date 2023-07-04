@@ -19,11 +19,9 @@ let g:ale_c_clangd_executable = g:clangd_bin
 let g:ale_c_clangformat_options = ''
 
 let g:ale_c_clangformat_executable = g:clang_format_bin
-let g:ale_c_clangformat_options = ''
-
-let g:ale_c_clangformat_style_option = ''
-
-let g:ale_c_clangformat_use_local_file = g:enable
+" let g:ale_c_clangformat_options = '-style=file '
+" let g:ale_c_clangformat_style_option = ''
+" let g:ale_c_clangformat_use_local_file = g:enable
 
 " https://clang.llvm.org/extra/clang-tidy/checks/list.html
 let g:ale_c_clangtidy_checks = []

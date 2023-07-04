@@ -6,22 +6,22 @@ call DebugPrint('53.0-clang.vimrc: start')
 
 " Check to see what the latest version of clang is installed.
 let g:clangd_bin = 'clangd'
-let g:clang_format_bin = 'clangd-format'
-let g:clang_check_bin = 'clangd-check'
-let g:clang_tidy_bin = 'clangd-tidy'
+let g:clang_format_bin = 'clang-format'
+let g:clang_check_bin = 'clang-check'
+let g:clang_tidy_bin = 'clang-tidy'
 
 for i in range(9, 999)
-    if executable('clangd-' . string(i))
-        let g:clangd_bin = 'clangd-' . string(i)
+    if executable(g:clangd_bin . '-' . string(i))
+        let g:clangd_bin = g:clangd_bin . '-' . string(i)
     endif
-    if executable('clang-format-' . string(i))
-        let g:clang_format_bin = 'clangd-format-' . string(i)
+    if executable(g:clang_format_bin . '-' . string(i))
+        let g:clang_format_bin = g:clang_format_bin . '-' . string(i)
     endif
-    if executable('clang-check-' . string(i))
-        let g:clang_check_bin = 'clangd-check-' . string(i)
+    if executable(g:clang_check_bin . '-' . string(i))
+        let g:clang_check_bin = g:clang_check_bin . '-' . string(i)
     endif
-    if executable('clang-tidy-' . string(i))
-        let g:clang_tidy_bin = 'clangd-tidy-' . string(i)
+    if executable(g:clang_tidy_bin . '-' . string(i))
+        let g:clang_tidy_bin = g:clang_tidy_bin . '-' . string(i)
     endif
 endfor
 
