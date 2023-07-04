@@ -18,7 +18,7 @@ function! ToggleSpelling()
     endif
 endfunction
 
-:highlight SpellBad cterm=underline ctermfg=black ctermbg=magenta
+:highlight SpellBad cterm=underline ctermfg=black ctermbg=LightGrey
 
 if _enable_ale
     let g:ale_cspell_options = 'lint --config ~/.vim/configs/cspell.config.yaml --no-progress --show-suggestions'
