@@ -49,6 +49,30 @@ if g:clang_tidy_ver > 0
     let g:clang_tidy_bin = g:clang_tidy_bin . '-' . g:clang_tidy_ver
 endif
 
+if _enable_lsp
+    " ccls is working better than clangd
+    if executable('ccls')
+        let g:c_cpp_lsp_bin = 'ccls'
+    else
+        let g:c_cpp_lsp_bin = g:clangd_bin
+    endif
+
+    if executable(g:c_cpp_lsp_bin)
+        augroup lsp_c_cpp
+            autocmd!
+            autocmd User lsp_setup call lsp#register_server({
+                        \ 'name': g:c_cpp_lsp_bin,
+                        \ 'cmd': {server_info->[g:c_cpp_lsp_bin]},
+                        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+                        \ })
+            autocmd FileType c setlocal omnifunc=lsp#complete
+            autocmd FileType cpp setlocal omnifunc=lsp#complete
+            autocmd FileType objc setlocal omnifunc=lsp#complete
+            autocmd FileType objcpp setlocal omnifunc=lsp#complete
+        augroup end
+    endif
+endif
+
 call DebugPrint('53.0-clang.vimrc: end')
 
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:
