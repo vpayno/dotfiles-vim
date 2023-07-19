@@ -18,9 +18,14 @@ function! ToggleSpelling()
     endif
 endfunction
 
+command! ToggleSpelling call ToggleSpelling()
+
 :highlight SpellBad cterm=underline ctermfg=black ctermbg=LightGrey
 
 if _enable_ale
+    " disable cspell by default (it's really annoying)
+    let g:ale_cspell_executable = 'true'
+
     let g:ale_cspell_options = 'lint --config ~/.vim/configs/cspell.config.yaml --no-progress --show-suggestions'
 
     function! CSpellAddAllToDictionary()
@@ -28,6 +33,20 @@ if _enable_ale
         echom 'Adding [' . join(l:words, ', ') . '] to custom cspell dictionary'
         call writefile(l:words, $HOME . '/.vim/configs/cspell-custom_dictionary.txt', 'a')
     endfunction
+
+    let g:CSpellEnabledFlag = v:false
+
+    function! CSpellToggle()
+        if g:CSpellEnabledFlag
+            let g:CSpellEnabledFlag = v:false
+            let g:ale_cspell_executable = 'true'
+        else
+            let g:CSpellEnabledFlag = v:true
+            let g:ale_cspell_executable = 'cspell'
+        endif
+    endfunction
+
+    command! CSpellToggle call CSpellToggle()
 endif
 
 call DebugPrint('00.14-spelling.vimrc: end')
