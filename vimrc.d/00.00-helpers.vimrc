@@ -56,6 +56,12 @@ if get(g:, 'ImportedHelpers', 0) == 0
         return ArrayIndex(g:internal_filetypes, &filetype)
     endfunction
 
+    function ClearQuickfixList()
+        call setqflist([])
+    endfunction
+
+    command! ClearQuickfixList call ClearQuickfixList()
+
     call DebugPrint('00.00-helpers.vimrc: end')
 
 endif
