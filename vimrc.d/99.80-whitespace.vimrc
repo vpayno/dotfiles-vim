@@ -19,7 +19,7 @@ endfunc
 
 function! FileTypeUsesTabs()
     let l:result = v:false
-    let l:fts= ['ebuild', 'bash', 'go', 'make', 'nginx', 'sh', 'tsv']
+    let l:fts= ['ebuild', 'gentoo-init-d', 'gentoo-conf-d', 'gentoo-env-d', 'bash', 'go', 'make', 'nginx', 'sh', 'tsv']
 
     if index(l:fts, &filetype) >= 0
         let l:result = v:true
