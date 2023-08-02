@@ -14,6 +14,11 @@ if _enable_ale
     " Must be set before ale is loaded.
     let g:ale_completion_enabled = g:disable
 
+    let g:ale_set_balloons = g:disable
+
+    "set completeopt=menu,menuone,preview,noselect,noinsert
+    "set omnifunc=ale#completion#OmniFunc
+
     packadd! ale
 
     let g:ale_set_quickfix = g:enable
@@ -29,8 +34,6 @@ if _enable_ale
 
     let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰', '│', '─']
     " let g:ale_floating_window_border = repeat([''], 8)
-
-    set omnifunc=ale#completion#OmniFunc
 
     " enable lint status line
     " Set this. Airline will handle the rest.
@@ -66,7 +69,14 @@ if _enable_ale
     " Only run linters named in ale_linters settings.
     let g:ale_linters_explicit = g:disable
 
+    let g:ale_echo_msg_error_str = 'E'
+    let g:ale_echo_msg_warning_str = 'W'
+    let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+    let g:LanguageClient_useVirtualText = g:enable
+
     if g:false
+
         let g:ale_fixers = {
             \   '*': ['remove_trailing_lines', 'trim_whitespace'],
             \   'javascript': ['eslint'],
@@ -99,10 +109,6 @@ if _enable_ale
 
         let g:ale_sign_column_always = g:enable
         let g:ale_set_highlights = g:enable
-
-        let g:ale_echo_msg_error_str = 'E'
-        let g:ale_echo_msg_warning_str = 'W'
-        let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
         if _enable_coc
             let g:ale_disable_lsp = g:enable
