@@ -13,19 +13,22 @@ let g:ale_cpp_ccls_executable = 'ccls' . 'disabled'
 " let g:ale_cpp_ccls_init_options = {}
 
 let g:ale_cpp_clangd_executable = g:clangd_bin
-" let g:ale_cpp_clangd_options = ''
+let g:ale_cpp_clangd_options = '--import-insertions --clang-tidy --completion-style=detailed'
 
 let g:ale_cpp_clangcheck_executable = g:clang_check_bin
 " let g:ale_cpp_clangcheck_options = '--'
 
 let g:ale_cpp_clangformat_executable = g:clang_format_bin
 " let g:ale_cpp_clangformat_options = ''
+" let g:ale_cpp_clangformat_style_option = ''
+let g:ale_cpp_clangformat_use_local_file = g:enable
 
 let g:ale_cpp_clangtidy_executable = g:clang_tidy_bin
 " let g:ale_cpp_clangtidy_checks = ['*', '-llvm-header-guard', '-llvmlibc-restrict-system-libc-headers']
 " let g:ale_cpp_clangtidy_options = '--quiet --'
+let g:ale_cpp_clangtidy_options = '--fix'
 " let g:ale_cpp_clangtidy_extra_options = ''
-let g:ale_cpp_clangtidy_fix_errors = g:disable
+let g:ale_cpp_clangtidy_fix_errors = g:enable
 
 " https://github.com/KDE/clazy
 " let g:ale_cpp_clazy_executable = 'clazy-standalone'

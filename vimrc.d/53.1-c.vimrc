@@ -13,7 +13,7 @@ let g:ale_c_ccls_executable = 'ccls' . 'disabled'
 " let g:ale_c_ccls_init_options = {}
 
 let g:ale_c_clangd_executable = g:clangd_bin
-" let g:ale_c_clangformat_options = ''
+let g:ale_c_clangd_options = '--import-insertions --clang-tidy --completion-style=detailed'
 
 let g:ale_c_clangcheck_executable = g:clang_check_bin
 " let g:ale_c_clangcheck_options = '--'
@@ -27,8 +27,9 @@ let g:ale_c_clangformat_use_local_file = g:enable
 let g:ale_c_clangtidy_executable = g:clang_tidy_bin
 " let g:ale_c_clangtidy_checks = ['*', '-llvm-header-guard', '-llvmlibc-restrict-system-libc-headers']
 " let g:ale_c_clangtidy_options = '--quiet --'
+let g:ale_c_clangtidy_options = '--fix'
 " let g:ale_c_clangtidy_extra_options = ''
-let g:ale_c_clangtidy_fix_errors = g:disable
+let g:ale_c_clangtidy_fix_errors = g:enable
 
 let g:ale_c_cppcheck_executable = '' " 'cppcheck'
 let g:ale_c_cppcheck_options = '--enable=style'
