@@ -517,3 +517,6 @@
 [submodule "pack/upstream/opt/sg.nvim"]
 	path = pack/upstream/opt/sg.nvim
 	url = https://github.com/sourcegraph/sg.nvim
+[submodule "pack/upstream/opt/sourcegraph-vim"]
+	path = pack/upstream/opt/sourcegraph-vim
+	url = https://github.com/ElijahLynn/sourcegraph-vim
