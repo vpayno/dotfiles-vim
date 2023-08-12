@@ -514,3 +514,6 @@
 [submodule "pack/upstream/opt/nvim-bacon"]
 	path = pack/upstream/opt/nvim-bacon
 	url = https://github.com/Canop/nvim-bacon
+[submodule "pack/upstream/opt/sg.nvim"]
+	path = pack/upstream/opt/sg.nvim
+	url = https://github.com/sourcegraph/sg.nvim
