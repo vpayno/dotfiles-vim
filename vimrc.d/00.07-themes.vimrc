@@ -65,8 +65,8 @@ highlight clear CursorLine
 augroup CLClear
     autocmd! ColorScheme * highlight clear CursorLine
 augroup END
-highlight CursorLine cterm=NONE ctermbg=234 ctermfg=NONE guibg=NONE guifg=NONE
-highlight CursorColumn cterm=NONE ctermbg=236 ctermfg=NONE guibg=NONE guifg=NONE
+highlight CursorLine cterm=NONE ctermbg=235 ctermfg=NONE guibg=Grey15 guifg=NONE
+highlight CursorColumn cterm=NONE ctermbg=235 ctermfg=NONE guibg=Grey15 guifg=NONE
 
 highlight CursorLineNR cterm=bold ctermbg=darkgreen
 augroup CLNRSet
@@ -77,7 +77,8 @@ augroup END
 
 " show line lengths at 80, 120, 160 and 240 chars
 set colorcolumn=80,120,160,240
-hi ColorColumn ctermbg=darkgray guibg=darkgray
+" highlight ColorColumn ctermbg=235 guibg=darkgray
+highlight ColorColumn ctermbg=234 guibg=Grey11
 set textwidth=0
 
 " http://stackoverflow.com/questions/16987362/how-to-get-vim-to-highlight-non-ascii-characters
