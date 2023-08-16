@@ -43,6 +43,11 @@ if _enable_command_t && has('nvim')
     call DebugPrint('34-search.vimrc: end [command-t]')
 endif
 
+" enable extended regex search
+nnoremap / /\v
+vnoremap / /\v
+nnoremap ? ?\v
+vnoremap ? ?\v
 
 " let &wildignore = ''
 " let &grepformat = '%f:%l:%m,%f:%l%m,%f  %l%m'
