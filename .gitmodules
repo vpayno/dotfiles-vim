@@ -520,3 +520,6 @@
 [submodule "pack/upstream/opt/sourcegraph-vim"]
 	path = pack/upstream/opt/sourcegraph-vim
 	url = https://github.com/ElijahLynn/sourcegraph-vim
+[submodule "pack/upstream/opt/indent-blankline.nvim"]
+	path = pack/upstream/opt/indent-blankline.nvim
+	url = https://github.com/lukas-reineke/indent-blankline.nvim
