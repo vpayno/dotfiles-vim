@@ -82,6 +82,12 @@ if _enable_lsp
             \ 'allowlist': ['haskell']
             \})
 
+        autocmd User lsp_setup call lsp#register_server({
+            \ 'name': 'awk-language-server',
+            \ 'cmd': {_->['awk-language-server']},
+            \ 'allowlist': ['awk', 'gawk']
+            \})
+
         autocmd User lsp_server_init call <SID>setup_ls()
         autocmd BufEnter * call <SID>setup_ls()
     augroup END
