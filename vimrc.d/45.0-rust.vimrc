@@ -25,7 +25,43 @@ if _enable_rust
             endif
         endif
 
-        if g:_enable_rust_coc
+        if g:_enable_ale_rust
+
+            let g:ale_rust_analyzer_executable = 'rust-analyzer'
+            " let g:ale_rust_analyzer_config = {}
+
+            let g:ale_rust_cargo_use_check = v:true
+            let g:ale_rust_cargo_check_all_targets = v:false
+            let g:ale_rust_cargo_check_tests = v:true
+            let g:ale_rust_cargo_check_examples = v:true
+            let g:ale_rust_cargo_default_feature_behavior = 'all'
+            " let g:ale_rust_cargo_include_features = ''
+            let g:ale_rust_cargo_avoid_whole_workspace = v:true
+
+            let g:ale_rust_cargo_use_clippy = g:enable
+            " let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
+            " let g:ale_rust_cargo_clippy_options = '--all-features --future-incompat-report'
+
+            let g:ale_rust_cargo_use_check = g:enable
+            let g:ale_rust_cargo_check_tests = g:enable
+            let g:ale_rust_cargo_check_examples = g:enable
+            " let g:ale_rust_cargo_default_feature_behavior = 'all'
+
+            " let g:ale_rust_cargo_target_dir = ''
+
+            if g:_enable_ale_rust_fixers
+                let g:ale_fixers.rust = ['rustfmt']
+            else
+                let g:ale_fixers.rust = []
+            endif
+
+            if g:_enable_ale_rust_linters
+                let g:ale_linters.rust = ['analyzer', 'cargo']
+            else
+                let g:ale_linters.rust = []
+            endif
+
+        elseif g:_enable_rust_coc
             " highlight CocFloating ctermbg=grey
 
             inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
@@ -64,7 +100,9 @@ if _enable_rust
                     let g:ale_rust_cargo_check_tests = g:enable
                     let g:ale_rust_cargo_check_examples = g:enable
                     let g:ale_rust_cargo_default_feature_behavior = 'all'
-                    let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
+
+                    " let g:ale_rust_cargo_use_clippy = v:true
+                    " let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
 
                     if g:_enable_ale_rust_fixers
                         let g:ale_fixers.rust = ['rustfmt']
