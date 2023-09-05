@@ -9,6 +9,7 @@ black
 cmakelang
 cmakelint
 coverage
+dagger-io
 db
 db-sqlite3
 debugpy
