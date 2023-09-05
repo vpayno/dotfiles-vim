@@ -17,7 +17,7 @@ if _enable_markdown
     let g:vim_markdown_auto_insert_bullets = g:disable
     let g:vim_markdown_new_list_item_indent = g:disable
 
-    "let g:vim_markdown_conceal = 0
+    let g:vim_markdown_conceal = g:disable
 
     "let g:vim_markdown_folding_disabled = g:enable
     let g:vim_markdown_folding_level = 6
