@@ -43,6 +43,10 @@ function! EnableIndentGuides()
         "     let b:indentguides_match = matchadd('CursorLine', pat)
         " endif
     " endif
+
+    highlight IndentGuidesOdd  ctermbg=black    guibg=black
+    highlight IndentGuidesEven ctermbg=darkgrey guibg=darkgrey
+    let g:indent_guides_auto_colors = g:disable
 endfunction
 
 function! DisableIndentGuides()
