@@ -31,8 +31,9 @@ if v:version >= 500
     endif
 
     if !has('nvim')
-        "set pythonthreedll=/home/vpayno/.pyenv/versions/3.9.1/lib/libpython3.9.a
-        set pythonthreedll=/home/vpayno/.pyenv/versions/3.10.2/lib/libpython3.so
+        "set pythonthreedll=/home/vpayno/.pyenv/versions/3.9.18/lib/libpython3.9.a
+        "set pythonthreedll=/home/vpayno/.pyenv/versions/3.10.13/lib/libpython3.so
+        set pythonthreedll=/home/vpayno/.pyenv/versions/3.11.5/lib/libpython3.so
     endif
 
     call DebugPrint('vimrc: end')
