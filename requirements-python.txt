@@ -8,6 +8,7 @@ bandit
 black
 cmakelang
 cmakelint
+codechecker
 coverage
 dagger-io
 db
