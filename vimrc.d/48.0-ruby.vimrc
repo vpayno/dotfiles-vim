@@ -22,6 +22,18 @@ if _enable_ruby
         autocmd BufEnter,BufRead,FileType * if &filetype==#'ruby' | call ConfigureFileTypeRuby() | endif
     augroup end
 
+    function! RubyFormat()
+        execute 'normal! ggVG='
+    endfunction
+
+    command! RubyFormat call RubyFormat()
+
+    if g:_enable_ale_ruby_fixers
+        let g:ale_fixers.ruby = ['rufo']
+    else
+        let g:ale_fixers.ruby = []
+    endif
+
     call DebugPrint('48.0-ruby.vimrc: end')
 endif
 
