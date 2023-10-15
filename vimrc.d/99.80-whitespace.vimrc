@@ -60,6 +60,7 @@ function! SetOptionsForSpaces()
     if
         \ &filetype ==# 'html' ||
         \ &filetype ==# 'lisp' ||
+        \ &filetype ==# 'ruby' ||
         \ &filetype ==# 'xhtml' ||
         \ &filetype ==# 'xml' ||
         \ &filetype ==# 'yaml' ||
