@@ -29,7 +29,7 @@ if _enable_ruby
     command! RubyFormat call RubyFormat()
 
     if g:_enable_ale_ruby_fixers
-        let g:ale_fixers.ruby = ['rufo']
+        let g:ale_fixers.ruby = ['rubocop']
     else
         let g:ale_fixers.ruby = []
     endif
