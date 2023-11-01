@@ -12,6 +12,7 @@ let _enable_ack                   = g:enable
 let _enable_airline               = g:enable " if disabled, lightline is used
 let _enable_ale                   = g:enable
 let _enable_ale_c_fixers          = g:enable
+let _enable_ale_cpp_fixers        = g:enable
 let _enable_ale_go                = g:enable
 let _enable_ale_go_fixers         = g:enable
 let _enable_ale_go_linters        = g:enable

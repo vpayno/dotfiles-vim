@@ -26,7 +26,7 @@ let g:ale_cpp_clangformat_use_local_file = g:enable
 let g:ale_cpp_clangtidy_executable = g:clang_tidy_bin
 " let g:ale_cpp_clangtidy_checks = ['*', '-llvm-header-guard', '-llvmlibc-restrict-system-libc-headers']
 " let g:ale_cpp_clangtidy_options = '--quiet --'
-let g:ale_cpp_clangtidy_options = '--fix'
+" let g:ale_cpp_clangtidy_options = '--fix'
 " let g:ale_cpp_clangtidy_extra_options = ''
 let g:ale_cpp_clangtidy_fix_errors = g:enable
 
@@ -48,6 +48,12 @@ let g:ale_cpp_clangtidy_fix_errors = g:enable
 " let g:ale_cpp_flawfinder_minlevel = 1
 " let g:ale_cpp_flawfinder_options = ''
 " let g:ale_cpp_flawfinder_error_severity = 6
+
+if g:_enable_ale_cpp_fixers
+    let g:ale_fixers.cpp = ['clangtidy', 'clang-format']
+else
+    let g:ale_fixers.cpp = []
+endif
 
 call DebugPrint('53.2-cpp.vimrc: end')
 
