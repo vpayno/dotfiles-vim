@@ -19,16 +19,15 @@ let g:ale_c_clangcheck_executable = g:clang_check_bin
 " let g:ale_c_clangcheck_options = '--'
 
 let g:ale_c_clangformat_executable = g:clang_format_bin
-" let g:ale_c_clangformat_options = '-style=file '
+" let g:ale_c_clangformat_options = ''
 " let g:ale_c_clangformat_style_option = ''
 let g:ale_c_clangformat_use_local_file = g:enable
 
 " https://clang.llvm.org/extra/clang-tidy/checks/list.html
 let g:ale_c_clangtidy_executable = g:clang_tidy_bin
 " let g:ale_c_clangtidy_checks = ['*', '-llvm-header-guard', '-llvmlibc-restrict-system-libc-headers']
-" let g:ale_c_clangtidy_options = '--quiet --'
-let g:ale_c_clangtidy_options = '--fix'
-" let g:ale_c_clangtidy_extra_options = ''
+" let g:ale_c_clangtidy_options = '--quiet --fix --'
+let g:ale_c_clangtidy_extra_options = '--fix'
 let g:ale_c_clangtidy_fix_errors = g:enable
 
 let g:ale_c_cppcheck_executable = '' " 'cppcheck'
@@ -44,6 +43,12 @@ let g:ale_c_uncrustify_executable = '' " 'uncrustify'
 
 let g:ale_c_cpplint_executable = '' " 'cpplint'
 " let g:ale_c_cpplint_options = ''
+
+if g:_enable_ale_c_fixers
+    let g:ale_fixers.c = ['clangtidy', 'clang-format']
+else
+    let g:ale_fixers.c = []
+endif
 
 call DebugPrint('53.1-c.vimrc: end')
 
