@@ -94,6 +94,12 @@ if _enable_lsp
             \ 'allowlist': ['ruby']
             \})
 
+        autocmd User lsp_setup call lsp#register_server({
+            \ 'name': 'wasm-lsp',
+            \ 'cmd': {_->['wasm-lsp']},
+            \ 'allowlist': ['wat', 'wast']
+            \})
+
         autocmd User lsp_server_init call <SID>setup_ls()
         autocmd BufEnter * call <SID>setup_ls()
     augroup END
