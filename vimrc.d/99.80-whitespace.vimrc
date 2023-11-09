@@ -61,6 +61,7 @@ function! SetOptionsForSpaces()
         \ &filetype ==# 'html' ||
         \ &filetype ==# 'lisp' ||
         \ &filetype ==# 'ruby' ||
+        \ &filetype ==# 'wast' ||
         \ &filetype ==# 'xhtml' ||
         \ &filetype ==# 'xml' ||
         \ &filetype ==# 'yaml' ||
