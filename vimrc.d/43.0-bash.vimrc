@@ -21,7 +21,8 @@ if _enable_sh
             " https://github.com/dense-analysis/ale/blob/master/doc/ale-sh.txt
             " let g:ale_sh_bashate_options = ''
             " let g:ale_sh_shellcheck_options = ''
-            " let g:ale_sh_shfmt_options = ''
+            " let g:ale_sh_shfmt_options = '--case-indent --space-redirects -keep-padding'
+            let g:ale_sh_shfmt_options = '--case-indent --keep-padding'
 
             if g:_enable_ale_sh_fixers
                 let g:ale_fixers.sh = ['shfmt']
