@@ -101,6 +101,7 @@ let _enable_slime                 = g:enable
 let _enable_smart_gutter_numbers  = g:enable
 let _enable_snipmate              = g:disable " if enabled, overrides ultisnips
 let _enable_sort_motion           = g:disable " randomly not working
+let _enable_sourcegraph           = g:disable " llm, leaks data
 let _enable_surround              = g:enable
 let _enable_syntastic             = g:disable " dead, use ale instead
 let _enable_tabnine               = g:disable
