@@ -523,3 +523,9 @@
 [submodule "pack/upstream/opt/indent-blankline.nvim"]
 	path = pack/upstream/opt/indent-blankline.nvim
 	url = https://github.com/lukas-reineke/indent-blankline.nvim
+[submodule "pack/upstream/opt/nvim-treesitter"]
+	path = pack/upstream/opt/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "pack/upstream/opt/nvim-ts-playground"]
+	path = pack/upstream/opt/nvim-ts-playground
+	url = https://github.com/nvim-treesitter/playground

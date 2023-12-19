@@ -111,6 +111,7 @@ let _enable_telescope             = g:enable
 let _enable_termdebug             = g:enable
 let _enable_terraform             = g:enable
 let _enable_titlecase             = g:enable
+let _enable_treesitter            = g:enable " nvim only
 let _enable_tmux_navigator        = g:disable " not sure what the point of this plugin is
 let _enable_unimpaired            = g:enable
 let _enable_utils_baseconvert     = g:enable
