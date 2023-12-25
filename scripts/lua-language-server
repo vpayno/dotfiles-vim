@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# https://luals.github.io/#other-install
+# the binary needs the rest of the files in the source repo to work :(
+
+declare -r PROG_NAME="lua-language-server"
+
+declare -r REPO_URL="https://github.com/luals/lua-language-server"
+declare -r REPO_HOME="${HOME}/git_remote"
+declare -r REPO_DIR="${REPO_HOME}/${PROG_NAME}"
+
+declare -r PROG_PATH="${REPO_DIR}/bin/${PROG_NAME}"
+
+die() {
+	local -r message="${1:-error message not specified}"
+	local -r -i errno="${2:-1}"
+
+	printf "ERROR: %s\n" "${message}" 1>&2
+	exit "${errno}"
+} # die(message, errno)
+
+if [[ ! -d ${REPO_DIR} ]]; then
+	mkdir -pv "${REPO_HOME}" || die "failed to create ${REPO_HOME}"
+
+	git clone "${REPO_URL}" "${REPO_DIR}" || die "source repo clone failed"
+
+	cd "${REPO_DIR}" || die "couldn't cd to ${REPO_DIR}"
+
+	git restore . || die "failed to reset git repo state"
+
+	git checkout master || die "failed to switch back to the master branch"
+
+	git pull --tags || die "failed to refesh the master branch"
+
+	git checkout "$(git tag | sort -V | tail -n 1)" || die "failed to checkout the latest tag"
+
+	./make.sh || die "failed to build ${PROG_NAME}"
+
+elif [[ $1 == update ]]; then
+	cd "${REPO_DIR}" || die "couldn't cd to ${REPO_DIR}"
+
+	# git restore . || die "failed to reset git repo state"
+	# git checkout master || die "failed to switch back to the master branch"
+	# git pull --tags || die "failed to refesh the master branch"
+
+	git checkout "$(git tag | sort -V | tail -n 1)" || die "failed to checkout the latest tag"
+
+	./make.sh || die "failed to build ${PROG_NAME}"
+
+	# pop update from the arg array
+	shift
+fi 1>&2 # vim will get confused if any of that output goes to stdout
+
+exec "${PROG_PATH}" -E "${REPO_DIR}/main.lua" "$@" || die "failed to exec the ${PROG_NAME} server"

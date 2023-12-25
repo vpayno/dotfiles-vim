@@ -100,6 +100,12 @@ if _enable_lsp
             \ 'allowlist': ['wat', 'wast']
             \})
 
+        autocmd User lsp_setup call lsp#register_server({
+            \ 'name': 'lua-language-server',
+            \ 'cmd': {server_info->[$HOME . '/.vim/scripts/lua-language-server']},
+            \ 'allowlist': ['lua']
+            \})
+
         autocmd User lsp_server_init call <SID>setup_ls()
         autocmd BufEnter * call <SID>setup_ls()
     augroup END
