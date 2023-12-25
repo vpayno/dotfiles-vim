@@ -18,6 +18,9 @@ nnoremap <silent> <leader><bar> :call ToggleIndentGuides()<cr>
 let g:_use_indentlines_plugin = g:true
 let g:_enable_indent_guides_on_enter = g:true
 
+" :verbose set conceallevel? concealcursor?
+let g:indentLine_fileTypeExclude = ['dockerfile', 'json']
+
 function! EnableIndentGuides()
     "if !&expandtab && &tabstop == &shiftwidth
         " echom 'EnableIndentGuides() -> tabs'
