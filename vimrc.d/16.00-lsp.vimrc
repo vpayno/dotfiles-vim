@@ -106,6 +106,14 @@ if _enable_lsp
             \ 'allowlist': ['lua']
             \})
 
+        if executable('cuelsp')
+            autocmd User lsp_setup call lsp#register_server({
+                \ 'name': 'cuelsp',
+                \ 'cmd': {server_info->['cuelsp']},
+                \ 'allowlist': ['cue'],
+                \ })
+        endif
+
         autocmd User lsp_server_init call <SID>setup_ls()
         autocmd BufEnter * call <SID>setup_ls()
     augroup END
