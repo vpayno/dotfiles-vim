@@ -532,3 +532,6 @@
 [submodule "pack/upstream/opt/vim-cue"]
 	path = pack/upstream/opt/vim-cue
 	url = https://github.com/jjo/vim-cue
+[submodule "pack/upstream/opt/nvim-lspconfig"]
+	path = pack/upstream/opt/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig.git
