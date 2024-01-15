@@ -14,7 +14,8 @@ if _enable_ale
     " Must be set before ale is loaded.
     let g:ale_completion_enabled = g:disable
 
-    let g:ale_set_balloons = g:disable
+    let g:ale_set_balloons = g:false
+    let g:ale_cursor_detail = g:enable
 
     "set completeopt=menu,menuone,preview,noselect,noinsert
     "set omnifunc=ale#completion#OmniFunc
@@ -71,9 +72,15 @@ if _enable_ale
 
     let g:ale_echo_msg_error_str = 'E'
     let g:ale_echo_msg_warning_str = 'W'
-    let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+    "let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+    let g:ale_echo_msg_format = '[%linter%] (%code) %%s [%severity%]'
 
     let g:LanguageClient_useVirtualText = g:enable
+
+    augroup ag_ale_hover_cursor
+        autocmd!
+        autocmd CursorHold * ALEHover
+    augroup END
 
     if g:false
 
