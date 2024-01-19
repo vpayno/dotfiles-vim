@@ -1,0 +1,10 @@
+#!/bin/bash
+
+declare -a FILES
+
+# shellcheck disable=SC2206
+FILES=(${@:-./vimrc ./vimrc.d/*.vimrc})
+
+echo vint --warning --style-problem --enable-neovim "${FILES[@]}"
+time vint --warning --style-problem --enable-neovim "${FILES[@]}" || exit
+printf "\n"
