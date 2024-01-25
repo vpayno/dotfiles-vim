@@ -535,3 +535,6 @@
 [submodule "pack/upstream/opt/nvim-lspconfig"]
 	path = pack/upstream/opt/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
+[submodule "neomux"]
+	path = pack/upstream/opt/neomux
+	url = https://github.com/nikvdp/neomux
