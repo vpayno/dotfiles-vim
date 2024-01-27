@@ -98,10 +98,10 @@ jobs:
         id: install-tools
         run: |
           # https://github.com/Vimjas/covimerage/issues/95
-          #pip install 'click<8.0.0'
-          #pip install covimerage
-          pip install –upgrade setuptools wheel # fix missing pkg_resources under py312
-          pip install vim-vint
+          #pip install --upgrade 'click<8.0.0'
+          #pip install --upgrade covimerage
+          pip install --upgrade setuptools wheel # fix missing pkg_resources under py312
+          pip install --upgrade vim-vint
       - name: Show Tool Versions
         id: tool-versions
         if: false
