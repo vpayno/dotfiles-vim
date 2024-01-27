@@ -54,57 +54,70 @@ if _enable_lsp
                 \ 'name': 'ruff-lsp',
                 \ 'cmd': {server_info->['ruff-lsp']},
                 \ 'allowlist': ['python']
-                \})
+                \ })
+
         elseif executable('pylsp')
             " pip install python-lsp-server python-lsp-ruff
             autocmd User lsp_setup call lsp#register_server({
-                \ 'name': 'ruff-lsp',
-                \ 'cmd': {server_info->['ruff-lsp']},
+                \ 'name': 'pylsp',
+                \ 'cmd': {server_info->['pylsp']},
                 \ 'allowlist': ['python']
-                \})
+                \ })
         endif
 
-        autocmd User lsp_setup call lsp#register_server({
-            \ 'name': 'gopls',
-            \ 'cmd': {_->['gopls']},
-            \ 'allowlist': ['go']
-            \})
+        if executable('gopls')
+            autocmd User lsp_setup call lsp#register_server({
+                \ 'name': 'gopls',
+                \ 'cmd': {_->['gopls']},
+                \ 'allowlist': ['go']
+                \ })
+        endif
 
-        autocmd User lsp_setup call lsp#register_server({
-            \ 'name': 'rust-analyzer',
-            \ 'cmd': {_->['rust-analyzer']},
-            \ 'allowlist': ['rust']
-            \})
+        if executable('rust-analyzer')
+            autocmd User lsp_setup call lsp#register_server({
+                \ 'name': 'rust-analyzer',
+                \ 'cmd': {_->['rust-analyzer']},
+                \ 'allowlist': ['rust']
+                \ })
+        endif
 
-        autocmd User lsp_setup call lsp#register_server({
-            \ 'name': 'haskell-language-server',
-            \ 'cmd': {_->['haskell-language-server']},
-            \ 'allowlist': ['haskell']
-            \})
+        if executable('haskell-language-server')
+            autocm User lsp_setup call lsp#register_server({
+                \ 'name': 'haskell-language-server',
+                \ 'cmd': {_->['haskell-language-server']},
+                \ 'allowlist': ['haskell']
+                \ })
+        endif
 
-        autocmd User lsp_setup call lsp#register_server({
-            \ 'name': 'awk-language-server',
-            \ 'cmd': {_->['awk-language-server']},
-            \ 'allowlist': ['awk', 'gawk']
-            \})
+        if executable('awk-language-server')
+            autocmd User lsp_setup call lsp#register_server({
+                \ 'name': 'awk-language-server',
+                \ 'cmd': {_->['awk-language-server']},
+                \ 'allowlist': ['awk', 'gawk']
+                \ })
+        endif
 
-        autocmd User lsp_setup call lsp#register_server({
-            \ 'name': 'ruby-lsp',
-            \ 'cmd': {_->['solargraph', 'stdio']},
-            \ 'allowlist': ['ruby']
-            \})
+        if executable('solargraph')
+            autocmd User lsp_setup call lsp#register_server({
+                \ 'name': 'ruby-lsp',
+                \ 'cmd': {_->['solargraph', 'stdio']},
+                \ 'allowlist': ['ruby']
+                \ })
+        endif
 
-        autocmd User lsp_setup call lsp#register_server({
-            \ 'name': 'wasm-lsp',
-            \ 'cmd': {_->['wasm-lsp']},
-            \ 'allowlist': ['wat', 'wast']
-            \})
+        if executable('wasm-lsp')
+            autocmd User lsp_setup call lsp#register_server({
+                \ 'name': 'wasm-lsp',
+                \ 'cmd': {_->['wasm-lsp']},
+                \ 'allowlist': ['wat', 'wast']
+                \ })
+        endif
 
         autocmd User lsp_setup call lsp#register_server({
             \ 'name': 'lua-language-server',
             \ 'cmd': {server_info->[$HOME . '/.vim/scripts/lua-language-server']},
             \ 'allowlist': ['lua']
-            \})
+            \ })
 
         if executable('cuelsp')
             autocmd User lsp_setup call lsp#register_server({
