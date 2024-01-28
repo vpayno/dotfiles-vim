@@ -1,3 +1,18 @@
+regcomp
+fprintf
+regexec
+punct
+regfree
+ctype
+isogram
+strlen
+tolower
+isalpha
+powf
+realloc
+calloc
+strcmp
+strcpy
 AWKLIBPATH
 AWKSRCPATH
 RUSTDOCFLAGS
@@ -10,6 +25,7 @@ benchmem
 benchstat
 botch
 clippy
+collatz
 compgen
 coveragerc
 covermode
@@ -44,6 +60,7 @@ gtest
 hiedir
 hlint
 honnef
+ifndef
 ineffassign
 inplace
 ioctl
@@ -77,6 +94,10 @@ securego
 shellcheck
 shopt
 staticcheck
+stdbool
+stdint
+stdio
+stdlib
 tclsh
 tinfo
 ttclcheck
