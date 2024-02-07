@@ -1,0 +1,22 @@
+bacon
+bottom
+cargo-audit
+cargo-auditable
+cargo-chef
+cargo-expand
+cargo-fix
+cargo-fuzz
+cargo-info
+cargo-llvm-cov
+cargo-vet
+cargo-watch
+edit
+irust
+outdated
+sccache
+tree-sitter-cli
+typos-cli
+upgrades
+wasm-lsp-cli
+zellij
+--git https://github.com/mitsuhiko/rye rye
