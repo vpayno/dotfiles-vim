@@ -6,7 +6,7 @@ call DebugPrint('15.9-git.vimrc: start')
 
 augroup au_git
     autocmd!
-    autocmd BufNewFile,BufRead,BufEnter .git/COMMIT_EDITMSG set filetype=gitcommit | set nomodeline
+    autocmd BufNewFile,BufRead,BufEnter .git/COMMIT_EDITMSG set filetype=gitcommit | set nomodeline | set paste
 augroup end
 
 call DebugPrint('15.9-git.vimrc: end')
