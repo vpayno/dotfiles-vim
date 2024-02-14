@@ -51,9 +51,9 @@ if _enable_python
 
             " fixers are run in the order shown
             " autoflake, autoimport, autopep8, black, isort, pycln, pyflyby,
-            " reorder-python-imports, ruff, yapf
+            " reorder-python-imports, ruff, ruff_format, yapf
             if g:_enable_ale_python_fixers
-                let g:ale_fixers.python = ['autoimport', 'isort', 'black']
+                let g:ale_fixers.python = ['autoimport', 'isort', 'ruff', 'ruff_format']
             else
                 let g:ale_fixers.python = []
             endif
@@ -63,7 +63,7 @@ if _enable_python
             " 'pylama', 'pylint', 'pylsp', 'pyre', 'pyright', 'refurb', 'ruff',
             " 'unimport', 'vulture']
             if g:_enable_ale_python_linters
-                let g:ale_linters.python = ['ruff', 'pyright', 'refurb', 'bandit']
+                let g:ale_linters.python = ['ruff', 'mypy', 'pyright', 'refurb', 'bandit']
             else
                 let g:ale_linters.python = []
             endif
