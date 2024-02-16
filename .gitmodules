@@ -538,3 +538,6 @@
 [submodule "neomux"]
 	path = pack/upstream/opt/neomux
 	url = https://github.com/nikvdp/neomux
+[submodule "pack/upstream/opt/undotree"]
+	path = pack/upstream/opt/undotree
+	url = https://github.com/mbbill/undotree
