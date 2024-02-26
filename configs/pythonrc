@@ -1,0 +1,22 @@
+# ~/.vim/configs/pythonrc -> ~/.pythonrc
+
+# Install: ln -svf ~/.vim/configs/pythonrc ~/.pythonrc
+
+# Test this file: PYTHONSTARTUP=~/.vim/configs/pythonrc python
+
+import readline
+
+readline.parse_and_bind("tab: complete")
+
+try:
+    from rich import pretty, traceback
+except ModuleNotFoundError:
+    pass
+else:
+    pretty.install()
+    traceback.install(show_locals=False)
+
+try:
+    from rich import inspect  # noqa: F401
+except ModuleNotFoundError:
+    pass
