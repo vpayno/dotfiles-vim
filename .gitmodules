@@ -541,3 +541,6 @@
 [submodule "pack/upstream/opt/undotree"]
 	path = pack/upstream/opt/undotree
 	url = https://github.com/mbbill/undotree
+[submodule "pack/upstream/opt/zoxide.vim"]
+	path = pack/upstream/opt/zoxide.vim
+	url = https://github.com/nanotee/zoxide.vim

@@ -130,6 +130,7 @@ let _enable_wordmotion            = g:enable
 let _enable_yaml                  = g:enable
 let _enable_youcompleteme         = g:disable
 let _enable_youcompleteme_tabnine = g:disable " overrides youcompleteme and tabnine
+let _enable_zoxide                = g:enable
 
 if _enable_kotlin_android
     let _enable_ale = g:disable
