@@ -23,7 +23,7 @@ if _enable_sh
             " let g:ale_sh_shellcheck_options = ''
             let g:ale_sh_shellcheck_options = '--external-sources'
             " let g:ale_sh_shfmt_options = '--case-indent --space-redirects -keep-padding'
-            let g:ale_sh_shfmt_options = '--case-indent'
+            let g:ale_sh_shfmt_options = '--case-indent --indent=0'
 
             if g:_enable_ale_sh_fixers
                 let g:ale_fixers.sh = ['shfmt']
@@ -42,6 +42,7 @@ if _enable_sh
             augroup ag_sh_shfmt
                 autocmd!
                 autocmd BufWritePost * if &filetype==#'sh' | Shfmt | endif
+                autocmd BufWritePost * if &filetype==#'bash' | Shfmt | endif
             augroup end
 
             " augroup au_shell_retab
@@ -54,6 +55,7 @@ if _enable_sh
     augroup ag_sh_setup
         autocmd!
         autocmd BufEnter,BufRead,FileType * if &filetype==#'sh' | call ConfigureFileTypeSh() | endif
+        autocmd BufEnter,BufRead,FileType * if &filetype==#'bash' | call ConfigureFileTypeSh() | endif
     augroup end
 
     call DebugPrint('43.0-bash.vimrc: end')
