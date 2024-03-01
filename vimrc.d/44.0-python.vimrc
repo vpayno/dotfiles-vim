@@ -28,6 +28,8 @@ if _enable_python
             " let g:ale_python_bandit_options = ''
             let g:ale_python_bandit_use_config = g:enable  " looks for .bandit
             let g:ale_python_black_options = '--line-length=240'
+            let g:ale_python_bandit_options = '--config ' . $HOME . '/.vim/configs/bandit.yaml --skip B101'
+            let g:ale_python_bandit_use_global = g:disable
             " let g:ale_python_flake8_options = ''
             " let g:ale_python_flakehell_options = ''
             let g:ale_python_isort_options = '--profile black'
