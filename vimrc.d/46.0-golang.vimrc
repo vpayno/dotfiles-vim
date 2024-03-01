@@ -207,7 +207,7 @@ if (_enable_golang)
         else
             augroup ag_golang_gofmt
                 autocmd!
-                autocmd BufWritePost *.go | execute 'silent !"${HOME}"/.vim/scripts/gofmt --vim %' | :e
+                autocmd BufWritePost *.go | execute 'silent !' . $HOME . '/.vim/scripts/gofmt --vim %' | :e
             augroup end
 
         endif

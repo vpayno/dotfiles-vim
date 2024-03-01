@@ -15,7 +15,7 @@ if _enable_python
         if g:_enable_python_pyfmt
             augroup ag_python_pyfmt
                 autocmd!
-                autocmd BufWritePost *.py execute 'silent !"${HOME}"/.vim/scripts/pyfmt --vim %' | :e
+                autocmd BufWritePost *.py execute 'silent ! ' . $HOME . '/.vim/scripts/pyfmt" --vim %' | :e
             augroup end
         endif
 
@@ -120,7 +120,7 @@ if _enable_python
             "
 
             " Pylint configuration file
-            let g:pymode_lint_config = '$HOME/.pylintrc'
+            let g:pymode_lint_config = $HOME . '/.pylintrc'
 
             let g:pymode_options_max_line_length = 240
 
