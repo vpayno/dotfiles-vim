@@ -25,15 +25,21 @@ function! FileTypeUsesTabs()
         let l:result = v:true
     endif
 
+    " echom 'File type ' . &filetype . ' uses tabs: ' . l:result
+
     return l:result
 endfunction
 
 function! FileTypeUsesSpaces()
+    let l:result = v:true
+
     if FileTypeUsesTabs()
-        return v:false
-    else
-        return v:true
+        let l:result = v:false
     endif
+
+    " echom 'File type ' . &filetype . ' uses spaces: ' . l:result
+
+    return l:result
 endfunction
 
 function! SetOptionsForTabs()
@@ -80,7 +86,7 @@ function! SetOptionsForSpaces()
     endif
 
     if !empty(glob(expand('%'))) && ! &readonly
-        :%retab! | :w
+        " :%retab! | :w
     endif
 endfunction
 
