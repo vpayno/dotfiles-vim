@@ -59,6 +59,7 @@ let _enable_golang_vimgo          = g:disable " needs _enable_golang=1
 let _enable_haskell               = g:enable
 let _enable_html5_svg             = g:disable
 let _enable_indent_guides         = g:enable
+let _enable_indent_motion         = g:enable
 let _enable_indent_object         = g:enable
 let _enable_jinja                 = g:enable
 let _enable_jq                    = g:enable " requires at least vim 8.1.1776 (no neovim support)

@@ -544,3 +544,6 @@
 [submodule "pack/upstream/opt/zoxide.vim"]
 	path = pack/upstream/opt/zoxide.vim
 	url = https://github.com/nanotee/zoxide.vim
+[submodule "pack/upstream/opt/indent-motion"]
+	path = pack/upstream/opt/indent-motion
+	url = https://github.com/tmhedberg/indent-motion
