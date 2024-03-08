@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Usage: xmlformat
+# [--preserve "pre,literal"] - list of elements to skip
+# [--blanks] - allow blank lines
+# [--compress] - minify xml document
+# [--selfclose] - self-close empty elements
+# [--indent num]
+# [--indent-char char]
+# [--outfile file]
+# [--encoding enc]
+# [--outencoding enc]
+# [--disable-inlineformatting]
+# [--overwrite]
+# [--disable-correction] - don't fix whitespace
+# [--eof-newline] - make sure to end the file with a newline
+# [--help]
+# --infile file | file | -
+
+xmlformat --indent 2 --indent-char ' ' --outencoding utf-8 --eof-newline "${@}"
