@@ -1,0 +1,9 @@
+.github             @vpayno
+.gitlab-ci.yml      @vpayno
+CODEOWNERS          @vpayno
+LICENSE             @vpayno
+README.md           @vpayno
+CHANGELOG.md        @vpayno
+.gitignore          @vpayno
+.gitlint            @vpayno
+cliff.toml          @vpayno
