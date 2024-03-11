@@ -4,7 +4,7 @@
 if _enable_xml
     call DebugPrint('57.0-xml.vimrc: start')
 
-    " packadd! vim-xml
+    packadd! xml.vim
 
     command! -buffer XmlFmt let winsaved = winsaveview() | execute 'silent %! ~/.vim/scripts/xmlfmt -' | if v:shell_error > 0 | silent undo | else | silent :w | endif | call winrestview(winsaved)
 
