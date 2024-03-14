@@ -1,7 +1,7 @@
 "
 " vimrc.d/57.0-xml.vimrc
 
-if _enable_xml
+if _enable_xml && (&filetype ==# 'xml' || &filetype ==# 'xhtml' || &filetype ==# 'html')
     call DebugPrint('57.0-xml.vimrc: start')
 
     packadd! xml.vim
