@@ -88,6 +88,7 @@ ruff-lsp
 safety
 semgrep
 semver
+sqlfluff
 tabulate
 textual[dev]
 textualize_see
