@@ -547,3 +547,6 @@
 [submodule "pack/upstream/opt/indent-motion"]
 	path = pack/upstream/opt/indent-motion
 	url = https://github.com/tmhedberg/indent-motion
+[submodule "pack/upstream/opt/catppuccin"]
+	path = pack/upstream/opt/catppuccin
+	url = https://github.com/catppuccin/nvim
