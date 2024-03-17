@@ -556,3 +556,6 @@
 [submodule "pack/upstream/opt/neural"]
 	path = pack/upstream/opt/neural
 	url = https://github.com/dense-analysis/neural
+[submodule "pack/upstream/opt/tabnine-nvim"]
+	path = pack/upstream/opt/tabnine-nvim
+	url = https://github.com/codota/tabnine-nvim
