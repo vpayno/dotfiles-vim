@@ -9,6 +9,8 @@ let _enable_line_wrap             = g:disable
 
 " Enable/disable plugins.
 let _enable_ack                   = g:enable
+let _enable_ai                    = g:disable
+let _enable_ai_neural             = g:disable
 let _enable_airline               = g:enable " if disabled, lightline is used
 let _enable_ale                   = g:enable
 let _enable_ale_c_fixers          = g:enable
@@ -16,13 +18,13 @@ let _enable_ale_cpp_fixers        = g:enable
 let _enable_ale_go                = g:enable
 let _enable_ale_go_fixers         = g:enable
 let _enable_ale_go_linters        = g:enable
+let _enable_ale_json              = g:enable
 let _enable_ale_python            = g:enable
 let _enable_ale_python_fixers     = g:enable
 let _enable_ale_python_linters    = g:enable
 let _enable_ale_rust              = g:enable
 let _enable_ale_rust_fixers       = g:enable
 let _enable_ale_rust_linters      = g:enable
-let _enable_ale_json              = g:enable
 let _enable_ale_sh                = g:enable
 let _enable_ale_sh_fixers         = g:enable
 let _enable_ale_sh_linters        = g:enable

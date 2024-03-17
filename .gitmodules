@@ -553,3 +553,6 @@
 [submodule "pack/upstream/opt/nui.nvim"]
 	path = pack/upstream/opt/nui.nvim
 	url = https://github.com/MunifTanjim/nui.nvim
+[submodule "pack/upstream/opt/neural"]
+	path = pack/upstream/opt/neural
+	url = https://github.com/dense-analysis/neural
