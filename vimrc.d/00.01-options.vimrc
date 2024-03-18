@@ -56,6 +56,7 @@ let _enable_gentoo                = g:enable
 let _enable_gitgutter             = g:enable
 let _enable_gitgutter_statusline  = g:disable
 let _enable_github_actions        = g:enable
+let _enable_gleam                 = g:enable
 let _enable_golang                = g:enable " requires at least Vim 8.0.1453 or Neovim 0.4.0
 let _enable_golang_govim          = g:disable " needs _enable_golang=1
 let _enable_golang_vimgo          = g:disable " needs _enable_golang=1

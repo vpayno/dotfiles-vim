@@ -127,6 +127,14 @@ if _enable_lsp
                 \ })
         endif
 
+        if executable('gleam')
+            autocmd User lsp_setup call lsp#register_server({
+                \ 'name': 'gleamlsp',
+                \ 'cmd': {server_info->['gleam', 'lsp']},
+                \ 'allowlist': ['gleam'],
+                \ })
+        endif
+
         autocmd User lsp_server_init call <SID>setup_ls()
         autocmd BufEnter * call <SID>setup_ls()
     augroup END

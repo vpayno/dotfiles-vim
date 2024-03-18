@@ -559,3 +559,6 @@
 [submodule "pack/upstream/opt/tabnine-nvim"]
 	path = pack/upstream/opt/tabnine-nvim
 	url = https://github.com/codota/tabnine-nvim
+[submodule "pack/upstream/opt/gleam.vim"]
+	path = pack/upstream/opt/gleam.vim
+	url = https://github.com/gleam-lang/gleam.vim
