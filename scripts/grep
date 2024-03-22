@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if git status . >&/dev/null; then
+	exec git grep "$@"
+else
+	exec grep -R "$@"
+fi
