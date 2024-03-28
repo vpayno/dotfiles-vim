@@ -95,6 +95,7 @@ let _enable_python_pyfmt          = g:disable
 let _enable_python_pymode         = g:disable
 let _enable_replace_with_register = g:enable
 let _enable_ripgrep               = g:enable
+let _enable_r                     = g:enable
 let _enable_ruby                  = g:enable
 let _enable_ale_ruby_fixers       = g:enable
 let _enable_rust                  = g:enable

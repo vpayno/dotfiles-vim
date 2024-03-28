@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+export R_LIBS_USER="${HOME}/.local/R/site-library"
+mkdir -pv "${R_LIBS_USER}"
+
+if [[ ${1} == install ]]; then
+	R --no-save <<-EOF
+		system("pyenv version", intern = T)
+		system("pyenv global anaconda3", intern = T)
+		system("pyenv version", intern = T)
+
+		install.packages("styler")
+
+		system("pyenv version", intern = T)
+		system("bash -c 'pyenv global $(pyenv versions --bare | grep -E '^3[.]' | tail -n 1)'", intern = T)
+		system("pyenv version", intern = T)
+	EOF
+
+	exit
+fi
+
+#cd "$(mktemp)" || exit
+#pyenv version
+#pyenv local anaconda3
+
+{
+	printf "PWD: "
+	pwd
+	printf "\n"
+
+	printf "Python: "
+	pyenv version
+	printf "\n"
+} 1>&2
+
+R --no-save <<-EOF
+	# to use stdio
+	styler::tidyverse_style
+EOF

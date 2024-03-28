@@ -562,3 +562,6 @@
 [submodule "pack/upstream/opt/gleam.vim"]
 	path = pack/upstream/opt/gleam.vim
 	url = https://github.com/gleam-lang/gleam.vim
+[submodule "pack/upstream/opt/Nvim-R"]
+	path = pack/upstream/opt/Nvim-R
+	url = https://github.com/jalvesaq/Nvim-R
