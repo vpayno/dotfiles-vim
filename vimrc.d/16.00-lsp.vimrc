@@ -135,6 +135,14 @@ if _enable_lsp
                 \ })
         endif
 
+        if executable('R')
+            autocmd User lsp_setup call lsp#register_server({
+                \ 'name': 'r-lsp',
+                \ 'cmd': {server_info->[$HOME . '/.vim/scripts/r-lsp']},
+                \ 'allowlist': ['r'],
+                \ })
+        endif
+
         autocmd User lsp_server_init call <SID>setup_ls()
         autocmd BufEnter * call <SID>setup_ls()
     augroup END

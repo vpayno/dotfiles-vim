@@ -6,14 +6,14 @@ if _enable_r
 
     packadd! Nvim-R
 
-    let g:ale_r_languageserver_executable = $HOME . '.vim/scripts/r-lsp'
+    let g:ale_r_languageserver_executable = $HOME . '/.vim/scripts/r-lsp'
 
     let g:ale_r_languageserver_cmd = 'languageserver::run()'
     let g:ale_r_languageserver_config = {}
 
     let g:ale_r_format_executable = 'rfmt'
 
-    let g:ale_r_linter_executable = $HOME . '.vim/scripts/r-lintr'
+    let g:ale_r_linter_executable = $HOME . '/.vim/scripts/r-lintr'
 
     let g:ale_r_lintr_options = 'lintr::linters_with_defaults()'
     let g:ale_r_lintr_lint_package = v:true
