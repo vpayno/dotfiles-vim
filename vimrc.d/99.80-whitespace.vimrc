@@ -78,6 +78,7 @@ function! SetOptionsForSpaces()
         set tabstop=2
     elseif
         \ &filetype ==# 'lua' ||
+        \ &filetype ==# 'java' ||
         \ &filetype ==# 'json' ||
         \ &filetype ==# 'json.jinja'
         set shiftwidth=4

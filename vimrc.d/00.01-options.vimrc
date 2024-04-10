@@ -19,6 +19,7 @@ let _enable_ale_cpp_fixers        = g:enable
 let _enable_ale_go                = g:enable
 let _enable_ale_go_fixers         = g:enable
 let _enable_ale_go_linters        = g:enable
+let _enable_ale_java              = g:enable
 let _enable_ale_json              = g:enable
 let _enable_ale_python            = g:enable
 let _enable_ale_python_fixers     = g:enable
