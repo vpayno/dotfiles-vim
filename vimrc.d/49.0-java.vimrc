@@ -12,7 +12,7 @@ if g:_enable_ale_java
     " let g:ale_java_javalsp_executable = ''
     " let g:ale_java_javalsp_config = {}
 
-    let g:ale_java_google_java_format_executable = 'google-java-format'
+    let g:ale_java_google_java_format_executable = $HOME . '.vim/scripts/google-java-format'
     " let g:ale_java_google_java_format_options = ''
 
     " let g:ale_linters.java = ['checkstyle', 'cspell', 'eclipselsp', 'javac', 'javalsp', 'pmd']
