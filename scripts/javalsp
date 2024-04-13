@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if [[ ! -d ${HOME}/git_remote/eclipse.jdt.ls ]]; then
+	git clone https://github.com/eclipse-jdtls/eclipse.jdt.ls "${HOME}/git_remote/eclipse.jdt.ls"
+
+	cd "${HOME}/git_remote/eclipse.jdt.ls" || exit
+
+	time ./mvnw clean verify
+fi
+
+cd "${HOME}/git_remote/eclipse.jdt.ls" || exit
+
+exec "./org.eclipse.jdt.ls.product/target/repository/bin/jdtls" "${@}"
