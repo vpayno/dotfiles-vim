@@ -25,7 +25,15 @@
     },
     "MD033": {
         "allowed_elements": [
+            "details",
             "figure",
+            "hr1",
+            "hr2",
+            "hr3",
+            "hr4",
+            "hr5",
+            "hr6",
+            "summary",
             "video"
         ]
     },
