@@ -143,6 +143,14 @@ if _enable_lsp
                 \ })
         endif
 
+        if executable('java')
+            autocmd User lsp_setup call lsp#register_server({
+                \ 'name': 'javalsp',
+                \ 'cmd': {server_info->[$HOME . '/.vim/scripts/javalsp', 'lsp']},
+                \ 'allowlist': ['java'],
+                \ })
+        endif
+
         autocmd User lsp_server_init call <SID>setup_ls()
         autocmd BufEnter * call <SID>setup_ls()
     augroup END

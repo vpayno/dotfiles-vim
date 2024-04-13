@@ -1,5 +1,21 @@
 #!/usr/bin/env bash
 
+if [[ ${1} == "lsp" ]]; then
+	if [[ ! -d ${HOME}/git_remote/java-language-server ]]; then
+		git clone https://github.com/georgewfraser/java-language-server "${HOME}/git_remote/java-language-server"
+
+		cd "${HOME}/git_remote/java-language-server" || exit
+
+		./scripts/link_linux.sh
+
+		mvn package -DskipTests
+	fi
+
+	cd "${HOME}/git_remote/java-language-server" || exit
+
+	exec "./dist/lang_server_linux.sh" "${@}"
+fi
+
 if [[ ! -d ${HOME}/git_remote/eclipse.jdt.ls ]]; then
 	git clone https://github.com/eclipse-jdtls/eclipse.jdt.ls "${HOME}/git_remote/eclipse.jdt.ls"
 
