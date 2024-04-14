@@ -25,6 +25,8 @@
     },
     "MD033": {
         "allowed_elements": [
+            "b",
+            "center",
             "details",
             "figure",
             "hr1",
