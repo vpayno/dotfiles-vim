@@ -99,6 +99,7 @@ let _enable_ripgrep               = g:enable
 let _enable_r                     = g:enable
 let _enable_ruby                  = g:enable
 let _enable_ale_ruby_fixers       = g:enable
+let _enable_rainbow               = g:enable
 let _enable_rust                  = g:enable
 let _enable_rust_bacon            = g:enable " only works with nvim
 let _enable_rust_coc              = g:disable
