@@ -11,10 +11,12 @@ dockerfile-language-server-nodejs
 dot-language-server
 fixjson
 git-conventional-commits
+json
 jsonlint
 markdownlint-cli
 npm
 textlint
+tldr
 vim-language-server
 vscode-json-languageserver
 vscode-langservers-extracted
