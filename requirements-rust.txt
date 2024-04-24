@@ -1,3 +1,4 @@
+--git https://github.com/mitsuhiko/rye rye
 bacon
 bottom
 cargo-audit
@@ -10,6 +11,7 @@ cargo-info
 cargo-llvm-cov
 cargo-vet
 cargo-watch
+dprint
 edit
 irust
 outdated
@@ -19,4 +21,3 @@ typos-cli
 upgrades
 wasm-lsp-cli
 zellij
---git https://github.com/mitsuhiko/rye rye
