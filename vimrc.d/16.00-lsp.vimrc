@@ -52,7 +52,7 @@ if _enable_lsp
             " pip install ruff-lsp ruff
             autocmd User lsp_setup call lsp#register_server({
                 \ 'name': 'ruff-lsp',
-                \ 'cmd': {server_info->['ruff-lsp']},
+                \ 'cmd': {server_info->[$HOME . '/.vim/scripts/ruff-lsp']},
                 \ 'allowlist': ['python']
                 \ })
 
@@ -60,7 +60,7 @@ if _enable_lsp
             " pip install python-lsp-server python-lsp-ruff
             autocmd User lsp_setup call lsp#register_server({
                 \ 'name': 'pylsp',
-                \ 'cmd': {server_info->['pylsp']},
+                \ 'cmd': {server_info->[$HOME . '/.vim/scripts/pylsp']},
                 \ 'allowlist': ['python']
                 \ })
         endif

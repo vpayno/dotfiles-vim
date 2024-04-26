@@ -22,6 +22,14 @@ if _enable_python
         if g:_enable_ale && g:_enable_ale_python
             " https://github.com/dense-analysis/ale/blob/master/doc/ale-python.txt
 
+            if isdirectory('.venv')
+                let g:ale_python_auto_virtualenv = '.venv'
+            endif
+
+            let g:ale_python_pylsp_executable = $HOME . '/.vim/scripts/pylsp'
+            let g:ale_python_pyright_executable = $HOME . '/.vim/scripts/pyright-lsp'
+            let g:ale_python_jedils_executable = $HOME . '/.vim/scripts/jedi-lsp'
+
             " let g:ale_python_autoflake_options = ''
             " let g:ale_python_autoimport_options = ''
             " let g:ale_python_autopep8_options = ''
