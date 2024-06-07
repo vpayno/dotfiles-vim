@@ -58,6 +58,11 @@ if _enable_sh
         autocmd BufEnter,BufRead,FileType * if &filetype==#'bash' | call ConfigureFileTypeSh() | endif
     augroup end
 
+    augroup au_sh_ft_set
+        autocmd!
+        autocmd BufNewFile,BufRead *.sh,*.bash set filetype=sh
+    augroup end
+
     call DebugPrint('43.0-bash.vimrc: end')
 endif
 
