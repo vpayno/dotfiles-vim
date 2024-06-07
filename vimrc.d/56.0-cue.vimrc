@@ -9,11 +9,10 @@
 if _enable_cue
     call DebugPrint('56.0-cue.vimrc: start')
 
-    packadd! vim-cue
-
-    command! -buffer CueFmt let winsaved = winsaveview() | execute 'silent %! cue fmt -' | if v:shell_error > 0 | silent undo | else | silent :w | endif | call winrestview(winsaved)
-
     function! ConfigureFileTypeCue()
+        packadd! vim-cue
+
+        command! -buffer CueFmt let winsaved = winsaveview() | execute 'silent %! cue fmt -' | if v:shell_error > 0 | silent undo | else | silent :w | endif | call winrestview(winsaved)
 
         if g:_enable_cue_fmt
             set autoread
@@ -23,10 +22,9 @@ if _enable_cue
             augroup end
         endif
 
+        " <range>gq
+        " set formatprg=cue\ fmt\ -
     endfunction
-
-    " <range>gq
-    " set formatprg=cue\ fmt\ -
 
     augroup au_cue_ft
         autocmd!
@@ -39,7 +37,6 @@ if _enable_cue
     augroup end
 
     call DebugPrint('56.0-cue.vimrc: end')
-
 endif
 
 " vim:filetype=vim:syntax=vim:et:ts=4:sw=4:ai:
