@@ -165,6 +165,11 @@ if _enable_rust
         autocmd BufEnter,BufRead,FileType * if &filetype==#'rust' | call ConfigureFileTypeRust() | endif
     augroup end
 
+    augroup au_rust_ft_set
+        autocmd!
+        autocmd BufNewFile,BufRead *.rs set filetype=rust
+    augroup end
+
     call DebugPrint('45.0-rust.vimrc: end')
 endif
 
