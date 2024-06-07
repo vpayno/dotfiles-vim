@@ -151,6 +151,14 @@ if _enable_lsp
                 \ })
         endif
 
+        if executable('arduino-language-server')
+            autocmd User lsp_setup call lsp#register_server({
+                \ 'name': 'arduino-language-server',
+                \ 'cmd': {server_info->[$HOME . '/.vim/scripts/arduino-language-server']},
+                \ 'allowlist': ['arduino'],
+                \ })
+        endif
+
         autocmd User lsp_server_init call <SID>setup_ls()
         autocmd BufEnter * call <SID>setup_ls()
     augroup END

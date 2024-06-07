@@ -64,6 +64,7 @@ function! SetOptionsForSpaces()
     set softtabstop=0
 
     if
+        \ &filetype ==# 'arduino' ||
         \ &filetype ==# 'dart' ||
         \ &filetype ==# 'gleam' ||
         \ &filetype ==# 'html' ||

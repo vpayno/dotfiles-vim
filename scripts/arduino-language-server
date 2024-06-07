@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+
+set -e
+
+#if [[ -d .venv ]]; then
+## shellcheck disable=SC1091
+#source ./.venv/bin/activate
+#fi
+
+declare search_path="${PWD}"
+declare config_found=false
+
+declare fqbn_config=".arduino-fqbn.conf"
+declare acli_config=".arduino-cli.yaml"
+
+declare fqbn
+declare clangd_bin
+declare -i clangd_ver=11
+
+while ! "${config_found}"; do
+	if [[ -f ${search_path}/${fqbn_config} ]]; then
+		config_found=true
+		break
+	fi
+
+	if [[ ${search_path} == "/" ]]; then
+		break
+	fi
+
+	search_path="$(dirname "${search_path}")"
+done
+
+if ! "${config_found}"; then
+	printf "ERROR: %s not found\n" "${fqbn_config}"
+	exit 1
+fi
+
+fqbn="$(cat "${search_path}/${fqbn_config}")"
+
+config_found=false
+search_path="${PWD}"
+
+while ! "${config_found}"; do
+	if [[ -f ${search_path}/${acli_config} ]]; then
+		config_found=true
+		break
+	fi
+
+	if [[ ${search_path} == "/" ]]; then
+		break
+	fi
+
+	search_path="$(dirname "${search_path}")"
+done
+
+if ! "${config_found}"; then
+	printf "ERROR: %s not found\n" "${acli_config}"
+	exit 1
+fi
+
+acli_config="${search_path}/${acli_config}"
+
+while [[ -z ${clangd_bin} ]]; do
+	if command -v clangd-"${clangd_ver}" >&/dev/null; then
+		clangd_bin="clangd-${clangd_ver}"
+	fi
+	((clangd_ver += 1))
+done
+
+exec arduino-language-server -clangd "${clangd_bin}" -cli-config "${acli_config}" -fqbn "${fqbn}" "${@}"
