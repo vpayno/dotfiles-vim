@@ -4,11 +4,10 @@
 if _enable_xml && (&filetype ==# 'xml' || &filetype ==# 'xhtml' || &filetype ==# 'html')
     call DebugPrint('57.0-xml.vimrc: start')
 
-    packadd! xml.vim
-
-    command! -buffer XmlFmt let winsaved = winsaveview() | execute 'silent %! ~/.vim/scripts/xmlfmt -' | if v:shell_error > 0 | silent undo | else | silent :w | endif | call winrestview(winsaved)
-
     function! ConfigureFileTypeXml()
+        packadd! xml.vim
+
+        command! -buffer XmlFmt let winsaved = winsaveview() | execute 'silent %! ~/.vim/scripts/xmlfmt -' | if v:shell_error > 0 | silent undo | else | silent :w | endif | call winrestview(winsaved)
 
         if g:_enable_xml_fmt
             set autoread
@@ -17,7 +16,6 @@ if _enable_xml && (&filetype ==# 'xml' || &filetype ==# 'xhtml' || &filetype ==#
                 autocmd BufWritePost *.xml XmlFmt
             augroup end
         endif
-
     endfunction
 
     " <range>gq
@@ -26,6 +24,11 @@ if _enable_xml && (&filetype ==# 'xml' || &filetype ==# 'xhtml' || &filetype ==#
     augroup ag_xml_setup
         autocmd!
         autocmd BufEnter,BufRead,FileType * if &filetype==#'xml' | call ConfigureFileTypeXml() | endif
+    augroup end
+
+    augroup au_xml_ft
+        autocmd!
+        autocmd BufNewFile,BufRead *.xml set filetype=xml
     augroup end
 
     call DebugPrint('57.0-xml.vimrc: end')
