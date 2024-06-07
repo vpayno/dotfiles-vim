@@ -23,6 +23,11 @@ if _enable_yaml
         endif
     endfunction
 
+    augroup au_yaml_ft_set
+        autocmd!
+        autocmd BufNewFile,BufRead *.yaml,*.yml set filetype=yaml
+    augroup end
+
     augroup ag_yaml_setup
         autocmd!
         autocmd BufEnter,BufRead,FileType * if &filetype==#'yaml' | call ConfigureFileTypeYaml() | endif
