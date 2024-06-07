@@ -67,6 +67,11 @@ if _enable_perl5 || _enable_perl6
         autocmd BufEnter,BufRead,FileType * if &filetype==#'perl' | call ConfigureFileTypePerl() | endif
     augroup end
 
+    augroup au_perl_ft_set
+        autocmd!
+        autocmd BufNewFile,BufRead *.pl set filetype=perl
+    augroup end
+
     call DebugPrint('47.0-perl.vimrc: end')
 endif
 
