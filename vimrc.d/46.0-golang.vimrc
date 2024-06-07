@@ -218,6 +218,11 @@ if (_enable_golang)
         autocmd BufEnter,BufRead,FileType * if &filetype==#'go' | call ConfigureFileTypeGo() | endif
     augroup end
 
+    augroup au_rust_ft_set
+        autocmd!
+        autocmd BufNewFile,BufRead *.go set filetype=go
+    augroup end
+
     call DebugPrint('46.0-golang.vimrc: end')
 endif
 
