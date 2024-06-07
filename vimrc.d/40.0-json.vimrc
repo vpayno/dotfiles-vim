@@ -33,6 +33,11 @@ if _enable_json
         endif
     endfunction
 
+    augroup au_json_ft_set
+        autocmd!
+        autocmd BufNewFile,BufRead *.json set filetype=json
+    augroup end
+
     augroup ag_json_setup
         autocmd!
         autocmd BufEnter,BufRead,FileType * if &filetype==#'json' | call ConfigureFileTypeJson() | endif
