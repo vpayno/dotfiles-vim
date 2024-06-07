@@ -34,6 +34,11 @@ if _enable_ruby
         let g:ale_fixers.ruby = []
     endif
 
+    augroup au_ruby_ft_set
+        autocmd!
+        autocmd BufNewFile,BufRead *.rb set filetype=ruby
+    augroup end
+
     call DebugPrint('48.0-ruby.vimrc: end')
 endif
 
