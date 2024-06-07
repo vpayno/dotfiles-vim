@@ -20,6 +20,12 @@ if _enable_html5_svg
         autocmd BufEnter,BufRead,FileType * if &filetype==#'html' || &filetype==#'svg' | call ConfigureFileTypeHtmlSvg() | endif
     augroup end
 
+    augroup au_html_svg_ft_set
+        autocmd!
+        autocmd BufNewFile,BufRead *.html,*.xhtml set filetype=html
+        autocmd BufNewFile,BufRead *.svg set filetype=svg
+    augroup end
+
     call DebugPrint('42.0-html5_svg.vimrc: end')
 endif
 
