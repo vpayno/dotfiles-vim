@@ -262,6 +262,11 @@ if _enable_python
         autocmd BufEnter,BufRead,FileType * if &filetype==#'python' | call ConfigureFileTypePython() | endif
     augroup end
 
+    augroup au_python_ft_set
+        autocmd!
+        autocmd BufNewFile,BufRead *.py set filetype=python
+    augroup end
+
     call DebugPrint('44.0-python.vimrc: end')
 
 endif
