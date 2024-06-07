@@ -5,9 +5,16 @@
 if _enable_jinja
     call DebugPrint('40.9-jinja.vimrc: start')
 
-    packadd! vim-jinja
+    function! ConfigureFileTypeJinja()
+        packadd! vim-jinja
+    endfunction
 
-    augroup au_jinja
+    augroup ag_jinja_setup
+        autocmd!
+        autocmd BufEnter,BufRead,FileType * if &filetype==#'jinja' | call ConfigureFileTypeJinja() | endif
+    augroup end
+
+    augroup au_jinja_ft_set
         autocmd!
         autocmd BufNewFile,BufRead *.jinja,*.j2 set filetype=jinja
         autocmd BufNewFile,BufRead *.yaml.jinja,*.yaml.j2,*.yml.jinja,*.yml.j2 set filetype=yaml.jinja
