@@ -33,22 +33,9 @@ if _enable_arduino
         let g:lsc_server_commands = {'arduino': $HOME . '/.vim/scripts/arduino-language-server'}
         let g:lsc_auto_map = v:true
 
-        " my_file.ino [arduino:avr:uno]
-        function! ArduinoStatusLineBasic()
-            return '%f [' . g:arduino_board . ']'
-        endfunction
-
-        " my_file.ino [arduino:avr:uno] [arduino:usbtinyisp] (/dev/ttyACM0:9600)
-        function! ArduinoStatusLineVerbose()
-            let port = arduino#GetPort()
-            let line = '%f [' . g:arduino_board . '] [' . g:arduino_programmer .  ']'
-
-            if !empty(port)
-                let line = line . ' (' . port . ':' . g:arduino_serial_baud .  ')'
-            endif
-
-            return line
-        endfunction
+        let g:LanguageClient_serverCommands = {
+            \ 'arduino': [$HOME . '/.vim/scripts/arduino-language-server']
+            \ }
 
         if g:_enable_airline
             augroup au_airline
@@ -60,6 +47,23 @@ if _enable_arduino
             setl statusline=%!ArduinoStatusLineBasic()
             "setl statusline=%!ArduinoStatusLineVerbose()
         endif
+    endfunction
+
+    " my_file.ino [arduino:avr:uno]
+    function! ArduinoStatusLineBasic()
+        return '%f [' . g:arduino_board . ']'
+    endfunction
+
+    " my_file.ino [arduino:avr:uno] [arduino:usbtinyisp] (/dev/ttyACM0:9600)
+    function! ArduinoStatusLineVerbose()
+        let port = arduino#GetPort()
+        let line = '%f [' . g:arduino_board . '] [' . g:arduino_programmer .  ']'
+
+        if !empty(port)
+            let line = line . ' (' . port . ':' . g:arduino_serial_baud .  ')'
+        endif
+
+        return line
     endfunction
 
     augroup ag_arduino_setup
