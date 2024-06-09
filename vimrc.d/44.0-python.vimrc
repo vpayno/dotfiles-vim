@@ -15,7 +15,7 @@ if _enable_python
         if g:_enable_python_pyfmt
             augroup ag_python_pyfmt
                 autocmd!
-                autocmd BufWritePost *.py execute 'silent ! ' . $HOME . '/.vim/scripts/pyfmt" --vim %' | :e
+                autocmd BufWritePre *.py execute 'silent %!' . $HOME . '/.vim/scripts/pyfmt --vim'
             augroup end
         endif
 
