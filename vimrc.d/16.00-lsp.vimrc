@@ -6,9 +6,6 @@
 
 " go install golang.org/x/tools/gopls@latest
 
-" autocmd! BufWritePost *.go | execute 'silent !go fmt %' | :e
-" autocmd! BufWritePost *.go | execute '! go fmt %' | :e
-
 func! s:setup_ls(...) abort
     let l:servers = lsp#get_allowed_servers()
 
