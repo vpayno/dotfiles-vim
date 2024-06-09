@@ -2,11 +2,6 @@
 
 declare output_cmd="cat"
 
-if [[ ${1} == --vim ]]; then
-	output_cmd="cat >& /dev/null"
-	shift 1
-fi
-
 declare -a targets=("${@:-.}")
 
 show_output() {
@@ -34,4 +29,12 @@ main() {
 	}
 } # main()
 
-main |& show_output
+vim_stdio() {
+	goimports | golines | gofumpt
+} # vim_stdio()
+
+if [[ ${1} == --vim ]]; then
+	vim_stdio
+else
+	main |& show_output
+fi

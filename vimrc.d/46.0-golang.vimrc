@@ -9,8 +9,7 @@
 " https://github.com/josa42/coc-go
 " :CocInstall coc-go
 
-" autocmd! BufWritePost *.go | execute 'silent !go fmt %' | :e
-" autocmd! BufWritePost *.go | execute '! go fmt %' | :e
+" autocmd! BufWritePre *.go | execute 'silent %!goimports | golines | gofumpt'
 
 if (_enable_golang)
     call DebugPrint('46.0-golang.vimrc: start')
@@ -44,13 +43,13 @@ if (_enable_golang)
             " let g:ale_go_gopls_init_options = {'ui.diagnostic.analyses': {}}
 
             if g:_enable_ale_go_fixers
-                let g:ale_fixers.go = ['goimports', 'golines', 'gofumpt']
+                let g:ale_fixers.go = ['gopls', 'goimports', 'golines', 'gofumpt']
             else
                 let g:ale_fixers.go = []
             endif
 
             if g:_enable_ale_go_linters
-                let g:ale_linters.go = ['golangci-lint']
+                let g:ale_linters.go = ['gopls', 'golangci-lint']
             else
                 let g:ale_linters.go = []
             endif
@@ -129,6 +128,7 @@ if (_enable_golang)
                     \ 'cmd': {server_info->['gopls']},
                     \ 'whitelist': ['go'],
                 \ })
+
             autocmd FileType go setlocal omnifunc=lsp#complete
             "autocmd FileType go nmap <buffer> gd <plug>(lsp-definition)
             "autocmd FileType go nmap <buffer> ,n <plug>(lsp-next-error)
@@ -207,7 +207,7 @@ if (_enable_golang)
         else
             augroup ag_golang_gofmt
                 autocmd!
-                autocmd BufWritePost *.go | execute 'silent !' . $HOME . '/.vim/scripts/gofmt --vim %' | :e
+                autocmd BufWritePre *.go | execute 'silent %!goimports | golines | gofumpt'
             augroup end
 
         endif
@@ -218,9 +218,11 @@ if (_enable_golang)
         autocmd BufEnter,BufRead,FileType * if &filetype==#'go' | call ConfigureFileTypeGo() | endif
     augroup end
 
-    augroup au_rust_ft_set
+    augroup au_go_ft_set
         autocmd!
         autocmd BufNewFile,BufRead *.go set filetype=go
+        autocmd BufNewFile,BufRead go.mod set filetype=gomod
+        autocmd BufNewFile,BufRead go.work set filetype=gowork
     augroup end
 
     call DebugPrint('46.0-golang.vimrc: end')
