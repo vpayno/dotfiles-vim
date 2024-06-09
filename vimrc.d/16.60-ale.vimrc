@@ -12,15 +12,18 @@ if _enable_ale
     call DebugPrint('16.60-ale.vimrc: start')
 
     " Must be set before ale is loaded.
-    let g:ale_completion_enabled = g:disable
+    let g:ale_completion_enabled = g:enable
 
-    let g:ale_set_balloons = g:false
+    let g:ale_set_balloons = g:enable
     let g:ale_cursor_detail = g:enable
+    let g:ale_detail_to_floating_preview = g:enable
+    let g:ale_disable_lsp = g:enable " or auto
+
+    " test this to see if it slows down the editor
+    let g:ale_echo_cursor = g:enable
 
     "set completeopt=menu,menuone,preview,noselect,noinsert
     "set omnifunc=ale#completion#OmniFunc
-
-    packadd! ale
 
     let g:ale_set_quickfix = g:enable
 
@@ -77,10 +80,19 @@ if _enable_ale
 
     let g:LanguageClient_useVirtualText = g:enable
 
+    " let g:ale_popup_menu_enabled = g:enable
+    let g:ale_hover_cursor = g:enable
+    let g:ale_hover_to_preview = ! g:ale_hover_cursor
+    let g:ale_hover_to_floating_preview = g:ale_hover_to_preview
+    let g:ale_hover_cursor = g:enable
+    let g:ale_set_balloons = g:enable
+
     augroup ag_ale_hover_cursor
         autocmd!
         autocmd CursorHold * ALEHover
     augroup END
+
+    packadd! ale
 
     if g:false
 
@@ -138,7 +150,7 @@ if _enable_ale
         " some other plugin which sets quickfix errors, etc.
         let g:ale_keep_list_window_open = g:enable
 
-        let g:ale_list_vertical = g:disable
+        let g:ale_list_vertical = g:enable
     endif
 
     call DebugPrint('16.60-ale.vimrc: end')
