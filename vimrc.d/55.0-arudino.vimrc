@@ -37,6 +37,22 @@ if _enable_arduino
             \ 'arduino': [$HOME . '/.vim/scripts/arduino-language-server']
             \ }
 
+        augroup au_arduino_fmt
+            autocmd! BufWritePre *.ino | execute 'silent %!' . $HOME . '/.vim/scripts/arduino-fmt'
+        augroup end
+
+        if g:_enable_ale_arduino_fixers
+            let g:ale_fixers.arduino = ['clang-format']
+        else
+            let g:ale_fixers.arduino = []
+        endif
+
+        if g:_enable_ale_arduino_linters
+            let g:ale_linters.arduino = ['arduino-language-server']
+        else
+            let g:ale_linters.arduino = []
+        endif
+
         if g:_enable_airline
             augroup au_airline
                 autocmd!

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -e
+
+declare clangfmt_config="${HOME}/.vim/configs/clang-format-arduino"
+declare local_config=".clang-format"
+
+declare clangfmt_bin
+declare -i clang_ver=99
+
+while ! command -v clang-format-"${clang_ver}" >&/dev/null; do
+	((clang_ver -= 1))
+done
+clangfmt_bin="clang-format-${clang_ver}"
+
+if [[ ! -f ${local_config} ]]; then
+	cp -v "${clangfmt_config}" "${local_config}"
+fi
+
+"${clangfmt_bin}" --style=file "${@}"
