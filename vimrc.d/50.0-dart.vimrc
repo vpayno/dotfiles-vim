@@ -3,8 +3,7 @@
 "
 " https://github.com/dart-lang/dart-vim-plugin
 
-" autocmd! BufWritePost *.dart | execute 'silent !dart format %' | :e
-" autocmd! BufWritePost *.dart | execute '! dart format %' | :e
+" autocmd! BufWritePre *.dart | execute 'silent %!dart format'
 
 if _enable_dart
     call DebugPrint('50.0-dart.vimrc: start')
