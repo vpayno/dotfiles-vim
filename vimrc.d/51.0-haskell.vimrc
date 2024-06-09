@@ -13,7 +13,7 @@ if _enable_haskell
 
         augroup au_haskell
             autocmd!
-            autocmd! BufWritePost *.hs | execute 'silent !brittany --write-mode inplace %' | :e
+            autocmd! BufWritePre *.hs | execute 'silent %!brittany'
         augroup end
     endfunction
 
