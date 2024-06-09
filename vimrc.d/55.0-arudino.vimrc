@@ -37,6 +37,22 @@ if _enable_arduino
             \ 'arduino': [$HOME . '/.vim/scripts/arduino-language-server']
             \ }
 
+        call ale#linter#Define('arduino', {
+            \   'name': 'arduino-language-server',
+            \   'lsp': 'stdio',
+            \   'executable': $HOME . '/.vim/scripts/arduino-language-server',
+            \   'command': '%e',
+            \   'project_root': $PWD,
+            \ })
+
+        augroup au_arduino_lsp
+            autocmd! User lsp_setup call lsp#register_server({
+                \ 'name': 'arduino-language-server',
+                \ 'cmd': {server_info->[$HOME . '/.vim/scripts/arduino-language-server']},
+                \ 'whitelist': ['arduino'],
+                \ })
+        augroup end
+
         augroup au_arduino_fmt
             autocmd! BufWritePre *.ino | execute 'silent %!' . $HOME . '/.vim/scripts/arduino-fmt'
         augroup end
