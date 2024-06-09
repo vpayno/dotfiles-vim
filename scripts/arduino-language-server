@@ -15,7 +15,7 @@ declare acli_config=".arduino-cli.yaml"
 
 declare fqbn
 declare clangd_bin
-declare -i clangd_ver=11
+declare -i clangd_ver=99
 
 while ! "${config_found}"; do
 	if [[ -f ${search_path}/${fqbn_config} ]]; then
@@ -60,11 +60,9 @@ fi
 
 acli_config="${search_path}/${acli_config}"
 
-while [[ -z ${clangd_bin} ]]; do
-	if command -v clangd-"${clangd_ver}" >&/dev/null; then
-		clangd_bin="clangd-${clangd_ver}"
-	fi
+while command -v clangd-"${clangd_ver}" >&/dev/null; do
 	((clangd_ver += 1))
 done
+clangd_bin="clangd-${clangd_ver}"
 
 exec arduino-language-server -clangd "${clangd_bin}" -cli-config "${acli_config}" -fqbn "${fqbn}" "${@}"
