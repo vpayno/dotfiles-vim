@@ -13,7 +13,7 @@ if _enable_haskell
 
         augroup au_haskell
             autocmd!
-            autocmd! BufWritePre *.hs | execute 'silent %!brittany'
+            autocmd! BufWritePre *.hs | call KeepView('silent %!brittany')
         augroup end
     endfunction
 

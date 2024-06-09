@@ -40,7 +40,7 @@ if _enable_syntastic
     let g:syntastic_ruby_checkers = ['ruby', 'flog']
 
     augroup au_syntastic
-        autocmd! BufWritePre *.rb | execute 'silent %!rufo'
+        autocmd! BufWritePre *.rb | call KeepView('silent %!rufo')
     augroup end
 
     call DebugPrint('16.50-syntastic.vimrc: end')

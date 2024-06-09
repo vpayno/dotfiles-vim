@@ -62,6 +62,17 @@ if get(g:, 'ImportedHelpers', 0) == 0
 
     command! ClearQuickfixList call ClearQuickfixList()
 
+    " similar to -> call setpos('.', getpos("''"))
+    " similar to -> ``
+    function! KeepView(arg)
+        let l:winview = winsaveview()
+        execute a:arg
+        call winrestview(l:winview)
+    endfunction
+
+    " doesn't work in autogroup with args
+    " command! KeepView call KeepView()
+
     call DebugPrint('00.00-helpers.vimrc: end')
 
 endif

@@ -9,7 +9,7 @@
 " https://github.com/josa42/coc-go
 " :CocInstall coc-go
 
-" autocmd! BufWritePre *.go | execute 'silent %!goimports | golines | gofumpt'
+" autocmd! BufWritePre *.go | call KeepView('silent %!goimports | golines | gofumpt')
 
 if (_enable_golang)
     call DebugPrint('46.0-golang.vimrc: start')
@@ -207,7 +207,7 @@ if (_enable_golang)
         else
             augroup ag_golang_gofmt
                 autocmd!
-                autocmd BufWritePre *.go | execute 'silent %!goimports | golines | gofumpt'
+                autocmd BufWritePre *.go | call KeepView('silent %!goimports | golines | gofumpt')
             augroup end
 
         endif

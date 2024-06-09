@@ -54,7 +54,7 @@ if _enable_arduino
         augroup end
 
         augroup au_arduino_fmt
-            autocmd! BufWritePre *.ino | execute 'silent %!' . $HOME . '/.vim/scripts/arduino-fmt'
+            autocmd! BufWritePre *.ino | call KeepView('silent %!' . $HOME . '/.vim/scripts/arduino-fmt')
         augroup end
 
         if g:_enable_ale_arduino_fixers
