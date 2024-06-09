@@ -12,15 +12,22 @@ if _enable_ale
     call DebugPrint('16.60-ale.vimrc: start')
 
     " Must be set before ale is loaded.
-    let g:ale_completion_enabled = g:enable
+    " let g:ale_completion_enabled = g:enable
 
     let g:ale_set_balloons = g:enable
     let g:ale_cursor_detail = g:enable
-    let g:ale_detail_to_floating_preview = g:enable
-    let g:ale_disable_lsp = g:enable " or auto
-
-    " test this to see if it slows down the editor
     let g:ale_echo_cursor = g:enable
+    " let g:ale_popup_menu_enabled = g:enable
+    let g:ale_hover_cursor = g:enable
+    let g:ale_hover_to_preview = !g:ale_set_balloons
+
+    " enable balloons
+    let g:ale_floating_preview = g:enable
+    let g:ale_detail_to_floating_preview = g:ale_floating_preview
+    let g:ale_hover_to_floating_preview = g:ale_floating_preview
+
+    " don't set to 0 or 1
+    let g:ale_disable_lsp = 'auto'
 
     "set completeopt=menu,menuone,preview,noselect,noinsert
     "set omnifunc=ale#completion#OmniFunc
@@ -79,13 +86,6 @@ if _enable_ale
     let g:ale_echo_msg_format = '[%linter%] (%code) %%s [%severity%]'
 
     let g:LanguageClient_useVirtualText = g:enable
-
-    " let g:ale_popup_menu_enabled = g:enable
-    let g:ale_hover_cursor = g:enable
-    let g:ale_hover_to_preview = ! g:ale_hover_cursor
-    let g:ale_hover_to_floating_preview = g:ale_hover_to_preview
-    let g:ale_hover_cursor = g:enable
-    let g:ale_set_balloons = g:enable
 
     augroup ag_ale_hover_cursor
         autocmd!
