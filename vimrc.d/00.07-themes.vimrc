@@ -57,8 +57,9 @@ endif
 
 " highlight search matches
 set hlsearch
-" highlight Search ctermbg=LightYellow ctermfg=Red
-highlight Search cterm=NONE guibg=peru guifg=black
+" highlight Search ctermbg=LightYellow ctermfg=LightBlue
+" highlight Search cterm=NONE guibg=peru guifg=black
+highlight Search cterm=NONE ctermbg=0 ctermfg=0 guibg=DarkOrange guifg=White
 
 "
 highlight clear CursorLine
