@@ -568,3 +568,6 @@
 [submodule "pack/upstream/opt/vim-rainbow"]
 	path = pack/upstream/opt/vim-rainbow
 	url = https://github.com/frazrepo/vim-rainbow.git
+[submodule "pack/upstream/opt/tinygo.vim"]
+	path = pack/upstream/opt/tinygo.vim
+	url = https://github.com/sago35/tinygo.vim
