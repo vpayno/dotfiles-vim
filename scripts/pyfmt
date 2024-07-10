@@ -4,6 +4,8 @@ declare output_cmd="cat"
 
 declare -a targets=("${@:-.}")
 
+declare isort_args="--profile black --multi-line 3 --wrap-length 10 --line-length 11 --dont-follow-links --ensure-newline-before-comments"
+
 show_output() {
 	# shellcheck disable=SC2086
 	eval ${output_cmd}
@@ -19,8 +21,8 @@ main() {
 		time yapf --style=google --recursive --in-place "${targets[@]}"
 		printf "\n"
 
-		echo isort --profile black --dont-follow-links --atomic --ensure-newline-before-comments "${targets[@]}"
-		time isort --profile black --dont-follow-links --atomic --ensure-newline-before-comments "${targets[@]}"
+		echo isort "${isort_args}" --atomic "${targets[@]}"
+		time isort "${isort_args}" --atomic "${targets[@]}"
 		printf "\n"
 
 		echo black --line-length=240 "${targets[@]}"
@@ -30,7 +32,7 @@ main() {
 } # main()
 
 vim_stdio() {
-	isort --profile black --ensure-newline-before-comments --stdout - | black --line-length=240 -
+	isort "${isort_args}" --stdout - | black --line-length=240 -
 } # vim_stdio()
 
 if [[ ${1} == --vim ]]; then

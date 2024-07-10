@@ -40,7 +40,7 @@ if _enable_python
             let g:ale_python_bandit_use_global = g:disable
             " let g:ale_python_flake8_options = ''
             " let g:ale_python_flakehell_options = ''
-            let g:ale_python_isort_options = '--profile black'
+            let g:ale_python_isort_options = '--profile black --multi-line 3 --wrap-length 10 --line-length 11 --dont-follow-links --ensure-newline-before-comments'
             " let g:ale_python_mypy_options = ''
             let g:ale_python_mypy_show_notes = g:enable
             " let g:ale_python_prospector_options = ''
@@ -244,7 +244,13 @@ if _enable_python
                 let g:vim_isort_map = ''
 
                 let g:vim_isort_config_overrides = {
-                    \ 'include_trailing_comma': 1,
+                    \ 'profile': 'black',
+                    \ 'wrap_length': 10,
+                    \ 'line_ending': 11,
+                    \ 'multi_line': 3,
+                    \ 'dont_follow_links': v:true,
+                    \ 'ensure_newline_before_comments': v:true,
+                    \ 'include_trailing_comma': v:true,
                     \ 'multi_line_output': 3
                     \}
 
