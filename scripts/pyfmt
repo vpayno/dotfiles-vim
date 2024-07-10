@@ -4,6 +4,7 @@ declare output_cmd="cat"
 
 declare -a targets=("${@:-.}")
 
+# https://pycqa.github.io/isort/docs/configuration/options.html
 declare isort_args="--profile black --multi-line 3 --wrap-length 10 --line-length 11 --dont-follow-links --ensure-newline-before-comments"
 
 show_output() {
