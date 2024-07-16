@@ -14,6 +14,13 @@ if _enable_gentoo
     " let g:syntastic_ebuild_checkers = ['pkgcheck']
     " let g:syntastic_sh_checkers = ['sh', 'checkbashisms']
 
+    if executable('shfmt')
+        augroup ag_ebuild_fmt
+            autocmd!
+            autocmd BufWritePre *.ebuild | call KeepView('silent %!shfmt --case-indent --space-redirects -keep-padding -')
+        augroup end
+    endif
+
     call DebugPrint('60.0-gentoo.vimrc: end')
 endif
 
