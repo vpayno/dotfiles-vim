@@ -14,6 +14,11 @@ if _enable_gentoo
     " let g:syntastic_ebuild_checkers = ['pkgcheck']
     " let g:syntastic_sh_checkers = ['sh', 'checkbashisms']
 
+    augroup au_ebuild_ft_set
+        autocmd!
+        autocmd BufNewFile,BufRead *.ebuild set filetype=ebuild
+    augroup end
+
     if executable('shfmt')
         augroup ag_ebuild_fmt
             autocmd!
