@@ -156,6 +156,14 @@ if _enable_lsp
                 \ })
         endif
 
+        if executable('nil')
+            autocmd User lsp_setup call lsp#register_server({
+                \ 'name': 'nix-language-server',
+                \ 'cmd': {server_info->[$HOME . '/.vim/scripts/nix-language-server']},
+                \ 'allowlist': ['nix'],
+                \ })
+        endif
+
         autocmd User lsp_server_init call <SID>setup_ls()
         autocmd BufEnter * call <SID>setup_ls()
     augroup END

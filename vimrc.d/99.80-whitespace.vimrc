@@ -69,6 +69,7 @@ function! SetOptionsForSpaces()
         \ &filetype ==# 'gleam' ||
         \ &filetype ==# 'html' ||
         \ &filetype ==# 'lisp' ||
+        \ &filetype ==# 'nix' ||
         \ &filetype ==# 'r' ||
         \ &filetype ==# 'ruby' ||
         \ &filetype ==# 'wast' ||
