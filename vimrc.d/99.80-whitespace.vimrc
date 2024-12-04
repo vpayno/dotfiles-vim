@@ -65,6 +65,7 @@ function! SetOptionsForSpaces()
 
     if
         \ &filetype ==# 'arduino' ||
+        \ &filetype ==# 'c' ||
         \ &filetype ==# 'dart' ||
         \ &filetype ==# 'gleam' ||
         \ &filetype ==# 'html' ||
