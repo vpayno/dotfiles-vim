@@ -69,6 +69,7 @@ function! SetOptionsForSpaces()
         \ &filetype ==# 'dart' ||
         \ &filetype ==# 'gleam' ||
         \ &filetype ==# 'html' ||
+        \ &filetype ==# 'just' ||
         \ &filetype ==# 'lisp' ||
         \ &filetype ==# 'nix' ||
         \ &filetype ==# 'r' ||
