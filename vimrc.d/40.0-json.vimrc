@@ -3,6 +3,8 @@
 "
 " https://github.com/elzr/vim-json
 
+let g:json_indent_size = 2
+
 if _enable_json
     call DebugPrint('40.0-json.vimrc: start')
 
@@ -20,15 +22,15 @@ if _enable_json
 
         " https://vi.stackexchange.com/questions/16906/how-to-format-json-file-in-vim
         function! FormatJson()
-            execute '%!jq --sort-keys --indent 4 .'
+            execute '%!jq --sort-keys --indent ' . g:json_indent_size . ' .'
         endfunction
 
-        command! JsonFmt %!jq --sort-keys --indent 4 .
+        command! JsonFmt %!jq --sort-keys --indent g:json_indent_size .
 
         if g:_enable_ale && g:_enable_ale_json
             let g:ale_fixers.json = ['fixjson', 'jq']
             let g:ale_linters.json = ['jsonlint']
-            let g:ale_json_jq_options = '. --sort-keys --indent 4'
+            let g:ale_json_jq_options = '. --sort-keys --indent ' . g:json_indent_size
             let g:ale_linters_ignore.json = []
         endif
     endfunction

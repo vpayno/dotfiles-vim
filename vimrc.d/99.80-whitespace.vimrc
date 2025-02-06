@@ -69,6 +69,8 @@ function! SetOptionsForSpaces()
         \ &filetype ==# 'dart' ||
         \ &filetype ==# 'gleam' ||
         \ &filetype ==# 'html' ||
+        \ &filetype ==# 'json' ||
+        \ &filetype ==# 'json.jinja' ||
         \ &filetype ==# 'just' ||
         \ &filetype ==# 'lisp' ||
         \ &filetype ==# 'nix' ||
@@ -83,9 +85,7 @@ function! SetOptionsForSpaces()
         set tabstop=2
     elseif
         \ &filetype ==# 'lua' ||
-        \ &filetype ==# 'java' ||
-        \ &filetype ==# 'json' ||
-        \ &filetype ==# 'json.jinja'
+        \ &filetype ==# 'java'
         set shiftwidth=4
         set tabstop=4
     else

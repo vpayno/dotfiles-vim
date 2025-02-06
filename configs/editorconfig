@@ -108,9 +108,9 @@ indent_style = space
 indent_size = 4
 
 [*.{json,jsonl}]
-indent_size = 4
+indent_size = 2
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 [*.{yml,yaml}]
 indent_size = 2
