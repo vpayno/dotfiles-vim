@@ -22,7 +22,7 @@ if _enable_sh
             " let g:ale_sh_bashate_options = ''
             " let g:ale_sh_shellcheck_options = ''
             let g:ale_sh_shellcheck_options = '--external-sources'
-            " let g:ale_sh_shfmt_options = '--case-indent --space-redirects -keep-padding'
+            " let g:ale_sh_shfmt_options = '--case-indent --space-redirects --keep-padding'
             let g:ale_sh_shfmt_options = '--case-indent --indent=0'
 
             if g:_enable_ale_sh_fixers

@@ -22,7 +22,7 @@ if _enable_gentoo
     if executable('shfmt')
         augroup ag_ebuild_fmt
             autocmd!
-            autocmd BufWritePre *.ebuild | call KeepView('silent %!shfmt --case-indent --space-redirects -keep-padding -')
+            autocmd BufWritePre *.ebuild | call KeepView('silent %!shfmt --case-indent --space-redirects --keep-padding -')
         augroup end
     endif
 
