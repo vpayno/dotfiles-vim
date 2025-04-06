@@ -91,6 +91,7 @@ let _enable_other_todo_highlight  = g:disable
 let _enable_perl5                 = g:enable
 let _enable_perl6                 = g:enable
 let _enable_powerline             = g:disable " if disabled, airline is used
+let _enable_puppet                = g:disable
 let _enable_python                = g:enable
 let _enable_python_autopep8       = g:disable
 let _enable_python_coc_pyright    = g:disable
