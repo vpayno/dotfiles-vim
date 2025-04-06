@@ -13,7 +13,7 @@
 
     vimconf-src = {
       flake = false;
-      url = "github:vpayno/dotfiles-vim?submodules=1&ref=addflake";
+      url = "github:vpayno/dotfiles-vim?submodules=1&ref=main";
     };
   };
 

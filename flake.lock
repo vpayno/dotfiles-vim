@@ -62,11 +62,11 @@
     "vimconf-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1743970467,
-        "narHash": "sha256-Nr6x+yrdZwaELtQ88/8WjBEK6LZ2JxyxaRXGgkHUN1w=",
+        "lastModified": 1743973031,
+        "narHash": "sha256-oxtAnnbR3U2sYWQGXGAzEja+nBepR9BILVSlpxSAJ28=",
         "owner": "vpayno",
         "repo": "dotfiles-vim",
-        "rev": "30122a00700d82e4f132a2f364c8e7d7d4ad3c2d",
+        "rev": "a865f2f54cc98753e6c93bca95be1ee2de5bdb44",
         "type": "github"
       },
       "original": {
