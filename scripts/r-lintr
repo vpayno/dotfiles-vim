@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export R_LIBS_USER="${HOME}/.local/R/site-library"
+export R_LIBS_USER="${MYVIMDIR:=${HOME}}/.local/R/site-library"
 mkdir -pv "${R_LIBS_USER}"
 
 if [[ ${1} == install ]]; then

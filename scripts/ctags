@@ -28,4 +28,4 @@ if ! is_git_root; then
 	exit 0
 fi
 
-ctags --exclude="@${HOME}/.vim/.ctagsignore" -R . 2> /dev/null
+ctags --exclude="@${MYVIMDIR:=${HOME}}/.vim/.ctagsignore" -R . 2>/dev/null

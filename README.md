@@ -5,6 +5,39 @@
 
 DotFiles - Vim Config
 
+## Nix
+
+Experimenting with Nix to make this configuration more portable.
+
+### Debugging
+
+When debugging the configuration, the changes need to be pushed to a branch, the
+branch needs to be referenced in the inputs and the input lock needs to be
+updated.
+
+```text
+git add -u .
+git commit -v --amend
+git push --force updateflake
+nix flake update vimconf-src && nix build && ./result/bin/vim
+```
+
+### Running
+
+To run it use `nix run`:
+
+```text
+nix run github:vpayno/dotfiles-vim --
+```
+
+### Installing
+
+To install it run `nix profile install ...`:
+
+```text
+nix profile install github:vpayno/dotfiles-vim
+```
+
 ## Installation
 
 ### Download
@@ -15,7 +48,8 @@ To download/clone the repo:
 git clone --recurse-submodules https://github.com/vpayno/dotfiles-vim.git ~/.vim
 ```
 
-If you cloned the repo with out the `--recurse-submodules` argument, use these commands to download the submodules:
+If you cloned the repo with out the `--recurse-submodules` argument, use these
+commands to download the submodules:
 
 ```bash
 cd ~/.vim
@@ -31,7 +65,8 @@ git submodule status
 
 ### Install Repo
 
-Run the `install.sh` script to replace your existing `~/.vimrc` configuration file with a symlink to the one in the repository.
+Run the `install.sh` script to replace your existing `~/.vimrc` configuration
+file with a symlink to the one in the repository.
 
 ```bash
 ./install.sh

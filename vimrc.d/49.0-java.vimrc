@@ -9,18 +9,18 @@ if g:_enable_ale_java
     let g:ale_java_checkstyle_executable = 'checkstyle'
     let g:ale_java_checkstyle_options = ''
 
-    " let g:ale_java_javalsp_executable = $HOME . '/scripts/javalsp'
+    " let g:ale_java_javalsp_executable = g:MYVIMDIR . '/scripts/javalsp'
     " let g:ale_java_javalsp_config = {}
 
-    " let g:ale_java_eclipselsp_executable = $HOME . '/scripts/javalsp'
-    " let g:ale_java_eclipselsp_path = $HOME . '/git_remote/eclipse.jdt.ls'
+    " let g:ale_java_eclipselsp_executable = g:MYVIMDIR . '/scripts/javalsp'
+    " let g:ale_java_eclipselsp_path = g:MYVIMDIR . '/git_remote/eclipse.jdt.ls'
     let g:ale_java_eclipselsp_executable = ''
     let g:ale_java_eclipselsp_path = ''
     " let g:ale_java_eclipselsp_workspace_path = ''
     " let g:ale_java_eclipselsp_config_path = $PWD . '/.jdtls'
     " let g:ale_java_eclipselsp_javaagent = ''
 
-    let g:ale_java_google_java_format_executable = $HOME . '.vim/scripts/google-java-format'
+    let g:ale_java_google_java_format_executable = g:MYVIMDIR . '/scripts/google-java-format'
     " let g:ale_java_google_java_format_options = ''
 
     " let g:ale_linters.java = ['checkstyle', 'cspell', 'eclipselsp', 'javac', 'javalsp', 'pmd']

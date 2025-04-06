@@ -13,8 +13,8 @@ let g:netrw_banner = g:disable
 let g:netrw_browse_split = 4  " 0=reuse, 1=split, 2=vsplit, 3=new, 4= previous
 let g:netrw_altv = 1 " 0=left, 1=right
 let g:netrw_liststyle = 3  " 0=thin, 1=long, 2=wide, 3=tree
-let g:netrw_list_hide = netrw_gitignore#Hide()
-let g:netrw_list_hide .= ',\(^\|\s\s\)\zs\.\S\+'
+"let g:netrw_list_hide = netrw_gitignore#Hide()
+"let g:netrw_list_hide .= ',\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_dirhistmax = 25  " number of entries in ~/.vim/.netrwhist
 
 " https://vi.stackexchange.com/questions/12586/exclude-some-paths-from-find-path

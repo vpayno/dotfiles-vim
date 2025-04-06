@@ -19,7 +19,8 @@ if _enable_xml && (&filetype ==# 'xml' || &filetype ==# 'xhtml' || &filetype ==#
     endfunction
 
     " <range>gq
-    " set formatprg=$HOME . '/.vim/scripts/xmlfmt'\ -
+    " set formatprg=$MYVIMDIR/scripts/xmlfmt
+    " let &formatprg = g:MYVIMDIR . '/scripts/xmlfmt'
 
     augroup ag_xml_setup
         autocmd!

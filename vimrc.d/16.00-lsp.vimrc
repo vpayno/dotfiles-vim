@@ -49,7 +49,7 @@ if _enable_lsp
             " pip install ruff-lsp ruff
             autocmd User lsp_setup call lsp#register_server({
                 \ 'name': 'ruff-lsp',
-                \ 'cmd': {server_info->[$HOME . '/.vim/scripts/ruff-lsp']},
+                \ 'cmd': {server_info->[g:MYVIMDIR . '/scripts/ruff-lsp']},
                 \ 'allowlist': ['python']
                 \ })
 
@@ -57,7 +57,7 @@ if _enable_lsp
             " pip install python-lsp-server python-lsp-ruff
             autocmd User lsp_setup call lsp#register_server({
                 \ 'name': 'pylsp',
-                \ 'cmd': {server_info->[$HOME . '/.vim/scripts/pylsp']},
+                \ 'cmd': {server_info->[g:MYVIMDIR . '/scripts/pylsp']},
                 \ 'allowlist': ['python']
                 \ })
         endif
@@ -112,7 +112,7 @@ if _enable_lsp
 
         autocmd User lsp_setup call lsp#register_server({
             \ 'name': 'lua-language-server',
-            \ 'cmd': {server_info->[$HOME . '/.vim/scripts/lua-language-server']},
+            \ 'cmd': {server_info->[g:MYVIMDIR . '/scripts/lua-language-server']},
             \ 'allowlist': ['lua']
             \ })
 
@@ -135,7 +135,7 @@ if _enable_lsp
         if executable('R')
             autocmd User lsp_setup call lsp#register_server({
                 \ 'name': 'r-lsp',
-                \ 'cmd': {server_info->[$HOME . '/.vim/scripts/r-lsp']},
+                \ 'cmd': {server_info->[g:MYVIMDIR . '/scripts/r-lsp']},
                 \ 'allowlist': ['r'],
                 \ })
         endif
@@ -143,7 +143,7 @@ if _enable_lsp
         if executable('java')
             autocmd User lsp_setup call lsp#register_server({
                 \ 'name': 'javalsp',
-                \ 'cmd': {server_info->[$HOME . '/.vim/scripts/javalsp', 'lsp']},
+                \ 'cmd': {server_info->[g:MYVIMDIR . '/scripts/javalsp', 'lsp']},
                 \ 'allowlist': ['java'],
                 \ })
         endif
@@ -151,7 +151,7 @@ if _enable_lsp
         if executable('arduino-language-server')
             autocmd User lsp_setup call lsp#register_server({
                 \ 'name': 'arduino-language-server',
-                \ 'cmd': {server_info->[$HOME . '/.vim/scripts/arduino-language-server']},
+                \ 'cmd': {server_info->[g:MYVIMDIR . '/scripts/arduino-language-server']},
                 \ 'allowlist': ['arduino'],
                 \ })
         endif
@@ -159,7 +159,7 @@ if _enable_lsp
         if executable('nil')
             autocmd User lsp_setup call lsp#register_server({
                 \ 'name': 'nix-language-server',
-                \ 'cmd': {server_info->[$HOME . '/.vim/scripts/nix-language-server']},
+                \ 'cmd': {server_info->[g:MYVIMDIR . '/scripts/nix-language-server']},
                 \ 'allowlist': ['nix'],
                 \ })
         endif

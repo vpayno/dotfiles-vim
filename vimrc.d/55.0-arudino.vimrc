@@ -30,17 +30,17 @@ if _enable_arduino
         let g:arduino_use_slime = 1
 
         let g:lsc_enable_autocomplete = g:enable
-        let g:lsc_server_commands = {'arduino': $HOME . '/.vim/scripts/arduino-language-server'}
+        let g:lsc_server_commands = {'arduino': g:MYVIMDIR . '/scripts/arduino-language-server'}
         let g:lsc_auto_map = v:true
 
         let g:LanguageClient_serverCommands = {
-            \ 'arduino': [$HOME . '/.vim/scripts/arduino-language-server']
+            \ 'arduino': [g:MYVIMDIR . '/scripts/arduino-language-server']
             \ }
 
         call ale#linter#Define('arduino', {
             \   'name': 'arduino-language-server',
             \   'lsp': 'stdio',
-            \   'executable': $HOME . '/.vim/scripts/arduino-language-server',
+            \   'executable': g:MYVIMDIR . '/scripts/arduino-language-server',
             \   'command': '%e',
             \   'project_root': $PWD,
             \ })
@@ -48,13 +48,13 @@ if _enable_arduino
         augroup au_arduino_lsp
             autocmd! User lsp_setup call lsp#register_server({
                 \ 'name': 'arduino-language-server',
-                \ 'cmd': {server_info->[$HOME . '/.vim/scripts/arduino-language-server']},
+                \ 'cmd': {server_info->[g:MYVIMDIR . '/scripts/arduino-language-server']},
                 \ 'whitelist': ['arduino'],
                 \ })
         augroup end
 
         augroup au_arduino_fmt
-            autocmd! BufWritePre *.ino | call KeepView('silent %!' . $HOME . '/.vim/scripts/arduino-fmt')
+            autocmd! BufWritePre *.ino | call KeepView('silent %!' . g:MYVIMDIR . '/scripts/arduino-fmt')
         augroup end
 
         if g:_enable_ale_arduino_fixers

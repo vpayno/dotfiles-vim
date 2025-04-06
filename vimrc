@@ -2,8 +2,38 @@
 " ~/.vim/vimrc
 "
 
+if $IN_NIX_FLAKE
+    set nocompatible
+endif
+
+echom 'VIM set to [' . $VIM . ']'
+echom 'MYVIMDIR set to [' . $MYVIMDIR . ']'
+echom 'MYVIMCR set to [' . $MYVIMCR . ']'
+echom 'VIMRUNTIME set to [' . $VIMRUNTIME . ']'
+
+if $MYVIMDIR == v:null || $MYVIMDIR is v:null
+    let g:MYVIMDIR = $HOME . '/.vim'
+else
+    let g:MYVIMDIR = $MYVIMDIR
+endif
+
+if $MYVIMCR == v:null || $MYVIMCR is v:null
+    let g:MYVIMCR = $HOME . '/.vim/vimrc'
+else
+    let g:MYVIMCR = $MYVIMCR
+endif
+
+let &runtimepath = $VIMRUNTIME . ',' . $MYVIMDIR
+set packpath+=$VIMRUNTIME
+set packpath+=$MYVIMDIR
+
 " Load helper functions and global variables.
 runtime! vimrc.d/00.00-helpers.vimrc
+
+call DebugPrint('VIM set to [' . $VIM . ']')
+call DebugPrint('MYVIMDIR set to [' . g:MYVIMDIR . ']')
+call DebugPrint('MYVIMCR set to [' . g:MYVIMCR . ']')
+call DebugPrint('runtimepath set to [' . &runtimepath . ']')
 
 call DebugPrint('vimrc: start [loading ' . $MYVIMRC . ']')
 
@@ -29,7 +59,7 @@ endif
 
 command! Scratch lua require'tools'.makeScratch()
 
-if !has('nvim')
+if !has('nvim') && !$IN_NIX_FLAKE
     "set pythonthreedll=/home/vpayno/.pyenv/versions/3.9.18/lib/libpython3.9.a
     "set pythonthreedll=/home/vpayno/.pyenv/versions/3.10.13/lib/libpython3.so
     set pythonthreedll=/home/vpayno/.pyenv/versions/3.11.5/lib/libpython3.so

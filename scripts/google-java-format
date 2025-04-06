@@ -2,8 +2,8 @@
 
 if ! command -v google-java-format >&/dev/null; then
 	latest_version="v1.22.0"
-	curl -sS -L "https://github.com/google/google-java-format/releases/download/${latest_version}/google-java-format_linux-x86-64" >"${HOME}/bin/google-java-format"
-	chmod a+x "${HOME}/bin/google-java-format"
+	curl -sS -L "https://github.com/google/google-java-format/releases/download/${latest_version}/google-java-format_linux-x86-64" >"${MYVIMDIR:=${MYVIMDIR:=${HOME}}}/bin/google-java-format"
+	chmod a+x "${MYVIMDIR:=${MYVIMDIR:=${HOME}}}/bin/google-java-format"
 fi
 
-exec "${HOME}/bin/google-java-format" "${@}"
+exec "${MYVIMDIR:=${MYVIMDIR:=${HOME}}}/bin/google-java-format" "${@}"

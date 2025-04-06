@@ -1,39 +1,39 @@
 #!/usr/bin/env bash
 
 if [[ ${1} == "lsp" ]]; then
-	if [[ ! -d ${HOME}/git_remote/java-language-server ]]; then
-		git clone https://github.com/georgewfraser/java-language-server "${HOME}/git_remote/java-language-server"
+	if [[ ! -d ${MYVIMDIR:=${HOME}}/git_remote/java-language-server ]]; then
+		git clone https://github.com/georgewfraser/java-language-server "${MYVIMDIR:=${HOME}}/git_remote/java-language-server"
 
-		cd "${HOME}/git_remote/java-language-server" || exit
+		cd "${MYVIMDIR:=${HOME}}/git_remote/java-language-server" || exit
 
 		./scripts/link_linux.sh
 
 		mvn package -DskipTests
 	fi
 
-	cd "${HOME}/git_remote/java-language-server" || exit
+	cd "${MYVIMDIR:=${HOME}}/git_remote/java-language-server" || exit
 
 	exec "./dist/lang_server_linux.sh" "${@}"
 fi
 
-if [[ ! -d ${HOME}/git_remote/eclipse.jdt.ls ]]; then
-	git clone https://github.com/eclipse-jdtls/eclipse.jdt.ls "${HOME}/git_remote/eclipse.jdt.ls"
+if [[ ! -d ${MYVIMDIR:=${HOME}}/git_remote/eclipse.jdt.ls ]]; then
+	git clone https://github.com/eclipse-jdtls/eclipse.jdt.ls "${MYVIMDIR:=${HOME}}/git_remote/eclipse.jdt.ls"
 
-	cd "${HOME}/git_remote/eclipse.jdt.ls" || exit
+	cd "${MYVIMDIR:=${HOME}}/git_remote/eclipse.jdt.ls" || exit
 
 	time ./mvnw clean verify
 fi
 
-cd "${HOME}/git_remote/eclipse.jdt.ls" || exit
+cd "${MYVIMDIR:=${HOME}}/git_remote/eclipse.jdt.ls" || exit
 
 # exec "./org.eclipse.jdt.ls.product/target/repository/bin/jdtls" "${@}"
 
 declare -a jars=(./org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_*.jar)
 
 # https://projectlombok.org/downloads/lombok.jar
-if [[ ! -f ${HOME}/.config/lombok/lombok.jar ]]; then
-	mkdir -pv "${HOME}"/.config/lombok/
-	curl -sSL https://projectlombok.org/downloads/lombok.jar >"${HOME}"/.config/lombok/lombok.jar
+if [[ ! -f ${MYVIMDIR:=${HOME}}/.config/lombok/lombok.jar ]]; then
+	mkdir -pv "${MYVIMDIR:=${HOME}}"/.config/lombok/
+	curl -sSL https://projectlombok.org/downloads/lombok.jar >"${MYVIMDIR:=${HOME}}"/.config/lombok/lombok.jar
 fi
 
 exec java \
@@ -44,8 +44,8 @@ exec java \
 	-Dlog.level=ALL \
 	-Xms1g \
 	-Xmx2G \
-	-javaagent:"${HOME}"/.config/lombok/lombok.jar \
-	-Xbootclasspath/a:"${HOME}"/.config/lombok/lombok.jar \
+	-javaagent:"${MYVIMDIR:=${HOME}}"/.config/lombok/lombok.jar \
+	-Xbootclasspath/a:"${MYVIMDIR:=${HOME}}"/.config/lombok/lombok.jar \
 	-jar "${jars[*]}" \
 	-configuration "./org.eclipse.jdt.ls.product/target/repository/config_linux/" \
 	-data "${1}" \

@@ -4,7 +4,8 @@
 
 call DebugPrint('00.14-spelling.vimrc: start')
 
-set spellfile=$HOME/.vim/spell/en.utf-8.add
+" set spellfile=$HOME/spell/en.utf-8.add
+let &spellfile = g:MYVIMDIR . '/spell/en.utf-8.add'
 
 let g:SpellModeFlag = g:false
 
@@ -31,7 +32,7 @@ if _enable_ale
     function! CSpellAddAllToDictionary()
         let l:words = systemlist('cspell lint --config ~/.vim/configs/cspell.config.yaml --no-progress --words-only --unique ' . @% . ' 2>/dev/null | sort --ignore-case')
         echom 'Adding [' . join(l:words, ', ') . '] to custom cspell dictionary'
-        call writefile(l:words, $HOME . '/.vim/configs/cspell-custom_dictionary.txt', 'a')
+        call writefile(l:words, g:MYVIMDIR . '/configs/cspell-custom_dictionary.txt', 'a')
     endfunction
 
     let g:CSpellEnabledFlag = v:false

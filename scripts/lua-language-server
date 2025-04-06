@@ -6,7 +6,7 @@
 declare -r PROG_NAME="lua-language-server"
 
 declare -r REPO_URL="https://github.com/luals/lua-language-server"
-declare -r REPO_HOME="${HOME}/git_remote"
+declare -r REPO_HOME="${MYVIMDIR:=${HOME}}/git_remote"
 declare -r REPO_DIR="${REPO_HOME}/${PROG_NAME}"
 
 declare -r PROG_PATH="${REPO_DIR}/bin/${PROG_NAME}"

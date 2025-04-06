@@ -54,9 +54,9 @@ vnoremap ? ?\v
 " let &grepprg = 'grep -n -R $* 2> /dev/null'
 
 " let &wildignore = '*.o,*.obj,*~,*.pyc,.git/**,ctags,tags,cscope*'
-" let &grepprg = $HOME . '/.vim/scripts/grep' -n --exclude=' . shellescape(&wildignore) . ' $*'
+" let &grepprg = g:MYVIMDIR . '/scripts/grep' -n --exclude=' . shellescape(&wildignore) . ' $*'
 
-" let &grepprg = $HOME . '/.vim/scripts/grep' -n $*'
+" let &grepprg = g:MYVIMDIR . '/scripts/grep' -n $*'
 " command -nargs=+ Ggr execute 'silent Ggrep!' <q-args> | copen "| redraw!
 " nnoremap <leader>s :grep! <cword><CR><CR>
 

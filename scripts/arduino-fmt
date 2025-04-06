@@ -2,7 +2,7 @@
 
 set -e
 
-declare clangfmt_config="${HOME}/.vim/configs/clang-format-arduino"
+declare clangfmt_config="${MYVIMDIR:=${HOME}}/.vim/configs/clang-format-arduino"
 declare local_config=".clang-format"
 
 declare clangfmt_bin

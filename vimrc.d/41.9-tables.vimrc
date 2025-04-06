@@ -13,7 +13,7 @@ command! RetabTable call RetabTable()
 func! RetabTable()
     let saved_view = winsaveview()
     " execute '%!column -t'
-    execute '%!' . $HOME . '/.vim/scripts/fmt-codeowners.py'
+    execute '%!' . g:MYVIMDIR . '/scripts/fmt-codeowners.py'
     call winrestview(saved_view)
 endfunc
 
