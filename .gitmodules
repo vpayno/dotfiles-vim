@@ -60,7 +60,7 @@
     url = https://github.com/mattn/webapi-vim
 [submodule "pack/upstream/opt/vim-markdown"]
     path = pack/upstream/opt/vim-markdown
-    url = https://travis-ci.org/plasticboy/vim-markdown
+    url = https://github.com/PreserVIM/vim-markdown
 [submodule "pack/upstream/opt/tabular"]
     path = pack/upstream/opt/tabular
     url = https://github.com/godlygeek/tabular
