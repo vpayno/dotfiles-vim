@@ -44,6 +44,22 @@
         version = "0.1.0";
         name = "${pname}-${version}";
 
+        metadata = {
+          homepage = "https://github.com/vpayno/dotfiles-vim";
+          description = "Personal pre-configured vim editor";
+          license = with pkgs.lib.licenses; [ mit ];
+          # maintainers = with pkgs.lib.maintainers; [vpayno];
+          maintainers = [
+            {
+              email = "vpayno@users.noreply.github.com";
+              github = "vpayno";
+              githubId = 3181575;
+              name = "Victor Payno";
+            }
+          ];
+          mainProgram = "vim";
+        };
+
         overlays = [ (import rust-overlay) ];
 
         pkgs = import nixpkgs {
@@ -856,7 +872,7 @@
         packages = {
           default = pkgs.buildEnv {
             inherit pname version name;
-            meta = {
+            meta = pkgs.lib.recursiveUpdate metadata {
               mainProgram = "bin/vim";
             };
             buildInputs = with pkgs; [
@@ -901,6 +917,7 @@
           default = {
             type = "app";
             program = "${self.packages.${system}.default}/bin/vim";
+            meta = metadata;
           };
         };
       }
