@@ -865,12 +865,26 @@
 
         # just ./. skips all gisubmodules
         vimrcdir-src = vimconf-src;
+
+        usageMessage = ''
+          Available ${name} flake commands:
+
+            nix run .#usage
+
+            nix run . -- "message"
+              nix run .#default -- vim args
+              nix run .#vim     -- vim args
+
+            nix profile install github:vpayno/dotfiles-vim
+        '';
       in
       {
         formatter = treefmt-conf.formatter.${system};
 
-        packages = {
-          default = pkgs.buildEnv {
+        packages = rec {
+          default = vim;
+
+          vim = pkgs.buildEnv {
             inherit pname version name;
             meta = pkgs.lib.recursiveUpdate metadata {
               mainProgram = "bin/vim";
@@ -911,12 +925,29 @@
               done
             '';
           };
+
+          # very odd, this doesn't work with pkgs.writeShellApplication
+          # odd quoting error when the string usagemessage as new lines
+          showUsage = pkgs.writeShellScriptBin "showUsage" ''
+            printf "%s" "${usageMessage}"
+          '';
         };
 
-        apps = {
-          default = {
+        apps = rec {
+          default = vim;
+
+          vim = {
             type = "app";
             program = "${self.packages.${system}.default}/bin/vim";
+            meta = metadata;
+          };
+
+          usage = {
+            type = "app";
+            pname = "usage";
+            inherit version;
+            name = "${pname}-${version}";
+            program = "${pkgs.lib.getExe self.packages.${system}.showUsage}";
             meta = metadata;
           };
         };
