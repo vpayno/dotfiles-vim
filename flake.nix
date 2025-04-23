@@ -11,6 +11,11 @@
       inputs.systems.follows = "systems";
     };
 
+    treefmt-conf = {
+      url = "github:vpayno/nix-treefmt-conf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     vimconf-src = {
       flake = false;
       url = "github:vpayno/dotfiles-vim?submodules=1&ref=main";
@@ -22,6 +27,7 @@
       self,
       nixpkgs,
       flake-utils,
+      treefmt-conf,
       vimconf-src,
       ...
     }:
@@ -835,6 +841,8 @@
         vimrcdir-src = vimconf-src;
       in
       {
+        formatter = treefmt-conf.formatter.${system};
+
         packages = {
           default = pkgs.buildEnv {
             inherit pname version name;
