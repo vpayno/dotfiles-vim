@@ -573,4 +573,4 @@
 	url = https://github.com/sago35/tinygo.vim
 [submodule "pack/upstream/opt/just-vim"]
 	path = pack/upstream/opt/just-vim
-	url = https://github.com/vmchale/just-vim
+	url = https://github.com/vpayno/just-vim
