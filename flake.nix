@@ -16,6 +16,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     vimconf-src = {
       flake = false;
       url = "github:vpayno/dotfiles-vim?submodules=1&ref=main";
@@ -28,6 +33,7 @@
       nixpkgs,
       flake-utils,
       treefmt-conf,
+      rust-overlay,
       vimconf-src,
       ...
     }:
@@ -38,7 +44,11 @@
         version = "0.1.0";
         name = "${pname}-${version}";
 
-        pkgs = nixpkgs.legacyPackages.${system};
+        overlays = [ (import rust-overlay) ];
+
+        pkgs = import nixpkgs {
+          inherit system overlays;
+        };
 
         vimNativePkg = if pkgs.stdenv.isDarwin then pkgs.vim-darwin else pkgs.vim-full;
 
