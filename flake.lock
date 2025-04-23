@@ -76,8 +76,7 @@
         "nixpkgs": "nixpkgs",
         "rust-overlay": "rust-overlay",
         "systems": "systems",
-        "treefmt-conf": "treefmt-conf",
-        "vimconf-src": "vimconf-src"
+        "treefmt-conf": "treefmt-conf"
       }
     },
     "rust-overlay": {
@@ -167,23 +166,6 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "type": "github"
-      }
-    },
-    "vimconf-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1743975845,
-        "narHash": "sha256-DOOjV9UPxDt62N0d0M61bdgu+lqJ9yrAP8VYy6wGyis=",
-        "owner": "vpayno",
-        "repo": "dotfiles-vim",
-        "rev": "c43f6a869d1a792a6ff50fb91d17c23940a0ab13",
-        "type": "github"
-      },
-      "original": {
-        "owner": "vpayno",
-        "ref": "main",
-        "repo": "dotfiles-vim",
         "type": "github"
       }
     }

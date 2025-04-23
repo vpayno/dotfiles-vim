@@ -20,11 +20,6 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    vimconf-src = {
-      flake = false;
-      url = "github:vpayno/dotfiles-vim?submodules=1&ref=main";
-    };
   };
 
   outputs =
@@ -34,7 +29,6 @@
       flake-utils,
       treefmt-conf,
       rust-overlay,
-      vimconf-src,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -863,8 +857,37 @@
           surround
         ];
 
-        # just ./. skips all gisubmodules
-        vimrcdir-src = vimconf-src;
+        vimConfigDir = pkgs.stdenv.mkDerivation {
+          name = "vim-config-dir";
+          src =
+            (pkgs.fetchFromGitHub {
+              owner = "vpayno";
+              repo = "dotfiles-vim";
+              rev = "87e4026bb4bceecc9b88c1651d61e4df81b06f75"; # this is always behind by one so make sure only flake changes are in the next/last commit
+              fetchSubmodules = true;
+              hash = "sha256-L7FnHvjBZcibxqCm8kCWS3/uVGLs8mtQcu0nNt53tNs=";
+            }).overrideAttrs
+              {
+                GIT_CONFIG_COUNT = 1;
+                GIT_CONFIG_KEY_0 = "url.https://github.com/.insteadOf";
+                GIT_CONFIG_VALUE_0 = "git@github.com:";
+              };
+          buildInputs = with pkgs; [
+            coreutils
+            rsync
+            tree
+          ];
+          installPhase = ''
+            pwd
+            ls $src
+
+            mkdir -pv $out
+
+            rsync --verbose --archive --hard-links --sparse --exclude=.git "$src"/ "$out"/
+
+            tree -d "$out"/
+          '';
+        };
 
         usageMessage = ''
           Available ${name} flake commands:
@@ -897,6 +920,9 @@
             paths = [ vimNativePkg ]; # ++ toolPkgs ++ pluginPkgs;
             ignoreCollisions = false;
             postBuild = ''
+              printf "vimConfigDir: %s\n" "${vimConfigDir}"
+              printf "\n"
+
               tree $out
 
               bin_path="${pkgs.lib.makeBinPath toolPkgs}"
@@ -911,16 +937,16 @@
                 echo wrapProgram "$p" \
                   --prefix PATH : "$bin_path" \
                   --set IN_NIX_FLAKE "1" \
-                  --set VIM "${vimrcdir-src}" \
-                  --set MYVIMDIR "${vimrcdir-src}" \
-                  --set MYVIMRC "${vimrcdir-src}/vimrc" \
+                  --set VIM "${vimConfigDir}" \
+                  --set MYVIMDIR "${vimConfigDir}" \
+                  --set MYVIMRC "${vimConfigDir}/vimrc" \
                   --set VIMRUNTIME "${vimNativePkg}/share/vim/vim91"
                 wrapProgram "$p" \
                   --prefix PATH : "$bin_path" \
                   --set IN_NIX_FLAKE "1" \
-                  --set VIM "${vimrcdir-src}" \
-                  --set MYVIMDIR "${vimrcdir-src}" \
-                  --set MYVIMRC "${vimrcdir-src}/vimrc" \
+                  --set VIM "${vimConfigDir}" \
+                  --set MYVIMDIR "${vimConfigDir}" \
+                  --set MYVIMRC "${vimConfigDir}/vimrc" \
                   --set VIMRUNTIME "${vimNativePkg}/share/vim/vim91"
               done
             '';
