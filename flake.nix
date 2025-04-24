@@ -278,7 +278,6 @@
             rope
             ruff
             ruff-api
-            ruff-lsp
             safety
             # semgrep # error: Alias pythonPackages is still in python-packages.nix
             semver
