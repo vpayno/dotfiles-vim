@@ -863,7 +863,7 @@
             (pkgs.fetchFromGitHub {
               owner = "vpayno";
               repo = "dotfiles-vim";
-              rev = "87e4026bb4bceecc9b88c1651d61e4df81b06f75"; # this is always behind by one so make sure only flake changes are in the next/last commit
+              rev = "2dd65017b0fbe82416e477cd732b092aa3e37826"; # this is always behind by one so make sure only flake changes are in the next/last commit
               fetchSubmodules = true;
               hash = "sha256-L7FnHvjBZcibxqCm8kCWS3/uVGLs8mtQcu0nNt53tNs=";
             }).overrideAttrs
