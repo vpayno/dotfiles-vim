@@ -24,7 +24,7 @@
 skip_commits:
   message: /\[minor\]/
   files:
-    - '**/*.md'
+    - "**/*.md"
 
 # === Build matrix ===
 
@@ -37,23 +37,21 @@ image:
 # === How to build ===
 
 cache:
-    - C:\vim -> .appveyor.yml, tests\fetch-vim.bat
+  - C:\vim -> .appveyor.yml, tests\fetch-vim.bat
 
 environment:
   VIM_EXE: C:\vim\vim\vim80\vim.exe
 
 for:
   # Don't run the Windows build if the commit message includes "[ci-linux]"
-  -
-    matrix:
+  - matrix:
       only:
         - image: Visual Studio 2013
     skip_commits:
       message: /\[ci-linux\]/
 
   # Platform-specific configuration for Ubuntu
-  -
-    matrix:
+  - matrix:
       only:
         - image: Ubuntu1604
     # $APPVEYOR_BUILD_FOLDER isn't expanded in the environment section

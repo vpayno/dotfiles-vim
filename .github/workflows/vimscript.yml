@@ -3,7 +3,7 @@
 #
 ---
 name: Vimscript Workflow
-on:  # yamllint disable-line rule:truthy
+on: # yamllint disable-line rule:truthy
   push:
     branches:
       - main
@@ -13,7 +13,7 @@ on:  # yamllint disable-line rule:truthy
 jobs:
   stage1:
     name: Change Check
-    runs-on: 'ubuntu-latest'
+    runs-on: "ubuntu-latest"
     outputs:
       docs_changed: ${{ steps.check_file_changed.outputs.docs_changed }}
     steps:
@@ -93,7 +93,7 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3'
+          python-version: "3"
       - name: Install Tools
         id: install-tools
         run: |
@@ -118,14 +118,14 @@ jobs:
         uses: PsychoLlama/vader-action@v1
         with:
           neovim: false
-          test-pattern: '**/*.vader'
+          test-pattern: "**/*.vader"
       - name: Vader Tests with NeoVim
         if: false
         id: vim-tests-vader-neovim
         uses: PsychoLlama/vader-action@v1
         with:
           neovim: true
-          test-pattern: '**/*.vader'
+          test-pattern: "**/*.vader"
       - name: Checkout themis.vim
         if: false
         id: checkout-themis

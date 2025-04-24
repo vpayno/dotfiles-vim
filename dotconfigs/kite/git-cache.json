@@ -1,48 +1,48 @@
 {
-"Repos": {
-"/home/vpayno/git_vpayno/learning-python": {
-"Commits": {
-"18c0d455922cedd67da0d75caf750db827962b78": [
-0
-],
-"51736749e7404049398a7acd1ce46233e1f9b2db": [
-1
-],
-"9021c203a23fb95429d2aae5a6ad4cda9ae776ef": [
-5,
-6,
-7,
-8,
-9,
-10
-],
-"b1bb595316f3ddcb3b4843b8898bf142fa0ba07c": [
-2
-],
-"ce31c31b0b7b7adf62a1fd9c681948009417f08c": [
-3
-],
-"e2659db23a4ff460434b63e74fc7929c62dc2fdd": null,
-"e74c0aee3437b8096b557cd39f79abefa1b95cf6": [
-4
-]
-},
-"Files": [
-"edgedb-asyncio/lesson04-coroutines_part2/futures.py",
-"edgedb-asyncio/lesson03-coroutines/webcrawler.py",
-"edgedb-asyncio/lesson03-coroutines/coroutines.py",
-"edgedb-asyncio/lesson02-the_event_loop/trampolines.py",
-"edgedb-asyncio/lesson01/mayhem.py",
-"python_crash_course/alien_invasion/setup.py",
-"python_crash_course/alien_invasion/src/alien_invasion/__init__.py",
-"python_crash_course/alien_invasion/src/alien_invasion/alien_invasion.py",
-"python_crash_course/alien_invasion/src/alien_invasion/bullet.py",
-"python_crash_course/alien_invasion/src/alien_invasion/settings.py",
-"python_crash_course/alien_invasion/src/alien_invasion/ship.py"
-]
-}
-},
-"EvictionOrder": [
-"/home/vpayno/git_vpayno/learning-python"
-]
+  "Repos": {
+    "/home/vpayno/git_vpayno/learning-python": {
+      "Commits": {
+        "18c0d455922cedd67da0d75caf750db827962b78": [
+          0
+        ],
+        "51736749e7404049398a7acd1ce46233e1f9b2db": [
+          1
+        ],
+        "9021c203a23fb95429d2aae5a6ad4cda9ae776ef": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "b1bb595316f3ddcb3b4843b8898bf142fa0ba07c": [
+          2
+        ],
+        "ce31c31b0b7b7adf62a1fd9c681948009417f08c": [
+          3
+        ],
+        "e2659db23a4ff460434b63e74fc7929c62dc2fdd": null,
+        "e74c0aee3437b8096b557cd39f79abefa1b95cf6": [
+          4
+        ]
+      },
+      "Files": [
+        "edgedb-asyncio/lesson04-coroutines_part2/futures.py",
+        "edgedb-asyncio/lesson03-coroutines/webcrawler.py",
+        "edgedb-asyncio/lesson03-coroutines/coroutines.py",
+        "edgedb-asyncio/lesson02-the_event_loop/trampolines.py",
+        "edgedb-asyncio/lesson01/mayhem.py",
+        "python_crash_course/alien_invasion/setup.py",
+        "python_crash_course/alien_invasion/src/alien_invasion/__init__.py",
+        "python_crash_course/alien_invasion/src/alien_invasion/alien_invasion.py",
+        "python_crash_course/alien_invasion/src/alien_invasion/bullet.py",
+        "python_crash_course/alien_invasion/src/alien_invasion/settings.py",
+        "python_crash_course/alien_invasion/src/alien_invasion/ship.py"
+      ]
+    }
+  },
+  "EvictionOrder": [
+    "/home/vpayno/git_vpayno/learning-python"
+  ]
 }

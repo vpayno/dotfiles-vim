@@ -1,15 +1,15 @@
 ---
 # https://cspell.org/docs/getting-started/
 $schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
-version: '0.2'
+version: "0.2"
 
 dictionaryDefinitions:
   - name: custom-words
-    path: '~/.vim/configs/cspell-custom_dictionary.txt'
+    path: "~/.vim/configs/cspell-custom_dictionary.txt"
     addWords: true
 
   - name: program-words
-    path: '~/.vim/configs/cspell-program_dictionary.txt'
+    path: "~/.vim/configs/cspell-program_dictionary.txt"
     addWords: true
 
 dictionaries:
@@ -19,7 +19,7 @@ dictionaries:
   - program-words
 
 ignorePaths:
-  - 'node_modules'
+  - "node_modules"
 
 ignoreRegExpList:
-  - "--\\w+"  # ansible-navigator long CLI parameters
+  - "--\\w+" # ansible-navigator long CLI parameters
