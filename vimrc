@@ -8,19 +8,19 @@ endif
 
 echom 'VIM set to [' . $VIM . ']'
 echom 'MYVIMDIR set to [' . $MYVIMDIR . ']'
-echom 'MYVIMCR set to [' . $MYVIMCR . ']'
+echom 'MYVIMRC set to [' . $MYVIMRC . ']'
 echom 'VIMRUNTIME set to [' . $VIMRUNTIME . ']'
 
-if $MYVIMDIR == v:null || $MYVIMDIR is v:null
+if $MYVIMDIR == '' || $MYVIMDIR == v:null || $MYVIMDIR is v:null
     let g:MYVIMDIR = $HOME . '/.vim'
 else
     let g:MYVIMDIR = $MYVIMDIR
 endif
 
-if $MYVIMCR == v:null || $MYVIMCR is v:null
-    let g:MYVIMCR = $HOME . '/.vim/vimrc'
+if $MYVIMRC == v:null || $MYVIMRC is v:null
+    let g:MYVIMRC = $HOME . '/.vim/vimrc'
 else
-    let g:MYVIMCR = $MYVIMCR
+    let g:MYVIMRC = $MYVIMRC
 endif
 
 let &runtimepath = $VIMRUNTIME . ',' . $MYVIMDIR
@@ -32,7 +32,7 @@ runtime! vimrc.d/00.00-helpers.vimrc
 
 call DebugPrint('VIM set to [' . $VIM . ']')
 call DebugPrint('MYVIMDIR set to [' . g:MYVIMDIR . ']')
-call DebugPrint('MYVIMCR set to [' . g:MYVIMCR . ']')
+call DebugPrint('MYVIMRC set to [' . g:MYVIMRC . ']')
 call DebugPrint('runtimepath set to [' . &runtimepath . ']')
 
 call DebugPrint('vimrc: start [loading ' . $MYVIMRC . ']')
