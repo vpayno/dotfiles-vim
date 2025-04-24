@@ -776,6 +776,7 @@
             lua-language-server
             markdownlint-cli
             markdownlint-cli2
+            marksman
             nginx-language-server
             npm-check
             npm-check-updates
