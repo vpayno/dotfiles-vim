@@ -14,8 +14,8 @@ if _enable_yaml
         let g:yaml_limit_spell = g:disable
 
         if g:_enable_ale && g:_enable_ale_yaml
-            let g:ale_yaml_yamllint_options = '--config-file ~/.vim/configs/yamllint-custom.yaml'
-            let g:ale_yaml_yamlfix_options = '--config-file ~/.vim/configs/yamlfix-custom.toml'
+            let g:ale_yaml_yamllint_options = '--config-file ' . g:MYVIMDIR . '/.vim/configs/yamllint-custom.yaml'
+            let g:ale_yaml_yamlfix_options = '--config-file ' . g:MYVIMDIR . '/.vim/configs/yamlfix-custom.toml'
 
             let g:ale_fixers.yaml = ['yamlfix']
             let g:ale_linters.yaml = ['yamllint']

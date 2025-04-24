@@ -1,11 +1,11 @@
 #!/bin/bash
 
 for path_entry in ${PATH//:/ }; do
-	if [[ -d ${path_entry} ]]; then
-		for path_item in "${path_entry}"/*; do
-			if [[ -x ${path_item} ]] && [[ ! -d ${path_item} ]]; then
-				printf "%s\n" "${path_item##*/}"
-			fi
-		done
-	fi
-done | sort -uV | grep '^[a-zA-Z0-9]' >~/.vim/configs/cspell-program_dictionary.txt
+        if [[ -d ${path_entry} ]]; then
+                for path_item in "${path_entry}"/*; do
+                        if [[ -x ${path_item} ]] && [[ ! -d ${path_item} ]]; then
+                                printf "%s\n" "${path_item##*/}"
+                        fi
+                done
+        fi
+done | sort -uV | grep '^[a-zA-Z0-9]' >"${MYVIMDIR:=${HOME}}"/.vim/configs/cspell-program_dictionary.txt

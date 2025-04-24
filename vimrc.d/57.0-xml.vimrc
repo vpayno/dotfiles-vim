@@ -7,7 +7,7 @@ if _enable_xml && (&filetype ==# 'xml' || &filetype ==# 'xhtml' || &filetype ==#
     function! ConfigureFileTypeXml()
         packadd! xml.vim
 
-        command! -buffer XmlFmt let winsaved = winsaveview() | execute 'silent %! ~/.vim/scripts/xmlfmt -' | if v:shell_error > 0 | silent undo | else | silent :w | endif | call winrestview(winsaved)
+        command! -buffer XmlFmt let winsaved = winsaveview() | execute 'silent %! ' . g:MYVIMDIR . '/.vim/scripts/xmlfmt -' | if v:shell_error > 0 | silent undo | else | silent :w | endif | call winrestview(winsaved)
 
         if g:_enable_xml_fmt
             set autoread

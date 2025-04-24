@@ -5,7 +5,7 @@ Code Owners formatter.
 - ignore blank lines
 - format the rest of the lines like `column -t` would
 
-file: ~/.vim/scripts/scripts/fmt-codeowners.py
+file: "${MYVIMDIR:=${HOME}}"/.vim/scripts/scripts/fmt-codeowners.py
 """
 
 import sys

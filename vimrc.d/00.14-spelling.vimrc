@@ -27,10 +27,10 @@ if _enable_ale
     " disable cspell by default (it's really annoying)
     let g:ale_cspell_executable = 'true'
 
-    let g:ale_cspell_options = 'lint --config ~/.vim/configs/cspell.config.yaml --no-progress --show-suggestions'
+    let g:ale_cspell_options = 'lint --config ' . g:MYVIMDIR . '/.vim/configs/cspell.config.yaml --no-progress --show-suggestions'
 
     function! CSpellAddAllToDictionary()
-        let l:words = systemlist('cspell lint --config ~/.vim/configs/cspell.config.yaml --no-progress --words-only --unique ' . @% . ' 2>/dev/null | sort --ignore-case')
+        let l:words = systemlist('cspell lint --config ' . g:MYVIMDIR . '/.vim/configs/cspell.config.yaml --no-progress --words-only --unique ' . @% . ' 2>/dev/null | sort --ignore-case')
         echom 'Adding [' . join(l:words, ', ') . '] to custom cspell dictionary'
         call writefile(l:words, g:MYVIMDIR . '/configs/cspell-custom_dictionary.txt', 'a')
     endfunction

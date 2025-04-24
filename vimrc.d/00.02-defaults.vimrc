@@ -144,7 +144,7 @@ let g:khuno_ignore='E501'
 " Reload vimrc immediately when edited
 augroup au_reload_config
     autocmd!
-    autocmd! bufwritepost vimrc source ~/.vimrc
+    autocmd! bufwritepost vimrc source g:MYVIMDIR . '/.vimrc'
     " Reloading ~/.vimrc when writing *.vimrc files caused problems with indent guides on the current buffer(s).
     autocmd! bufwritepost *.vimrc source %
 augroup end

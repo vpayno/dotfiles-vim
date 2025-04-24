@@ -44,7 +44,7 @@ if _enable_ale
 
     let g:ale_fixers.markdown = ['textlint']
     let g:ale_linters.markdown = ['markdownlint']
-    let g:ale_markdown_markdownlint_options = '--config ~/.vim/configs/markdownlint.json'
+    let g:ale_markdown_markdownlint_options = '--config ' . g:MYVIMDIR . '/.vim/configs/markdownlint.json'
     let g:ale_linters_ignore.markdown = []
 
     call DebugPrint('41.0-markdown.vimrc: [ale] end')
